@@ -1,0 +1,2 @@
+class ScholarSessionsController < ApplicationController
+end
