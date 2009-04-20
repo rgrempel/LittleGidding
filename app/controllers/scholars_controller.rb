@@ -1,15 +1,17 @@
 class ScholarsController < ApplicationController
   def create
-    @scholar = Scholar.new({
-      :full_name => params[:full_name],
-      :email => params[:email],
-      :institution => params[:institution]
-    })
+    @record = Scholar.new(params)
+    @record.password = params[:password]
+    @record.password_confirmation = params[:password_confirmation]
 
-    if @scholar.save
-
+    @toxml_options = {:only => [:id, :email, :full_name, :institution]}
+    
+    if @record.save
+      @status = 0
     else
-
+      @status = -4
     end
+    
+    render :template => "shared/smartclient/show"
   end
 end

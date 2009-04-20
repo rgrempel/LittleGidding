@@ -25,6 +25,8 @@ class Scholar < ActiveRecord::Base
   acts_as_authentic do |c|
     c.perishable_token_valid_for 1.day
   end
+  
+  attr_accessible :email, :institution, :full_name
 
   def deliver_password_reset_instructions!
     reset_perishable_token!

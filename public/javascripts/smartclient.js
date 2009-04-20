@@ -34,6 +34,12 @@ isc.RailsDataSource.create({
   dataURL: "/scholars.xml",
   fields: [
     {
+      name: "id",
+      type: "integer",
+      primaryKey: true,
+      canEdit: false
+    },
+    {
       name: "full_name",
       type: "text",
       title: "Full Name",
@@ -65,6 +71,8 @@ isc.RegistrationForm.addProperties({
     {name: "full_name"},
     {name: "email"},
     {name: "institution"},
+    {name: "password", type: "password", title: "Password"},
+    {name: "password_confirmation", type: "password", title: "Confirm Password"},
     {name: "submit", type: "submit", title: "Register"}
   ]
 });
@@ -73,6 +81,12 @@ isc.RailsDataSource.create({
   ID: "scholar_sessions",
   dataURL: "/scholar_sessions.xml",
   fields: [
+    {
+      name: "id",
+      type: "integer",
+      primaryKey: true,
+      canEdit: false
+    },
     {
       name: "email",
       type: "text",
@@ -122,10 +136,20 @@ isc.LoginWindow.addProperties({
 
   initWidget: function() {
     this.Super("initWidget", arguments);
+    
     this.loginForm = isc.LoginForm.create();
-    this.addItem(this.loginForm);
     this.registrationForm  = isc.RegistrationForm.create();
-    this.addItem(this.registrationForm);
+    
+    this.tabSet = isc.TabSet.create({
+      tabs: [
+        {title: "Login", pane: this.loginForm},
+        {title: "Register", pane: this.registrationForm},
+        {title: "Activate"},
+        {title: "Reset Password"}
+      ]
+    });
+    
+    this.addItem(this.tabSet);
   },
 
   show: function() {
