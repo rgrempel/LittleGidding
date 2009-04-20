@@ -1,8 +1,9 @@
 class CreateScholars < ActiveRecord::Migration
   def self.up
     create_table :scholars do |t|
-      t.string :login, :null => false
       t.string :email, :null => false
+      t.string :institution, :null => false
+      t.string :full_name, :null => false
 
       t.string :crypted_password, :null => false
       t.string :password_salt, :null => false
