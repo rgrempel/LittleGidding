@@ -1,8 +1,9 @@
 class ScholarsController < ApplicationController
   def create
-    @record = Scholar.new(params)
-    @record.password = params[:password]
-    @record.password_confirmation = params[:password_confirmation]
+    data = params[:request][:data][:scholars]
+    @record = Scholar.new(data)
+    @record.password = data[:password]
+    @record.password_confirmation = data[:password_confirmation]
 
     @toxml_options = {:only => [:id, :email, :full_name, :institution]}
     

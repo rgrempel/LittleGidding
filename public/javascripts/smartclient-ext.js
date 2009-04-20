@@ -3,9 +3,9 @@ isc.defineClass("RailsDataSource", "RestDataSource");
 isc.RailsDataSource.addProperties({
     operationBindings:[
        {operationType:"fetch", dataProtocol:"getParams"},
-       {operationType:"add", dataProtocol:"postParams"},
+       {operationType:"add", dataProtocol:"postMessage"},
        {operationType:"remove", dataProtocol:"postParams", requestProperties:{httpMethod:"DELETE"}},
-       {operationType:"update", dataProtocol:"postParams", requestProperties:{httpMethod:"PUT"}}
+       {operationType:"update", dataProtocol:"postMessage", requestProperties:{httpMethod:"PUT"}}
     ],
 
     getDataURL : function (dsRequest) { 
