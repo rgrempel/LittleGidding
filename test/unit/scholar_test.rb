@@ -8,6 +8,7 @@
 #  full_name          :string(255)     not null
 #  crypted_password   :string(255)     not null
 #  password_salt      :string(255)     not null
+#  activated_at       :datetime
 #  persistence_token  :string(255)     not null
 #  perishable_token   :string(255)     not null
 #  login_count        :integer         default(0), not null

@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20090419204244) do
     t.string   "full_name",                         :null => false
     t.string   "crypted_password",                  :null => false
     t.string   "password_salt",                     :null => false
+    t.datetime "activated_at"
     t.string   "persistence_token",                 :null => false
     t.string   "perishable_token",                  :null => false
     t.integer  "login_count",        :default => 0, :null => false
@@ -41,5 +42,7 @@ ActiveRecord::Schema.define(:version => 20090419204244) do
   end
 
   add_index "scholars", ["email"], :name => "index_scholars_on_email", :unique => true
+  add_index "scholars", ["last_request_at"], :name => "index_scholars_on_last_request_at"
+  add_index "scholars", ["persistence_token"], :name => "index_scholars_on_persistence_token"
 
 end

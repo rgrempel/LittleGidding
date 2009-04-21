@@ -7,7 +7,9 @@ class CreateScholars < ActiveRecord::Migration
 
       t.string :crypted_password, :null => false
       t.string :password_salt, :null => false
-      
+
+      t.datetime :activated_at
+
       t.string :persistence_token, :null => false
       t.string :perishable_token, :null => false
       
@@ -23,7 +25,6 @@ class CreateScholars < ActiveRecord::Migration
     end
 
     add_index :scholars, :email, :unique => true
-    add_index :scholars, :login, :unique => true
     add_index :scholars, :persistence_token
     add_index :scholars, :last_request_at
   end
