@@ -73,8 +73,31 @@ isc.RegistrationForm.addProperties({
     {name: "institution"},
     {name: "password", type: "password", title: "Password"},
     {name: "password_confirmation", type: "password", title: "Confirm Password"},
-    {name: "submit", type: "submit", title: "Register"}
-  ]
+    {
+      name: "submit", 
+      type: "button", 
+      click: function (form, item) {
+        form.submit (function(dsResponse, data, dsRequest) {
+          form.handleSubmission(dsResponse, data, dsRequest);
+        });
+      }
+    }
+  ],
+
+  handleSubmission: function(dsResponse, data, dsRequest) {
+    if (dsResponse.status == 0) {
+      this.editNewRecord();
+      isc.say(
+        "You have successfully registered! Check your email for a confirmation code, and then enter it in the 'Activate' tab to continue", 
+        {target: this, methodName: "fireSuccessfulRegistration"}
+      );
+    }
+  },
+
+  fireSuccessfulRegistration: function () {
+    // Just here to be observed ...
+    return true;
+  }
 });
 
 isc.RailsDataSource.create({
@@ -152,8 +175,14 @@ isc.LoginWindow.addProperties({
     this.addItem(this.tabSet);
   },
 
+  handleSuccessfulRegistration: function() {
+    this.tabSet.selectTab(2);
+  },
+
   show: function() {
     this.Super("show", arguments);
+    
+    this.observe (this.registrationForm, "fireSuccessfulRegistration", "observer.handleSuccessfulRegistration()");
 
     this.loginForm.editNewRecord();
     this.registrationForm.editNewRecord();
