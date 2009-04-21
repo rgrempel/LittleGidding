@@ -9,6 +9,7 @@ class ScholarsController < ApplicationController
     
     if @record.save
       @status = 0
+      @record.deliver_account_confirmation_instructions!
     else
       @status = -4
     end

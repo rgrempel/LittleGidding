@@ -139,6 +139,13 @@ isc.LoginForm.addProperties({
   ]
 });
 
+isc.defineClass("ActivationForm", isc.DynamicForm);
+isc.ActivationForm.addProperties({
+  
+
+});
+
+
 // A button that knows how to login
 isc.defineClass("LoginButton", isc.Button);
 isc.LoginButton.addProperties({
