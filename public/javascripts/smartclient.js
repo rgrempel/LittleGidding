@@ -71,10 +71,12 @@ isc.RegistrationForm.addProperties({
     {name: "full_name"},
     {name: "email"},
     {name: "institution"},
-    {name: "password", type: "password", title: "Password"},
-    {name: "password_confirmation", type: "password", title: "Confirm Password"},
+    {name: "password", type: "password", title: "Password", required: true},
+    {name: "password_confirmation", type: "password", title: "Confirm Password", required: true},
     {
-      name: "submit", 
+      name: "submit",
+      title: "Register",
+      align: "right",
       type: "button", 
       click: function (form, item) {
         form.submit (function(dsResponse, data, dsRequest) {
@@ -116,13 +118,6 @@ isc.RailsDataSource.create({
       title: "Email Address",
       length: 50,
       required: true
-    },
-    {
-      name: "password",
-      type: "password",
-      title: "Password",
-      length: 20,
-      required: true
     }
   ]
 });
@@ -133,16 +128,71 @@ isc.LoginForm.addProperties({
   fields: [
     {type: "header", defaultValue: "Login"},
     {name: "email"},
-    {name: "password"},
+    {name: "password", type: "password", title: "Password", required: true},
     {name: "space", type: "spacer", height: 10},
-    {name: "submit", type: "submit", title: "Login", align: "right", titleAlign: "right"}
-  ]
+    {
+      name: "submit",
+      title: "Login",
+      align: "right",
+      type: "button", 
+      click: function (form, item) {
+        form.submit (function(dsResponse, data, dsRequest) {
+          form.handleSubmission(dsResponse, data, dsRequest);
+        });
+      }
+    },
+  ],
+
+  handleSubmission: function(dsResponse, data, dsRequest) {
+
+  }
 });
 
-isc.defineClass("ActivationForm", isc.DynamicForm);
-isc.ActivationForm.addProperties({
-  
+isc.defineClass("ActivationForm", isc.DynamicForm).addProperties({
+  dataSource: "scholar_sessions",
+  fields: [
+    {type: "header", defaultValue: "Activate Account"},
+    {name: "email"},
+    {name: "perishable_token", type: "text", title: "Activation Code"},
+    {
+      name: "submit",
+      title: "Activate",
+      align: "right",
+      type: "button", 
+      click: function (form, item) {
+        form.submit (function(dsResponse, data, dsRequest) {
+          form.handleSubmission(dsResponse, data, dsRequest);
+        });
+      }
+    },
+  ],
+    
+  handleSubmission: function(dsResponse, data, dsRequest) {
 
+  }
+});
+
+isc.defineClass("PasswordResetForm", isc.DynamicForm).addProperties({
+  dataSource: "scholars",
+  fields: [
+    {type: "header", defaultValue: "Reset Password"},
+    {name: "email"},
+    {
+      name: "submit",
+      title: "Reset Password",
+      align: "right",
+      type: "button", 
+      click: function (form, item) {
+        form.submit (function(dsResponse, data, dsRequest) {
+          form.handleSubmission(dsResponse, data, dsRequest);
+        });
+      }
+    },
+  ],
+    
+  handleSubmission: function(dsResponse, data, dsRequest) {
+
+  }
 });
 
 
@@ -169,13 +219,15 @@ isc.LoginWindow.addProperties({
     
     this.loginForm = isc.LoginForm.create();
     this.registrationForm  = isc.RegistrationForm.create();
-    
+    this.activationForm = isc.ActivationForm.create();
+    this.passwordResetForm = isc.PasswordResetForm.create();
+
     this.tabSet = isc.TabSet.create({
       tabs: [
         {title: "Login", pane: this.loginForm},
         {title: "Register", pane: this.registrationForm},
-        {title: "Activate"},
-        {title: "Reset Password"}
+        {title: "Activate", pane: this.activationForm},
+        {title: "Reset Password", pane: this.passwordResetForm}
       ]
     });
     
@@ -193,6 +245,8 @@ isc.LoginWindow.addProperties({
 
     this.loginForm.editNewRecord();
     this.registrationForm.editNewRecord();
+    this.passwordResetForm.editNewRecord();
+    this.activationForm.editNewRecord();
   }
 });
 
