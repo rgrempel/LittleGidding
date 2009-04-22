@@ -21,11 +21,6 @@ isc.LG.addProperties({
 
   loginWindow: null,
 
-  setEmail: function(value) {
-    this.email = value;
-    return this;
-  },
-
   showLoginWindow: function() {
     if (!this.loginWindow) {
       this.loginWindow = isc.LoginWindow.create();
@@ -33,15 +28,40 @@ isc.LG.addProperties({
     this.loginWindow.show();
   },
 
-  fireSuccessfulActivation: function() {
-    // just here to be observed
-    return true;
+  logout: function() {
+    var ds = isc.DataSource.get("scholar_sessions");
+    // The id: is bogus ... this is really a singleton on the server
+    ds.removeData({id: 1}, function(dsResponse, data, dsRequest) {
+      if (dsResponse.status == 0) isc.LG.app.fireLogout();
+    });
+  },
+  
+  fireSuccessfulRegistration: function(value) {
+    this.email = value;
+    return this;
+  },
+
+  fireSuccessfulActivation: function(email) {
+    this.fireSuccessfulLogin(email);
+    return this;
+  },
+
+  fireSuccessfulLogin: function(email) {
+    this.loggedIn = email;
+    this.loginWindow.destroy();
+    this.loginWindow = null;
+    return this; 
+  },
+
+  fireLogout: function() {
+    this.loggedIn = null;
+    return this;
   }
 });
 
 isc.RailsDataSource.create({
   ID: "scholars",
-  dataURL: "/scholars.xml",
+  dataURL: "/scholars",
   fields: [
     {
       name: "id",
@@ -77,7 +97,7 @@ isc.defineClass("RegistrationForm", isc.DynamicForm);
 isc.RegistrationForm.addProperties({
   dataSource: "scholars",
   fields: [
-    {type: "header", defaultValue: "Register"},
+    {name: "base", type: "header", defaultValue: "Register"},
     {name: "full_name"},
     {name: "email"},
     {name: "institution"},
@@ -98,30 +118,25 @@ isc.RegistrationForm.addProperties({
 
   handleSubmission: function(dsResponse, data, dsRequest) {
     if (dsResponse.status == 0) {
-      isc.LG.app.setEmail(data.email);
       this.editNewRecord();
       isc.say(
         "You have successfully registered! Check your email for a confirmation code, and then enter it in the 'Activate' tab to continue", 
-        {target: this, methodName: "fireSuccessfulRegistration"}
+        function() {
+          isc.LG.app.fireSuccessfulRegistration(data.email);
+        }
       );
     }
   },
-
-  fireSuccessfulRegistration: function () {
-    // Just here to be observed ...
-    return true;
-  }
 });
 
 isc.RailsDataSource.create({
   ID: "scholar_sessions",
-  dataURL: "/scholar_sessions.xml",
+  dataURL: "/scholar_sessions",
   fields: [
     {
       name: "id",
-      type: "integer",
-      primaryKey: true,
-      canEdit: false
+      type: "text",
+      primaryKey: true
     },
     {
       name: "email",
@@ -137,7 +152,7 @@ isc.defineClass("LoginForm", isc.DynamicForm);
 isc.LoginForm.addProperties({
   dataSource: "scholar_sessions",
   fields: [
-    {type: "header", defaultValue: "Login"},
+    {name: "base", type: "header", defaultValue: "Login"},
     {name: "email"},
     {name: "password", type: "password", title: "Password", required: true},
     {name: "space", type: "spacer", height: 10},
@@ -155,19 +170,27 @@ isc.LoginForm.addProperties({
   ],
 
   handleSubmission: function(dsResponse, data, dsRequest) {
-
+    if (dsResponse.status == 0) {
+      //  isc.LG.app.setEmail(data.email);
+      this.editNewRecord();
+      isc.say(
+        "You have successfully logged in!", function(){
+          isc.LG.app.fireSuccessfulLogin(data.email);
+        }
+      );
+    } 
   },
 
   initWidget: function() {
     this.Super("initWidget", arguments);
-    this.observe(isc.LG.app, "setEmail", "observer.setValue('email', isc.LG.app.email)");
+    this.observe(isc.LG.app, "fireSuccessfulRegistration", "observer.setValue('email', isc.LG.app.email)");
   }
 });
 
 isc.defineClass("ActivationForm", isc.DynamicForm).addProperties({
   dataSource: "scholar_sessions",
   fields: [
-    {type: "header", defaultValue: "Activate Account"},
+    {name: "base", type: "header", defaultValue: "Activate Account"},
     {name: "email"},
     {name: "perishable_token", type: "text", title: "Activation Code"},
     {
@@ -189,21 +212,23 @@ isc.defineClass("ActivationForm", isc.DynamicForm).addProperties({
       this.editNewRecord();
       isc.say(
         "You have successfully activated your account! From now on, use your email and password to log in.", 
-        {target: isc.LG.app, methodName: "fireSuccessfulActivation"}
+        function() {
+          isc.LG.app.fireSuccessfulActivation(data.email);
+        }
       );
     }    
   },
 
   initWidget: function() {
     this.Super("initWidget", arguments);
-    this.observe(isc.LG.app, "setEmail", "observer.setValue('email', isc.LG.app.email)");
+    this.observe(isc.LG.app, "fireSuccessfulRegistration", "observer.setValue('email', isc.LG.app.email)");
   }
 });
 
 isc.defineClass("PasswordResetForm", isc.DynamicForm).addProperties({
   dataSource: "scholars",
   fields: [
-    {type: "header", defaultValue: "Reset Password"},
+    {name: "base", type: "header", defaultValue: "Reset Password"},
     {name: "email"},
     {
       name: "submit",
@@ -227,10 +252,30 @@ isc.defineClass("PasswordResetForm", isc.DynamicForm).addProperties({
 // A button that knows how to login
 isc.defineClass("LoginButton", isc.Button);
 isc.LoginButton.addProperties({
-  title: "Login or Register",
   width: 200,
-  action: function() {
+  loginAction: function() {
     isc.LG.app.showLoginWindow();
+  },
+  logoutAction: function() {
+    isc.LG.app.logout();
+  },
+  initWidget: function() {
+    this.Super("initWidget", arguments);
+    this.observe(isc.LG.app, "fireSuccessfulLogin", "observer.handleLogin()");
+    this.observe(isc.LG.app, "fireLogout", "observer.handleLogout()");
+    if (isc.LG.app.loggedIn) {
+      this.handleLogin();
+    } else {
+      this.handleLogout();
+    }
+  },
+  handleLogin: function() {
+    this.setTitle("Logout: " + isc.LG.app.loggedIn);
+    this.action = this.logoutAction;
+  },
+  handleLogout: function() {
+    this.setTitle("Login or Register");
+    this.action = this.loginAction;
   }
 });
 
@@ -261,7 +306,8 @@ isc.LoginWindow.addProperties({
     
     this.addItem(this.tabSet);
 
-    this.observe(isc.LG.app, "fireSuccessfulActivation", "observer.closeClick()");
+  //  this.observe(isc.LG.app, "fireSuccessfulActivation", "observer.closeClick()");
+  //  this.observe(isc.LG.app, "fireSuccessfulLogin", "observer.closeClick()");
   },
 
   handleSuccessfulRegistration: function() {
@@ -271,7 +317,7 @@ isc.LoginWindow.addProperties({
   show: function() {
     this.Super("show", arguments);
     
-    this.observe (this.registrationForm, "fireSuccessfulRegistration", "observer.handleSuccessfulRegistration()");
+    this.observe (isc.LG.app, "fireSuccessfulRegistration", "observer.handleSuccessfulRegistration()");
 
     this.loginForm.editNewRecord();
     this.registrationForm.editNewRecord();

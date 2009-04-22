@@ -10,6 +10,16 @@ isc.RailsDataSource.addProperties({
 
     getDataURL : function (dsRequest) { 
         var url = this.Super("getDataURL", arguments);
+        switch (dsRequest.operationType) {
+          case "fetch":
+          case "add":
+            url += ".xml";
+            break;
+          case "remove":
+          case "update":
+            url += "/{id}.xml";
+            break;
+        }
         for (var key in dsRequest.data) {
           macro = "{" + key + "}";
           while (url.indexOf(macro) >= 0) {

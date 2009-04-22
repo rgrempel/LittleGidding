@@ -12,6 +12,9 @@ class ScholarSessionsController < ApplicationController
       if @record
         if @record.activated_at
           # ... an attempt to reset password ...
+          @record.password = data[:password]
+          @record.password_confirmation = data[:password_confirmation]
+          @status = @record.save ? 0 : -4
         else
           # ... an activation ...
           @record.activated_at = Time.now
@@ -45,7 +48,11 @@ class ScholarSessionsController < ApplicationController
   end
 
   def destroy
+    @record = current_scholar_session
+    @record.destroy
 
+    @status = 0
+    render :template => "shared/smartclient/show"
   end
 
   def update
