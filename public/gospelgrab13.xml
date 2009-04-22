@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE book SYSTEM "file:gospelgrab9c.dtd">
+<!DOCTYPE book SYSTEM "gospelgrab9c.dtd">
 
 <!-- gospelgrab.9x was succeeded by 10, 11, 12?, and 13-.  Thus, gospelgrab.13- is the most recent document, though for some reason it is a bit smaller file than the earlier ones.  We will rename the file from "gospelgrab" soon.-->
 <!-- In gospelgrab.87 we have changed image tags to figure tags, and changed the attribute description to figdesc. -->
