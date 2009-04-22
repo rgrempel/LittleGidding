@@ -3,7 +3,6 @@ class ScholarSession < Authlogic::Session::Base
   self.login_field = :email
 
   validate :check_activation
-  after_validation_on_create :mark_activated
 
   def check_activation
     return true if attempted_record.nil?
@@ -15,10 +14,7 @@ class ScholarSession < Authlogic::Session::Base
     true
   end
 
-  def mark_activated
-    if attempted_record.activated_at.nil?
-      attempted_record.activated_at = Time.now
-      attempted_record.save
-    end
+  def to_xml options={}
+    credentials.to_xml options
   end
 end

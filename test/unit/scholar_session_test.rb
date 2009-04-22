@@ -21,9 +21,6 @@ class ScholarSessionTest < ActiveSupport::TestCase
       
       session = ScholarSession.new :email => "rgrempel@gmail.com", :password => "12345"  
       assert !session.save, "Should have failed saving session"
-
-      @scholar.reload
-      assert_nil @scholar.activated_at, "Should not have marked activated_at"
     end
 
     should "be able to log in with password once activated" do
