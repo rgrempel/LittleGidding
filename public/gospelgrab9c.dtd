@@ -1,0 +1,40 @@
+<!ELEMENT ms (#PCDATA)>
+<!ELEMENT figDesc (#PCDATA)>
+<!ELEMENT figure (#PCDATA | figDesc | ms | source | text | head | inven | sculp | ex | fe | date | n | artist)*>
+<!ATTLIST figure fp CDATA #IMPLIED>
+<!ATTLIST figure size CDATA #IMPLIED>
+<!ATTLIST figure composite CDATA #IMPLIED>
+<!ATTLIST figure col CDATA #IMPLIED>
+<!ELEMENT inven (#PCDATA)>
+<!ELEMENT hi (#PCDATA)>
+<!ATTLIST hi rend CDATA #IMPLIED>
+<!ELEMENT verse (#PCDATA)>
+<!ATTLIST verse book CDATA #IMPLIED>
+<!ATTLIST verse cnumber CDATA #IMPLIED>
+<!ATTLIST verse id CDATA #IMPLIED>
+<!ATTLIST verse type CDATA #IMPLIED>
+<!ATTLIST verse vnumber CDATA #IMPLIED>
+<!ELEMENT link (#PCDATA | hi)*>
+<!ATTLIST link col CDATA #IMPLIED>
+<!ELEMENT artist (#PCDATA)>
+<!ELEMENT comment (#PCDATA | hi)*>
+<!ATTLIST comment ref CDATA #IMPLIED>
+<!ATTLIST comment col CDATA #IMPLIED>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT ex (#PCDATA)>
+<!ELEMENT sculp (#PCDATA)>
+<!ELEMENT hchapter (#PCDATA | figure | comment | excerpt | head | link | textnote)*>
+<!ATTLIST hchapter n CDATA #IMPLIED>
+<!ATTLIST hchapter toctitle CDATA #IMPLIED>
+<!ATTLIST hchapter col CDATA #IMPLIED>
+<!ELEMENT text (#PCDATA)>
+<!ELEMENT book (#PCDATA | hchapter)*>
+<!ELEMENT head (#PCDATA | hi)*>
+<!ELEMENT textnote (#PCDATA)>
+<!ATTLIST textnote col CDATA #IMPLIED>
+<!ELEMENT n (#PCDATA)>
+<!ELEMENT fe (#PCDATA)>
+<!ELEMENT excerpt (#PCDATA | verse)*>
+<!ATTLIST excerpt source CDATA #IMPLIED>
+<!ATTLIST excerpt type CDATA #IMPLIED>
+<!ELEMENT source (#PCDATA)>
