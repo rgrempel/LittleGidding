@@ -21,11 +21,21 @@ isc.LG.addProperties({
 
   loginWindow: null,
 
+  setEmail: function(value) {
+    this.email = value;
+    return this;
+  },
+
   showLoginWindow: function() {
     if (!this.loginWindow) {
       this.loginWindow = isc.LoginWindow.create();
     }
     this.loginWindow.show();
+  },
+
+  fireSuccessfulActivation: function() {
+    // just here to be observed
+    return true;
   }
 });
 
@@ -88,6 +98,7 @@ isc.RegistrationForm.addProperties({
 
   handleSubmission: function(dsResponse, data, dsRequest) {
     if (dsResponse.status == 0) {
+      isc.LG.app.setEmail(data.email);
       this.editNewRecord();
       isc.say(
         "You have successfully registered! Check your email for a confirmation code, and then enter it in the 'Activate' tab to continue", 
@@ -145,6 +156,11 @@ isc.LoginForm.addProperties({
 
   handleSubmission: function(dsResponse, data, dsRequest) {
 
+  },
+
+  initWidget: function() {
+    this.Super("initWidget", arguments);
+    this.observe(isc.LG.app, "setEmail", "observer.setValue('email', isc.LG.app.email)");
   }
 });
 
@@ -168,7 +184,19 @@ isc.defineClass("ActivationForm", isc.DynamicForm).addProperties({
   ],
     
   handleSubmission: function(dsResponse, data, dsRequest) {
+    if (dsResponse.status == 0) {
+      //  isc.LG.app.setEmail(data.email);
+      this.editNewRecord();
+      isc.say(
+        "You have successfully activated your account! From now on, use your email and password to log in.", 
+        {target: isc.LG.app, methodName: "fireSuccessfulActivation"}
+      );
+    }    
+  },
 
+  initWidget: function() {
+    this.Super("initWidget", arguments);
+    this.observe(isc.LG.app, "setEmail", "observer.setValue('email', isc.LG.app.email)");
   }
 });
 
@@ -232,6 +260,8 @@ isc.LoginWindow.addProperties({
     });
     
     this.addItem(this.tabSet);
+
+    this.observe(isc.LG.app, "fireSuccessfulActivation", "observer.closeClick()");
   },
 
   handleSuccessfulRegistration: function() {
