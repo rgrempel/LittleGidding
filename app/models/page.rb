@@ -13,7 +13,11 @@ class Page < ActiveRecord::Base
     S3_CONFIG[:bucket_name]
   end
 
+  def localfile
+    File.join Rails.root, "s3", self.filename
+  end
+
   def url
-    AWS::S3::S3Object.url_for self.filename, self.class.bucket_name
+    AWS::S3::S3Object.url_for "LittleGidding/#{self.filename}", self.class.bucket_name
   end
 end
