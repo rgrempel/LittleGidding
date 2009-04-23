@@ -354,9 +354,114 @@ isc.LoginWindow.addProperties({
   }
 });
 
+isc.defineClass("PageScroll", isc.VLayout).addProperties({
+  initWidget: function() {
+    this.column = -1;
+
+    this.image = isc.Img.create({
+      imageType: "normal",
+      overflow: "scroll",
+      defaultWidth: "100%",
+      defaultHeight: "100%",
+      naturalImageWidth: 2035.0,
+      naturalImageHeight: 1318.0,
+      magnification: null,
+      aspectRatio: 2035.0 / 1318.0,
+      canDrag: true,
+      cursor: "all-scroll",
+      dragAppearance: "none",
+      dragStart: function() {
+        this.scrollLeftStart = this.getScrollLeft();
+        this.scrollTopStart = this.getScrollTop();
+      },
+      dragMove: function() {
+        this.scrollTo(
+          this.scrollLeftStart - isc.Event.lastEvent.x + isc.Event.mouseDownEvent.x,
+          this.scrollTopStart - isc.Event.lastEvent.y + isc.Event.mouseDownEvent.y
+        );
+      },
+      draw: function() {
+        this.Super("draw", arguments);
+        if (this.magnification) return;
+        var widthRatio = this.getInnerContentWidth() / this.naturalImageWidth;
+        var heightRatio = this.getInnerContentHeight() / this.naturalImageHeight;
+        this.magnification = widthRatio < heightRatio ? widthRatio : heightRatio;
+        this.zoom();
+      },
+      zoom: function() {
+        this.imageHeight = this.naturalImageHeight * this.magnification;
+        this.imageWidth = this.naturalImageWidth * this.magnification;
+        this.markForRedraw();
+      },
+      mouseWheel: function() {
+        var ev = isc.Event.lastEvent;
+        var factor = 1 + (ev.wheelDelta > 0 ? 0.1 : -0.1);
+        this.magnify(factor);
+      },
+      click: function() {
+        this.magnify(isc.Event.shiftKeyDown() ? 0.9 : 1.1);
+        return false;
+      },
+      magnify: function(factor) {
+        var ev = isc.Event.lastEvent;
+        var apparentY = ev.y - this.getPageTop();
+        var apparentX = ev.x - this.getPageLeft();
+        var realX = apparentX + this.getScrollLeft();
+        var realY = apparentY + this.getScrollTop();
+        var newX = realX * factor;
+        var newY = realY * factor;
+
+        this.magnification = this.magnification * factor;
+        this.zoom();
+
+        // If we'll be scrolled, then try to keep the mouse over the same point
+        var scrollY = this.imageHeight > this.getInnerContentHeight();
+        var scrollX = this.imageWidth > this.getInnerContentWidth();
+        if (scrollX || scrollY) {
+          this.scrollTo(scrollX ? newX - apparentX : this.getScrollLeft(), 
+                        scrollY ? newY - apparentY : this.getScrollTop());
+        }
+      }
+    });
+
+    this.slider = isc.Slider.create({
+      width: "100%",
+      minValue: 0,
+      maxValue: 574,
+      numValues: 575,
+      stepPercent: 1.0 / 575.0,
+      title: "Column",
+      vertical: false,
+      valueChanged: function(value) {
+        return value;
+      }
+    });
+
+    this.observe(this.slider, "valueChanged", "observer.setColumn(returnVal)");
+
+    this.addMember(this.image);
+    this.addMember(this.slider);
+
+    this.setColumn(0);
+
+    this.Super("initWidget", arguments);
+  },
+
+  setColumn: function(column) {
+    if (this.column == column) return;
+    this.column = column;
+    if (this.slider.value != column) this.slider.setValue(column);
+    var img = "/pages/" + String(column) + ".png";
+    if (this.image.src != img) {
+      this.image.setSrc(img);
+      // This seems to be required to get the scroll bars working ...?
+      // this.image.redraw();
+    }
+  }
+});
+
 // The overall app nav widget
-isc.defineClass("AppNav", isc.HLayout);
-isc.AppNav.addProperties({
+isc.defineClass("AppNav", isc.VLayout).addProperties({
   initWidget: function () {
     this.Super("initWidget", arguments);
 
@@ -364,6 +469,11 @@ isc.AppNav.addProperties({
     this.addMember(isc.ChapterTitlesGrid.create({
       width: "600",
       height: "33%",
+      showEdges: true
+    }));
+    this.addMember(isc.PageScroll.create({
+      width: "100%",
+      height: "50%",
       showEdges: true
     }));
   }
