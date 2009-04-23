@@ -59,6 +59,34 @@ isc.LG.addProperties({
   }
 });
 
+isc.defineClass("ChapterTitlesGrid", isc.ListGrid).addProperties({
+  dataSource: "chapter_titles",
+  autoFetchData: true,
+  showAllRecords: true,
+  fields: [
+    {name: "n", width: "60", align: "right"},
+    {name: "toctitle"}
+  ]
+});
+
+isc.RailsDataSource.create({
+  ID: "chapter_titles",
+  dataURL: "/chapter_titles",
+  fields: [
+    {
+      name: "n",
+      type: "text",
+      primaryKey: true,
+      title: "Chapter"
+    },
+    {
+      name: "toctitle",
+      type: "text",
+      title: "Title"
+    }
+  ]
+});
+
 isc.RailsDataSource.create({
   ID: "scholars",
   dataURL: "/scholars",
@@ -333,6 +361,11 @@ isc.AppNav.addProperties({
     this.Super("initWidget", arguments);
 
     this.addMember(isc.LoginButton.create());
+    this.addMember(isc.ChapterTitlesGrid.create({
+      width: "600",
+      height: "33%",
+      showEdges: true
+    }));
   }
 });
 
