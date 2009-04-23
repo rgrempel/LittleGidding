@@ -28,9 +28,7 @@ private
   
   def require_scholar
     unless current_scholar
-      store_location
-      flash[:notice] = "You must be logged in to access this page"
-      redirect_to new_scholar_session_url
+      render :text => "You must login to view this item", :status => 403
       return false
     end
   end
