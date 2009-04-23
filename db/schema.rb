@@ -9,7 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090419204244) do
+ActiveRecord::Schema.define(:version => 20090423134713) do
+
+  create_table "pages", :force => true do |t|
+    t.integer  "column_start", :null => false
+    t.integer  "column_end",   :null => false
+    t.string   "filename"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pages", ["column_end"], :name => "index_pages_on_column_end"
+  add_index "pages", ["column_start"], :name => "index_pages_on_column_start"
 
   create_table "scholar_sessions", :force => true do |t|
     t.string   "session_id", :null => false
