@@ -291,10 +291,13 @@ isc.defineClass("AppNav", isc.VLayout).addProperties({
             showResizeBar: true,
             members: [
               this.chapterTitles,
-              isc.Label.create({
+              isc.TabSet.create({
+                showEdges: true,
                 height: "66%",
-                align: "center",
-                contents: "Text go here"
+                tabs: [
+                  {title: "Text", pane: isc.Label.create({align: "center", contents: "Text go here"})},
+                  {title: "Figures", pane: isc.Label.create({align: "center", contents: "Figures go here"})}                  
+                ]
               })
             ]
           }),
@@ -302,10 +305,13 @@ isc.defineClass("AppNav", isc.VLayout).addProperties({
             width: "66%",
             members: [
               this.pageScroll,
-              isc.Label.create({
+              isc.TabSet.create({
+                showEdges: true,
                 height: "25%",
-                align: "center",
-                contents: "Comments go here"
+                tabs: [
+                  {title: "All Comments", pane: isc.Label.create({align: "center", contents: "Comments go here"})},
+                  {title: "Comments on this Page", pane: isc.Label.create({align: "center", contents: "Comments go here"})}                  
+                ]
               })
             ]
           })
