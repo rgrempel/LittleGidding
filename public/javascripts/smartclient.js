@@ -528,25 +528,35 @@ isc.defineClass("AppNav", isc.VLayout).addProperties({
   initWidget: function () {
     this.Super("initWidget", arguments);
 
-    this.addMember(isc.LoginButton.create());
+    this.loginButton = isc.LoginButton.create();
     
     this.chapterTitles = isc.ChapterTitlesGrid.create({
-      width: "600",
+      width: "100%",
       height: "33%",
-      showEdges: true
+      showEdges: true,
+      showResizeBar: true
     });
 
     this.pageScroll = isc.PageScroll.create({
       width: "100%",
-      height: "50%",
+      height: "66%",
       showEdges: true
     });
 
     this.observe(this.chapterTitles, "selectionChanged", "observer.handleChapterSelection(returnVal)");
     this.observe(this.pageScroll, "setColumn", "observer.handleSetColumn()");
 
-    this.addMember(this.chapterTitles);
-    this.addMember(this.pageScroll);
+    this.addMembers([
+      this.loginButton,
+      isc.HLayout.create({
+        height: "100%",
+        width: "100%",
+        members: [
+          this.chapterTitles,
+          this.pageScroll
+        ]
+      })
+    ]);
   },
   
   handleChapterSelection: function(retVal) {
