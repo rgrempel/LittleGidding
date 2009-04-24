@@ -539,8 +539,9 @@ isc.defineClass("AppNav", isc.VLayout).addProperties({
 
     this.pageScroll = isc.PageScroll.create({
       width: "100%",
-      height: "66%",
-      showEdges: true
+      height: "75%",
+      showEdges: true,
+      showResizeBar: true
     });
 
     this.observe(this.chapterTitles, "selectionChanged", "observer.handleChapterSelection(returnVal)");
@@ -552,8 +553,29 @@ isc.defineClass("AppNav", isc.VLayout).addProperties({
         height: "100%",
         width: "100%",
         members: [
-          this.chapterTitles,
-          this.pageScroll
+          isc.VLayout.create({
+            width: "33%",
+            showResizeBar: true,
+            members: [
+              this.chapterTitles,
+              isc.Label.create({
+                height: "66%",
+                align: "center",
+                contents: "Text go here"
+              })
+            ]
+          }),
+          isc.VLayout.create({
+            width: "66%",
+            members: [
+              this.pageScroll,
+              isc.Label.create({
+                height: "25%",
+                align: "center",
+                contents: "Comments go here"
+              })
+            ]
+          })
         ]
       })
     ]);
