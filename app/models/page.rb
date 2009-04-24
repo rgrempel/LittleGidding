@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: pages
+#
+#  id           :integer         not null, primary key
+#  column_start :integer         not null
+#  column_end   :integer         not null
+#  filename     :string(255)
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
 require "aws/s3"
   
 class Page < ActiveRecord::Base
@@ -17,7 +29,7 @@ class Page < ActiveRecord::Base
     File.join Rails.root, "s3", self.filename
   end
 
-  def url
-    AWS::S3::S3Object.url_for "LittleGidding/#{self.filename}", self.class.bucket_name
+  def png_url
+    "/pages/#{self.id}.png"
   end
 end

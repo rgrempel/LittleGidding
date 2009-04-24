@@ -5,5 +5,14 @@ xml.response do
   xml.totalRows @totalRows
   xml.startRow @startRow
   xml.endRow @endRow
-  xml << @data
+  xml.data do
+    @records.each do |record|
+      xml << record.to_xml({
+        :skip_instruct => true,
+        :skip_types => true,
+        :root => "record",
+        :dasherize => false
+      }.merge(@toxml_options || {}))
+    end
+  end
 end

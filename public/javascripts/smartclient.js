@@ -354,9 +354,44 @@ isc.LoginWindow.addProperties({
   }
 });
 
+isc.RailsDataSource.create({
+  ID: "pages",
+  dataURL: "/pages",
+  fields: [
+    {
+      name: "id",
+      type: "integer",
+      primaryKey: true
+    },
+    {
+      name: "column_start",
+      type: "integer"
+    },
+    {
+      name: "column_end",
+      type: "integer"
+    },
+    {
+      name: "png_url",
+      type: "image"
+    }
+  ]
+});
+
 isc.defineClass("PageScroll", isc.VLayout).addProperties({
   initWidget: function() {
     this.column = -1;
+
+    this.pages = isc.ResultSet.create({
+      dataSource: "pages",
+      fetchMode: "local",
+      dataArrived: function(startRow, endRow) {
+        // To be observed
+        return [startRow, endRow];
+      }
+    });
+    
+    this.observe(this.pages, "dataArrived", "observer.handleDataArrived()");
 
     this.image = isc.Img.create({
       imageType: "normal",
@@ -443,19 +478,35 @@ isc.defineClass("PageScroll", isc.VLayout).addProperties({
     this.addMember(this.slider);
 
     this.setColumn(0);
-
+    
     this.Super("initWidget", arguments);
+  },
+
+  handleDataArrived: function() {
+    this.ignore(this.pages, "dataArrived");
+    var column = this.column;
+    this.column = -1;
+    this.setColumn(column);
   },
 
   setColumn: function(column) {
     if (this.column == column) return;
     this.column = column;
     if (this.slider.value != column) this.slider.setValue(column);
-    var img = "/pages/" + String(column) + ".png";
-    if (this.image.src != img) {
-      this.image.setSrc(img);
-      // This seems to be required to get the scroll bars working ...?
-      // this.image.redraw();
+    
+    this.pages.setCriteria({
+      _constructor: "AdvancedCriteria",
+      operator: "and",
+      criteria: [
+        {fieldName: "column_start", operator: "lessOrEqual", value: column},
+        {fieldName: "column_end", operator: "greaterOrEqual", value: column}
+      ]
+    });
+    
+    var page = this.pages.get(0);
+    if (!page) return;
+    if (this.image.src != page.png_url) {
+      this.image.setSrc(page.png_url);
     }
   }
 });
