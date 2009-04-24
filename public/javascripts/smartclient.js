@@ -63,9 +63,15 @@ isc.defineClass("ChapterTitlesGrid", isc.ListGrid).addProperties({
   dataSource: "chapter_titles",
   autoFetchData: true,
   showAllRecords: true,
+  selectionType: "single",
+  selectionChanged: function(record, state) {
+    // For observation
+    return [record, state];
+  },
   fields: [
     {name: "n", width: "60", align: "right"},
-    {name: "toctitle"}
+    {name: "toctitle"},
+    {name: "col", width: "40", align: "right"}
   ]
 });
 
@@ -83,6 +89,11 @@ isc.RailsDataSource.create({
       name: "toctitle",
       type: "text",
       title: "Title"
+    },
+    {
+      name: "col",
+      type: "integer",
+      title: "Column"
     }
   ]
 });
@@ -490,7 +501,7 @@ isc.defineClass("PageScroll", isc.VLayout).addProperties({
   },
 
   setColumn: function(column) {
-    if (this.column == column) return;
+    if (this.column == column) return column;
     this.column = column;
     if (this.slider.value != column) this.slider.setValue(column);
     
@@ -504,10 +515,11 @@ isc.defineClass("PageScroll", isc.VLayout).addProperties({
     });
     
     var page = this.pages.get(0);
-    if (!page) return;
+    if (!page) return column;
     if (this.image.src != page.png_url) {
       this.image.setSrc(page.png_url);
     }
+    return column;
   }
 });
 
@@ -517,16 +529,63 @@ isc.defineClass("AppNav", isc.VLayout).addProperties({
     this.Super("initWidget", arguments);
 
     this.addMember(isc.LoginButton.create());
-    this.addMember(isc.ChapterTitlesGrid.create({
+    
+    this.chapterTitles = isc.ChapterTitlesGrid.create({
       width: "600",
       height: "33%",
       showEdges: true
-    }));
-    this.addMember(isc.PageScroll.create({
+    });
+
+    this.pageScroll = isc.PageScroll.create({
       width: "100%",
       height: "50%",
       showEdges: true
-    }));
+    });
+
+    this.observe(this.chapterTitles, "selectionChanged", "observer.handleChapterSelection(returnVal)");
+    this.observe(this.pageScroll, "setColumn", "observer.handleSetColumn()");
+
+    this.addMember(this.chapterTitles);
+    this.addMember(this.pageScroll);
+  },
+  
+  handleChapterSelection: function(retVal) {
+    var record = retVal[0];
+    var state = retVal[1];
+    if (state) {
+      if (this.pageScroll.column != record.col) {
+        this.pageScroll.setColumn(record.col);
+      }
+    }
+  },
+
+  handleSetColumn: function() {
+    var rows = this.chapterTitles.getTotalRows();
+    var selectRecord = null;
+    var newColumn = this.pageScroll.column;
+    
+    var x;
+    for (x = 0; x < rows; x++) {
+      var record = this.chapterTitles.getRecord(x);
+      if (record.col > newColumn) break;
+      selectRecord = record;
+    }
+    x--;
+
+    if (!selectRecord) return;
+    var selectedRecord = this.chapterTitles.getSelectedRecord();
+    if (selectedRecord && (selectedRecord.n == selectRecord.n)) return;
+    
+    this.chapterTitles.deselectAllRecords();
+    this.chapterTitles.selectRecord(selectRecord);
+
+    var body = this.chapterTitles.body;
+    var visible = body.getVisibleRows();
+    if (x < visible[0]) {
+      body.scrollBy(0, (x - visible[0] - 3) * body.cellHeight);
+    } else if (x > visible[1]) {
+      body.scrollBy(0, (x - visible[1] + 3) * body.cellHeight);
+    }
   }
 });
 

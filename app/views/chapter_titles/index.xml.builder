@@ -7,7 +7,7 @@ xml.response do
   xml.endRow @endRow
   xml.data do
     @nodes.each do |node|
-      xml.record :n => node[:n], :toctitle => node[:toctitle]
+      xml.record :n => node[:n], :toctitle => node[:toctitle], :col => node[:col]
     end
   end
 end
