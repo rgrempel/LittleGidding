@@ -8,8 +8,8 @@ xml.response do
   xml.endRow @endRow
   xml.data do
     @nodes.each do |node|
-      column = node.xpath("ancestor-or-self::*[@col]")
-      node["col"] = column[-1]["col"] if (column.length > 0) 
+      column = node.xpath("preceding-sibling::figure[@col] | ancestor-or-self::*[@col]").last
+      node["col"] = column["col"] if column 
       xml << node.to_xml
     end
   end
