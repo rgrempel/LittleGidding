@@ -261,7 +261,7 @@ isc.defineClass("PageScroll", isc.VLayout).addProperties({
       },
       mouseWheel: function() {
         var ev = isc.Event.lastEvent;
-        var factor = 1 + (ev.wheelDelta > 0 ? 0.1 : -0.1);
+        var factor = 1 + (ev.wheelDelta < 0 ? 0.1 : -0.1);
         this.magnify(factor);
       },
       click: function() {
