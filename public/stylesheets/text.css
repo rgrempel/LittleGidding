@@ -1,0 +1,47 @@
+div.hchapter {
+  font-weight: bold;
+  font-size: 10pt;
+}
+
+span.colorred {
+  color: #DC143C;
+}
+
+span.colorgold {
+  color: #FFD700;
+}
+
+div.figure {
+  margin-left: 24pt;
+  padding: 2pt;
+  border: 1px solid black;
+}
+
+div.comment {
+  font-family: serif;
+  font-style: italic;
+  font-size: 9pt;
+}
+
+div.context {
+  font-size: 10pt;
+}
+
+div.supplement {
+  font-size: 9pt;
+  margin-left: 24px;
+}
+
+div.verse {
+  margin-left: 24;
+  position: relative;
+}
+
+span.versenumber {
+  display: block;
+  position: absolute;
+  left: -24px;
+  width: 18px;
+  text-align: right;
+}
+
