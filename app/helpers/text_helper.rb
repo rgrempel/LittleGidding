@@ -96,8 +96,21 @@ module TextHelper
     end
   end
 
+  GOSPELS = {
+    "a" => "Matthew", 
+    "b" => "Mark", 
+    "c" => "Luke",
+    "d" =>"John"
+  }
+
   def render_excerpt xml, node
     apply_record xml, node do
+      source = if node.key?("source")
+        (node["source"].gsub(/^([abcd])\./) {|match| "#{GOSPELS[$1]} " })
+      else
+        ""
+      end
+      xml.source source 
       apply_html xml do |html|
         html.div :class => node["type"] do
           apply_children html, node
