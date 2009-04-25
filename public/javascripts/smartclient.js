@@ -151,6 +151,37 @@ isc.RailsDataSource.create({
 });
 
 isc.RailsDataSource.create({
+  ID: "text",
+  dataURL: "/text",
+  fields: [
+    {name: "text", type: "text", title: "Text"}
+  ]
+});
+
+isc.defineClass("TextGrid", isc.ListGrid).addProperties({
+  dataSource: "text",
+  autoFetchData: true,
+  showAllRecords: false,
+  selectionType: "single",
+  alternateRecordStyles: false,
+  cellPadding: 4,
+  wrapCells: true,
+  bodyProperties: {
+    fixedRowHeights: false
+  },
+  getCellVAlign: function(record, rowNum, colNum) {
+    return "top";
+  },
+  fields: [
+    {name: "text"}
+  ],
+  selectionChanged: function(record, state) {
+    // For observation
+    return [record, state];
+  }
+});
+
+isc.RailsDataSource.create({
   ID: "pages",
   dataURL: "/pages",
   fields: [
@@ -334,6 +365,11 @@ isc.defineClass("AppNav", isc.VLayout).addProperties({
       height: "100%"
     });
 
+    this.textGrid = isc.TextGrid.create({
+      width: "100%",
+      height: "100%"
+    });
+
     this.observe(this.chapterTitles, "selectionChanged", "observer.handleChapterSelection(returnVal)");
     this.observe(this.pageScroll, "setColumn", "observer.handleSetColumn()");
 
@@ -351,7 +387,7 @@ isc.defineClass("AppNav", isc.VLayout).addProperties({
               isc.TabSet.create({
                 height: "66%",
                 tabs: [
-                  {title: "Text", pane: isc.Label.create({align: "center", contents: "Text go here"})}
+                  {title: "Text", pane: this.textGrid}
                 ]
               })
             ]
