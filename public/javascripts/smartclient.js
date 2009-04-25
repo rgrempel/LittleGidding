@@ -154,7 +154,7 @@ isc.RailsDataSource.create({
   ID: "text",
   dataURL: "/text",
   fields: [
-    {name: "text", type: "text", title: "Text"}
+    {name: "html", type: "text", title: "Text"}
   ]
 });
 
@@ -173,7 +173,7 @@ isc.defineClass("TextGrid", isc.ListGrid).addProperties({
     return "top";
   },
   fields: [
-    {name: "text"}
+    {name: "html"}
   ],
   selectionChanged: function(record, state) {
     // For observation
