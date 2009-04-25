@@ -39,6 +39,7 @@ module TextHelper
     apply_record xml, node do
       apply_html xml do |html|
         html.div :class => "hchapter" do
+          html.text! "#{node["n"]} "
           head = node.xpath("head")
           if head.length > 0
             apply_children html, head.first
