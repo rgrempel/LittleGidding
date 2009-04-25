@@ -29,7 +29,9 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       format.png do
-        send_file @page.localfile, :x_sendfile => true, :type => :png, :disposition => "inline"
+        type = :png
+        type = :jpg if @page.localfile.match(/\.jpg$/)
+        send_file @page.localfile, :x_sendfile => true, :disposition => "inline", :type => type
       end
     end
   end
