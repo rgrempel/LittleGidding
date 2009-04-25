@@ -63,6 +63,7 @@ isc.defineClass("ChapterTitlesGrid", isc.ListGrid).addProperties({
   dataSource: "chapter_titles",
   autoFetchData: true,
   showAllRecords: true,
+  alternateRecordStyles: true,
   selectionType: "single",
   selectionChanged: function(record, state) {
     // For observation
@@ -95,6 +96,57 @@ isc.RailsDataSource.create({
       type: "integer",
       title: "Column"
     }
+  ]
+});
+
+isc.defineClass("FiguresGrid", isc.ListGrid).addProperties({
+  dataSource: "figures",
+  autoFetchData: true,
+  showAllRecords: false,
+  selectionType: "single",
+  alternateRecordStyles: true,
+  cellPadding: 4,
+  titleField: "figDesc",
+  wrapCells: true,
+  bodyProperties: {
+    fixedRowHeights: false
+  },
+  getCellVAlign: function(record, rowNum, colNum) {
+    return "top";
+  },
+  fields: [
+    {name: "col", width: "60"},
+    {name: "figDesc", width: "*"},
+    {name: "head", width: "*"},
+    {name: "text", width: "*"}
+  ],
+  selectionChanged: function(record, state) {
+    // For observation
+    return [record, state];
+  }
+});
+
+isc.RailsDataSource.create({
+  ID: "figures",
+  dataURL: "/figures",
+  fields: [
+    {name: "col", type: "integer", title: "Column", xmlAttribute: true},
+    {name: "figDesc", type: "text", title: "Description"},
+    {name: "head", type: "text", title: "Head"},
+    {name: "text", type: "text", title: "Text"},
+    {name: "ms", type: "text", detail: true},
+    // Source is sometime duplicated in the XML ... with identical contents
+    {name: "source", type: "text", title: "Source", detail: true},
+    {name: "artist", type: "text", title: "Artist", detail: true},
+    {name: "inven", type: "text", detail: true},
+    {name: "sculp", type: "text", detail: true},
+    {name: "fe", type: "text", detail: true},
+    {name: "fp", type: "text", detail: true, xmlAttribute: true},
+    {name: "date", type: "text", title: "Date", detail: true},
+    {name: "n", type: "text", detail: true},
+    // Size is an attribute ... values miniature, small
+    {name: "size", type: "text", title: "Size", detail: true, xmlAttribute: true},
+    {name: "composite", type: "text", title: "Composite", detail: true, xmlAttribute: true}
   ]
 });
 
@@ -277,6 +329,11 @@ isc.defineClass("AppNav", isc.VLayout).addProperties({
       showResizeBar: true
     });
 
+    this.figuresGrid = isc.FiguresGrid.create({
+      width: "100%",
+      height: "100%"
+    });
+
     this.observe(this.chapterTitles, "selectionChanged", "observer.handleChapterSelection(returnVal)");
     this.observe(this.pageScroll, "setColumn", "observer.handleSetColumn()");
 
@@ -292,11 +349,9 @@ isc.defineClass("AppNav", isc.VLayout).addProperties({
             members: [
               this.chapterTitles,
               isc.TabSet.create({
-                showEdges: true,
                 height: "66%",
                 tabs: [
-                  {title: "Text", pane: isc.Label.create({align: "center", contents: "Text go here"})},
-                  {title: "Figures", pane: isc.Label.create({align: "center", contents: "Figures go here"})}                  
+                  {title: "Text", pane: isc.Label.create({align: "center", contents: "Text go here"})}
                 ]
               })
             ]
@@ -306,11 +361,10 @@ isc.defineClass("AppNav", isc.VLayout).addProperties({
             members: [
               this.pageScroll,
               isc.TabSet.create({
-                showEdges: true,
                 height: "25%",
                 tabs: [
-                  {title: "All Comments", pane: isc.Label.create({align: "center", contents: "Comments go here"})},
-                  {title: "Comments on this Page", pane: isc.Label.create({align: "center", contents: "Comments go here"})}                  
+                  {title: "Figures", pane: this.figuresGrid}, 
+                  {title: "Comments", pane: isc.Label.create({align: "center", contents: "Comments go here"})}                  
                 ]
               })
             ]
