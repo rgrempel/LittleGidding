@@ -56,6 +56,20 @@ isc.LG.addProperties({
   fireLogout: function() {
     this.loggedIn = null;
     return this;
+  },
+
+  column: 0,
+
+  setColumn: function(value) {
+    if (this.column != value) {
+      this.column = value;
+      this.fireColumnChanged(value);
+    }
+  },
+
+  // For observation
+  fireColumnChanged: function(value) {
+    return value;
   }
 });
 
@@ -66,14 +80,48 @@ isc.defineClass("ChapterTitlesGrid", isc.ListGrid).addProperties({
   alternateRecordStyles: true,
   selectionType: "single",
   selectionChanged: function(record, state) {
-    // For observation
-    return [record, state];
+    if (state && !this.handlingColumnChange) isc.LG.app.setColumn(record.col);
   },
   fields: [
     {name: "n", width: "60", align: "right"},
     {name: "toctitle"},
     {name: "col", width: "40", align: "right"}
-  ]
+  ],
+  init: function() {
+    this.Super("init", arguments);
+    this.observe(isc.LG.app, "fireColumnChanged", "observer.handleColumnChanged()");
+  },
+  handleColumnChanged: function() {
+    var newColumn = isc.LG.app.column;
+    var selectedRecord = this.getSelectedRecord();
+    if (selectedRecord && selectedRecord.col == newColumn) return;
+
+    var rows = this.getTotalRows();
+    var selectRecord = null;
+    var x;
+    for (x = 0; x < rows; x++) {
+      var record = this.getRecord(x);
+      if (record.col > newColumn) break;
+      selectRecord = record;
+    }
+    x--;
+
+    if (!selectRecord) return;
+    if (selectedRecord && (selectedRecord.n == selectRecord.n)) return;
+    
+    this.deselectAllRecords();
+    this.handlingColumnChange = true;
+    this.selectRecord(selectRecord);
+    this.handlingColumnChange = false;
+
+    var body = this.body;
+    var visible = body.getVisibleRows();
+    if (x < visible[0]) {
+      body.scrollBy(0, (x - visible[0] - 3) * body.cellHeight);
+    } else if (x > visible[1]) {
+      body.scrollBy(0, (x - visible[1] + 3) * body.cellHeight);
+    }
+  }
 });
 
 isc.RailsDataSource.create({
@@ -121,8 +169,16 @@ isc.defineClass("FiguresGrid", isc.ListGrid).addProperties({
     {name: "text", width: "*"}
   ],
   selectionChanged: function(record, state) {
-    // For observation
-    return [record, state];
+    if (state) {
+      isc.LG.app.setColumn(record.col);
+    }
+  },
+  initWidget: function() {
+    this.Super("initWidget", arguments);
+    this.observe(isc.LG.app, "fireColumnChanged", "observer.handleColumnChanged()");
+  },
+  handleColumnChanged: function() {
+    // TODO: figure out how to deal with this
   }
 });
 
@@ -180,8 +236,16 @@ isc.defineClass("TextGrid", isc.ListGrid).addProperties({
     {name: "col", width: 30}
   ],
   selectionChanged: function(record, state) {
-    // For observation
-    return [record, state];
+    if (state) {
+      isc.LG.app.setColumn(record.col);
+    }
+  },
+  initWidget: function() {
+    this.Super("initWidget", arguments);
+    this.observe(isc.LG.app, "fireColumnChanged", "observer.handleColumnChanged()");
+  },
+  handleColumnChanged: function() {
+    // TODO: figure out how to deal with this
   }
 });
 
@@ -211,8 +275,6 @@ isc.RailsDataSource.create({
 
 isc.defineClass("PageScroll", isc.VLayout).addProperties({
   initWidget: function() {
-    this.column = -1;
-
     this.pages = isc.ResultSet.create({
       dataSource: "pages",
       fetchMode: "local",
@@ -299,30 +361,25 @@ isc.defineClass("PageScroll", isc.VLayout).addProperties({
       title: "Column",
       vertical: false,
       valueChanged: function(value) {
-        return value;
+        isc.LG.app.setColumn(value);
       }
     });
 
-    this.observe(this.slider, "valueChanged", "observer.setColumn(returnVal)");
+    this.observe(isc.LG.app, "fireColumnChanged", "observer.handleColumnChanged()");
 
     this.addMember(this.image);
     this.addMember(this.slider);
 
-    this.setColumn(0);
-    
     this.Super("initWidget", arguments);
   },
 
   handleDataArrived: function() {
     this.ignore(this.pages, "dataArrived");
-    var column = this.column;
-    this.column = -1;
-    this.setColumn(column);
+    this.handleColumnChanged();
   },
 
-  setColumn: function(column) {
-    if (this.column == column) return column;
-    this.column = column;
+  handleColumnChanged: function() {
+    var column = isc.LG.app.column;
     if (this.slider.value != column) this.slider.setValue(column);
     
     this.pages.setCriteria({
@@ -335,11 +392,9 @@ isc.defineClass("PageScroll", isc.VLayout).addProperties({
     });
     
     var page = this.pages.get(0);
-    if (!page) return column;
-    if (this.image.src != page.png_url) {
+    if (page && (this.image.src != page.png_url)) {
       this.image.setSrc(page.png_url);
     }
-    return column;
   }
 });
 
@@ -373,9 +428,6 @@ isc.defineClass("AppNav", isc.VLayout).addProperties({
       width: "100%",
       height: "100%"
     });
-
-    this.observe(this.chapterTitles, "selectionChanged", "observer.handleChapterSelection(returnVal)");
-    this.observe(this.pageScroll, "setColumn", "observer.handleSetColumn()");
 
     this.addMembers([
       this.loginButton,
@@ -412,45 +464,6 @@ isc.defineClass("AppNav", isc.VLayout).addProperties({
         ]
       })
     ]);
-  },
-  
-  handleChapterSelection: function(retVal) {
-    var record = retVal[0];
-    var state = retVal[1];
-    if (state) {
-      if (this.pageScroll.column != record.col) {
-        this.pageScroll.setColumn(record.col);
-      }
-    }
-  },
-
-  handleSetColumn: function() {
-    var rows = this.chapterTitles.getTotalRows();
-    var selectRecord = null;
-    var newColumn = this.pageScroll.column;
-    
-    var x;
-    for (x = 0; x < rows; x++) {
-      var record = this.chapterTitles.getRecord(x);
-      if (record.col > newColumn) break;
-      selectRecord = record;
-    }
-    x--;
-
-    if (!selectRecord) return;
-    var selectedRecord = this.chapterTitles.getSelectedRecord();
-    if (selectedRecord && (selectedRecord.n == selectRecord.n)) return;
-    
-    this.chapterTitles.deselectAllRecords();
-    this.chapterTitles.selectRecord(selectRecord);
-
-    var body = this.chapterTitles.body;
-    var visible = body.getVisibleRows();
-    if (x < visible[0]) {
-      body.scrollBy(0, (x - visible[0] - 3) * body.cellHeight);
-    } else if (x > visible[1]) {
-      body.scrollBy(0, (x - visible[1] + 3) * body.cellHeight);
-    }
   }
 });
 
