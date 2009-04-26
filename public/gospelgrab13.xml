@@ -6,7 +6,7 @@
 <book>
   <hchapter n="0.3" toctitle="THE ORDER of the CHAPTERS of the CONCORDANCE" col="1"/>
   <hchapter n="0.2" toctitle="Preface1" col="5">
-    <figure>
+    <figure id="figure1">
       <figDesc>Evangelist symbols: angel, lion, ox, eagle in corners around ornamental border oval
         of decorative flowers with grapes and squash at top</figDesc>
     </figure>
@@ -97,7 +97,7 @@
       &amp; Helps for them, who cannot intend the doing it themselues+ </comment>
   </hchapter>
   <hchapter n="0.1" toctitle="title page" col="6">
-    <figure>
+    <figure id="figure2">
       <figDesc>ornamental border of flowers and angel faces, with Evangelist animals within, in
         corners.</figDesc>
     </figure>
@@ -141,7 +141,7 @@
       <verse book="c" cnumber="2" id="c.1.4-c" type="context" vnumber="4"> That thou mighte&#x17F;t know
         the certainetie of tho&#x17F;e things wherein thou ha&#x17F;t beene in&#x17F;tructed. </verse>
     </excerpt>
-    <figure>
+    <figure id="figure3">
       <figDesc>Luke, with ox, painting Madonna and child</figDesc>
       <ms>THE EVANGELICALL HISTORIE+ THE PREFACE</ms>
       <source>[Luke same as Cecil p1]</source>
@@ -152,7 +152,7 @@
     <comment ref="c 1:3 word 21">1 Hee meanes not ye* order of time yt* things were done in; but yt*
       he began not to write till he had first made diligent search of all things</comment>
     <!-- I have added a ref attribute to the comment tag to connect the comment with the point in the excerpt to which it refers.  In this case, there is a marker above word 21 -->
-    <figure col="8">
+    <figure id="figure4" col="8">
       <figDesc>John, with books, writing in a book In Principio . . ., with Eagle</figDesc>
       <text>In principio erat Verbum, et Verbu' erat aput Deum et Deus erat Verbum Hoc erat in
         principio aput Deum</text>
@@ -210,7 +210,7 @@
     </excerpt>
     <link><hi rend="color(red)">(</hi>Jhon Bare witne&#x17F;&#x17F;e of him and cryed<hi rend="color(red)">)</hi>
       <hi rend="color(red)">CHAP. 16.</hi> P.45</link>
-    <figure>
+    <figure id="figure5">
       <figDesc>Priest burning incense (cf Zacharias), Ln</figDesc>
       <head>NASCENTEM EFFOETA SOBOLEM DE CONIVGE VATI NVNCIVS AMBIGVO PRAEDICIT COELITVS ALES .</head>
       <text>HADE. IVN.</text>
@@ -357,7 +357,7 @@
         the handmaide of the Lord, be it vnto me according to thy word: and the Angel departed from
         her. </verse>
     </excerpt>
-    <figure>
+    <figure id="figure6">
       <figDesc>Annunciation with Mary reading, Gabriel, Spirit/dove, Tetragrammaton, Ln</figDesc>
       <head>Te Gabriel sposaqz dei matreqz futuru o maria, inlaesa virginatate, canit : Felix
         divinis quae gredere vocibus ansa es felix exepto quisquis et inde tuo</head>
@@ -425,7 +425,7 @@
       <verse book="c" cnumber="2" id="c.1.56-c" type="context" vnumber="56"> And Mary abode with her
         about three moneths, and returned to her owne hou&#x17F;e. </verse>
     </excerpt>
-    <figure col="13">
+    <figure id="figure7" col="13">
       <figDesc/>
       <head>De Annuntiatione B. Virginis. Lu. 1.</head>
       <text>1. &#x17F;&#x17F;ma. Trinitas decernit de Redemptione generis humani per Incarnationem aeterni Verbi
@@ -435,7 +435,7 @@
       <ex>Boethius Bolswert</ex>
       <n>1</n>
     </figure>
-    <figure>
+    <figure id="figure8">
       <figDesc/>
       <head>De Visitatione S. Elisabeth. Lu.1.</head>
       <text>1. Impraegnata Dei Verbo Maria, magna festinatione confert se ad vi&#x17F;endam propinquam
@@ -446,7 +446,7 @@
       <ex>Boethius Bolswert</ex>
       <n>2</n>
     </figure>
-    <figure>
+    <figure id="figure9">
       <figDesc/>
       <head>De Natiuitate Chri&#x17F;ti Domini. Lu.3.</head>
       <text>1. Caesaris edicto, persoluendi census causa proficiscuntur in Bethleem Io&#x17F;eph et &#x17F;&#x17F;.
@@ -542,7 +542,7 @@
       <!-- TODO - find a symbol for YE -->
     </excerpt>
     <link col="">(And it came to pa&#x17F;&#x17F;e in tho&#x17F;e days. Chap.8.pag.19.</link>
-    <figure col="15">
+    <figure id="figure10" col="15">
       <figDesc>Matthew with Angel, vision of Adam and Eve at foot of tree, apostles in tree, madonna
         and child, Chri&#x17F;t crucified on top.</figDesc>
       <head>S.MATHEVS</head>
@@ -654,16 +654,16 @@
       from Elizabeth &amp; therefore ye* chapter going before neither ought nor could be placed
       in any other order. [Ed. This note appears after the title of VII, but refers to VI.]</comment>
     <link col="18">(NOW WHEN IESVS CHAP.9. P.21</link>
-    <figure>
+    <figure id="figure11">
       <figDesc>Nativity before cla&#x17F;&#x17F;ical ruins, angel and shepherds in background</figDesc>
       <head>EN DEVS HIC HOMO FIT NATVS DE VISCERE MATRIS HEC TAMEN EST VIRGO SEMPER ET ILLE DEVS</head>
       <ex>[G De Jode]</ex>
       <n>2</n>
     </figure>
-    <figure size="miniature">
+    <figure id="figure12" size="miniature">
       <figDesc>Angel and Joseph</figDesc>
     </figure>
-    <figure size="miniature">
+    <figure id="figure13" size="miniature">
       <figDesc>angels with IHS</figDesc>
     </figure>
     <!-- added size attribute to image tag.  Sometime should provide measurements for each image, but not enough time now -->
@@ -746,17 +746,17 @@
         &#x17F;o named of the Angel before hee was conceiued in the wombe. </verse>
     </excerpt>
     <link col="21">&amp; (And when the dayes of her Purification &amp; Chap. x. P. 27</link>
-    <figure>
+    <figure id="figure14">
       <figDesc>Angels, Shepherds</figDesc>
       <head>Angelus e celo mi&#x17F;&#x17F;us pastoribus addest , Deq dei gnato nuncia laeta tulit Luc. 2</head>
       <text>Gloria in excelsis deo ac in terra pax hominibus bone voluntatis</text>
       <ex>G de Jode</ex>
       <n>3</n>
     </figure>
-    <figure size="miniature">
+    <figure id="figure15" size="miniature">
       <figDesc>Angel and Shepherds</figDesc>
     </figure>
-    <figure size="miniature">
+    <figure id="figure16" size="miniature">
       <figDesc>nativity</figDesc>
     </figure>
   </hchapter>
@@ -815,13 +815,13 @@
     <link col="27">
       <hi rend="letter(roman)">(AND WHEN THEY WERE DEPARTED CHAP.11.P.29</hi>
     </link>
-    <figure>
+    <figure id="figure17">
       <figDesc>circumcision in Temple/presentation of Je&#x17F;us lk 2.22</figDesc>
       <head>SECVNDVM LEGEM MOYSI TVLERVNT ILLVM IN IERVSALEM VT SISTERENT EVM DOMINO. Luc.2</head>
       <ex>GdJ?</ex>
       <n>2</n>
     </figure>
-    <figure composite="yes">
+    <figure id="figure18" composite="yes">
       <figDesc>Emblematic arrangement around miniature circ. image Text: cincvmcisio nihil with
         anchor, crucifixion, bird split (l) praepvtivm nihil with arrow, bird, fire (r) sed nova
         creatvra with bird(s) burning (c)</figDesc>
@@ -834,24 +834,24 @@
       it is probable ye wisemen were induced to come by his Prophe/-cy. &amp; so ye journey
       might easily be performed in this time from/Aram or ye parts neere adjoining of Mesopotamia or
       Chaldea.</comment>
-    <figure>
+    <figure id="figure19">
       <figDesc>Wise men</figDesc>
       <head>Conuocat Herodes ad se reges fine mora Deq recens nato multa rogauit eos Math.2</head>
       <ex>GdJ?</ex>
     </figure>
-    <figure>
+    <figure id="figure20">
       <figDesc>Wise men with Herod</figDesc>
       <head>Hit reges repetunt Longa regione profecti, Cum donis veteris maenia Bethleticos Math.2.</head>
       <ex>GdJ?</ex>
       <n>5</n>
     </figure>
-    <figure>
+    <figure id="figure21">
       <figDesc>Wise men present gifts to Chri&#x17F;t</figDesc>
       <head>Myrrham, thus aurum felicia munera dando. Extera turba sacros voluitur ante pedes.
         Math.2.</head>
       <ex>GdJ?</ex>
     </figure>
-    <figure>
+    <figure id="figure22">
       <figDesc>Angel to wise men</figDesc>
       <head>Angelus in somnis alia discedere terra, Iu&#x17F;&#x17F;it, ad herodis nec remeare domum. Math.2.</head>
       <ex>GdJ?</ex>
@@ -922,15 +922,15 @@
         instant, gaue thankes likewi&#x17F;e vnto the Lord, and &#x17F;pake of him to al them that looked for
         redemption in || Hieru&#x17F;alem. </verse>
     </excerpt>
-    <figure>
+    <figure id="figure23">
       <figDesc>Nunc Dimittis</figDesc>
       <head>NVNC DIMITIS SERVVM TVVM DOMINE SECVNDVM VERBVM TVVM IN PACE. Luc.2.</head>
       <ex>[G De Jode]?</ex>
     </figure>
-    <figure size="miniature">
+    <figure id="figure24" size="miniature">
       <figDesc>Wise men present gifts to Mary and Je&#x17F;us</figDesc>
     </figure>
-    <figure size="small">
+    <figure id="figure25" size="small">
       <figDesc>Mary pierced with sword</figDesc>
     </figure>
   </hchapter>
@@ -985,13 +985,13 @@
     <link col="31">
       <hi rend="letter(roman)">(IN tho&#x17F;e DAYES CAME IOHN THE BAPTIST. CHAP 13.P.39</hi>
     </link>
-    <figure col="29">
+    <figure id="figure26" col="29">
       <figDesc>Flight to Egypt</figDesc>
       <head>Nocte sub obscura puerum cum matre Josephus Ducit in Aegiptum barbariemque fugit. Math.</head>
       <ex>Gerar de Jode</ex>
       <n>8</n>
     </figure>
-    <figure>
+    <figure id="figure27">
       <figDesc>Slaughter of infants</figDesc>
       <head>Infantes matrum iugulantur ab vbere rapti. Hoc numero vt caderet filius iyse dei Math. 2</head>
       <ex>[G De Jode]</ex>
@@ -1051,7 +1051,7 @@
       <verse book="c" cnumber="3" id="c.2.52-c" type="context" vnumber="52"> And Je&#x17F;us increa&#x17F;ed in
         wi&#x17F;edom and || &#x17F;tature, and in fauour with God and man. </verse>
     </excerpt>
-    <figure col="31">
+    <figure id="figure28" col="31">
       <figDesc>Chri&#x17F;t in Temple (though he &#x17F;eems older than 12, Joseph finding him)</figDesc>
       <ex>[G De Jode]?</ex>
     </figure>
@@ -1060,48 +1060,48 @@
         rend="color(red) letter(roman)
                 ">STORIES</hi> of our Lord and Saviour <hi
         rend="letter(roman) color(gold)">IESVS Chri&#x17F;t</hi>.</head>
-    <figure col="33" size="miniature">
+    <figure id="figure29" col="33" size="miniature">
       <figDesc>annunciation</figDesc>
       <n>1</n>
     </figure>
-    <figure size="miniature">
+    <figure id="figure30" size="miniature">
       <figDesc>mary and elizabeth</figDesc>
       <n>2</n>
     </figure>
-    <figure size="miniature">
+    <figure id="figure31" size="miniature">
       <figDesc>nativity</figDesc>
       <n>3</n>
     </figure>
-    <figure size="miniature">
+    <figure id="figure32" size="miniature">
       <figDesc>cicumcision of Je&#x17F;us</figDesc>
       <n>4</n>
     </figure>
-    <figure size="miniature">
+    <figure id="figure33" size="miniature">
       <figDesc>Epiphanie</figDesc>
     </figure>
-    <figure size="miniature">
+    <figure id="figure34" size="miniature">
       <figDesc>Epiphanie</figDesc>
       <n>6</n>
     </figure>
-    <figure size="miniature">
+    <figure id="figure35" size="miniature">
       <figDesc>flight to Egypt</figDesc>
       <n>7</n>
     </figure>
-    <figure size="miniature">
+    <figure id="figure36" size="miniature">
       <figDesc>slaughter of innocents</figDesc>
       <n>8</n>
     </figure>
-    <figure size="miniature">
+    <figure id="figure37" size="miniature">
       <figDesc>Je&#x17F;us as boy in temple</figDesc>
       <n>9</n>
     </figure>
-    <figure size="miniature">
+    <figure id="figure38" size="miniature">
       <figDesc>mary and child with angels playing instruments and singing</figDesc>
     </figure>
-    <figure size="miniature">
+    <figure id="figure39" size="miniature">
       <figDesc>mary and elizabeth with child, dove</figDesc>
     </figure>
-    <figure size="miniature">
+    <figure id="figure40" size="miniature">
       <figDesc>mary and child with angels bringing cro&#x17F;&#x17F; from heaven</figDesc>
     </figure>
   </hchapter>
@@ -1109,38 +1109,38 @@
     <head>To wch are added Divers other Conjecturals touching his <hi
         rend="color(red)
                 letter(roman)">INFANCIE</hi>+</head>
-    <figure col="35" size="small">
+    <figure id="figure41" col="35" size="small">
       <figDesc>mary with child, angel looking over from side</figDesc>
     </figure>
-    <figure size="small">
+    <figure id="figure42" size="small">
       <figDesc>Mary and child with old man and another child, likely John and Zacharias, bringing
         fruit</figDesc>
     </figure>
-    <figure size="small">
+    <figure id="figure43" size="small">
       <figDesc>Mary and child with angel bringing fruit</figDesc>
     </figure>
-    <figure size="miniature">
+    <figure id="figure44" size="miniature">
       <figDesc>Mary and child with old man and another child, likely John and Zacharias, bringing
         fruit</figDesc>
       <text>Transite ad me omnes qui concupiscitis me et a generationibus meis implemini Eccle
       24</text>
     </figure>
-    <figure size="large">
+    <figure id="figure45" size="large">
       <figDesc>Mary with heart pierced by sword</figDesc>
     </figure>
-    <figure size="miniature">
+    <figure id="figure46" size="miniature">
       <figDesc>flight to Egypt</figDesc>
       <text>[obscured by next image] D'Egypt reuenans, Io&#x17F;eph, Iesvs, Mary, . . . mour, font belle
         compagnie</text>
     </figure>
-    <figure
+    <figure id="figure47"
       composite="yes [Crucifixion set within title page of Bolswert text.  The fit is so tight that it is barely noticable]"
       size="small">
       <figDesc>crucifixion set within scene of tomb</figDesc>
       <source>Vitae Pa&#x17F;&#x17F;ionis, title page border</source>
       <source>Vitae Pa&#x17F;&#x17F;ionis, title page border</source>
     </figure>
-    <figure size="small">
+    <figure id="figure48" size="small">
       <figDesc>Angel bringing cro&#x17F;&#x17F; from heaven to praying Je&#x17F;us</figDesc>
       <head>De Vita Chri&#x17F;ti Domini usque ad Baptismum. Luc. 2. 1</head>
       <text>Proficiebat puer Iesus in dies sapientiâ, aetate, et gratiâ, apud Deum et homines,
@@ -1153,7 +1153,7 @@
       <n>10</n>
       <source>Vitae Pa&#x17F;&#x17F;ionis et Mortis Jesu Chri&#x17F;ti</source>
     </figure>
-    <figure size="small">
+    <figure id="figure49" size="small">
       <figDesc>Je&#x17F;us carrying cro&#x17F;&#x17F;, ladder, spear, sponge, and basket of tools, back bowed</figDesc>
       <ms>In Laboribus A Juventute mea</ms>
     </figure>
@@ -1162,27 +1162,27 @@
     col="37">
     <head><hi rend="color(gold)">JOHNS B</hi>aptisme, <hi rend="color(gold)">P</hi>reaching, <hi
         rend="color(gold)">F</hi>oode, &amp; <hi rend="color(gold)">R</hi>ayment</head>
-    <figure>
+    <figure id="figure50">
       <figDesc>John in wilderne&#x17F;&#x17F; by water with divine light and lamb, tetragrammaton</figDesc>
       <head>Fac cum [factum?] est verbum Domini Super Ioannem Zachariae filium in deserto. Luc.III</head>
       <inven>Joan Stradanus</inven>
       <sculp>Ant. Wierx</sculp>
       <ex>Th. Gall</ex>
     </figure>
-    <figure composite="yes">
+    <figure id="figure51" composite="yes">
       <figDesc>image of two men, one helping the other, and on top, three people watching a tailor</figDesc>
       <ms>He yt hath two coates let him Impart &amp; c.</ms>
     </figure>
-    <figure col="38">
+    <figure id="figure52" col="38">
       <figDesc>Mark with Lion, sitting at writing table, holding book</figDesc>
     </figure> description="Miniatures of Mark with Lion, Ox and Matt with Angel as each gospel
-    begins its bit."/&gt; <figure col="39" size="miniature">
+    begins its bit."/&gt; <figure id="figure53" col="39" size="miniature">
       <figDesc>Mark at writing desk with lion</figDesc>
     </figure>
-    <figure size="miniature">
+    <figure id="figure54" size="miniature">
       <figDesc>ox at feet of Luke</figDesc>
     </figure>
-    <figure size="miniature">
+    <figure id="figure55" size="miniature">
       <figDesc>Matthew with book and angel</figDesc>
     </figure>
     <excerpt source="b.1:1-3" type="context">
@@ -1309,14 +1309,14 @@
       <verse book="c" cnumber="4" id="c.3.16-c" type="context" vnumber="16"> Iohn an&#x17F;wered, &#x17F;aying
         vnto them all, </verse>
     </excerpt>
-    <figure col="40">
+    <figure id="figure56" col="40">
       <figDesc>Tongues of Fire (Pentecost), woman in center of group of men and women, in frame with
         incense spelling ABBA PATER</figDesc>
       <head>PARS TOTIVS ET DE TOTO FIDES . et dedit dominus hominibus,</head>
       <text>Tetragrammaton [imitation, nonsensical Hebrew]</text>
       <ms>He &#x17F;hall baptize yu* wth* the Holy Gho&#x17F;t and with Fire</ms>
     </figure>
-    <figure>
+    <figure id="figure57">
       <figDesc>Noble woman giving food to the poor</figDesc>
       <ms>And He yt hath meat let him doe likewise.</ms>
     </figure>
@@ -1365,7 +1365,7 @@
     
     <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">B</hi>APTISME of <hi
       rend="color(gold)">Chri&#x17F;t</hi> &amp; his <hi rend="color(gold)">G</hi>ENEALOGIE+</head>
-    <figure>
+    <figure id="figure58">
       <figDesc>Baptism with Angels, composite image, with Tetragrammaton pasted at top, over text,
         which is also pasted</figDesc>
       <head>Hic est filius meus dilectus In quo mibi coplacui</head>
@@ -1497,7 +1497,7 @@
     </excerpt>
     <comment ref="c 3:22 word 23">I It being vncertain, wch of ye two was spoken, we haue put both
       [regards words of Father Thou art/This is</comment>
-    <figure>
+    <figure id="figure59">
       <figDesc>Baptism of Chri&#x17F;t, Dove</figDesc>
       <head>De praedicatione Ioīs. et Baptismo Chri&#x17F;ti. Matth.3.</head>
       <text>1.Valedicit Dñs matri suae, circiter annū aetatis trigesimū ingre&#x17F;&#x17F;us et ad Baptistam,
@@ -1512,12 +1512,12 @@
 
     <head><hi rend="color(gold)">Chri&#x17F;t</hi> his <hi rend="color(gold)">F</hi>ast and <hi
         rend="color(gold)">T</hi>emptation+</head>
-    <figure>
+    <figure id="figure60">
       <figDesc>Je&#x17F;us rejects bread offered by feminine-looking devil with horns, pointy ears, wings,
         and claws on toes</figDesc>
       <head/>
     </figure>
-    <figure>
+    <figure id="figure61">
       <figDesc>Je&#x17F;us in wilderne&#x17F;&#x17F;</figDesc>
       <head>De Ieiunio, et tentatione. Matt.4. Mar.1. Luc.4.</head>
       <text>1.Iesus plennus Spiritus sancto, eius ductu secedit in desertum, Ubi dies et noctes
@@ -1659,7 +1659,7 @@
 
     <head><hi rend="color(gold)">T</hi>HE JEWS EMBA&#x17F;&#x17F;AGE And <hi rend="color(gold)">J</hi>OHN his
       Testimonie+</head>
-    <figure>
+    <figure id="figure62">
       <figDesc>Mo&#x17F;es presenting 10 Commandments</figDesc>
     </figure>
     <excerpt source="d.1:15-34" type="context">
@@ -1739,12 +1739,12 @@
   <hchapter n="XVII" toctitle="The di&#x17F;ciples" col="47">
 
     <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">D</hi>ISCIPLES.</head>
-    <figure>
+    <figure id="figure63">
       <figDesc>Harrowing of Hell, doors to underground broken, Chri&#x17F;t reaching down to people,
         devils aghast</figDesc>
       <n>21</n>
     </figure>
-    <figure fp="562/15b">
+    <figure id="figure64" fp="562/15b">
       <figDesc>Angel showing scribe vision of New Jerusalem, square city with Tetragrammaton and
         dove above and lamb on hill in center, nine angels at nine gates, shepherd and flock in
         foreground</figDesc>
@@ -1826,7 +1826,7 @@
   <hchapter n="XVIII" toctitle="The MARRIAGE in Cana" col="49">
 
     <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">M</hi>ARIAGE.</head>
-    <figure>
+    <figure id="figure65">
       <figDesc>Wedding, with Je&#x17F;us commanding servant in foreground</figDesc>
       <ex>Gerardus de Iode [GdJ]</ex>
     </figure>
@@ -1868,7 +1868,7 @@
         miracles did Je&#x17F;us in Cana of Galilee, and manife&#x17F;ted foorth his glory, and his di&#x17F;ciples
         beleeued on him. </verse>
     </excerpt>
-    <figure size="miniature">
+    <figure id="figure66" size="miniature">
       <figDesc>John at writing desk with books and eagle</figDesc>
     </figure>
   </hchapter>
@@ -1925,7 +1925,7 @@
       <verse book="d" cnumber="3" id="d.2.25-c" type="context" vnumber="25"> And needed not that any
         &#x17F;hould te&#x17F;tifie of man: for he knew what was in man. </verse>
     </excerpt>
-    <figure>
+    <figure id="figure67">
       <figDesc>Scouring of Temple [note the cla&#x17F;&#x17F;ical temple with ark openly displayed!]</figDesc>
       <ex>GdJ?</ex>
       <n>12</n>
@@ -1937,7 +1937,7 @@
   <hchapter n="XX" toctitle="NICODEMUS" col="53">
 
     <head><hi rend="color(gold)">N</hi>ICODEMUS+</head>
-    <figure size="small">
+    <figure id="figure68" size="small">
       <figDesc>Chri&#x17F;t with Nicodemus (with embedded miniatures)</figDesc>
       <head>De colloquio Domini cum Nicodemo. Ioan.3.</head>
       <text>1. Nicodemus princeps Iudaeorum, noctu venit ad Iesum, de nece&#x17F;&#x17F;arijs ad vitam aeternam
@@ -1947,10 +1947,10 @@
       <ex>Boetius Bolswert</ex>
       <n>14</n>
     </figure>
-    <figure size="small">
+    <figure id="figure69" size="small">
       <figDesc>Chri&#x17F;t with Nicodemus</figDesc>
     </figure>
-    <figure col="54" composite="yes text pasted onto image" size="small">
+    <figure id="figure70" col="54" composite="yes text pasted onto image" size="small">
       <figDesc>Crucifixion</figDesc>
       <head>Sic Deus dilexit mundum.</head>
       <text>Sicut Moyses exaltauit Serpentem in deserto; ita exaltari oportet filium hominis vt
@@ -2041,7 +2041,7 @@
 
     <head><hi rend="color(gold)">J</hi>OHN'S second <hi rend="color(gold)">T</hi>ESTIMONIE of <hi
         rend="color(gold)">Chri&#x17F;t</hi>+</head>
-    <figure>
+    <figure id="figure71">
       <figDesc>Chri&#x17F;t as king, but with wounds and hands and feet, with bride, surrounded by
         musicians, composite image added of man with lamb and flag &#x17F;aying Ecce Agnus Dei</figDesc>
       <text>Gaudium nuptiaru Agni/3u. noui&#x17F;&#x17F;imum?</text>
@@ -2049,7 +2049,7 @@
     </figure>
     <comment>St Johns Comparison of ye Bride &amp; Bridegrome hath brought in this <hi
         rend="color(red)">Picture</hi> of Chri&#x17F;t’s spiritual Marriage with the Church+</comment>
-    <figure size="small">
+    <figure id="figure72" size="small">
       <figDesc>Musical score in four part harmony, hand with two fingers up</figDesc>
       <head>Title on left: DVO IN CARNEVNA Top right: Psalm 116</head>
       <artist>Andreas Peuernage</artist>
@@ -2171,7 +2171,7 @@
     col="57">
 
     <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">W</hi>OMAN of SAMARIA+</head>
-    <figure>
+    <figure id="figure73">
       <figDesc>figures of confinement and torture</figDesc>
       <source>[from plate used later re. Chri&#x17F;t watching the faithful visit tho&#x17F;e in prison (sheep
         and goats)</source>
@@ -2331,10 +2331,10 @@
         woman, Now wee beleeue, not becau&#x17F;e of thy &#x17F;aying for we haue heard him our &#x17F;elues and know
         that this is indeede the Chri&#x17F;t the Sauiour of the world. </verse>
     </excerpt>
-    <figure col="59">
+    <figure id="figure74" col="59">
       <figDesc>Chri&#x17F;t and woman at well</figDesc>
     </figure>
-    <figure col="61">
+    <figure id="figure75" col="61">
       <figDesc>Chri&#x17F;t and woman at well</figDesc>
       <head>Iesus fatigatus ex itinere, sedebat sic supra fontem. Venit mulier de Samaria haurire
         aquam. Dicit ei Iesus, Da mihi bibere. Ioan.4</head>
@@ -2394,7 +2394,7 @@
         in darkene&#x17F;&#x17F;e, &#x17F;aw great light: and to them which &#x17F;ate in the region and &#x17F;ha=dow of death,
         light is &#x17F;prung vp. </verse>
     </excerpt>
-    <figure col="63">
+    <figure id="figure76" col="63">
       <figDesc>Chri&#x17F;t and woman at well</figDesc>
       <head>De colloquio cum Samaritana. Ioan.4.</head>
       <text>1.Fe&#x17F;&#x17F;us de via Dominus, sedet ad fontem, Samaritanam expectans, et cum ea sensim
@@ -2429,7 +2429,7 @@
   <hchapter n="XXV" toctitle="THE NOBLE MANS SON" col="64">
 
     <head><hi rend="color(gold)">T</hi>HE RULER'S SON+</head>
-    <figure>
+    <figure id="figure77">
       <figDesc>Man bowing before Chri&#x17F;t</figDesc>
       <head>De Reguit filio</head>
       <text>Redeuntem in Galilaeum ex Iudea Dñm, qui miracula eius Ierosolymis spectarant, magno
@@ -2479,7 +2479,7 @@
     col="65">
 
     <head><hi rend="color(gold)">T</hi>HE Calling of the <hi rend="color(gold)">D</hi>ISCIPLES+</head>
-    <figure>
+    <figure id="figure78">
       <figDesc>Je&#x17F;us calling Peter and Andrew on seashore, halos</figDesc>
       <head>PETRVS ET ANDREAS PELAGO DVM RETIA IACTANS AD SE PRETERIENS Chri&#x17F;tVS VTRVQUE VOCAT</head>
       <ex>GdJ?</ex>
@@ -2569,7 +2569,7 @@
         brought their &#x17F;hips to land, they for&#x17F;ooke all, and followed him. </verse>
     </excerpt>
     <link>(AND IT CAME TO PA&#x17F;&#x17F;E WHEN.c.29.p.73</link>
-    <figure col="67">
+    <figure id="figure79" col="67">
       <figDesc>Overloaded boat, Je&#x17F;us</figDesc>
       <head>Duc in altum, et laxate retia vestra in capturam piscium. Et cum hoc feci&#x17F;&#x17F;ent,
         concluserunt piscium multitudinem copiosam.Luc.5</head>
@@ -2578,7 +2578,7 @@
   <hchapter n="XXVII" toctitle="{The TEACHING &amp; CASTING out ye uncleane spirit" col="69">
 
     <head><hi rend="color(gold)">Chri&#x17F;t</hi> teacheth &amp; healeth a Demoniack in Capernaum+</head>
-    <figure composite="yes">
+    <figure id="figure80" composite="yes">
       <figDesc>Je&#x17F;us heals Simon's mother (in bed), scenes of fishing and temple above</figDesc>
       <head>De insigni captura piscium Socru Simonis. &amp; c. Matt.8 Mar.1 Luc.4 Expulsis
         demonium ['Expulsis demonium' is pasted in from another source]</head>
@@ -2591,7 +2591,7 @@
       <n>[17]</n>
     </figure>
     <!-- this last part is pasted in -->
-    <figure>
+    <figure id="figure81">
       <figDesc>Je&#x17F;us heals Simon's mother</figDesc>
     </figure>
     <excerpt source="b.1:2" type="context">
@@ -2667,7 +2667,7 @@
   <hchapter n="XXVIII" toctitle="SIMONS WIVES MOTHER &amp; ALL DI&#x17F;eaSED" col="69">
 
     <head><hi rend="color(gold)">P</hi>ETERS wives Mother and other sick Folk+</head>
-    <figure>
+    <figure id="figure82">
       <figDesc>Je&#x17F;us and Peter's mother</figDesc>
       <head>Iesus Sanat Socrum Petri.</head>
       <n>17</n>
@@ -2705,7 +2705,7 @@
        and it left her. And immediately &#x17F;he aro&#x17F;e, &amp; mini&#x17F;tred
         vnto them. </verse>
     </excerpt>
-    <figure>
+    <figure id="figure83">
       <figDesc>Je&#x17F;us and Peter's mother</figDesc>
       <head>Socrus Simonis tenebatur magnis febribus; et rogauerunt illum pro ea. Et Stans Super
         illam imperauit febri; et dimisit illam.Luc.4</head>
@@ -2769,11 +2769,11 @@
         rend="color(gold)
             ">L</hi>eper &amp; <hi rend="color(gold)"
       >P</hi>erambulation+</head>
-    <figure>
+    <figure id="figure84">
       <figDesc>Men bring sick men to Je&#x17F;us, a demon dragon cast out</figDesc>
       <ms>The Leper clensed. And they brought unto him all sicke persons</ms>
     </figure>
-    <figure>
+    <figure id="figure85">
       <figDesc>Je&#x17F;us in desert, halo</figDesc>
       <head>Chri&#x17F;t Praying in ye Desert</head>
     </figure>
@@ -2892,11 +2892,11 @@
   <hchapter n="XXX" toctitle="The REPROOFE of THREE" col="75">
 
     <head><hi rend="color(gold)">T</hi>HE REPROOFE of THREE+</head>
-    <figure composite="yes">
+    <figure id="figure86" composite="yes">
       <figDesc>funeral proce&#x17F;&#x17F;ion, plow, foxes</figDesc>
       <ms>Lett THE DEAD BURY &amp; FOXES HAVE HOLES &amp;</ms>
     </figure>
-    <figure composite="yes">
+    <figure id="figure87" composite="yes">
       <figDesc>Man and plow with horses</figDesc>
       <ms> NOE MAN HAVING PUT HIS HAND TO THE PLOW AND LOOKING BACK</ms>
     </figure>
@@ -2959,7 +2959,7 @@
   <hchapter n="XXXI" toctitle="The TEMPEST STILLER = CH. XXX" col="77">
 
     <head><hi rend="color(gold)">T</hi>HE TEMPEST+</head>
-    <figure>
+    <figure id="figure88">
       <figDesc>Tempest, Chri&#x17F;t asleep</figDesc>
       <ex>Gd. Iode</ex>
       <fe>A Muller</fe>
@@ -3099,10 +3099,10 @@
     <excerpt source="c.8:25c" type="context">
       <verse book="c" cnumber="9" id="c.8.25-c" type="context" vnumber="25"> hee comman=deth euen the winds and water, and they obey him. </verse>
     </excerpt>
-    <figure>
+    <figure id="figure89">
       <figDesc>Modern fleet on still water (at night?)</figDesc>
     </figure>
-    <figure>
+    <figure id="figure90">
       <figDesc>Tempest, Je&#x17F;us casting demons into swine, Je&#x17F;us preaching on shore</figDesc>
       <head>De sedata maris tempestare. &amp; c. Matth. 8</head>
       <text>?</text>
@@ -3112,7 +3112,7 @@
   <hchapter n="XXXII" toctitle="The SWINE" col="82">
 
     <head><hi rend="color(gold)">T</hi>HE SWINE+</head>
-    <figure>
+    <figure id="figure91">
       <figDesc>Chri&#x17F;t casting out demons, man bent over bkwrd</figDesc>
       <head>Et uidit e poeris/poeius/ hominem saluarier Daemon Perdidit tum porcos setigerumq genus</head>
       <ex>GdJ?</ex>
@@ -3302,7 +3302,7 @@
       <verse book="b" cnumber="6" id="b.5.16-c.b" type="context" vnumber="16">and al&#x17F;o con=cerning the
         &#x17F;wine. </verse>
     </excerpt>
-    <figure col="84" size="miniature">
+    <figure id="figure92" col="84" size="miniature">
       <figDesc>Chri&#x17F;t casting out demons</figDesc>
     </figure>
     <excerpt source="a.8:28-33" type="supplement">
@@ -3391,14 +3391,14 @@
         began to publi&#x17F;h in Deca=polis, how great things Je&#x17F;us had done for him: and all men did
         marueile. </verse>
     </excerpt>
-    <figure>
+    <figure id="figure93">
       <figDesc>Prodigal eating with &#x17F;wine</figDesc>
     </figure>
   </hchapter>
   <hchapter n="XXXIII" toctitle="The SICK of the PALSY" col="85">
 
     <head><hi rend="color(gold)">T</hi>he SICK of the PALSY</head>
-    <figure>
+    <figure id="figure94">
       <figDesc>Man lowered through roof to Je&#x17F;us</figDesc>
       <head>De paralytico per tegulas demi&#x17F;&#x17F;o, et vocatione S.Matthaei. Mat.9.Mar.2.Luc.5.</head>
       <text>1. Demettitur per tectũ ante pedes Iesu paralyticus; Dñs videns fi: dem illorũ, condonat
@@ -3408,10 +3408,10 @@
       <ex>Boetius Bolswert</ex>
       <n>18</n>
     </figure>
-    <figure>
+    <figure id="figure95">
       <figDesc>Man lowered through roof to Je&#x17F;us</figDesc>
     </figure>
-    <figure>
+    <figure id="figure96">
       <figDesc>Sick of the palsy carrying out his bed </figDesc>
       <ms>The sick/ of ye palsy car/rijng out his/ bedWe never &#x17F;aw it on this Fashion</ms>
       <artist>GdJ?</artist>
@@ -3493,12 +3493,12 @@
       <verse book="c" cnumber="6" id="c.5.21-s" type="supplement" vnumber="21">And the Scribes and
         the Phari&#x17F;ees began to rea&#x17F;on, &#x17F;aying, </verse>
     </excerpt>
-    <figure>
+    <figure id="figure97">
       <figDesc>Man lowered through roof</figDesc>
       <head>Sic quem paralysis longo languere prostrauit A morbo soluit liberauitq
       fides.Luce.5</head>
     </figure>
-    <figure>
+    <figure id="figure98">
       <figDesc>Sick man lying down</figDesc>
     </figure>
     <excerpt source="a.9:2a" type="supplement">
@@ -3610,7 +3610,7 @@
 
     <head><hi rend="color(gold)">T</hi>HE calling of <hi rend="color(gold)">M</hi>ATHEW. And
       Disputation about FASTING</head>
-    <figure>
+    <figure id="figure99">
       <figDesc>Chri&#x17F;t, with di&#x17F;ciples, calls Matthew from table with money</figDesc>
       <source>[al&#x17F;o in Cecil p73/xxxiii]</source>
       <source>[al&#x17F;o in Cecil p73/xxxiii]</source>
@@ -3674,12 +3674,12 @@
     <excerpt source="c.5:30a" type="supplement">
       <verse book="c" cnumber="6" id="c.5.30-s" type="supplement" vnumber="30"> again&#x17F;t his di&#x17F;ciples, &#x17F;aying,</verse>
     </excerpt>
-    <figure col="91" size="miniature">
+    <figure id="figure100" col="91" size="miniature">
       <figDesc>mi&#x17F;&#x17F;ing, oval with base, so that the shape looks like a fish pointed upward. In
         raking light, significant indentation visible where the image sat, indicating the pre&#x17F;&#x17F;ure
         used in pre&#x17F;&#x17F;ing the&#x17F;e sheets after gluing. Glue remnants al&#x17F;o visible.</figDesc>
     </figure>
-    <figure col="91" composite="yes">
+    <figure id="figure101" col="91" composite="yes">
       <figDesc>dog and boy, with original figure covered by boy and birds and lamb?, in background,
         fea&#x17F;t on top, man preparing a carca&#x17F;&#x17F; below</figDesc>
       <ms>And Leui made him a greate fea&#x17F;t. The Slaughter hous.</ms>
@@ -3814,7 +3814,7 @@
   <hchapter n="XXXV" toctitle="IAIRVS &amp; ye BLOVDY I&#x17F;&#x17F;VE" col="93">
 
     <head><hi rend="color(gold)">J</hi>AIRUS and the Bloudy I&#x17F;&#x17F;ue</head>
-    <figure>
+    <figure id="figure102">
       <figDesc>Chri&#x17F;t and Jairus' daughter</figDesc>
       <head>De filia Archisynagogi et Haemorrhoi&#x17F;&#x17F;a. Matt.9.Mar.5.Luc.8.</head>
       <text>1. Iairus Archisenagogus supplicat Chri&#x17F;to, non grauetur ad se domum venire filiam
@@ -3824,10 +3824,10 @@
       <ex>Boetius Bolswert</ex>
       <n>[19]</n>
     </figure>
-    <figure size="miniature">
+    <figure id="figure103" size="miniature">
       <figDesc>woman touches hem of Je&#x17F;us's robe</figDesc>
     </figure>
-    <figure>
+    <figure id="figure104">
       <figDesc>Woman with blood flow</figDesc>
       <head>MVLIER FLVX. SANG. LAB.</head>
       <text>Sanatur, vestem sanulac contingit Iesu, Quae, patitur fluxum FOEMINA sanguineum.</text>
@@ -3907,7 +3907,7 @@
         knowing in him&#x17F;elfe that vertue had gone out of him, turned him about in the prea&#x17F;&#x17F;e, and
         &#x17F;aid, Who touched my clothes? </verse>
     </excerpt>
-    <figure col="95" composite="yes, crowd extended to right">
+    <figure id="figure105" col="95" composite="yes, crowd extended to right">
       <figDesc>Woman touches hem of Je&#x17F;us's robe in crowd</figDesc>
       <head>[Ecce mulier quae sanguinis fluxum patiebatur duodecim annis, acce&#x17F;&#x17F;it retro, et tetigit
         fimbriam vestimenti eius. Matth. 9]</head>
@@ -4119,29 +4119,29 @@
   <hchapter n="XXXVII" toctitle="BETHESDA" col="98">
 
     <head><hi rend="color(gold)">B</hi>ETHESDA+</head>
-    <figure>
+    <figure id="figure106">
       <figDesc>Chri&#x17F;t heals man by pool, bkgrd man walks with bedding</figDesc>
       <artist>IH.W. [difficult to read]</artist>
       <source>[al&#x17F;o in Cecil p81/xxxvii]</source>
       <source>[al&#x17F;o in Cecil p81/xxxvii]</source>
     </figure>
-    <figure>
+    <figure id="figure107">
       <figDesc>Man walks by temple with bedding</figDesc>
       <head>Y</head>
       <ex>GdJ?</ex>
       <n>8</n>
     </figure>
-    <figure col="101">
+    <figure id="figure108" col="101">
       <figDesc>skeletons rise to Chri&#x17F;t, Tetragrammaton above</figDesc>
       <ms>THE DEADE &#x17F;hall HEARE</ms>
       <sculp>Joan Collaert</sculp>
     </figure>
-    <figure col="102" composite="yes">
+    <figure id="figure109" col="102" composite="yes">
       <figDesc>The resurrection, Chri&#x17F;t top center, flowers pasted to cover 'private
       parts'.</figDesc>
     </figure>
     <comment col="102">They that haue don good, unto the Resurrection of Life &amp;</comment>
-    <figure composite="yes">
+    <figure id="figure110" composite="yes">
       <figDesc>Chri&#x17F;t with large candle</figDesc>
       <ms>Hee was a burning &amp; a shining Light</ms>
     </figure>
@@ -4312,7 +4312,7 @@
   <hchapter n="XXXVIII" toctitle="The RVBBING of ye EARES" col="103">
 
     <head><hi rend="color(gold)">T</hi>HE Rubbing of the Eares of Corne+</head>
-    <figure col="104" composite="no">
+    <figure id="figure111" col="104" composite="no">
       <figDesc>David exchanges sword with Abiathar</figDesc>
       <ms>DAVID ABIATHAR</ms>
     </figure>
@@ -4407,7 +4407,7 @@
   <hchapter n="XXXIX" toctitle="The WITHERED HAND = CH. XXXIX" col="106">
 
     <head><hi rend="color(gold)">T</hi>HE WITHERED HAND+</head>
-    <figure>
+    <figure id="figure112">
       <figDesc>Chri&#x17F;t and man with withered hand, in background, Chri&#x17F;t puts hand over sitting man</figDesc>
       <source>[al&#x17F;o in Cecil p 85/xxxix]</source>
       <source>[al&#x17F;o in Cecil p 85/xxxix]</source>
@@ -4545,11 +4545,11 @@
         the Gentiles tru&#x17F;t. </verse>
     </excerpt>
     <link col="107">(THEN WAS BROVGHT VNTO HIM &amp; Chap.49 p.142</link>
-    <figure col="108" composite="yes">
+    <figure id="figure113" col="108" composite="yes">
       <figDesc>figures in praise around mi&#x17F;&#x17F;ing oval</figDesc>
       <ms>AND IN HIS NAME &#x17F;hall THE GENTILES TRVST</ms>
     </figure>
-    <figure col="109">
+    <figure id="figure114" col="109">
       <figDesc>Chri&#x17F;t on hill teaching apostles, bkgd, Chri&#x17F;t heals man with apostles</figDesc>
       <source>[po&#x17F;&#x17F;ibly same as Cecil p87/xl, though background is different]</source>
       <source>[po&#x17F;&#x17F;ibly same as Cecil p87/xl, though background is different]</source>
@@ -4559,7 +4559,7 @@
     <head><hi rend="color(gold)">T</hi>he <hi rend="color(gold)">C</hi>alling of ye <hi
         rend="color(gold)">T</hi>welve <hi rend="color(gold)">A</hi>postles &amp; ye <hi
         rend="color(gold)">S</hi>ermon in ye <hi rend="color(gold)">M</hi>ounte+</head>
-    <figure>
+    <figure id="figure115">
       <figDesc>Job, &#x17F;eated, me&#x17F;&#x17F;engers offer hands, volcano in bk?</figDesc>
       <head>BEATI PAVPERES SPIRITV QVONIA' IPSORVM, EST REGNV' CAELORV'</head>
       <text>Talem postentas te praedicat omnis Jobe.</text>
@@ -4689,35 +4689,35 @@
       <verse book="a" cnumber="6" id="a.5.10-c" type="context" vnumber="10"> *Ble&#x17F;&#x17F;ed are they which
         are per&#x17F;ecuted for righteou&#x17F;ne&#x17F;&#x17F;e &#x17F;ake: for theirs is the kingdome of heauen. </verse>
     </excerpt>
-    <figure col="113">
+    <figure id="figure116" col="113">
       <figDesc>Magdalene wipes Je&#x17F;us's feet with her hair</figDesc>
       <head>BEATI QVI LVGENT, QVONIAM IPSI CONSOLABVNTVR</head>
       <text>Magdala.</text>
       <inven>M Heemskerck</inven>
       <fe>[ML]</fe>
     </figure>
-    <figure>
+    <figure id="figure117">
       <figDesc>Mary, Joseph, bring Chri&#x17F;t to Simeon</figDesc>
       <head>BEATI QVI ESVRIVNT ET SITIVNT IVSTITIA',QVONIA' IPSI SATVRABVNTVR</head>
       <text>Primus es hic Simeon</text>
       <inven>[M Heemskerck]</inven>
       <fe>[ML]</fe>
     </figure>
-    <figure col="115">
+    <figure id="figure118" col="115">
       <figDesc>Thobias? Sick brought to Chri&#x17F;t: Ble&#x17F;&#x17F;ed are the merciful</figDesc>
       <head>BEATI MISERICORDES, QVONIAM IPSI MISERICORDIAM CONSEQVENTVR</head>
       <text>Thobias. nulli veterum pretate secundus</text>
       <inven>[M Heemskerck]</inven>
       <fe>[ML]</fe>
     </figure>
-    <figure>
+    <figure id="figure119">
       <figDesc>Angel with Mary, Annunciation: Ble&#x17F;&#x17F;ed are the pure in heart</figDesc>
       <head>BEATI MVNDO CORDE QVONIAM IPSI DEVM VIDEBVNT</head>
       <text>Integritatis eras Maria Iex vnica vitae</text>
       <inven>M Heemskerck</inven>
       <fe>[ML]</fe>
     </figure>
-    <figure col="117">
+    <figure id="figure120" col="117">
       <figDesc>Abigail offering food to David and his soldiers: Ble&#x17F;&#x17F;ed are the peacemakers</figDesc>
       <head>BEATI PACIFICI, QVONIAM FILII DEI VOCABVNTVR</head>
       <text>Muncribus placat te&#x17F;&#x17F;idae molliter iram. Conciliat que virum Abbigail, pacem que
@@ -4773,7 +4773,7 @@
         men &#x17F;hall &#x17F;peake well of you: for &#x17F;o did their fathers to the fal&#x17F;e Prophets. </verse>
     </excerpt>
     <link col="117">(BVT I &#x17F;ay VNTO YOV &amp; Chapt: 41 p.123.</link>
-    <figure col="118">
+    <figure id="figure121" col="118">
       <figDesc>IHS over group of people, including apostles and soldiers, the former with
         instruments of their martyrdoms, many holding quills?</figDesc>
       <ms>Merces Vestra copiosa est in caelo</ms>
@@ -4895,7 +4895,7 @@
       <verse book="a" cnumber="6" id="a.5.42-c" type="context" vnumber="42"> Giue to him that a&#x17F;keth
         thee: and *from him that would borrow of thee, turne not thou away. </verse>
     </excerpt>
-    <figure col="119">
+    <figure id="figure122" col="119">
       <figDesc>Mo&#x17F;es being meek with Aaron, tabernacle in background [Numbers 12:3]</figDesc>
       <head>BEATI MITES QVONIA' IPSI PO&#x17F;&#x17F;IDEBVNT TERRAM.</head>
       <text>Laurea prima tibi sacer mili&#x17F;&#x17F;ime Mo&#x17F;es.</text>
@@ -4903,13 +4903,13 @@
         Chri&#x17F;t forbids v22 &amp;</ms>
       <artist>MvH</artist>
     </figure>
-    <figure>
+    <figure id="figure123">
       <figDesc>Chri&#x17F;t with candle and books of prophets and evangelists</figDesc>
       <text>sic luceat lvx vestra [around flame] coram hominibus[base of candle] Lex PROPHETA
         EVANGELIVM [at bottom]</text>
       <ex>vidua Gerardi de Iode [GdJ]</ex>
     </figure>
-    <figure col="121">
+    <figure id="figure124" col="121">
       <figDesc>Man being stoned outside city while praying, Tetragrammaton and Chri&#x17F;t with cro&#x17F;&#x17F; in
         top left</figDesc>
       <head>BEATI QVI PERSECVTIONE' PATIVNTVR PROPTER IVSTITIAM, QVONIAM IPsoRVM EST REGNVM CELORVM</head>
@@ -4919,7 +4919,7 @@
     </figure>
     <comment col="122">The Composition is omitted in regard it would litle or not at all differ from
       the Collection</comment>
-    <figure col="124">
+    <figure id="figure125" col="124">
       <figDesc>St Martin cuts his cloak for two men?</figDesc>
       <ms>S. MARTIN. GIVE TO HIM that ASKETH thee</ms>
     </figure>
@@ -5002,7 +5002,7 @@
         mercifull, as your Father al&#x17F;o is mercifull. </verse>
     </excerpt>
     <link>(IVDGE NOT AND &amp; Chapt. 43. p. 129</link>
-    <figure composite="no">
+    <figure id="figure126" composite="no">
       <figDesc>David spies Bathsheba, man under Pegasus</figDesc>
       <head>WHOsoEVER LOOKETH ON A WOMAN TO LVST AFTER HER &amp;</head>
       <ms>DAVID BATHSHEBA</ms>
@@ -5015,17 +5015,17 @@
   </hchapter>
   <hchapter n="XLII" toctitle="The SINGLE Eie.. SVPERFLVOVS Care" col="125">
     <head><hi rend="color(gold)">T</hi>HE SINGLE Eie, &amp; THOUGHT for things of this LIFE+</head>
-    <figure composite="yes">
+    <figure id="figure127" composite="yes">
       <figDesc>Almes given with a trumpet Publican with crowd, al&#x17F;o composite image in corner with
         women and a man praying, in window Snt. Nicholas*</figDesc>
       <ms>ALMES GIVEN WITH A TRUMPET, St Nicholas</ms>
       <n>5</n>
     </figure>
-    <figure>
+    <figure id="figure128">
       <figDesc>Man in closet</figDesc>
       <head>Enter into thy closett And when thou hast shutt thy Doore, pray to &amp;</head>
     </figure>
-    <figure composite="yes">
+    <figure id="figure129" composite="yes">
       <figDesc>birds over rocky landscape. solomon, flowers, insects, small temple</figDesc>
       <ms>BEHOLD The FOVLES of the AYRE soLOMON in all his Glory was not arayed like one of
       the&#x17F;e</ms>
@@ -5158,7 +5158,7 @@
   </hchapter>
   <hchapter n="XLIII" toctitle="DIVERS PRECEPTS" col="129">
     <head><hi rend="color(gold)">D</hi>IVERS INSTRUCTIONS+</head>
-    <figure>
+    <figure id="figure130">
       <figDesc>Blind leading blind, script in Fr and Ger</figDesc>
       <text>Si les Aueugles se conduy&#x17F;ent lung lautre, Is cherront en la fo&#x17F;&#x17F;e lung apres lautre .
         Ist dat de Blinden willen leyden malcandere, Sy fullen vallen inde gracht deen naer dandere
@@ -5256,7 +5256,7 @@
       <verse book="a" cnumber="8" id="a.7.16-c" type="context" vnumber="16"> Ye &#x17F;hall know them by
         their fruits:* </verse>
     </excerpt>
-    <figure col="131">
+    <figure id="figure131" col="131">
       <figDesc>Man with beam in eye, &#x17F;wine in background, copulating</figDesc>
       <head>Ibse trabem festucam carpis amici Pectoris o quantum est ulcera no&#x17F;&#x17F;e. Luc.6.</head>
       <ex>GdJ?</ex>
@@ -5306,7 +5306,7 @@
       <verse book="a" cnumber="8" id="a.7.23-c" type="context" vnumber="23"> And then will I profe&#x17F;&#x17F;e
         vnto them, *I neuer knew you: *Depart from me, ye that worke iniquity. </verse>
     </excerpt>
-    <figure col="133">
+    <figure id="figure132" col="133">
       <figDesc>Sermon on mount</figDesc>
       <head>De Sermone Domini in monte.Matth.5.</head>
       <text>1. Exponit Dñs in monte dilectis discipulis 8. Beatitudinum genera, et alia perfectionis
@@ -5316,7 +5316,7 @@
       <ex>Boetius Bolswert</ex>
       <n>[21]</n>
     </figure>
-    <figure>
+    <figure id="figure133">
       <figDesc>Leper and centurion</figDesc>
       <head>De Leproso et Centurione. Matth.5.</head>
       <text>1. Descendenti Dño de monte occurit Leprosus supplicans, Dñe si vis, potes me mundare;
@@ -5326,7 +5326,7 @@
       <ex>Boetius Bolswert</ex>
       <n>[22]</n>
     </figure>
-    <figure>
+    <figure id="figure134">
       <figDesc>Centurion's servant?</figDesc>
       <head>De Viduae filio ad portas Naim suscitato &amp;c. Matt.11.</head>
       <text>1. Ducitur funus adolescentis extra portam ciuitatis, prose-quente matre et maximâ
@@ -5449,11 +5449,11 @@
         things, hee marueiled at him, and turned him about, and &#x17F;aid vnto the peo=ple that followed
         him, I &#x17F;ay vnto you, I haue not found &#x17F;o great faith, no, not in I&#x17F;rael. </verse>
     </excerpt>
-    <figure col="135">
+    <figure id="figure135" col="135">
       <figDesc>Je&#x17F;us heals centurion's servant, sitting on bed, outside in crowd</figDesc>
       <head>Te Chri&#x17F;te auctorrem vitae mortisq' magistrum Testatur Gnatus quatriduanus erat.</head>
     </figure>
-    <figure>
+    <figure id="figure136">
       <figDesc>Centurion</figDesc>
       <head>The Centurion</head>
     </figure>
@@ -5529,22 +5529,22 @@
   </hchapter>
   <hchapter n="XLVII" toctitle="JOHNS EMBA&#x17F;&#x17F;AGE" col="137">
     <head><hi rend="color(gold)">J</hi>OHNS &#x17F;ending to <hi rend="color(gold)">Chri&#x17F;t</hi>+</head>
-    <figure>
+    <figure id="figure137">
       <figDesc>Je&#x17F;us puts fingers on blind man's eyes</figDesc>
     </figure>
-    <figure>
+    <figure id="figure138">
       <figDesc>Je&#x17F;us heals man at pool of Bethesda</figDesc>
       <n>17</n>
     </figure>
-    <figure>
+    <figure id="figure139">
       <figDesc>Je&#x17F;us heals a kneeling man</figDesc>
       <n>10</n>
     </figure>
-    <figure>
+    <figure id="figure140">
       <figDesc>Je&#x17F;us raises Lazarus from the dead</figDesc>
       <n>19</n>
     </figure>
-    <figure size="miniature">
+    <figure id="figure141" size="miniature">
       <figDesc>Je&#x17F;us healing men in crowd</figDesc>
       <text>Thees Pictures expre&#x17F;&#x17F;/what Chri&#x17F;t &#x17F;end worde of/ to Jhon Baptist/ The Blinde &#x17F;ee
         &amp;</text>
@@ -5693,17 +5693,17 @@
   </hchapter>
   <hchapter n="XLVIII" toctitle="The WOMAN that was a SINNER" col="140">
     <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">W</hi>OMAN yt was a SINNER+</head>
-    <figure>
+    <figure id="figure142">
       <figDesc>Magdelene wiping Chri&#x17F;t's feet with her hair at table with di&#x17F;ciples</figDesc>
       <head>Unguento Chri&#x17F;tum perfundit in aede Symonis, Faemina peccatrix, saluaque facta fide est.
         Luc.7</head>
     </figure>
-    <figure size="miniature">
+    <figure id="figure143" size="miniature">
       <figDesc>Magdelene wiping Chri&#x17F;t's feet with her hair at table with di&#x17F;ciples</figDesc>
       <head>Iesu pedes rigat, tergit, oscilatur, vngit Magdalena Luc. 7</head>
       <n>24</n>
     </figure>
-    <figure col="141">
+    <figure id="figure144" col="141">
       <figDesc>Magdelene wiping Chri&#x17F;t's feet with her hair at table with di&#x17F;ciples</figDesc>
       <head>De Conversione Magdalenae. Lu.7</head>
       <text>1.Magdalena paenitens medio in conuiuio et domi alienae prosternit se ad Chri&#x17F;ti pedes,
@@ -5774,7 +5774,7 @@
   </hchapter>
   <hchapter n="XLIX" toctitle="The BLINDE &amp; DVMB DEVIL." col="142">
     <head><hi rend="color(gold)">T</hi>HE Po&#x17F;&#x17F;e&#x17F;&#x17F;ed wth a Blind and Dumbe Deuill+</head>
-    <figure>
+    <figure id="figure145">
       <figDesc>Chri&#x17F;t ca&#x17F;ts out demons, background, preaches on &#x17F;eashore</figDesc>
       <head>De aridâ manu sanata, demonio muto, et laude &#x17F;&#x17F; Matris. Matt 12. Mar. 3 Luc.11</head>
       <text>1.Dum Dominus aridam cuiusdam brachium sana&#x17F;&#x17F;et ingens illum omnis generis aegrorum
@@ -5837,7 +5837,7 @@
       <verse book="b" cnumber="4" id="b.3.23-c" type="context" vnumber="23"> And he called them vnto
         him, and in parables, How can Satan ca&#x17F;t out Satan? </verse>
     </excerpt>
-    <figure col="143" composite="yes">
+    <figure id="figure146" col="143" composite="yes">
       <figDesc>image of ca&#x17F;ting into &#x17F;wine, with &#x17F;wine removed, demons, tree, and two men standing
         on left added [same base image as Chp 32]</figDesc>
       <ms>YE SATAN ca&#x17F;t OUT SATAN</ms>
@@ -5968,12 +5968,12 @@
         Scribes, and of the Phari&#x17F;ees, an&#x17F;wered, &#x17F;aying, Ma&#x17F;ter, we would &#x17F;ee a &#x17F;igne from thee.
       </verse>
     </excerpt>
-    <figure>
+    <figure id="figure147">
       <figDesc>Jonah fleeing Tetragrammaton</figDesc>
       <head>Mittitur ad Ninives celebernma maenia Jonas, Imperium domini sed tamen ille fugit.</head>
       <ex>CJ? Vi&#x17F;&#x17F;cher</ex>
     </figure>
-    <figure>
+    <figure id="figure148">
       <figDesc>Jonah thrown over the boat [The Comparison is here glued line-by-line onto the print</figDesc>
       <head>A domino fugiens iactatur in aequora Ionas, Excepit hunc caeco bellua ventre ferox.</head>
       <text>S.Matthew 39 But he an&#x17F;wered, and &#x17F;aid to them, And will and adulterous generation
@@ -5987,12 +5987,12 @@
         Ionas was a signe vnto the Nineuites, so &#x17F;hall al&#x17F;o the sonne of Man bee to this generation.</text>
       <ex>CJ? Vi&#x17F;&#x17F;cher</ex>
     </figure>
-    <figure>
+    <figure id="figure149">
       <figDesc>Jonah spit up on land by whale</figDesc>
       <head>Euomit absorptum caeco de gutture Caetus. Redditur et terre qui modo praeda fuit.</head>
       <ex>CJ? Vi&#x17F;&#x17F;cher</ex>
     </figure>
-    <figure composite="yes">
+    <figure id="figure150" composite="yes">
       <figDesc>Jonah, on hill overlooking city, under tree, with Tetragrammaton, attached image from
         smaller print shows people of Ninevah on knees praying under Tetragrammaton</figDesc>
       <head>Digna deo, turbat rigidum clementia Ionam, Germine, carpit eum, dispereunte. Deus.</head>
@@ -6033,7 +6033,7 @@
         at the preaching of Jonas; and, behold, a greater than Jonas is here.</verse>
     </excerpt>
     <link col="148">(NOE MAN WHEN HE HATH LIGHTED &amp; chapt. 82 p. 280</link>
-    <figure>
+    <figure id="figure151">
       <figDesc>Queen of Sheba and solomon?</figDesc>
       <head>Munera magna ferens venit regina Sabaea. Magnificas pompas ingeniumque probat. 3.Reg.
         cap.10 </head>
@@ -6077,10 +6077,10 @@
     <head><hi rend="color(gold)">T</hi>HE WOMANS Exclamation. <hi rend="color(gold)
             "
         >Chri&#x17F;t'S</hi> Mother, Brethren, Sisters+</head>
-    <figure>
+    <figure id="figure152">
       <figDesc>Mary, large, hands folded on breast</figDesc>
     </figure>
-    <figure size="miniature">
+    <figure id="figure153" size="miniature">
       <figDesc>book with crown</figDesc>
       <head>verbum dei</head>
     </figure>
@@ -6159,14 +6159,14 @@
       </verse>
     </excerpt>
     <link col="152">(NOW IT CAME TO PA&#x17F;&#x17F; &amp; Chap. 31 p. 75</link>
-    <figure>
+    <figure id="figure154">
       <figDesc>Mary</figDesc>
       <ms>Ble&#x17F;&#x17F;ed is the wombe yt &amp;</ms>
     </figure>
   </hchapter>
   <hchapter n="LI" toctitle="The PARABLE of the &#x17F;owER" col="153">
     <head><hi rend="color(gold)">T</hi>HE PARABLE of the &#x17F;owER+</head>
-    <figure>
+    <figure id="figure155">
       <figDesc>Chri&#x17F;t preaching to crowd from boat, bkgd: getting in boat, &#x17F;ower in field</figDesc>
       <head>E NAVIGIO TVRBAS DOCET PARABOLAM EIVS QVI SEMINAT MAT 14</head>
       <ex>Gerard de Iode</ex>
@@ -6327,14 +6327,14 @@
         and haue not &#x17F;eene them: and to heare tho&#x17F;e things which ye heare, and haue not heard them.
       </verse>
     </excerpt>
-    <figure col="156">
+    <figure id="figure156" col="156">
       <figDesc>round miniature, &#x17F;ower in field</figDesc>
       <head>DIVERsoS LAETVM IACTATVR SEMEN IN AGROS. CONTEMTVS VERBI MAGNUS UBIQVE DEIEST. LVCAE
         VIII</head>
       <source>al&#x17F;o in Cecil 119/Lii</source>
       <source>al&#x17F;o in Cecil 119/Lii</source>
     </figure>
-    <figure col="157">
+    <figure id="figure157" col="157">
       <figDesc>Chri&#x17F;t preaching to crowd from boat, bkgd: getting in boat, &#x17F;ower in field [Used in
         consecutive openings. An error?]</figDesc>
       <head>E NAVIGIO TVRBAS DOCET PARABOLAM EIVS QVI SEMINAT MAT 14</head>
@@ -6470,7 +6470,7 @@
         him &#x17F;hall be giuen: and he that hath not, from him &#x17F;halbe taken, euen that which he hath.
       </verse>
     </excerpt>
-    <figure col="160">
+    <figure id="figure158" col="160">
       <figDesc>Chri&#x17F;t preaching from boat</figDesc>
       <head>[De propositis a Chri&#x17F;to parabolis. Matt.13. Marc. 4. Luc.8.]</head>
       <text>Urgentibus turbis cogitur Dominus eas de naui docere, quod varijs ad earum captum
@@ -6483,7 +6483,7 @@
   </hchapter>
   <hchapter n="LII" toctitle="PARABLES of the TARES &#x17F;eeD MVSTARD &#x17F;eeD LEAVEN" col="161">
     <head><hi rend="color(gold)">P</hi>ARABLES of TARES, &#x17F;eeD, MUSTARD-&#x17F;eeD, LEAVEN</head>
-    <figure>
+    <figure id="figure159">
       <figDesc>Goat-man &#x17F;ows tares in midst of sleepers</figDesc>
       <head>DVM DORMIVNT HOMINES INIMICVS ZIZANIA INTERSERIT TRITICO M</head>
       <artist>[GdJ]</artist>
@@ -6533,7 +6533,7 @@
       <verse book="a" cnumber="14" id="a.13.31-c" type="context" vnumber="31">❡ Another parable put
         he foorth vnto them, &#x17F;ay=ing, *</verse>
     </excerpt>
-    <figure col="163">
+    <figure id="figure160" col="163">
       <figDesc>Field grown, ready for harvest, men in foreground: master and servants</figDesc>
       <head>BONVM SEMEM SEMINATVM VNDE ERGO ZIZANIA MAT 13</head>
       <artist>[GdJ]</artist>
@@ -6597,12 +6597,12 @@
   </hchapter>
   <hchapter n="LIII" toctitle="PARABLES of the Exposition of ye TARE TREASVRE PEARLE NETT" col="165">
     <head><hi rend="color(gold)">T</hi>he TARES expounded. The trea&#x17F;ure, The PEARLE, The NETT</head>
-    <figure>
+    <figure id="figure161">
       <figDesc>Lord directs harvest, fire in background</figDesc>
       <head>TEMPORE ME&#x17F;&#x17F;IS TRITICV' CONDATVR HORREO ZIZANIA IGNE EXVRANTVR mat 13</head>
       <artist>[GdJ]</artist>
     </figure>
-    <figure col="167">
+    <figure id="figure162" col="167">
       <figDesc>trea&#x17F;ure in field, man digging, man buying field</figDesc>
       <head>Defo&#x17F;so similis Thesauro est gloria coeh Et margaritam conquirenti pretiosam. Math.13.</head>
       <artist>[GdJ]</artist>
@@ -6670,7 +6670,7 @@
   </hchapter>
   <hchapter n="LIIII" toctitle="NAZARETH. Chri&#x17F;tS SECOND GOING about GALILEE" col="169">
     <head><hi rend="color(gold)">N</hi>azereth</head>
-    <figure>
+    <figure id="figure163">
       <figDesc>Chri&#x17F;t in architectural frame, with IHS and nails in heart above.</figDesc>
       <head>VENITE AD ME OMNES QVI LABORATIS ET ONERATI ESTIS ET EGO REFICIAM VOS.</head>
       <inven>M de Vos</inven>
@@ -6728,7 +6728,7 @@
         witne&#x17F;&#x17F;e, and wondered at the gracious wordes, which proceeded out of his mouth. And they
         &#x17F;aid, </verse>
     </excerpt>
-    <figure col="170">
+    <figure id="figure164" col="170">
       <figDesc>Isaiah with &#x17F;aw</figDesc>
       <head>ESAIAS.</head>
       <source>out of plates in FP, large with 2 or 3 full body figures</source>
@@ -6756,19 +6756,19 @@
       <verse book="b" cnumber="7" id="b.6.3-s" type="supplement" vnumber="3"> and are
         not his &#x17F;i&#x17F;ters here with us? and they were offended at him.</verse>
     </excerpt>
-    <figure size="miniature">
+    <figure id="figure165" size="miniature">
       <figDesc>Chri&#x17F;t as boy and Joseph building, Mary in foreground sewing</figDesc>
       <source>[&#x17F;ee similar print, but mirror image, in Cecil 123/Liiii]</source>
       <source>[&#x17F;ee similar print, but mirror image, in Cecil 123/Liiii]</source>
     </figure>
     <comment>Both Comparison and Composition are omitted in regarde they would litle or nothing at
       all differ from the Collection</comment>
-    <figure col="171">
+    <figure id="figure166" col="171">
       <figDesc>Elijah appealing to widow with son</figDesc>
       <head>Tec ta Sareptanae diuine propheta veas ti Thesbita viduae dum furit atra fames.</head>
       <n>2</n>
     </figure>
-    <figure>
+    <figure id="figure167">
       <figDesc>Elisha with boy and bird</figDesc>
       <head>ELISAEVS</head>
       <n>2</n>
@@ -6841,7 +6841,7 @@
       <verse book="b" cnumber="7" id="b.6.6-c" type="context" vnumber="6"> And hee marueiled becau&#x17F;e
         of their vnbeliefe. </verse>
     </excerpt>
-    <figure col="175" composite="yes">
+    <figure id="figure168" col="175" composite="yes">
       <figDesc>The women that followed Chri&#x17F;t: (&#x17F;ee files under GdJ)Elizabeth Anna Magdalene Maria
         Salome Susanna Joanna</figDesc>
       <head>The Women that followed Chri&#x17F;t / SUSANNA</head>
@@ -6933,7 +6933,7 @@
       <verse book="a" cnumber="11" id="a.10.5-c" type="context" vnumber="5"> The&#x17F;e twelue Je&#x17F;us &#x17F;ent
         forth </verse>
     </excerpt>
-    <figure>
+    <figure id="figure169">
       <figDesc>12 di&#x17F;ciples, each holding symbolic object (Peter: key) and with his martyrdom in
         bkgdExcept Judas, ki&#x17F;&#x17F;ing Chri&#x17F;t, from other source [doing and receiving violence a theme
         here]Images of women added to center of first page—Peter looks to his mother.women:
@@ -6942,86 +6942,86 @@
         THOMAS. S. MATTHAEVS. S. IACOBVS MINOR. S. IVDAS THADAEVS. S. SIMON</head>
       <n>2,?,5,4,8,9,6,10,7,?,11,?</n>
     </figure>
-    <figure>
+    <figure id="figure170">
       <figDesc>Peter with key, in background, on cro&#x17F;&#x17F;, up&#x17F;ide down</figDesc>
       <head>S. PETRVS</head>
       <n>2</n>
     </figure>
-    <figure>
+    <figure id="figure171">
       <figDesc>Andrew with cro&#x17F;&#x17F;, in background on cro&#x17F;&#x17F;</figDesc>
       <head>S. ANDREAS</head>
       <n/>
     </figure>
-    <figure>
+    <figure id="figure172">
       <figDesc>Jacob major with staff, in background kneeling, other drawing sword</figDesc>
       <head>S. IACOBVS MAIOR</head>
       <n>5</n>
     </figure>
-    <figure>
+    <figure id="figure173">
       <figDesc>John with snake in cup, in background, boiled alive</figDesc>
       <head>S. IOHANNES</head>
       <n>4</n>
     </figure>
-    <figure>
+    <figure id="figure174">
       <figDesc>Woman with food</figDesc>
       <ms>Petronilla</ms>
       <n/>
     </figure>
-    <figure>
+    <figure id="figure175">
       <figDesc>Woman with hands up</figDesc>
       <ms>Mater Jacobi et Johanni</ms>
       <n/>
     </figure>
-    <figure>
+    <figure id="figure176">
       <figDesc>, in background, </figDesc>
       <n/>
     </figure>
     <!-- finish later! -->
-    <figure>
+    <figure id="figure177">
       <figDesc>, in background, </figDesc>
       <n/>
     </figure>
-    <figure>
+    <figure id="figure178">
       <figDesc>, in background, </figDesc>
       <n/>
     </figure>
-    <figure>
+    <figure id="figure179">
       <figDesc>, in background, </figDesc>
       <n/>
     </figure>
-    <figure>
+    <figure id="figure180">
       <figDesc>, in background, </figDesc>
       <n/>
     </figure>
-    <figure>
+    <figure id="figure181">
       <figDesc>, in background, </figDesc>
       <n/>
     </figure>
-    <figure>
+    <figure id="figure182">
       <figDesc>, in background, </figDesc>
       <n/>
     </figure>
-    <figure>
+    <figure id="figure183">
       <figDesc>, in background, </figDesc>
       <n/>
     </figure>
-    <figure col="181">
+    <figure id="figure184" col="181">
       <figDesc>Peter? preaching</figDesc>
       <ms>As yee goe, preach &#x17F;aying The kingdom of heaven is at hand</ms>
       <inven>[MdV]?</inven>
     </figure>
-    <figure col="182">
+    <figure id="figure185" col="182">
       <figDesc>Peter? healing</figDesc>
       <ms>Heale the sicke</ms>
       <inven>MdV</inven>
     </figure>
-    <figure>
+    <figure id="figure186">
       <figDesc>Je&#x17F;us preaches</figDesc>
       <text>Mittit Dn's discipulos binos ad praedicicandem salutaribus monitus instructos patientiam
         et mansuetudinem ouium inter lupos, prudentiam serpentum, et columbae simplicitatem eis
         commendans</text>
     </figure>
-    <figure col="183" composite="yes">
+    <figure id="figure187" col="183" composite="yes">
       <figDesc>full page composite sheep, wolves, serpents, doves*</figDesc>
       <head>Behold, I &#x17F;end you: foorth as sheepe in the middest of wolues. be yee therefore wise as
         serpents And harmle&#x17F;&#x17F;e as DOVES</head>
@@ -7112,12 +7112,12 @@
       <verse book="c" cnumber="10" id="c.9.5-c" type="context" vnumber="5"> out of that Citie &#x17F;hake off the very du&#x17F;t from your feete, for a
         te&#x17F;timony again&#x17F;t them </verse>
     </excerpt>
-    <figure col="185">
+    <figure id="figure188" col="185">
       <figDesc>Stephen before council, stoning in bkgd</figDesc>
       <ms>They will de/liver you unto ye councils/ S Steven</ms>
       <inven>M. de Vos</inven>
     </figure>
-    <figure col="186">
+    <figure id="figure189" col="186">
       <figDesc>Paul lowered from city wall</figDesc>
       <ms>When they persecute you in this citty, flee yee into another</ms>
       <inven>MdV</inven>
@@ -7125,7 +7125,7 @@
       <source>FP</source>
       <source>FP</source>
     </figure>
-    <figure size="detail">
+    <figure id="figure190" size="detail">
       <figDesc>public flogging</figDesc>
       <head>And they will scourge you in there synagogues</head>
     </figure>
@@ -7232,11 +7232,11 @@
         giue to drinke vnto one of the&#x17F;e little ones, a cup of cold water onely, in the name of a
         di&#x17F;ciple, verily I &#x17F;ay vnto you, hee &#x17F;hall in no wi&#x17F;e lo&#x17F;e his reward. </verse>
     </excerpt>
-    <figure col="187" composite="yes">
+    <figure id="figure191" col="187" composite="yes">
       <figDesc>Three-part composite: ri&#x17F;en Chri&#x17F;t with cro&#x17F;&#x17F; and wounds, saints and Mary, large hand
         and sword over him, doubling as cro&#x17F;&#x17F;</figDesc>
     </figure>
-    <figure>
+    <figure id="figure192">
       <figDesc>woman giving water to child</figDesc>
     </figure>
     <excerpt source="a.11:1" type="context">
@@ -7259,7 +7259,7 @@
   </hchapter>
   <hchapter n="LVI" toctitle="JOHNS BEHEADING" col="189">
     <head><hi rend="color(gold)">T</hi>HE BEHEADING OF <hi rend="color(gold)">J</hi>OHN</head>
-    <figure>
+    <figure id="figure193">
       <figDesc>Salome dances before Herod</figDesc>
       <head>REGEM HILARA VIRGO CHOREIS, DABIT ILLE CVPITA COLLA TIBI MATRIS LVDIBRIA DIRA NEFANDAE,
         [pasted]</head>
@@ -7360,7 +7360,7 @@
       <verse book="a" cnumber="15" id="a.14.12-s" type="supplement" vnumber="12">And his di&#x17F;ciples
         came, and took up the body and buried it, </verse>
     </excerpt>
-    <figure>
+    <figure id="figure194">
       <figDesc>John in prison, decapitated, Salome receives head on platter; pre&#x17F;ents it, bkgd
         di&#x17F;ciples take body</figDesc>
       <head>NVNC FVNESTA EPVLIS ANIMV' FERALIBVS EXPLE. INCREPITI INCESTVS REVS EN TIBI CONCIDIT
@@ -7417,7 +7417,7 @@
   </hchapter>
   <hchapter n="LVII" toctitle="The FIVE LOAVES" col="193">
     <head><hi rend="color(gold)">T</hi>HE FIVE LOAVES</head>
-    <figure>
+    <figure id="figure195">
       <figDesc>Five loaves, Chri&#x17F;t on hill&#x17F;ide with multitudes</figDesc>
       <head>[Est puer vnus hic qui habet quinque panes ordeaceos, et duos pisces: sed haec quid sunt
         inter tantos? Ioan 6]</head>
@@ -7430,7 +7430,7 @@
       <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chri&#x17F;ti, BL 1899cc68 [al&#x17F;o in Cecil
       157/lxiii]</source>
     </figure>
-    <figure col="194" size="miniature">
+    <figure id="figure196" col="194" size="miniature">
       <figDesc>Five loaves, Chri&#x17F;t on hill&#x17F;ide with multitudes</figDesc>
       <head>Iesus satiat quinque millia virorum. Mar.6. Joan 6</head>
       <n>25</n>
@@ -7673,12 +7673,12 @@
   </hchapter>
   <hchapter n="LVIII" toctitle="IESVS WALKING on the &#x17F;ea" col="197">
     <head><hi rend="color(gold)">Je&#x17F;us</hi> WALKING on the &#x17F;ea</head>
-    <figure composite="yes">
+    <figure id="figure197" composite="yes">
       <figDesc>Composite: Boat in tempest, sleeping Chri&#x17F;t removed; figure of Chri&#x17F;t walking added;
         Peter walking out to Chri&#x17F;t added [base &#x17F;ame as 31]</figDesc>
       <ex>G de Jode</ex>
     </figure>
-    <figure size="detail">
+    <figure id="figure198" size="detail">
       <figDesc>Lion be&#x17F;ide Mark pa&#x17F;&#x17F;age</figDesc>
     </figure>
     <excerpt source="b.6:45-46" type="context">
@@ -7840,18 +7840,18 @@
         as many as touched || him, were made whole. </verse>
     </excerpt>
     <link col="199">(then came together &amp; Chapt. 60 p.206</link>
-    <figure size="detail">
+    <figure id="figure199" size="detail">
       <figDesc>John? writing</figDesc>
     </figure>
   </hchapter>
   <hchapter n="LIX" toctitle="The BREAD from HEAVEN" col="201">
     <head><hi rend="color(gold)">T</hi>HE HEAVENLY BREAD+</head>
-    <figure>
+    <figure id="figure200">
       <figDesc>Manna gathering</figDesc>
       <head>Tritica mi&#x17F;&#x17F;a venit de summo vertice celi, &#x17F;idereisq' pluit dulcia manna plagis.
       Exod.16</head>
     </figure>
-    <figure col="203">
+    <figure id="figure201" col="203">
       <figDesc>di&#x17F;ciples gathered around Chri&#x17F;t as he ascends</figDesc>
       <ms>WHAT AND yf you &#x17F;hall &#x17F;ee the sonne of man ascend up where hee was before?</ms>
       <fe>Anto. Wierine</fe>
@@ -8031,7 +8031,7 @@
     <head>
       <hi rend="color(gold)"/>
     </head>
-    <figure composite="yes">
+    <figure id="figure202" composite="yes">
       <figDesc>Composite: Absolom hanging by hair, stabbed; youths mocking Elisha eaten by bears</figDesc>
       <artist>EB?</artist>
       <n>4</n>
@@ -8223,7 +8223,7 @@
     <excerpt source="b.7:23b" type="supplement">
       <verse book="b" cnumber="8" id="b.7.23-s" type="supplement" vnumber="23"> and defile the man.</verse>
     </excerpt>
-    <figure composite="yes [bottom devil pasted in]">
+    <figure id="figure203" composite="yes [bottom devil pasted in]">
       <figDesc>Devilish busine&#x17F;&#x17F; that defiles a man: many devils</figDesc>
       <text>Vana opera, Luxuria, Superbia, Turbata conscientia, Acedia, Avaritia, Gula,
       Invidia</text>
@@ -8236,7 +8236,7 @@
   <hchapter n="LXI" toctitle="The CANANITISH WOMAN" col="209">
     <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">C</hi>anaanitish <hi
         rend="color(gold)">W</hi>OMAN+</head>
-    <figure>
+    <figure id="figure204">
       <figDesc>Woman begging Chri&#x17F;t to heal daughter</figDesc>
     </figure>
     <excerpt source="a.15:21" type="context">
@@ -8371,7 +8371,7 @@
         multitude wondred, when they &#x17F;aw the dumbe to &#x17F;peake, the maimed to be whole, the lame to
         walke, and the blinde to &#x17F;ee: and they glo=rified the God of I&#x17F;rael. </verse>
     </excerpt>
-    <figure col="212">
+    <figure id="figure205" col="212">
       <figDesc>Chri&#x17F;t heals woman</figDesc>
       <head>De Chananaea, Surdo et Muto Matth. 15</head>
       <text>Mulier Chananaea supplicat Dño pro filiâ, cui Dominus respondet panem filiorem canibus
@@ -8385,7 +8385,7 @@
   </hchapter>
   <hchapter n="LXIII" toctitle="The SEVEN LOAVES" col="213">
     <head><hi rend="color(gold)">T</hi>HE SEUEN LOAUES+</head>
-    <figure>
+    <figure id="figure206">
       <figDesc>Chri&#x17F;t, crowd, loaves</figDesc>
     </figure>
     <comment>The Composition is omitted in regard it would little or nothing difer from ye Collection</comment>
@@ -8485,19 +8485,19 @@
     <excerpt source="a.15:39b" type="context">
       <verse book="a" cnumber="16" id="a.15.39-c.b" type="context" vnumber="39"> into the coa&#x17F;tes of Magdala. </verse>
     </excerpt>
-    <figure>
+    <figure id="figure207">
       <figDesc>mini of &#x17F;ame</figDesc>
     </figure>
   </hchapter>
   <hchapter n="LXIIII" toctitle="The LEAVEN of the PHARI&#x17F;eeS" col="217">
     <head><hi rend="color(gold)">S</hi>IGNE from Heauen. Leauen of ye Phari&#x17F;ees.</head>
-    <figure>
+    <figure id="figure208">
       <figDesc>A Discerner of the Skie</figDesc>
       <ms>A Discerner of the Skie</ms>
       <inven>M de Vos</inven>
       <ex>CJ? Vi&#x17F;&#x17F;cher</ex>
     </figure>
-    <figure size="detail">
+    <figure id="figure209" size="detail">
       <figDesc>A Discerner of the Sky</figDesc>
       <ms>A Discerner of the Sky</ms>
     </figure>
@@ -8541,7 +8541,7 @@
       <verse book="a" cnumber="17" id="a.16.4-c.b" type="context" vnumber="4"> but
         the &#x17F;igne of the Prophet Ionas. And hee left them, and departed. </verse>
     </excerpt>
-    <figure size="miniature">
+    <figure id="figure210" size="miniature">
       <figDesc>Jonah out of whale's mouth</figDesc>
     </figure>
     <excerpt source="b.8:13" type="context">
@@ -8630,7 +8630,7 @@
         how that hee bade them not beware of the leauen of bread: but of the doctrine of the
         Phari&#x17F;ees, and of the Sadduces. </verse>
     </excerpt>
-    <figure size="large">
+    <figure id="figure211" size="large">
       <figDesc>Jonah out of whales mouth [J's penis removed]</figDesc>
     </figure>
   </hchapter>
@@ -8657,24 +8657,24 @@
   </hchapter>
   <hchapter n="LXVI" toctitle="PETERS FAITH" col="221">
     <head><hi rend="color(gold)">P</hi>ETERS FAITH+</head>
-    <figure>
+    <figure id="figure212">
       <figDesc>Mark? points to lamb</figDesc>
       <head>S.MARK.[pasted]</head>
     </figure>
-    <figure col="222">
+    <figure id="figure213" col="222">
       <figDesc>Elijah and child</figDesc>
       <head>ELIAS [pasted]</head>
     </figure>
-    <figure composite="yes">
+    <figure id="figure214" composite="yes">
       <figDesc>Chri&#x17F;t and Peter, crucifix</figDesc>
       <head>This picture is to expre&#x17F;&#x17F; Chri&#x17F;t Fore-&#x17F;hewing of his pa&#x17F;&#x17F;ion and/his reproof of
       Peter</head>
     </figure>
-    <figure col="223">
+    <figure id="figure215" col="223">
       <figDesc>Jeremiah</figDesc>
       <head>IEREMIAS</head>
     </figure>
-    <figure col="224">
+    <figure id="figure216" col="224">
       <figDesc>Prophet dropping book</figDesc>
     </figure>
     <excerpt source="c.9:18a" type="context">
@@ -8747,7 +8747,7 @@
       <verse book="a" cnumber="17" id="a.16.20-c" type="context" vnumber="20"> Then charged hee his
         di&#x17F;ciples, that they &#x17F;hould tell no man that he was Je&#x17F;us the Chri&#x17F;t. </verse>
     </excerpt>
-    <figure size="miniature">
+    <figure id="figure217" size="miniature">
       <figDesc>Chri&#x17F;t with di&#x17F;ciples</figDesc>
     </figure>
     <excerpt source="a.16.19" type="context">
@@ -8806,12 +8806,12 @@
       <verse book="a" cnumber="17" id="a.16.24-c" type="context" vnumber="24">❡ *Then &#x17F;aid Je&#x17F;us vnto
         his di&#x17F;ciples </verse>
     </excerpt>
-    <figure col="225" composite="yes">
+    <figure id="figure218" col="225" composite="yes">
       <figDesc>Return of Chri&#x17F;t, judgment, with cherubs added around top edge</figDesc>
       <inven>M de Vos</inven>
       <ex>G de Jode</ex>
     </figure>
-    <figure composite="yes">
+    <figure id="figure219" composite="yes">
       <figDesc>composite of many symbols, including candle, lamp, Bible, shirt, spade, spindle, whip</figDesc>
       <text>[&#x17F;ee comment]</text>
     </figure>
@@ -8911,13 +8911,13 @@
       <verse book="a" cnumber="17" id="a.16.28-c" type="context" vnumber="28"> till they &#x17F;ee the Sonne of
         man comming in his King=dome. </verse>
     </excerpt>
-    <figure col="227">
+    <figure id="figure220" col="227">
       <figDesc>Hell, punishment by each sin, [penis removed lower left]</figDesc>
       <text>Superbia, Avaritia, Luxuria, Premium peccati, Vermis consciencie, Acedia, Stipendium
         malorum operum, Invidia, Gula, Ira</text>
       <n>4 noui&#x17F;&#x17F;imum</n>
     </figure>
-    <figure>
+    <figure id="figure221">
       <figDesc>weighing of ecclesiastic graces and &#x17F;even deadly sins by two angels and an 'Accusator
         Consien''</figDesc>
       <text>1 The Popes Pardon/ 2 Corporal Penances/ 3 Satisfactions by founding Monasterie,
@@ -8928,7 +8928,7 @@
     <head>
       <hi rend="color(gold)"/>
     </head>
-    <figure>
+    <figure id="figure222">
       <figDesc>Bunch of Grapes, with explanation of typology. . .</figDesc>
       <head>The Spies Carrying Off the Fruit From Cannan [Numb. 13:2, 19-23].</head>
       <text>19.1 x 25.8&gt;&gt; cm. In margin right: [I] M. d Vos inu: G de Iode exc. Left
@@ -8942,7 +8942,7 @@
       Chri&#x17F;t’s Transfiguration was an Earnest and Fore&#x17F;igne of the Glory of heaven/ And divers
       Allegorize the/ storys Making Chri&#x17F;t the Cluster of Grapes And the Pole wheron it/ was carried
       to signify his Cro&#x17F;&#x17F;/ The 2 Bearers to Mo&#x17F;es and Elias &amp;</comment>
-    <figure>
+    <figure id="figure223">
       <figDesc>Transfiguration</figDesc>
       <ex>[Gerar. de Iod.]</ex>
     </figure>
@@ -9059,7 +9059,7 @@
       <verse book="a" cnumber="18" id="a.17.5-c" type="context" vnumber="5"> and behold a voyce out of the cloude, which &#x17F;aide,
         This is my be loued &#x17F;onne, in whom I am well plea&#x17F;ed: heare ye him. </verse>
     </excerpt>
-    <figure>
+    <figure id="figure224">
       <figDesc>Transfiguration [repeated from previous page]</figDesc>
       <ex>Gerar. de Iod.</ex>
     </figure>
@@ -9150,7 +9150,7 @@
       <verse book="a" cnumber="18" id="a.17.13-c" type="context" vnumber="13"> Then the Di&#x17F;ciples
         vnder&#x17F;tood that hee &#x17F;pake vnto them of Iohn the Bapti&#x17F;t. </verse>
     </excerpt>
-    <figure col="235">
+    <figure id="figure225" col="235">
       <figDesc>Elijah at Mt Horeb? in contest with prie&#x17F;ts of Baal</figDesc>
       <n>.4.</n>
     </figure>
@@ -9158,7 +9158,7 @@
   <hchapter n="LXVIII" toctitle="The DEVIL yt goes not out but by fa&#x17F;tING" col="237">
     <head><hi rend="color(gold)">T</hi>HE DUMB SPIRIT that commeth not out but by <hi
         rend="color(gold)">P</hi>RAYER and <hi rend="color(gold)">F</hi>ASTING+</head>
-    <figure composite="yes">
+    <figure id="figure226" composite="yes">
       <figDesc>composite: ca&#x17F;ting out of demon*</figDesc>
       <head>S.Marke.</head>
       <ex>CJ? Vi&#x17F;&#x17F;cher</ex>
@@ -9317,7 +9317,7 @@
     col="241">
     <head><hi rend="color(gold)">Chri&#x17F;t</hi> Foretells his <hi rend="color(gold)">D</hi>EATH Paies
         <hi rend="color(gold)">T</hi>RIBUTE+</head>
-    <figure composite="yes">
+    <figure id="figure227" composite="yes">
       <figDesc>composite around crucifixion of the several parts of the pa&#x17F;&#x17F;ion</figDesc>
     </figure>
     <excerpt source="b.9:30" type="context">
@@ -9389,7 +9389,7 @@
     toctitle="WHO is the GREATEST SCANDAL is to be AVOYDED LITTLE ONES are not to be CONTEMNED"
     col="243">
     <head><hi rend="color(gold)">W</hi>HO is the <hi rend="color(gold)">G</hi>REATEST+</head>
-    <figure>
+    <figure id="figure228">
       <figDesc>composite of money in fish's mouth, including figures of Je&#x17F;us and Peter, and
         miniature of fish with money</figDesc>
       <head>goe to the &#x17F;ea and ca&#x17F;t in an Hooke/ DOTH NOT your ma&#x17F;ter pay tribute</head>
@@ -9453,12 +9453,12 @@
       <verse book="a" cnumber="19" id="a.18.5-s" type="supplement" vnumber="5">And who&#x17F;o &#x17F;hall
         receive one &#x17F;uch little childe in my name, receiveth me.</verse>
     </excerpt>
-    <figure>
+    <figure id="figure229">
       <figDesc>Chri&#x17F;t with child</figDesc>
     </figure>
     <comment>The Composition and Comparison are omitted in this Heade in regard they are playne in
       the Collection</comment>
-    <figure>
+    <figure id="figure230">
       <figDesc>composite: Tetragrammaton, angels, Je&#x17F;us</figDesc>
       <ms>There Angels doe always BEHOLD The FACE of my Father wch is in Heaven/Yf Thy Hand or Thy
         Foot offend THEE CVT Them of/ HELL FIRE</ms>
@@ -9580,15 +9580,15 @@
   </hchapter>
   <hchapter n="LXXI" toctitle="WE MUST FORGIVE OUR BRETHREN." col="247">
     <head><hi rend="color(gold)">W</hi>E MUST FORGIUE OUR BRETHREN</head>
-    <figure>
+    <figure id="figure231">
       <figDesc>Man pleads before Lord at table</figDesc>
       <n>1</n>
     </figure>
-    <figure col="249">
+    <figure id="figure232" col="249">
       <figDesc>2nd man pleads before fir&#x17F;t man in yard</figDesc>
       <n>2</n>
     </figure>
-    <figure col="251">
+    <figure id="figure233" col="251">
       <figDesc>1st man in jail</figDesc>
       <n>4</n>
     </figure>
@@ -9736,7 +9736,7 @@
   </hchapter>
   <hchapter n="LXXIII" toctitle="The TEN LEPERS" col="253">
     <head><hi rend="color(gold)">T</hi>HE TEN LEPERS+</head>
-    <figure>
+    <figure id="figure234">
       <figDesc>Lepers approach Chri&#x17F;t</figDesc>
     </figure>
     <excerpt source="c.17:11-19" type="context">
@@ -9916,16 +9916,16 @@
       <verse book="d" cnumber="8" id="d.7.53-c" type="context" vnumber="53"> And euery man went vnto
         his owne hou&#x17F;e. </verse>
     </excerpt>
-    <figure col="255">
+    <figure id="figure235" col="255">
       <figDesc>Mo&#x17F;es strikes rock with staff </figDesc>
       <ex>G de Jode</ex>
     </figure>
-    <figure col="257">
+    <figure id="figure236" col="257">
       <figDesc>Susanna with crowd approaches boy and man</figDesc>
       <ms>Susanna</ms>
       <artist>IEF?</artist>
     </figure>
-    <figure>
+    <figure id="figure237">
       <figDesc>Nicodemus rea&#x17F;oning with Phari&#x17F;ees</figDesc>
       <head>NICODEMUS And the Phari&#x17F;ees reosning together</head>
       <n>6</n>
@@ -9935,7 +9935,7 @@
   </hchapter>
   <hchapter n="LXXV" toctitle="The WOMAN taken in ADVLTERY." col="259">
     <head><hi rend="color(gold)">T</hi>HE WOMAN Taken in Adulterie+</head>
-    <figure>
+    <figure id="figure238">
       <figDesc>Chr^i&#x17F;t kneels at woman's feet in Temple</figDesc>
       <ex>GdJ?</ex>
       <source>Y</source>
@@ -9982,27 +9982,27 @@
         Lord. And Je&#x17F;us &#x17F;aide vnto her, Neither doe I condemne thee: Goe, and &#x17F;inne no more.
       </verse>
     </excerpt>
-    <figure>
+    <figure id="figure239">
       <figDesc>Chr^i&#x17F;t kneels at woman's feet in Temple</figDesc>
       <n>18</n>
     </figure>
   </hchapter>
   <hchapter n="LXXVI" toctitle="The STONERS" col="261">
     <head><hi rend="color(gold)">T</hi>HE STONERS</head>
-    <figure>
+    <figure id="figure240">
       <figDesc>Chr^i&#x17F;t in clouds, luminous</figDesc>
       <ms>I am the light of the world</ms>
       <inven>M. de Vos</inven>
       <ex>CJ? Vi&#x17F;&#x17F;cher</ex>
     </figure>
-    <figure>
+    <figure id="figure241">
       <figDesc>Abraham and Isaac, sacrifice, explanation below [typological rel between sacrifice of
         Isaac and that of Chr^i&#x17F;t, Jews imitate Abraham?]</figDesc>
       <n>5</n>
     </figure>
     <comment col="263">The often mentioning of Abraham as a Father/ hath br^oughte in this story
       aboue.</comment>
-    <figure col="265">
+    <figure id="figure242" col="265">
       <figDesc>men pick up rocks to stone Chr^i&#x17F;t</figDesc>
       <source>Y [al&#x17F;o in Cecil 187/lxxvii]</source>
       <n>10</n>
@@ -10178,7 +10178,7 @@
   </hchapter>
   <hchapter n="LXXVII" toctitle="The MAN BORNE BLINDE" col="265">
     <head><hi rend="color(gold)">T</hi>HE MAN BORNE BLINDE+</head>
-    <figure col="267">
+    <figure id="figure243" col="267">
       <figDesc>Chr^i&#x17F;t puts fingers on blind man's eyes</figDesc>
     </figure>
     <excerpt source="d.9:1-41" type="context">
@@ -10330,7 +10330,7 @@
     <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">T</hi>RUE <hi
         rend="color(gold)
             ">S</hi>HEPHEARD+</head>
-    <figure>
+    <figure id="figure244">
       <figDesc>&#x17F;hepherds wor^k in barn, &#x17F;heep</figDesc>
       <head>[Simon Ioannis diligis me plus his . . . Joannis 21]</head>
       <inven>M. de Vos</inven>
@@ -10339,7 +10339,7 @@
       <source>[al&#x17F;o in Cecil 375/cl]</source>
       <source>[al&#x17F;o in Cecil 375/cl]</source>
     </figure>
-    <figure>
+    <figure id="figure245">
       <figDesc>&#x17F;hepherd with &#x17F;heep</figDesc>
     </figure>
     <excerpt source="d.10:1-21" type="context">
@@ -10415,13 +10415,13 @@
       </verse>
     </excerpt>
     <link col="270">(AND IT WAS &amp; Chapt: 92.p.305</link>
-    <figure col="271">
+    <figure id="figure246" col="271">
       <figDesc>&#x17F;hepherd chases away wolves</figDesc>
       <inven>M. de Vos</inven>
       <sculp>Jul. Goltzius</sculp>
       <ex>Joan Bapti&#x17F;ta Vrints</ex>
     </figure>
-    <figure>
+    <figure id="figure247">
       <figDesc>David fights bear, lion dead</figDesc>
       <text>Pro grege uti patrio certans Ie&#x17F;&#x17F;cius Heros/ Crudivoros fregit rictus ursi atq' Leonis ;
         1. Samuel.17 Sic quoq bella gerens Chr^i&#x17F;tus pro gente fideli/ Ora Lupi fregit stygy et fera
@@ -10434,11 +10434,11 @@
   </hchapter>
   <hchapter n="LXXIX" toctitle="The &#x17F;endING of ye &#x17F;evenTY" col="273">
     <head><hi rend="color(gold)">T</hi>HE he &#x17F;endING of ye <hi rend="color(gold)">S</hi>EVENTY</head>
-    <figure composite="yes">
+    <figure id="figure248" composite="yes">
       <figDesc>composite: Lord &#x17F;ends wor^kers to harvest fields*</figDesc>
       <ms>&#x17F;end forth laborers/The Lord of the Harvest</ms>
     </figure>
-    <figure>
+    <figure id="figure249">
       <figDesc>&#x17F;ending of apo&#x17F;tles</figDesc>
       <head>De mi&#x17F;&#x17F;is ad praedicandum Apostolis.&amp;c. Matt. 10 Luc.9 et 10.</head>
       <text>1.Mittit Dñs discipulos binos ad praedicandum salutaribus monitis instructos patientiam
@@ -10548,15 +10548,15 @@
       <verse book="c" cnumber="11" id="c.10.21-c" type="context" vnumber="21">❡ In that houre Je&#x17F;us
         reioyced in &#x17F;pirit, and </verse>
     </excerpt>
-    <figure composite="275">
+    <figure id="figure250" composite="275">
       <figDesc>Angel, Abr^aham, sodom (or^ story of sodom?)</figDesc>
       <ms>IT &#x17F;hall BEE MORE TOLLERABLE for^ the Land of sodom</ms>
     </figure>
-    <figure>
+    <figure id="figure251">
       <figDesc>apo&#x17F;tles in clouds with Tetragrammaton, satan falls</figDesc>
       <ms>Satan</ms>
     </figure>
-    <figure>
+    <figure id="figure252">
       <figDesc>Chr^i&#x17F;t with halo</figDesc>
     </figure>
     <excerpt source="c.10:21b-22" type="supplement">
@@ -10603,14 +10603,14 @@
   </hchapter>
   <hchapter n="LXXX" toctitle="The SAMARITANE" col="277">
     <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">S</hi>AMARITANE</head>
-    <figure>
+    <figure id="figure253">
       <figDesc>Composite: Good Samaritan tends man, another man pa&#x17F;&#x17F;es, reading, with miniature of
         angel in corner</figDesc>
       <head>[miniature] DILIGES DOMINVM DEVM TVVM EX TOTO CORDE TVO etc.ET PROXIMVM TVVM VT TEIP
         SVM.Luc.10.</head>
       <ex>GdJ</ex>
     </figure>
-    <figure>
+    <figure id="figure254">
       <figDesc>Mary and Martha</figDesc>
       <head>[De Martha et Magdalena Xūm excipientibus. Luc.10.]</head>
       <text>1.Martha Dominum excipit hospitio, ac ne quid desit conuiuio, satagit circa frequens
@@ -10669,7 +10669,7 @@
   </hchapter>
   <hchapter n="LXXXI" toctitle="MARTHA &amp; Mary .." col="278">
     <head><hi rend="color(gold)">M</hi>ARTHA &amp; <hi rend="color(gold)">M</hi>ARIE</head>
-    <figure>
+    <figure id="figure255">
       <figDesc>Mary and Martha</figDesc>
       <inven>Ambros. Franc.</inven>
       <ex>Gerard de Iode</ex>
@@ -10698,7 +10698,7 @@
     <head>
       <hi rend="color(gold)"/>
     </head>
-    <figure>
+    <figure id="figure256">
       <figDesc>Woman with loaves and jug</figDesc>
       <ms>Lend me three loaves</ms>
     </figure>
@@ -10771,7 +10771,7 @@
   </hchapter>
   <hchapter n="LXXXIII" toctitle="The SCRIBES" col="281">
     <head><hi rend="color(gold)">T</hi>HE WOES</head>
-    <figure>
+    <figure id="figure257">
       <figDesc>Cain killing Abel between their two altars</figDesc>
       <artist>M Coxcij, C I Vi&#x17F;&#x17F;cher</artist>
       <inven>M.Coxcij</inven>
@@ -10779,7 +10779,7 @@
       <fe>Hadelaer</fe>
       <n>2</n>
     </figure>
-    <figure col="283" composite="yes">
+    <figure id="figure258" col="283" composite="yes">
       <figDesc>Zacharias stoned* (the&#x17F;e together illustrate range of Pr^ophetic martyrdom)Composite
         of three images, Z at altar, Z stoned, and censor at bottom. NB. The overlap makes the far
         left stoner pick up a piece of the altar itself—a significant interpretive combination!
@@ -10906,11 +10906,11 @@
   </hchapter>
   <hchapter n="LXXXV" toctitle="CAREFVLNES for^ RICHES ." col="285">
     <head><hi rend="color(gold)">C</hi>AREFULNES for^ RICHES+</head>
-    <figure>
+    <figure id="figure259">
       <figDesc>Rich man with barns</figDesc>
       <ms>&#x17F;oul thou ha&#x17F;t/much goods/I will pull downe my barnes and builde greater</ms>
     </figure>
-    <figure composite="yes">
+    <figure id="figure260" composite="yes">
       <figDesc>Stores, Tools, Death with arrow</figDesc>
     </figure>
     <excerpt source="c.12:13-34" type="context">
@@ -10991,12 +10991,12 @@
       <verse book="c" cnumber="13" id="c.12.34-c" type="context" vnumber="34"> For^ where your
         trea&#x17F;ure is, there wil your heart be al&#x17F;o. </verse>
     </excerpt>
-    <figure col="287">
+    <figure id="figure261" col="287">
       <figDesc>fea&#x17F;ting, bkgd funeral proce&#x17F;&#x17F;ion</figDesc>
       <ms>Thou foole this night &#x17F;hall bee required of thee &amp;</ms>
       <n>4</n>
     </figure>
-    <figure composite="yes">
+    <figure id="figure262" composite="yes">
       <figDesc>solomon in all his riches with flowers and insects</figDesc>
       <head>soLOMON IN AL HIS glory was not arayed/ like one of thees.</head>
     </figure>
@@ -11096,7 +11096,7 @@
       <verse book="c" cnumber="13" id="c.12.59-c" type="context" vnumber="59"> I tell thee, Thou
         &#x17F;halt not depart thence, till thou ha&#x17F;t payed the very la&#x17F;t || mite. </verse>
     </excerpt>
-    <figure col="289" composite="yes">
+    <figure id="figure263" col="289" composite="yes">
       <figDesc>composite scene of servants eating, drinking, and attacking people</figDesc>
       <sculp>S Dolende</sculp>
     </figure>
@@ -11105,7 +11105,7 @@
   </hchapter>
   <hchapter n="LXXXVII" toctitle="REPENTANCE ." col="291">
     <head><hi rend="color(gold)">R</hi>EPENTANCE+</head>
-    <figure composite="yes">
+    <figure id="figure264" composite="yes">
       <figDesc>Attack on Galileans, blood mingled with sacrifice [bridges with previous page]</figDesc>
       <head>GALILEANS who&#x17F;e Bloude was mingled with their sacrifices</head>
     </figure>
@@ -11142,7 +11142,7 @@
       <verse book="c" cnumber="14" id="c.13.9-c" type="context" vnumber="9"> And if it beare fruit,
         Well: and if not, then after that, thou &#x17F;halt cut it downe. </verse> <!-- Well - ital -->
     </excerpt>
-    <figure>
+    <figure id="figure265">
       <figDesc>two men in a vineyard</figDesc>
       <ms>CVT IT DOWNE/ Lett it alone this yeare al&#x17F;o [NB The dre&#x17F;&#x17F;er of the vineyard is Chr^i&#x17F;t]</ms>
       <n>45</n>
@@ -11150,7 +11150,7 @@
   </hchapter>
   <hchapter n="LXXXVIII" toctitle="The WOMAN BOWED TOGETHER ." col="293">
     <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">W</hi>OMAN BOWED TOGETHER+</head>
-    <figure composite="yes">
+    <figure id="figure266" composite="yes">
       <figDesc>composite: men leading a&#x17F;&#x17F;es</figDesc>
       <head>Doth not each one of you on the Sabbath loos his ox or^ his a&#x17F;&#x17F; &amp;</head>
     </figure>
@@ -11199,7 +11199,7 @@
         which a woman tooke &amp; hid in three || mea&#x17F;ures of meale, till the whole was leauened.
       </verse>
     </excerpt>
-    <figure>
+    <figure id="figure267">
       <figDesc>woman bowed over</figDesc>
       <head>MVLIER INCLINATA.</head>
       <inven>M. de Vos </inven>
@@ -11208,7 +11208,7 @@
   </hchapter>
   <hchapter n="LXXXIX" toctitle="THE STRAIT GATE ." col="294">
     <head><hi rend="color(gold)">T</hi>HE STRAIT GATE+</head>
-    <figure>
+    <figure id="figure268">
       <figDesc>Ruler consulting with group of men</figDesc>
       <ms>Herod consulting to kill Chr^i&#x17F;t</ms>
     </figure>
@@ -11268,16 +11268,16 @@
   </hchapter>
   <hchapter n="XC" toctitle="THE DROPSIE ." col="295">
     <head><hi rend="color(gold)">T</hi>HE DROPSIE+</head>
-    <figure>
+    <figure id="figure269">
       <figDesc>Host &#x17F;ends servant out to invite poor to fea&#x17F;t</figDesc>
       <head>Villam emi et nece&#x17F;&#x17F;e habeo exire &amp;? videre illam, rogo te; habe me exculatum.
         [pasted]</head>
       <inven>Marten van Heemskerck</inven>
     </figure>
-    <figure col="296">
+    <figure id="figure270" col="296">
       <figDesc>floral border</figDesc>
     </figure>
-    <figure>
+    <figure id="figure271">
       <figDesc>Chr^i&#x17F;t heals man with dropsy</figDesc>
       <head>De hydropico et vocandis ad conuiuium.Luc.14.</head>
       <text>1.Curat Dominus hydropicum Sabbato, quem Phari&#x17F;ei consultò obiecerant an Sabbatho
@@ -11375,14 +11375,14 @@
       <verse book="c" cnumber="15" id="c.14.24-c" type="context" vnumber="24"> For^ I &#x17F;ay vnto you,
         that none of tho&#x17F;e men which were bidden, &#x17F;hall ta&#x17F;t of my &#x17F;upper. </verse>
     </excerpt>
-    <figure col="289">
+    <figure id="figure272" col="289">
       <figDesc>Man with oxen rejects invite</figDesc>
       <head>Iuga bouum emi quinque: J eo probare illa. rogo te, habe me exculatum. luce 14.[pasted]</head>
       <inven>Marten van Heemskerck.</inven>
       <sculp>DVC[monogram]</sculp>
       <n>3</n>
     </figure>
-    <figure composite="299">
+    <figure id="figure273" composite="299">
       <figDesc>Man with wife</figDesc>
       <head>Uxorem duxi, et ideo non po&#x17F;&#x17F;um venire. luce 14.[pasted]</head>
       <inven>Marten van Heemskerck</inven>
@@ -11392,12 +11392,12 @@
   </hchapter>
   <hchapter n="XCI" toctitle="ALL is to be FOR&#x17F;akeN ." col="301">
     <head><hi rend="color(gold)">A</hi>LL is to bee FOR&#x17F;akeN+</head>
-    <figure>
+    <figure id="figure274">
       <figDesc>Tower of Babel, being built</figDesc>
       <ms>THEES MEN BEGAN TO BVILDE</ms>
       <ex>[CJ? Vi&#x17F;&#x17F;cher]</ex>
     </figure>
-    <figure>
+    <figure id="figure275">
       <figDesc>Chr^i&#x17F;t carries cro&#x17F;&#x17F;</figDesc>
     </figure>
     <excerpt source="c.14:25-35" type="context">
@@ -11440,14 +11440,14 @@
         him heare. </verse>
     </excerpt>
     <link col="304">(THEN DREW &amp; Chapt 93 p. 307</link>
-    <figure col="303">
+    <figure id="figure276" col="303">
       <figDesc>Tower of Babel, wind of God blows, Tetragrammaton</figDesc>
       <text>AGEDVM, DESCENDAMUS ET CONFUNDAMUS IBI SERMONEM EORUM, NE QUIS SERMONEM ALTERIUS
         INTELLIGAT.</text>
       <ms>And were not Able to Finish</ms>
       <ex>C I Vi&#x17F;&#x17F;cher</ex>
     </figure>
-    <figure>
+    <figure id="figure277">
       <figDesc>St Catherine with quill and swor^d</figDesc>
       <head>S. CATHARINA.</head>
       <text>Regn'u mu'di, et oem' ornatu' saeculi cotempsi, propter amorem Dn'i mei Iesu Chr^i&#x17F;ti/
@@ -11459,7 +11459,7 @@
   <hchapter n="XCII" toctitle="The fea&#x17F;t of DEDICATION &amp; IESVS beyond IORDAN ." col="305">
     <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">D</hi>EDICATION &amp; <hi
         rend="color(gold)">Je&#x17F;us</hi> his GOING beyond JORDAN+</head>
-    <figure>
+    <figure id="figure278">
       <figDesc>Je&#x17F;us an&#x17F;wers questions in Temple, man reaches for^ stones</figDesc>
       <ex>GdJ?</ex>
       <source>Y</source>
@@ -11568,7 +11568,7 @@
   <hchapter n="XCIII" toctitle="PARABLES of the &#x17F;heepe . lo&#x17F;t MONY . PRODIGAL ." col="307">
     <head><hi rend="color(gold)">P</hi>ARABLES, of the <hi rend="color(gold)">S</hi>HEEPE, <hi
         rend="color(gold)">G</hi>ROATE, <hi rend="color(gold)">P</hi>RODIGAL+</head>
-    <figure>
+    <figure id="figure279">
       <figDesc>Man with lo&#x17F;t &#x17F;heep, woman looking for^ piece of silver</figDesc>
       <artist>GdJ?</artist>
     </figure>
@@ -11689,45 +11689,45 @@
         &#x17F;hould make merry, and be glad: for^ this thy brother was dead, and is aliue a=gaine: and was
         lo&#x17F;t, and is found. </verse>
     </excerpt>
-    <figure col="309">
+    <figure id="figure280" col="309">
       <figDesc>Prodigal leaves</figDesc>
       <ex>Gerardus de Iode [GdJ]</ex>
     </figure>
-    <figure>
+    <figure id="figure281">
       <figDesc>Angels play instruments</figDesc>
     </figure>
-    <figure size="small">
+    <figure id="figure282" size="small">
       <figDesc>Prodigal leaves</figDesc>
     </figure>
-    <figure col="311">
+    <figure id="figure283" col="311">
       <figDesc>Prodigal with women and men at games, food, and music</figDesc>
       <ex>[GdJ]</ex>
     </figure>
-    <figure>
+    <figure id="figure284">
       <figDesc>Devils hold playing cards, backgammon board</figDesc>
       <text>Accusator malorum operum</text>
     </figure>
-    <figure size="small">
+    <figure id="figure285" size="small">
       <figDesc>Prodigal with women and men at games, food, and music</figDesc>
     </figure>
-    <figure col="313">
+    <figure id="figure286" col="313">
       <figDesc>Prodigal kneels by &#x17F;wine</figDesc>
       <ex>[G De Jode]</ex>
     </figure>
-    <figure size="small">
+    <figure id="figure287" size="small">
       <figDesc>Prodigal kneels by &#x17F;wine</figDesc>
     </figure>
-    <figure col="315">
+    <figure id="figure288" col="315">
       <figDesc>Prodigal kneels at feet of father</figDesc>
       <ex>[G De Jode]</ex>
     </figure>
-    <figure size="small">
+    <figure id="figure289" size="small">
       <figDesc>Prodigal kneels at feet of father</figDesc>
     </figure>
   </hchapter>
   <hchapter n="XCIIII" toctitle="THE STEWARD ." col="317">
     <head><hi rend="color(gold)">T</hi>HE STEWARD+</head>
-    <figure>
+    <figure id="figure290">
       <figDesc>Steward approaches lord</figDesc>
       <n>3</n>
     </figure>
@@ -11807,7 +11807,7 @@
         &#x17F;aid unto them </verse>
     </excerpt>
     <comment col="318">The Collection &#x17F;erues both for^ Comparison and Composition.</comment>
-    <figure col="319">
+    <figure id="figure291" col="319">
       <figDesc>The creation, Tetragrammaton in three places: in sky and al&#x17F;o by Adam and Eve</figDesc>
       <head>PRODUCAT TERRA VIVENTIA ANIMANTIA, PECUDES ET REPTILIA IN SPECIES SUAS.</head>
       <text>Non est bonem Hominum e&#x17F;&#x17F;e solem, volo ipse auxillium facere./ Faciamus Hominem ad
@@ -11902,7 +11902,7 @@
   </hchapter>
   <hchapter n="XCVI" toctitle="THE RICH GLUTTON ." col="321">
     <head><hi rend="color(gold)">T</hi>HE RICH GLUTTON+</head>
-    <figure composite="yes">
+    <figure id="figure292" composite="yes">
       <figDesc>Rich glutton with beggar, Lazarus, dog licking sores, small angels below</figDesc>
       <artist>GdJ?</artist>
     </figure>
@@ -11994,7 +11994,7 @@
         &#x17F;eruants: Wee haue done that which was our duetie to doe. </verse>
     </excerpt>
     <link col="324">(AND IT CAME TO PA&#x17F;&#x17F;E &amp; Chap.73 p.253</link>
-    <figure col="323" composite="yes">
+    <figure id="figure293" col="323" composite="yes">
       <figDesc>Glutton in mouth of fiery beast, pointing to mouth, Lazarus above with God (in papal
         hat?), small devils below</figDesc>
     </figure>
@@ -12060,36 +12060,36 @@
         and &#x17F;aid vnto him, *Where, Lord? And he &#x17F;aid vnto them, Where&#x17F;oeuer the body is, thither will
         the Eagles be gathered together. </verse>
     </excerpt>
-    <figure col="325">
+    <figure id="figure294" col="325">
       <figDesc>Noah, animals enter ark</figDesc>
       <inven>[M Heemskerck]</inven>
       <ex>[C I Vi&#x17F;&#x17F;cher]</ex>
     </figure>
-    <figure>
+    <figure id="figure295">
       <figDesc>People in city try to escape flood, ark in background</figDesc>
       <inven>M Heemskerck</inven>
       <ex>CJ? Vi&#x17F;&#x17F;cher</ex>
     </figure>
-    <figure col="327">
+    <figure id="figure296" col="327">
       <figDesc>Lot and daughters with angels leave sodom, wife watches city aflame in background</figDesc>
       <head>Cum Ultione Misericordia . . .</head>
       <ms>Lykewise al&#x17F;o as it was in the days of Lott</ms>
       <source>[&#x17F;ame as Cecil 193/lxxx]</source>
       <source>[&#x17F;ame as Cecil 193/lxxx]</source>
     </figure>
-    <figure size="detail">
+    <figure id="figure297" size="detail">
       <figDesc>Wife with embedded text “Remember Lots wife”**</figDesc>
       <head>32 Remember Lots wife .</head>
     </figure>
   </hchapter>
   <hchapter n="XCVIII" toctitle="THE VNIVST IVDGE ." col="329">
     <head><hi rend="color(gold)">T</hi>HE VNJUST JUDGE+</head>
-    <figure>
+    <figure id="figure298">
       <figDesc>Man in temple, on knee befor^e judge</figDesc>
       <source>Y</source>
       <source>Y</source>
     </figure>
-    <figure>
+    <figure id="figure299">
       <figDesc>Chr^i&#x17F;t teaching, bubbles with scenes of unjust judge</figDesc>
       <head>De orandi Studio, et Parabola Iudicis iniqui, Publicani et Phari&#x17F;ei.Luc.17.</head>
       <text>1. Rogatus Dominus à Phari&#x17F;eis, Quando venit regnum Dei, inquit, Non venit regnum dei
@@ -12155,12 +12155,12 @@
   <hchapter n="C" toctitle="The LITTLE childr^en &amp; RICH young man ." col="331">
     <head><hi rend="color(gold)">Chr^i&#x17F;t</hi> Embraceth Little childr^en &amp; is For&#x17F;aken by the
       Rich man+</head>
-    <figure>
+    <figure id="figure300">
       <figDesc>Chr^i&#x17F;t with childr^en</figDesc>
       <ex>G de Jode</ex>
       <fe>Herman Muller</fe>
     </figure>
-    <figure composite="yes">
+    <figure id="figure301" composite="yes">
       <figDesc>childr^en and strawberries pasted over scene of Chr^i&#x17F;t with childr^en*</figDesc>
     </figure>
     <excerpt source="a.19:13a" type="context">
@@ -12208,21 +12208,21 @@
         you, Who&#x17F;oever &#x17F;hall not receive the kingdome of God as a little childe, &#x17F;hall in no wi&#x17F;e enter
         therein.</verse>
     </excerpt>
-    <figure col="333">
+    <figure id="figure302" col="333">
       <figDesc>Esther, Haman, King</figDesc>
       <ms>THOV &#x17F;halt NOT KILL/ AMAN</ms>
     </figure>
-    <figure>
+    <figure id="figure303">
       <figDesc>Achan burying stolen goods in tent</figDesc>
       <ms>THOU &#x17F;halt not steale/ ACHAN</ms>
       <n>6</n>
     </figure>
-    <figure col="335">
+    <figure id="figure304" col="335">
       <figDesc>Men tied to tree, about to be &#x17F;toned by crowd</figDesc>
       <ms>Thou &#x17F;halt not Beare False witne&#x17F;&#x17F;/ The ELDERS that Accused Susanna</ms>
       <artist>IEF?</artist>
     </figure>
-    <figure>
+    <figure id="figure305">
       <figDesc>Phineas about to thrust swor^d into man and woman</figDesc>
       <ms>Thou &#x17F;halt not Commit Adultery/ PHINEAS</ms>
     </figure>
@@ -12294,16 +12294,16 @@
       <verse book="a" cnumber="20" id="a.19.20-c" type="context" vnumber="20"> The yong man &#x17F;aith
         vnto him, All the&#x17F;e things haue I kept from my youth vp: what lacke I yet? </verse>
     </excerpt>
-    <figure col="337">
+    <figure id="figure306" col="337">
       <figDesc>Men giving money and goods in the street</figDesc>
       <ms>Goe and sell that thou ha&#x17F;t/and giue to the Poore/And thou &#x17F;halt haue
       trea&#x17F;ure/in/Heauen</ms>
     </figure>
-    <figure col="338">
+    <figure id="figure307" col="338">
       <figDesc>Chr^i&#x17F;t with cro&#x17F;&#x17F;</figDesc>
       <head>And come take up thy Cro&#x17F;&#x17F; and follow mee</head>
     </figure>
-    <figure>
+    <figure id="figure308">
       <figDesc>A young man walking</figDesc>
       <head>And hee was sad and wente away greiued</head>
     </figure>
@@ -12311,7 +12311,7 @@
       <verse book="b" cnumber="11" id="b.10.21-c" type="context" vnumber="21"> Then Je&#x17F;us beholding
         him, loued him, and&#x17F;aid vnto him, One thing thou lacke&#x17F;t; </verse>
     </excerpt>
-    <figure col="337" size="miniature">
+    <figure id="figure309" col="337" size="miniature">
       <figDesc>miniature of Matthew as an angel's scribe</figDesc>
     </figure>
     <excerpt source="a.19:21a" type="supplement">
@@ -12382,7 +12382,7 @@
       <verse book="a" cnumber="20" id="a.19.25-c" type="context" vnumber="25"> When his di&#x17F;ciples
         heard it, they were exceeding=ly amazed, </verse>
     </excerpt>
-    <figure col="339-344" composite="yes">
+    <figure id="figure310" col="339-344" composite="yes">
       <figDesc>Figures of 12 tribes of I&#x17F;rael, Judah with Lion, etc, one full opening [REDO as
         either twelve image tags or^ give detail and treat as one composite?]</figDesc>
     </figure>
@@ -12446,12 +12446,12 @@
     </excerpt>
     <comment>The mention of the Twelve Tribes hath br^ought in thees and the rest of the Heades of
       them.</comment>
-    <figure col="345">
+    <figure id="figure311" col="345">
       <figDesc>Abr^aham traveling with family and goods</figDesc>
       <head>Abr^aham.</head>
       <ex>G de Jode</ex>
     </figure>
-    <figure size="miniature">
+    <figure id="figure312" size="miniature">
       <figDesc>Miniatures of Matthew, Mark and Luke along&#x17F;ide relevant texts</figDesc>
     </figure>
     <excerpt source="a.19:30" type="supplement">
@@ -12483,12 +12483,12 @@
   </hchapter>
   <hchapter n="CI" toctitle="The LABOVRERS ." col="347">
     <head><hi rend="color(gold)">T</hi>HE LABOURERS</head>
-    <figure composite="yes">
+    <figure id="figure313" composite="yes">
       <figDesc>Composite: group of women</figDesc>
       <ms>Ophra/ RVTH</ms>
       <inven>Adria. d. Werdt</inven>
     </figure>
-    <figure>
+    <figure id="figure314">
       <figDesc>Vineyard manager and servant</figDesc>
       <head>ITE,VITES NOSTRAS COMITES PERAGRATE FIDELES, QVAE FVERINT IVSTIS PRAEMIA DIGNA, DABO.</head>
       <inven>M de Vos</inven>
@@ -12553,7 +12553,7 @@
         fir&#x17F;t, and the fir&#x17F;t la&#x17F;t: for^ many be called, but few cho&#x17F;en. </verse>
     </excerpt>
     <link col="349">(AND IESVS Chapt.104.p.359</link>
-    <figure>
+    <figure id="figure315">
       <figDesc>Manager giving payment, men wor^king in field</figDesc>
       <head>[Faelices nimium colitur queis vinea Chr^i&#x17F;ti Aequa laborantes praemia namque ferent]</head>
       <ex>[GdJ]</ex>
@@ -12718,7 +12718,7 @@
       <verse book="d" cnumber="12" id="d.11.46-c" type="context" vnumber="46"> But &#x17F;ome of them went
         their wayes to the Pha=ri&#x17F;ees, and told them what things Je&#x17F;us had done. </verse>
     </excerpt>
-    <figure col="351">
+    <figure id="figure316" col="351">
       <figDesc>Pastiche of miniatures, including four medallions*</figDesc>
       <text>(four medallions) [1]Omnes eum nos manifestari oportet ante tribunal Chr^i&#x17F;te, ut referat
         unus quisque propria corporis, prout ge&#x17F;sit. siue bonum, siue malum. 2. Corinthi.5/ top:
@@ -12731,7 +12731,7 @@
         and in Latin]</text>
       <ms>I am the re&#x17F;urrection and the life</ms>
     </figure>
-    <figure>
+    <figure id="figure317">
       <figDesc>Chr^i&#x17F;t resurrects Lazarus</figDesc>
       <head>De suscitatione Lazari. Ioan 11</head>
       <text>1. Intellectâ aegritudine Lazari substitit Dñs, tum veniente obuiã prodiere sorores. Dñe
@@ -12744,7 +12744,7 @@
     </figure>
     <comment>Lazarus his sickne&#x17F;&#x17F; and Death/ hath br^ought in tho&#x17F;e pictures aboue/ signifying. The
       Foregoing cau&#x17F;es,/ and the Consequences of Death &amp;</comment>
-    <figure col="353">
+    <figure id="figure318" col="353">
       <figDesc>Je&#x17F;us raising Lazarus</figDesc>
       <artist>GdJ?</artist>
     </figure>
@@ -12753,7 +12753,7 @@
     <head><hi rend="color(gold)">T</hi>HE fir&#x17F;t Consultation again&#x17F;t <hi
         rend="color(gold)
                 ">Chr^i&#x17F;t</hi>+</head>
-    <figure>
+    <figure id="figure319">
       <figDesc>Caiphas Pontifex, embedded text** quoting him (figures numbered in original, but no
         legend given)al&#x17F;o, asterisk in text—why?</figDesc>
       <head>Ye know nothing at all, nor^ con&#x17F;ider that it is expedient for^ us, that one man &#x17F;hould
@@ -12809,12 +12809,12 @@
   <hchapter n="CIIII" toctitle="THE Pa&#x17F;&#x17F;ion Foretold. The sons of Zebedee." col="357">
     <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">P</hi>a&#x17F;&#x17F;ion Foretold. The sons of
       Zebedee.</head>
-    <figure>
+    <figure id="figure320">
       <figDesc>composite: flogging, crucifixion, re&#x17F;urrection, angel with cro&#x17F;&#x17F;</figDesc>
     </figure>
     <comment>The Pictures aboue are to/ Expre&#x17F;&#x17F; tho&#x17F;e seuerall/ pa&#x17F;&#x17F;adges of Chr^i&#x17F;t’s suffe-/rings
       which him&#x17F;elfe relates</comment>
-    <figure col="359">
+    <figure id="figure321" col="359">
       <figDesc>hand from cloud offering cup of fire to man who is drinking from it</figDesc>
       <ms>Yee &#x17F;hall indeed Drink of the Cup that I Drink of &amp;</ms>
     </figure>
@@ -12964,7 +12964,7 @@
         many. </verse>
     </excerpt>
     <link>(AND THEY CAME TO JERICHO &amp; Chapt: 108.p.368</link>
-    <figure>
+    <figure id="figure322">
       <figDesc>woman praying</figDesc>
       <ms>The Mother of Zebedees childr^en</ms>
     </figure>
@@ -12972,7 +12972,7 @@
   <hchapter n="CV" toctitle="THE BLIND MAN at the Enterance of Jericho" col="361">
     <head><hi rend="color(gold)">T</hi>HE BLIND MAN at the Enterance of Jericho+[chapter number here
       mistaken: V for^ CV]</head>
-    <figure composite="yes">
+    <figure id="figure323" composite="yes">
       <figDesc>Blind man sitting, pasted with Je&#x17F;us in crowd*</figDesc>
       <artist>GdJ?</artist>
     </figure>
@@ -13009,7 +13009,7 @@
   </hchapter>
   <hchapter n="CVI" toctitle="ZACHEUS ." col="362">
     <head><hi rend="color(gold)">Z</hi>ACHEUS</head>
-    <figure col="363">
+    <figure id="figure324" col="363">
       <figDesc>Je&#x17F;us and Zacheus</figDesc>
       <head>De Zachaeo.Matt.25.Luc.19.</head>
       <text>1.Zachaeus homuncio, princeps publicanorũ, de&#x17F;iderio videndi Chr^i&#x17F;tum, praecurens
@@ -13019,11 +13019,11 @@
       <ex>Boetius Bolswert</ex>
       <n>[44]</n>
     </figure>
-    <figure>
+    <figure id="figure325">
       <figDesc>Zacheus in tree</figDesc>
       <artist>H.C.F</artist>
     </figure>
-    <figure>
+    <figure id="figure326">
       <figDesc>Chr^i&#x17F;t at fea&#x17F;t</figDesc>
     </figure>
     <excerpt source="c.19:1-10" type="context">
@@ -13062,7 +13062,7 @@
   </hchapter>
   <hchapter n="CVII" toctitle="THE TEN POUNDS ." col="365">
     <head><hi rend="color(gold)">T</hi>HE TEN POUNDS+</head>
-    <figure>
+    <figure id="figure327">
       <figDesc>Nobleman in chariot, drawn by horses</figDesc>
       <head>[Post multum vero temporis . . .]</head>
       <inven>[CP Groening]</inven>
@@ -13071,7 +13071,7 @@
       <n>4</n>
       <source>[al&#x17F;o in Cecil 249/cviii]</source>
     </figure>
-    <figure>
+    <figure id="figure328">
       <figDesc>Nobleman demanding account, three men pre&#x17F;ent money on table</figDesc>
       <head>[Et accedens qui qumque talenta acceperat . . .]</head>
       <inven>[CP Groening]</inven>
@@ -13204,12 +13204,12 @@
   </hchapter>
   <hchapter n="CIX" toctitle="THE SUPPER in BETHANIE ." col="369">
     <head><hi rend="color(gold)">T</hi>HE SUPPER in BETHANIE+</head>
-    <figure composite="yes">
+    <figure id="figure329" composite="yes">
       <figDesc>Composite: Mary wipes Chr^i&#x17F;t’s feet with her hair, in corner, Boelwert print of
         Chr^i&#x17F;t at table, with text and image reversed, so text is on top. Bolswert described below</figDesc>
       <artist>GdJ?</artist>
     </figure>
-    <figure composite="yes">
+    <figure id="figure330" composite="yes">
       <figDesc>Je&#x17F;us at table, woman pours oil on his hair [the composite image conflates the two
         stories]</figDesc>
       <head>[De caenâ in Bethaniâ. Matt.26. Mar.14.Ioan.12.]</head>
@@ -13220,7 +13220,7 @@
       <ex>Boetius Bolswert</ex>
       <n>[43]</n>
     </figure>
-    <figure size="miniature">
+    <figure id="figure331" size="miniature">
       <figDesc>Miniature, Mary at Chr^i&#x17F;t’s feet</figDesc>
     </figure>
     <excerpt source="d.12:1-2" type="context">
@@ -13347,20 +13347,20 @@
       <verse book="d" cnumber="13" id="d.12.11-c" type="context" vnumber="11"> Becau&#x17F;e that by
         rea&#x17F;on of him many of the Iewes went away and beleeued on Je&#x17F;us. </verse>
     </excerpt>
-    <figure>
+    <figure id="figure332">
       <figDesc>Woman (Martha) preparing food</figDesc>
     </figure>
-    <figure>
+    <figure id="figure333">
       <figDesc>Mary wipes Chr^i&#x17F;t’s feet with her hair, Chr^i&#x17F;t at table</figDesc>
       <n>14</n>
     </figure>
-    <figure>
+    <figure id="figure334">
       <figDesc>Man (Judas) leaving through door with sack (of money)</figDesc>
     </figure>
   </hchapter>
   <hchapter n="CX" toctitle="THE PALME BRANCHES ." col="373">
     <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">P</hi>ALME BRANCHES+</head>
-    <figure>
+    <figure id="figure335">
       <figDesc>Triumphal entry, palms, Chr^i&#x17F;t on donkey </figDesc>
       <artist>GdJ?</artist>
     </figure>
@@ -13536,10 +13536,10 @@
       </verse>
     </excerpt>
     <link col="376">(AND IESVS ENTRED &amp; Ch:112.p.383</link>
-    <figure size="small">
+    <figure id="figure336" size="small">
       <figDesc>Triumphal entry, palms, Chr^i&#x17F;t on donkey</figDesc>
     </figure>
-    <figure col="377">
+    <figure id="figure337" col="377">
       <figDesc>Triumphal entry, palms, Chr^i&#x17F;t on donkey</figDesc>
       <head>De ingre&#x17F;&#x17F;u Ierosolymam die Palmarum. Matt.21.Mar.11.Luc.19.Ioan.12</head>
       <text>1. Mittit Dñs duos discipulos in proximũ ca&#x17F;tellũ, qui adducant afinã et pullũ; si quis
@@ -13605,7 +13605,7 @@
   </hchapter>
   <hchapter n="CXI" toctitle="The ca&#x17F;tING OVT BVYERS &amp; GENTILES ." col="378">
     <head><hi rend="color(gold)">T</hi>HE ENTERANCE into ye TEMPLE &amp; SECOND ca&#x17F;ting Out+</head>
-    <figure>
+    <figure id="figure338">
       <figDesc>Chr^i&#x17F;t in temple, money table turned over</figDesc>
       <head>De eiectis e Templo negotiatoribae. Mat.21.Mar.11.Luc.19.Ioan.12.</head>
       <text>1.Elecit Dominus ementes et vendentes e templo, exprobrans eis, Domus mea domis
@@ -13615,7 +13615,7 @@
       <ex>Boetius Bolswert</ex>
       <n>46</n>
     </figure>
-    <figure composite="yes">
+    <figure id="figure339" composite="yes">
       <figDesc>composite: Chr^i&#x17F;t teaches on hill, curses fig tree, with clouds pasted over God the
         Father as old man with beard, with hands on clouds, looking down</figDesc>
       <head>De ficulnea arefacta, et gentilibus Chr^i&#x17F;tu' videre cupientibus. Mat. 21. Mar.11. Joan.
@@ -13627,7 +13627,7 @@
       <ex>Boetius Bolswert</ex>
       <n>[47]</n>
     </figure>
-    <figure size="small">
+    <figure id="figure340" size="small">
       <figDesc>Chr^i&#x17F;t teaches out&#x17F;ide Jerusalem</figDesc>
       <text>Iesus videns Ierusalem fleuit super illam.Luc.19 Quoties volui congregare quemadmodum
         gallina.&amp;.Mat.23.</text>
@@ -13792,7 +13792,7 @@
         vnto me, so I &#x17F;peake. </verse>
     </excerpt>
     <link col="380">(NOW befor^e THE fea&#x17F;t OF &amp; Chapt.130.P.461.</link>
-    <figure>
+    <figure id="figure341">
       <figDesc>Chr^i&#x17F;t clears Temple of money-changers</figDesc>
       <head>[Cum feci&#x17F;&#x17F;et quasi flagellum de funiculis, omnes eiecit de templo, oues quodque et
         boues, et numulariorum effudit aes, et mensas subuerit. Ioan. 2.]</head>
@@ -13807,11 +13807,11 @@
   </hchapter>
   <hchapter n="CXII" toctitle="The FIG TREE" col="383">
     <head><hi rend="color(gold)">T</hi>HE FIG TREE &amp; <hi rend="color(gold)">F</hi>AITH</head>
-    <figure>
+    <figure id="figure342">
       <figDesc>Joshua with arms held up, battle below</figDesc>
       <artist>GdJ?</artist>
     </figure>
-    <figure>
+    <figure id="figure343">
       <figDesc>composite: Chr^i&#x17F;t teaches on hill, curses fig tree, with Tetragrammaton pasted over
         God the Father as old man with beard, with hands on clouds, looking down [&#x17F;ame as previous,
         but with different paste-over]</figDesc>
@@ -13823,7 +13823,7 @@
         commemoratione volems turbatur ac tristatur etc.</text>
       <n>[47]</n>
     </figure>
-    <figure>
+    <figure id="figure344">
       <figDesc>Battle with sun in center of sky</figDesc>
       <fe>Harman Muller</fe>
       <n>8</n>
@@ -13942,7 +13942,7 @@
   </hchapter>
   <hchapter n="CXIII" toctitle="BY WHAT POWER" col="385">
     <head><hi rend="color(gold)">B</hi>Y WHAT POWER+</head>
-    <figure>
+    <figure id="figure345">
       <figDesc>Baptism of Chr^i&#x17F;t</figDesc>
       <n>4</n>
     </figure>
@@ -14066,12 +14066,12 @@
         harlots beleeued him. And ye when ye had &#x17F;eene it repented not afterward, that yee might
         beleeue him. </verse>
     </excerpt>
-    <figure>
+    <figure id="figure346">
       <figDesc>Composite, father bidding sons to go wor^k in the vineyard*</figDesc>
       <ms>The Father bidding his sons/ goe wor^ke in the Vineyard/ The son yt went and wroughte/ The
         2 sons</ms>
     </figure>
-    <figure col="389">
+    <figure id="figure347" col="389">
       <figDesc>Husbandmen beat servants, kill owner’s son</figDesc>
       <head>A domino mi&#x17F;sos ad bacchica dona coloni Multarunt natum porro dedere neci. Luck</head>
       <artist>[GdJ]?</artist>
@@ -14251,18 +14251,18 @@
   <hchapter n="CXV" toctitle="MAIRRIAGE GUESTS ." col="393">
     <head><hi rend="color(gold)">T</hi>HE MARRIAGE GUESTS+</head>
     <!-- to here, noon sept 14             -->
-    <figure>
+    <figure id="figure348">
       <figDesc>A ma&#x17F;ter &#x17F;ending out his &#x17F;ervants</figDesc>
     </figure>
-    <figure composite="yes">
+    <figure id="figure349" composite="yes">
       <figDesc>composite: ma&#x17F;ter and &#x17F;ervant with minature of similar scene</figDesc>
     </figure>
-    <figure>
+    <figure id="figure350">
       <figDesc>guests coming in</figDesc>
       <inven>M Heemskerc</inven>
       <n>6</n>
     </figure>
-    <figure composite="yes">
+    <figure id="figure351" composite="yes">
       <figDesc>composite: the binding of the unwelcome guest without wedding garment with minature
         of &#x17F;ame</figDesc>
     </figure>
@@ -14317,11 +14317,11 @@
   </hchapter>
   <hchapter n="CXVI" toctitle="TRIBVTE to be PAYED ." col="397">
     <head><hi rend="color(gold)">T</hi>RIBUTE mu&#x17F;t bee PAYD+</head>
-    <figure>
+    <figure id="figure352">
       <figDesc>Chr^i&#x17F;t asking for^ penny</figDesc>
       <artist>GdJ?</artist>
     </figure>
-    <figure>
+    <figure id="figure353">
       <figDesc>Caesar</figDesc>
       <ms>CAESAR</ms>
     </figure>
@@ -14425,7 +14425,7 @@
     <excerpt source="a.22:22b" type="context">
       <verse book="a" cnumber="23" id="a.22.22-c.b" type="context" vnumber="22"> and left him, and went their way. </verse>
     </excerpt>
-    <figure size="miniature">
+    <figure id="figure354" size="miniature">
       <figDesc>Chr^i&#x17F;t asking for^ penny</figDesc>
     </figure>
   </hchapter>
@@ -14433,7 +14433,7 @@
     <head>
       <hi rend="color(gold)"/>
     </head>
-    <figure composite="yes">
+    <figure id="figure355" composite="yes">
       <figDesc>Mo&#x17F;es at the bush, center of bush pasted over with smoke</figDesc>
       <ms>Mo&#x17F;es at the Bush</ms>
       <artist>GdJ?</artist>
@@ -14584,14 +14584,14 @@
       <verse book="a" cnumber="23" id="a.22.33-c" type="context" vnumber="33"> And when the
         multitude heard this, they were a&#x17F;toni&#x17F;hed at his doctrine. </verse>
     </excerpt>
-    <figure col="403">
+    <figure id="figure356" col="403">
       <figDesc>Deception of Isaac, Jacob, mother (name?)</figDesc>
       <ms>The Mention of Isaac and Jacob hath/ br^oughte in this Picture”</ms>
     </figure>
   </hchapter>
   <hchapter n="CXVIII" toctitle="The GREAT COMANDEMENT ." col="405">
     <head><hi rend="color(gold)">T</hi>HE GREAT COMANDEMENT+</head>
-    <figure>
+    <figure id="figure357">
       <figDesc>City bowing befor^e idol, fiery furnace</figDesc>
       <artist>Gerard de. Iode</artist>
       <n>3</n>
@@ -14662,14 +14662,14 @@
     <head><hi rend="color(gold)">W</hi>HOSE <hi rend="color(gold)">S</hi>ON <hi
         rend="color(gold)
                 ">Chr^i&#x17F;t</hi> IS+</head>
-    <figure>
+    <figure id="figure358">
       <figDesc>David with harp</figDesc>
     </figure>
-    <figure composite="yes">
+    <figure id="figure359" composite="yes">
       <figDesc>Chr^i&#x17F;t resurrected, angels above, demon underfoot, all one piece of paper, with
         monster and flame pasted below</figDesc>
     </figure>
-    <figure>
+    <figure id="figure360">
       <figDesc>David raising swor^d to cut off Goliath's head</figDesc>
     </figure>
     <comment>The Pictures of David And of Chr^i&#x17F;ts re&#x17F;urrection are uppon occasion of tho&#x17F;e wor^des
@@ -14728,7 +14728,7 @@
   <hchapter n="CXX" toctitle="The SCRIBES are to be HEARD but To be TAKEN HEED OF The WOES."
     col="409">
     <head><hi rend="color(gold)">T</hi>he Scribes are to be Obeyed, but not Imitated. Woes.</head>
-    <figure>
+    <figure id="figure361">
       <figDesc>Nebuccadnezer in his court, in background, eating gra&#x17F;&#x17F;</figDesc>
     </figure>
     <excerpt source="a.23:1" type="context">
@@ -14902,7 +14902,7 @@
     </excerpt>
     <comment>The Picture of Nabuchodonezers Eating Gra&#x17F;&#x17F; uppon occasion of, who&#x17F;oever &#x17F;hall Exalt
       him&#x17F;elfe &amp;</comment>
-    <figure col="411">
+    <figure id="figure362" col="411">
       <figDesc>Wall and candles, owl, bat, qvietnes Iob 3.13, oblivion Psal 88.12, hourgla&#x17F;&#x17F; &#x17F;ays
         “volat tempus”; candles &#x17F;ay “consumor”*Composite: This image lifts up (pasted at top only)
         to reveal two skeletons lying one on each &#x17F;ide so that their legs overlap in the center (l
@@ -14919,13 +14919,13 @@
   </hchapter>
   <hchapter n="CXXI" toctitle="The POORE WIDDOW" col="413">
     <head><hi rend="color(gold)">T</hi>HE POORE <hi rend="color(gold)">W</hi>IDDOW+</head>
-    <figure>
+    <figure id="figure363">
       <figDesc>Je&#x17F;us points to woman putting coin in chest</figDesc>
       <source>Y</source>
       <n>7</n>
       <source>Y</source>
     </figure>
-    <figure size="small">
+    <figure id="figure364" size="small">
       <figDesc>Je&#x17F;us points to woman putting coin in chest</figDesc>
     </figure>
     <excerpt source="b.12:41-44" type="context">
@@ -15054,13 +15054,13 @@
         &#x17F;hall be in diuers places, and famines, and pe&#x17F;tilences: and fearefull &#x17F;ights and great
         &#x17F;ignes &#x17F;hall there be from heauen. </verse>
     </excerpt>
-    <figure>
+    <figure id="figure365">
       <figDesc>Je&#x17F;us and di&#x17F;ciples on mount in front of temple (its doom predicted)</figDesc>
       <source>Y</source>
       <n>5</n>
       <source>Y</source>
     </figure>
-    <figure col="417" composite="y">
+    <figure id="figure366" col="417" composite="y">
       <figDesc>composite: 9 scenes of Chr^i&#x17F;tian martyrdom, incl St Lawrence</figDesc>
       <text>Lawrence laid upon the gridron. Chr^i&#x17F;tians burned in a Furnace. Martrus and Sanctus were
         fryed in an Iron Chaire. The &#x17F;earing of Womens Breasts. Rosting Chr^i&#x17F;tians and pouring
@@ -15070,18 +15070,18 @@
       <source>Foxe?</source>
       <source>Foxe?</source>
     </figure>
-    <figure>
+    <figure id="figure367">
       <figDesc>man chopping off another's arm, other arm mi&#x17F;&#x17F;ing, hole spraying blood</figDesc>
     </figure>
-    <figure>
+    <figure id="figure368">
       <figDesc>man hitting kneeling man on head with hammer</figDesc>
     </figure>
     <comment>Chr^i&#x17F;t his foretelling of Persecutions hath br^oughte in thees Pictures of Famous
       MARTIRS</comment>
-    <figure col="419">
+    <figure id="figure369" col="419">
       <figDesc>6 images of saints, most with halos or^ crowns [break up]</figDesc>
     </figure>
-    <figure composite="yes">
+    <figure id="figure370" composite="yes">
       <figDesc>Mo&#x17F;es (with horns) speaks to Pharoah/Herod [Mo&#x17F;es pasted over another pri&#x17F;oner,
         likely Je&#x17F;us, and dove pasted over Mo&#x17F;es--presumably to show the perversion of the law in
         bringing its author under judgment. &#x17F;ee notes]</figDesc>
@@ -15198,17 +15198,17 @@
         the kingdome &#x17F;hal be preached in all the wor^ld for^ a witne&#x17F;&#x17F;e vnto all nations, and then
         &#x17F;hall the end come. </verse>
     </excerpt>
-    <figure col="421">
+    <figure id="figure371" col="421">
       <figDesc>The destruction of Jerusalem Lk “days of vengeance”</figDesc>
       <ex>Gerar d. Iode</ex>
     </figure>
-    <figure>
+    <figure id="figure372">
       <figDesc>Daniel</figDesc>
       <ms>DANIEL</ms>
     </figure>
     <comment>The Picture Aboue and on ye other syde are Titus his sacking and Triumphing ouer
       Jerusalem</comment>
-    <figure col="423">
+    <figure id="figure373" col="423">
       <figDesc>The destruction of Jerusalem</figDesc>
       <ms>Titus</ms>
     </figure>
@@ -15310,7 +15310,7 @@
         Lord had &#x17F;hortned tho&#x17F;e dayes, no fle&#x17F;h &#x17F;hould be &#x17F;aued: but for^ the elects &#x17F;ake whom he
         hath cho&#x17F;en, he hath &#x17F;hortned the dayes. </verse>
     </excerpt>
-    <figure>
+    <figure id="figure374">
       <figDesc>Proce&#x17F;&#x17F;ional with ox</figDesc>
       <ms>The Pompe of Roman Sacrifize/wch by &#x17F;ome are Interpreted/to bee the Abomination/of
         de&#x17F;olation</ms>
@@ -15320,16 +15320,16 @@
   </hchapter>
   <hchapter n="CXXIII" toctitle="Chr^i&#x17F;tS coming to IVDGEMENT" col="425">
     <head><hi rend="color(gold)">T</hi>HE Comming to <hi rend="color(gold)">J</hi>UDGEMENT+</head>
-    <figure composite="yes">
+    <figure id="figure375" composite="yes">
       <figDesc>Chr^i&#x17F;t’s return, re&#x17F;urrection of the dead , surrounded by pasted angels and devils*</figDesc>
       <text>Forta animo esto (repeated)/in proximo erit salus tua/In inferno nulla est
       redemptio</text>
     </figure>
-    <figure>
+    <figure id="figure376">
       <figDesc>miniature of Chr^i&#x17F;t</figDesc>
       <text>&#x17F;tone of the son of Man</text>
     </figure>
-    <figure col="427" composite="yes?">
+    <figure id="figure377" col="427" composite="yes?">
       <figDesc>miniature of Chr^i&#x17F;t, angels, etc</figDesc>
       <head>Coniecturals of the &#x17F;igne of the son/of Man.</head>
     </figure>
@@ -15474,14 +15474,14 @@
   </hchapter>
   <hchapter n="CXXIIII" toctitle="Wee mu&#x17F;t WATCH ." col="427">
     <head><hi rend="color(gold)">W</hi>ee mu&#x17F;t <hi rend="color(gold)">W</hi>atch+</head>
-    <figure composite="yes">
+    <figure id="figure378" composite="yes">
       <figDesc>Women, birds, angel, around Collection text “watch and pray”** *</figDesc>
     </figure>
     <excerpt source="b.13:33" type="context">
       <verse book="b" cnumber="14" id="b.13.33-c" type="context" vnumber="33"> :Take yee heed Watch
         and Pray For^ ye Know not when the time is </verse>
     </excerpt>
-    <figure col="429">
+    <figure id="figure379" col="429">
       <figDesc>the fea&#x17F;t of Balthazar: long table in grand room</figDesc>
     </figure>
     <textnote>paper folded--plate wider than column</textnote>
@@ -15572,7 +15572,7 @@
   </hchapter>
   <hchapter n="CXXV" toctitle="THE TEN VIRGINS ." col="431">
     <head><hi rend="color(gold)">T</hi>HE TEN VIRGINS</head>
-    <figure composite="yes">
+    <figure id="figure380" composite="yes">
       <figDesc>Wedding fea&#x17F;t: 3 or^ 4 large images together of 10 virgins</figDesc>
       <artist>GdJ?</artist>
     </figure>
@@ -15621,13 +15621,13 @@
       <verse book="a" cnumber="26" id="a.25.13-c" type="context" vnumber="13"> *Watch therefor^e, for^
         ye know neither the day, nor^ the houre, wherein the Sonne of man commeth. </verse>
     </excerpt>
-    <figure col="433">
+    <figure id="figure381" col="433">
       <figDesc>wi&#x17F;e and foolish virgins</figDesc>
     </figure>
   </hchapter>
   <hchapter n="CXXVI" toctitle="The TALENTS" col="435">
     <head><hi rend="color(gold)">T</hi>HE TALENTS</head>
-    <figure>
+    <figure id="figure382">
       <figDesc>Scene of fir&#x17F;t accounting: Lord deals out money [fir&#x17F;t of series that appears
         earlier?]</figDesc>
       <head>[Homo peregre abiturus, vocatis . . .]</head>
@@ -15638,10 +15638,10 @@
       <n>1</n>
       <source>[al&#x17F;o in Cecil 247/cviii]</source>
     </figure>
-    <figure>
+    <figure id="figure383">
       <figDesc>miniature of Je&#x17F;us at door</figDesc>
     </figure>
-    <figure>
+    <figure id="figure384">
       <figDesc>Women around text</figDesc>
     </figure>
     <excerpt source="a.25:14-30" type="context">
@@ -15707,7 +15707,7 @@
         vnprofitable &#x17F;eruant into outer darkene&#x17F;&#x17F;e, there &#x17F;hall be weeping and gna&#x17F;hing of teeth.
       </verse>
     </excerpt>
-    <figure>
+    <figure id="figure385">
       <figDesc>&#x17F;ervant investing</figDesc>
       <head>[Abiens autem qui quintque talenta acceperat et . . .]</head>
       <inven>CP Groening</inven>
@@ -15717,7 +15717,7 @@
       <n>2</n>
       <source>[al&#x17F;o in Cecil 247/cviii]</source>
     </figure>
-    <figure>
+    <figure id="figure386">
       <figDesc>&#x17F;ervant digging</figDesc>
       <head>[Qui vero unum acceperat . . .]</head>
       <inven>CP Groening</inven>
@@ -15727,7 +15727,7 @@
       <n>3</n>
       <source>[al&#x17F;o in Cecil 287/cxxvii]</source>
     </figure>
-    <figure>
+    <figure id="figure387">
       <figDesc>&#x17F;ervant bound in jail</figDesc>
       <head>[Inutisem &#x17F;eruum eijcite in tenebras . . .]</head>
       <inven>CP Groening</inven>
@@ -15740,7 +15740,7 @@
   </hchapter>
   <hchapter n="CXXVII" toctitle="THE IVDGEMENT ." col="443">
     <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">J</hi>UDGEMENT+</head>
-    <figure>
+    <figure id="figure388">
       <figDesc>Chr^i&#x17F;t judging, angel divides &#x17F;heep from goats</figDesc>
       <head>[Cum venerit filius hominis tunc . . . ]</head>
       <inven>M d Vos</inven>
@@ -15807,18 +15807,18 @@
       <verse book="a" cnumber="26" id="a.25.46-c" type="context" vnumber="46"> And* the&#x17F;e &#x17F;hall go
         away into e=uerla&#x17F;ting puni&#x17F;hment: but the righ=teous into life eternall. </verse>
     </excerpt>
-    <figure col="445-8">
+    <figure id="figure389" col="445-8">
       <figDesc>4 images of Chr^i&#x17F;tians with Chr^i&#x17F;t in backgnd, giving food, water, ho&#x17F;pitality,
         clothing [break up]</figDesc>
       <inven>M de Vos</inven>
       <ex>G. de Jode</ex>
     </figure>
-    <figure col="449">
+    <figure id="figure390" col="449">
       <figDesc>Chr^i&#x17F;t witne&#x17F;&#x17F;es tho&#x17F;e tending the sick</figDesc>
       <inven>M de Vos</inven>
       <ex>G. de Jode</ex>
     </figure>
-    <figure>
+    <figure id="figure391">
       <figDesc>Angel herding &#x17F;heep and goats at re&#x17F;urrection</figDesc>
       <inven>[MdV]</inven>
     </figure>
@@ -15830,13 +15830,13 @@
       <verse book="c" cnumber="22" id="c.21.38-c" type="context" vnumber="38"> And all the people
         came early in the morning to him in the Temple, for^ to heare him. </verse>
     </excerpt>
-    <figure col="451">
+    <figure id="figure392" col="451">
       <figDesc>Chr^i&#x17F;t talking to pri&#x17F;oner, pointing to people entering pri&#x17F;on [this image is al&#x17F;o
         the source for^ the various illustrations of torture earlier in the volume</figDesc>
       <inven>M de Vos</inven>
       <ex>G. de Jode</ex>
     </figure>
-    <figure>
+    <figure id="figure393">
       <figDesc>Devils herding goats and people at re&#x17F;urrection</figDesc>
       <inven>MdV</inven>
     </figure>
@@ -15845,18 +15845,18 @@
     <head><hi rend="color(gold)">J</hi>UDAS Couenants to sell <hi rend="color(gold)
             "
         >Chr^i&#x17F;t</hi>+</head>
-    <figure>
+    <figure id="figure394">
       <figDesc>Absolom drawn away from David</figDesc>
       <ex>GdJ?</ex>
     </figure>
-    <figure>
+    <figure id="figure395">
       <figDesc>Absolon crowned on throne</figDesc>
       <ex>GdJ?</ex>
       <n>3</n>
     </figure>
     <comment>Absolon and/ Achitophels consultation agaynst David was a Type of that of the Phari&#x17F;ees
       agaynst Chr^i&#x17F;t</comment>
-    <figure col="455">
+    <figure id="figure396" col="455">
       <figDesc>Joseph &#x17F;old by brothers</figDesc>
       <ms>Josephs selling by his Bretheren was a Type of Judas his selling Chr^i&#x17F;t [&#x17F;ee note on
         typology]</ms>
@@ -15947,16 +15947,16 @@
   </hchapter>
   <hchapter n="CXXIX" toctitle="THE PASCHAL LAMBE ." col="457">
     <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">P</hi>ASCHAL LAMBE+</head>
-    <figure>
+    <figure id="figure397">
       <figDesc>Pa&#x17F;sover celebration in Egypt</figDesc>
       <ms>The Jews celebrating the Pa&#x17F;souer in Aegipt</ms>
       <artist>GdJ?</artist>
     </figure>
-    <figure>
+    <figure id="figure398">
       <figDesc>Burning of remains of Pa&#x17F;sover</figDesc>
       <ms>The Burning of/ the Remaynes of the Pa&#x17F;souer</ms>
     </figure>
-    <figure col="459">
+    <figure id="figure399" col="459">
       <figDesc>la&#x17F;t supper, di&#x17F;ciple leans on Chr^i&#x17F;t, Judas looks away, knife on table points from
         Judas to Chr^i&#x17F;t, even as Judas looks at viewer, with hidden open hand and money in
       other</figDesc>
@@ -16056,14 +16056,14 @@
       <verse book="c" cnumber="23" id="c.22.18-c" type="context" vnumber="18"> For^ I &#x17F;ay vnto you, I
         will not drinke of the fruit of the Uine, vntill the kingdome of God &#x17F;hall come. </verse>
     </excerpt>
-    <figure>
+    <figure id="figure400">
       <figDesc>Miniature of la&#x17F;t supper</figDesc>
       <head>Legis Acco'pletio</head>
     </figure>
   </hchapter>
   <hchapter n="CXXX" toctitle="The wa&#x17F;hING of the FEET" col="461">
     <head><hi rend="color(gold)">T</hi>HE wa&#x17F;hING of the <hi rend="color(gold)">F</hi>EET.</head>
-    <figure>
+    <figure id="figure401">
       <figDesc>Je&#x17F;us wa&#x17F;hing his di&#x17F;ciple's feet</figDesc>
       <head>Venit ergo ad Simonem Petram. Et dicit ei Petrus; Domine, tu mihi lauas pedes? Respondit
         ei Iesus, Quod ego facio, tu nescis modò, scies autem postea. Ioan 13.</head>
@@ -16194,7 +16194,7 @@
         with you in my Fathers kingdome. </verse>
     </excerpt>
     <link>AND WHEN THEY HAD SVNG &amp; Chapt.132.P.468</link>
-    <figure col="463">
+    <figure id="figure402" col="463">
       <figDesc>la&#x17F;t supper</figDesc>
       <head>[Caenantibus eis accepit Iesus panem, et benedixit ac fregit; deditque discipulis suis,
         et ait, accipite et comedite; hoc est corpus meum. Matth. 26]</head>
@@ -16206,10 +16206,10 @@
       <n>[34]</n>
       <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, BL 1899cc68</source>
     </figure>
-    <figure>
+    <figure id="figure403">
       <figDesc>wa&#x17F;hing of feet, la&#x17F;t supper</figDesc>
     </figure>
-    <figure>
+    <figure id="figure404">
       <figDesc>Miniature la&#x17F;t supper</figDesc>
       <head>GRATIAE INSTITVTIO</head>
       <n>7</n>
@@ -16217,7 +16217,7 @@
   </hchapter>
   <hchapter n="CXXXII" toctitle="The Trayter MARKED OVT" col="465">
     <head><hi rend="color(gold)">T</hi>HE MARKING out of ye TRAITOR+</head>
-    <figure>
+    <figure id="figure405">
       <figDesc>la&#x17F;t supper, Judas ri&#x17F;es from table with hand/money</figDesc>
     </figure>
     <excerpt source="d.13:16-21a" type="context">
@@ -16354,7 +16354,7 @@
       <verse book="b" cnumber="15" id="b.14.26-s" type="supplement" vnumber="26">❡ And when they had
         sung an || hymne, they went out into the mount of Olives.</verse>
     </excerpt>
-    <figure size="small">
+    <figure id="figure406" size="small">
       <figDesc>la&#x17F;t supper, Judas ri&#x17F;es from table with hand/money</figDesc>
     </figure>
   </hchapter>
@@ -16490,17 +16490,17 @@
         behold, here are two &#x17F;wor^ds. And he &#x17F;aid vnto them, It is ynough. </verse>
     </excerpt>
     <link>(AND HEE CAME OVT &amp; Ch.138.P.483</link>
-    <figure composite="yes">
+    <figure id="figure407" composite="yes">
       <figDesc>Peter with two cocks, two swor^ds, one impaling him*</figDesc>
     </figure>
-    <figure>
+    <figure id="figure408">
       <figDesc>Four figures (Judas with &#x17F;aw, Philip, Chr^i&#x17F;t triumphant, Thomas)</figDesc>
       <head>Ivdas Philip Chr^i&#x17F;t Thomas</head>
     </figure>
   </hchapter>
   <hchapter n="CXXXIIII" toctitle="The SERMON after SUPPER ." col="471">
     <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">S</hi>ERMON after SUPPER+</head>
-    <figure>
+    <figure id="figure409">
       <figDesc>Chr^i&#x17F;t with cro&#x17F;&#x17F; and lambs, city of Jerusalem in back, IHS in sky [in FP, al&#x17F;o in e2
         or^ e3?]</figDesc>
       <inven>MdV</inven>
@@ -16619,7 +16619,7 @@
     <head><hi rend="color(gold)">T</hi>he Continuation of the <hi rend="color(gold)
             "
       >S</hi>ERMON</head>
-    <figure>
+    <figure id="figure410">
       <figDesc>14 miniatures illustrating virtues</figDesc>
       <head>Septum Dona Spiritus Sancti</head>
       <text>Donum Sapientiae. Donum Intellectus. Donum Timoris Domini. Donum Consily. Donum
@@ -16725,12 +16725,12 @@
   </hchapter>
   <hchapter n="CXXXVI" toctitle="The Continuation of the SERMON ." col="476">
     <head><hi rend="color(gold)">C</hi>ontinuation of the <hi rend="color(gold)"/>ERMON+</head>
-    <figure>
+    <figure id="figure411">
       <figDesc>Spirit descending on Mary, di&#x17F;ciples, at Pentecost</figDesc>
       <text>When the Comforter is come whom I will &#x17F;ende unto you/ From the Father euen the Spirit
         of Truth wch pr^oceedeth from the Father &amp;</text>
     </figure>
-    <figure>
+    <figure id="figure412">
       <figDesc>Spirit as bird/dove</figDesc>
     </figure>
     <excerpt source="d.16:1-33" type="context">
@@ -16948,7 +16948,7 @@
         vnto them thy Name, and will declare it: that the loue wherewith thou ha&#x17F;t lo=ued me, may be
         in them, and I in them. </verse>
     </excerpt>
-    <figure col="479">
+    <figure id="figure413" col="479">
       <figDesc>Architectural shrine to Chr^i&#x17F;t, with veil/shroud, cro&#x17F;&#x17F;, rosary, IHS, etc. and with
         four evangelists, and three readers + Jerome acro&#x17F;&#x17F; bottom</figDesc>
       <head>PII&#x17F;&#x17F;IMA PA&#x17F;&#x17F;IONIS IESV MEDITATIO Anuis eiusdem XXXIII. instar Coronae rite accommodata.</head>
@@ -16962,37 +16962,37 @@
   </hchapter>
   <hchapter n="CXXXVIII" toctitle="The GARDEN" col="481">
     <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">G</hi>ARDEN</head>
-    <figure composite="yes">
+    <figure id="figure414" composite="yes">
       <figDesc>Adam and Eve eat fruit, (Adam’s penis removed and a flower formerly pasted over Eve’s
         crotch, though now that particular blo&#x17F;som removed)*</figDesc>
       <artist>[Crispin]</artist>
     </figure>
-    <figure>
+    <figure id="figure415">
       <figDesc>Adam and Eve hide from God/Tetragrammaton, cover themselves</figDesc>
       <text>ADAM UBIES. [with] Tetragrammaton</text>
       <artist>Crispin</artist>
     </figure>
-    <figure>
+    <figure id="figure416">
       <figDesc>Naked Eve, clothed Adam, Tetragrammaton</figDesc>
       <head>Deus fecit ipsistunicas pelliceas</head>
     </figure>
-    <figure composite="yes">
+    <figure id="figure417" composite="yes">
       <figDesc>Adam and Eve and snake driven from garden*</figDesc>
     </figure>
     <comment>The Fall of Adam, is premised To the Reparation, wch was wrought by Chr^i&#x17F;t
       Pa&#x17F;&#x17F;ion./which began in a Garden as likewyse did the Fall</comment>
-    <figure col="483" composite="yes">
+    <figure id="figure418" col="483" composite="yes">
       <figDesc>Chr^i&#x17F;t in garden with di&#x17F;ciples, vision of cup, composite with background of garden,
         all figures pasted in, top scene pasted in</figDesc>
       <artist>MdV and CJVi&#x17F;&#x17F;cher, [base print]</artist>
       <inven>M d.Vos [top scene]</inven>
       <sculp>Joan Collaert [top scene]</sculp>
     </figure>
-    <figure col="485-490">
+    <figure id="figure419" col="485-490">
       <figDesc>Four more images dramatizing scene in garden, including two of ki&#x17F;&#x17F; [pull
       apart]</figDesc>
     </figure>
-    <figure>
+    <figure id="figure420">
       <figDesc>Chr^i&#x17F;t healing ear of &#x17F;ervant, Peter &#x17F;heaving swor^d</figDesc>
       <head>[Qui autē traditit eũ, dedit illis signũ, dicens, Quemcumque osculatus fuero, ipse est,
         tenete eũ. Et confestim accedēs ad Iesum, dixit, Aue rabbi. Matt.26.]</head>
@@ -17004,7 +17004,7 @@
       <n>[26]</n>
       <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, BL 1899cc68</source>
     </figure>
-    <figure>
+    <figure id="figure421">
       <figDesc>Five miniatures in text, including young man running naked [pull apart]</figDesc>
     </figure>
     <excerpt source="d.18:1" type="context">
@@ -17402,7 +17402,7 @@
   </hchapter>
   <hchapter n="CXXXIX" toctitle="the EXAMINATION" col="491">
     <head><hi rend="color(gold)">T</hi>HE EXAMINATION &amp; Judgement+</head>
-    <figure>
+    <figure id="figure422">
       <figDesc>Chr^i&#x17F;t led away</figDesc>
       <head>De Chr^i&#x17F;ti comprehensione. Matth 26 &amp;</head>
       <text>1. ? ? Chr^i&#x17F;tus Deus ? Hae est hora veitra et potestas tenebrarum. 2. Magna va et
@@ -17410,7 +17410,7 @@
       <ex>Boetius Bolswert</ex>
       <n>[54]</n>
     </figure>
-    <figure>
+    <figure id="figure423">
       <figDesc>Caiphas</figDesc>
       <head>CAIPHAS</head>
     </figure>
@@ -17477,14 +17477,14 @@
       <verse book="b" cnumber="15" id="b.14.54-c.b" type="context" vnumber="54"> and he &#x17F;ate with the &#x17F;eruants
         and warmed him&#x17F;elfe at the fire. </verse>
     </excerpt>
-    <figure>
+    <figure id="figure424">
       <figDesc>Chr^i&#x17F;t led away</figDesc>
     </figure>
     <excerpt source="a.26:58b" type="context">
       <verse book="a" cnumber="27" id="a.26.58-c" type="context" vnumber="58"> to &#x17F;ee
         the end. </verse>
     </excerpt>
-    <figure col="493">
+    <figure id="figure425" col="493">
       <figDesc>Three images of Chr^i&#x17F;t on trial, tormented [pull apart]</figDesc>
       <n>28,29,30</n>
     </figure>
@@ -17566,7 +17566,7 @@
         peace, and an&#x17F;wered nothing. Againe, the high Prie&#x17F;t a&#x17F;ked him, and &#x17F;ayd vnto him, Art thou
         the Chr^i&#x17F;t, the Sonne of the Ble&#x17F;&#x17F;ed? </verse>
     </excerpt>
-    <figure>
+    <figure id="figure426">
       <figDesc>Man opening/taking off Garment</figDesc>
     </figure>
     <excerpt source="b.14:62a" type="supplement">
@@ -17639,14 +17639,14 @@
         bla&#x17F;phemou&#x17F;ly &#x17F;pake they again&#x17F;t him. </verse>
     </excerpt>
     <link col="496">(AND A&#x17F;soONE &amp; Chapt: 41 [sic, actually 141] P.501</link>
-    <figure>
+    <figure id="figure427">
       <figDesc>Chr^i&#x17F;t tortured</figDesc>
       <head>De nocturna illusione, et matutina condemnatione. Matth.26.27. Mar.14.15. Luc.22</head>
       <text>1. Ministri (illegible)</text>
       <ex>Boetius Bolswert</ex>
       <n>[56]</n>
     </figure>
-    <figure>
+    <figure id="figure428">
       <figDesc>Chr^i&#x17F;t on trial</figDesc>
       <head>[Tunc Princeps Sacerdotum scidit sua, dicens, Blasphemauit: Quid adhuc egemus testibus.
         Matth. 26.]</head>
@@ -17660,7 +17660,7 @@
   </hchapter>
   <hchapter n="CXL" toctitle="PETERS DENYAL ." col="497">
     <head><hi rend="color(gold)">P</hi>ETERS DENIAL+</head>
-    <figure>
+    <figure id="figure429">
       <figDesc>Composite image of Peter’s denial of Chr^i&#x17F;t</figDesc>
       <ms>And the Lord turned and looked upon/Peter. Satan hath desyred to haue you</ms>
     </figure>
@@ -17839,17 +17839,17 @@
         and wept bitterly. </verse>
     </excerpt>
     <link>(AND THEN MEN &amp; In the Chapt going befor^e p. 496</link>
-    <figure composite="yes">
+    <figure id="figure430" composite="yes">
       <figDesc>Peter with key*</figDesc>
       <ms>And Peter went out and wept bitterly</ms>
     </figure>
   </hchapter>
   <hchapter n="CXLI" toctitle="The &#x17F;econd EXAMINATION &amp; JUDAS his DEATH ." col="501">
     <head><hi rend="color(gold)">T</hi>HE &#x17F;econd EXAMINATION &amp; JUDAS his DEATH+</head>
-    <figure>
+    <figure id="figure431">
       <figDesc>Angels on hill reveal Trinity, Tetragrammaton</figDesc>
     </figure>
-    <figure>
+    <figure id="figure432">
       <figDesc>Chr^i&#x17F;t befor^e Pilate or^ king, likely</figDesc>
     </figure>
     <excerpt source="c.22:66a" type="context">
@@ -17934,7 +17934,7 @@
     </excerpt>
     <comment>BEHOLD The <hi rend="color(red)">SEVERITIE</hi> And <hi rend="color(gold)">GOODNES</hi>
       of <hi rend="color(gold)">GOD</hi>+</comment>
-    <figure composite="503">
+    <figure id="figure433" composite="503">
       <figDesc>8 panel Chr^i&#x17F;t’s pa&#x17F;&#x17F;ion w Fr. text</figDesc>
       <text>O Seigneur Dieu declarez moy Qui t'a plonge en cest esmoy. O homme toy par ton peche
         M'as ceste pa&#x17F;&#x17F;ion cau&#x17F;e. P Dieu le mal de ta souffrance L'interieur me prche et tranche. De
@@ -17949,7 +17949,7 @@
         Pour de la mort vous affrantir.</text>
       <ex>Phls Galle</ex>
     </figure>
-    <figure>
+    <figure id="figure434">
       <figDesc>4 miniatures: Saul falling on his &#x17F;word, Judas, Peter and Paul</figDesc>
       <text>Bloemert in SAUL.REX. Idiber re. IUDAS. S. PETRVS. PAULUS</text>
       <inven>Bloemert</inven>
@@ -17961,7 +17961,7 @@
     col="505">
     <head><hi rend="color(gold)">T</hi>HE ACCUSATION. EXAMINATION by PILATE &amp; &#x17F;endING to
       HERODE+</head>
-    <figure>
+    <figure id="figure435">
       <figDesc>Chr^i&#x17F;t led befor^e Pilate</figDesc>
       <head>[Mane consilium facientes summi Sacerdotes cum Senioribus et Scribus, vincientes Iesum,
         duxerunt et tradiderunt Pilato. Marci. 15.]</head>
@@ -18032,7 +18032,7 @@
         him, What is trueth? And when hee had &#x17F;aid this, hee went out againe vnto the Iewes, &amp;
         &#x17F;aith vnto them, I find in him no fault at all. </verse>
     </excerpt>
-    <figure col="507">
+    <figure id="figure436" col="507">
       <figDesc>Chr^i&#x17F;t led befor^e Herod</figDesc>
       <head>[Vt cognouit Pilatus quod de Herodis potestate e&#x17F;&#x17F;et, remisit eum ad Herodem, qui et
         ipse Hierosolymis erat illis diebus. Luc.23]</head>
@@ -18117,7 +18117,7 @@
   </hchapter>
   <hchapter n="CXLIII" toctitle="The SCOURGING . The CROWNING &amp; CONDEMNATION ." col="509">
     <head><hi rend="color(gold)">B</hi>ARRABAS. THE SCOURGING. THE CROWNING &amp; CONDEMNATION+</head>
-    <figure composite="yes">
+    <figure id="figure437" composite="yes">
       <figDesc>Pilate announces to crowd Je&#x17F;us's innocence. Je&#x17F;us and all small figures pasted in.
         [this is po&#x17F;&#x17F;ibly an entirely different scene in the original base plate. The bottom jail
         scene may cover the original title*</figDesc>
@@ -18235,7 +18235,7 @@
       <verse book="a" cnumber="28" id="a.27.22-s" type="supplement" vnumber="22">Pilate &#x17F;aith unto
         them </verse>
     </excerpt>
-    <figure>
+    <figure id="figure438">
       <figDesc>Je&#x17F;us &#x17F;courged by two men while others watch</figDesc>
       <head>[Vulneratus est propter iniquitates nostras, attritus est propter scelera nostra:
         Disciplina pacis nostrae super eum, et liuore eius sanati sumus. Isai. 53.]</head>
@@ -18246,7 +18246,7 @@
       <n>[41]</n>
       <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, [BL 1899cc68]</source>
     </figure>
-    <figure col="511-16">
+    <figure id="figure439" col="511-16">
       <figDesc>6 images of scourging, including 511 colored oval piece (on vellum?) and the wa&#x17F;hing
         of hands [pull apart]</figDesc>
       <n>?,?,12,13,14,15</n>
@@ -18462,7 +18462,7 @@
       </verse>
     </excerpt>
     <link>THEN THE soVLDIERS &amp; As is above in page 514</link>
-    <figure>
+    <figure id="figure440">
       <figDesc>Two angels hold up shroud with Chr^i&#x17F;t's face</figDesc>
       <head>ECCE HOMO</head>
     </figure>
@@ -18470,7 +18470,7 @@
   </hchapter>
   <hchapter n="CXLIIII" toctitle="The Crucifying &amp; DEATH ." col="517">
     <head><hi rend="color(gold)">T</hi>HE Crucifying &amp; DEATH+</head>
-    <figure>
+    <figure id="figure441">
       <figDesc>Chr^i&#x17F;t carrying cro&#x17F;&#x17F;</figDesc>
       <head>[Susceperunt autem Iesum et eduxerunt. Et baiulans sibi crucem, exiuit in eum qui
         dicitur Caluariae locum. Ioan. 19.]</head>
@@ -18481,12 +18481,12 @@
       <n>[45]</n>
       <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, [BL 1899cc68]</source>
     </figure>
-    <figure composite="yes">
+    <figure id="figure442" composite="yes">
       <figDesc>Daughters of Jerusalem*</figDesc>
       <ms>Daughters of Hieru&#x17F;alem weepe not for^ mee but weepe for^ yr/&#x17F;elues and for^ your
       childr^en</ms>
     </figure>
-    <figure col="519" composite="yes">
+    <figure id="figure443" col="519" composite="yes">
       <figDesc>Chr^i&#x17F;t nailed to cro&#x17F;&#x17F;, with altars and banners to the &#x17F;ides, and miniatures glued
         into the bottom corners*</figDesc>
       <head>[Et postquam venerunt in locum qui vocatur Caluariae, ibi crucifixerunt eum. Luc. 23.]</head>
@@ -18499,7 +18499,7 @@
       <n>[46]</n>
       <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, [BL 1899cc68]</source>
     </figure>
-    <figure>
+    <figure id="figure444">
       <figDesc>mi&#x17F;&#x17F;ing oval plate on 519/20, damage to page cau&#x17F;ed by its removal, impre&#x17F;&#x17F;ion
       left.</figDesc>
     </figure>
@@ -18592,23 +18592,23 @@
       <verse book="b" cnumber="16" id="b.15.23-c.b" type="context" vnumber="23"> but he receiued it not. </verse>
     </excerpt>
     <link>(AND WHEN THEY HAD CRVCIFIED &amp; As follows heer after. p. 525.</link>
-    <figure col="521">
+    <figure id="figure445" col="521">
       <figDesc>Mo&#x17F;es with serpent on cro&#x17F;&#x17F;</figDesc>
       <text>As Mo&#x17F;es lyfte up the Serpent in ye wilderne&#x17F;&#x17F;</text>
       <source>[al&#x17F;o in Cecil p47/xx]</source>
       <source>[al&#x17F;o in Cecil p47/xx]</source>
     </figure>
-    <figure composite="yes">
+    <figure id="figure446" composite="yes">
       <figDesc>Abel dead at altar with lamb*</figDesc>
       <text>That &#x17F;peaketh better things than yt of Abell</text>
     </figure>
-    <figure col="523" composite="yes">
+    <figure id="figure447" col="523" composite="yes">
       <figDesc>Composite: Chr^i&#x17F;t with thieves on cro&#x17F;&#x17F;*</figDesc>
       <text>I II III IIII V VI VII VIII IX X/ MORTIE MORI EMINI</text>
       <ms>Having SPOYLED PRINCIPALLITIES AND POWERS HEE MADE A &#x17F;heW OF THEM openly/TRIVMPHING OVER
         THEM</ms>
     </figure>
-    <figure size="miniature">
+    <figure id="figure448" size="miniature">
       <figDesc>Miniature of Abr^aham and Isaac, with angel re&#x17F;training Abr^aham</figDesc>
     </figure>
     <excerpt source="c.23:33a" type="context">
@@ -18678,7 +18678,7 @@
     </excerpt>
     <link>AND ONE OF THE MALEFACTORS &amp; As follows. p. 528</link>
     <!-- to here Sept 15 -->
-    <figure col="525">
+    <figure id="figure449" col="525">
       <figDesc>Chr^i&#x17F;t on cro&#x17F;&#x17F; with &#x17F;oldiers dividing robe</figDesc>
       <head>I.N.R.I.</head>
     </figure>
@@ -18719,10 +18719,10 @@
         they watched him there: </verse>
     </excerpt>
     <link col="526">(AND &#x17F;et VP OVER &amp; As goeth befor^e P.523</link>
-    <figure col="527">
+    <figure id="figure450" col="527">
       <figDesc>Chr^i&#x17F;t on cro&#x17F;&#x17F;</figDesc>
     </figure>
-    <figure>
+    <figure id="figure451">
       <figDesc>Chr^i&#x17F;t on cro&#x17F;&#x17F;</figDesc>
     </figure>
     <excerpt source="a.27:39-40a" type="supplement">
@@ -18815,14 +18815,14 @@
       <verse book="c" cnumber="24" id="c.23.43-c" type="context" vnumber="43"> And Je&#x17F;us &#x17F;aid vnto
         him, Uerily, I &#x17F;ay vnto thee, to day &#x17F;halt thou be with mee in Paradi&#x17F;e. </verse>
     </excerpt>
-    <figure col="529">
+    <figure id="figure452" col="529">
       <figDesc>Chr^i&#x17F;t on cro&#x17F;&#x17F; with women weeping</figDesc>
     </figure>
-    <figure>
+    <figure id="figure453">
       <figDesc>Women with ri&#x17F;en Chr^i&#x17F;t</figDesc>
       <ms>And went/into the/Holy Citty/ and ap/peared/unto ma/ny</ms>
     </figure>
-    <figure col="531">
+    <figure id="figure454" col="531">
       <figDesc>Women weeping</figDesc>
     </figure>
     <excerpt source="d.19:25-27" type="context">
@@ -18903,7 +18903,7 @@
       <verse book="a" cnumber="28" id="a.27.49-c" type="context" vnumber="49"> The re&#x17F;t &#x17F;aid, Let
         be, let vs &#x17F;ee whether Elias will come to &#x17F;aue him. </verse>
     </excerpt>
-    <figure col="532">
+    <figure id="figure455" col="532">
       <figDesc>Chr^i&#x17F;t on cro&#x17F;&#x17F;</figDesc>
       <head>[De septem verbis noui&#x17F;&#x17F;imis. Matt. 27. Mar.15. Luc.23. Ioan.19.</head>
       <ex>Boetius Bolswert?</ex>
@@ -18944,17 +18944,17 @@
         graues after his re&#x17F;urrecti=on, and went into the holy citie, and appeared vnto many
       </verse>
     </excerpt>
-    <figure composite="yes">
+    <figure id="figure456" composite="yes">
       <figDesc>Woman with halo pasted over scene of people rising from their graves*</figDesc>
       <ms>And came out of the Graves</ms>
       <source>[al&#x17F;o used in The Revelation, chapter XXI]</source>
       <source>[al&#x17F;o used in The Revelation, chapter XXI]</source>
     </figure>
-    <figure col="533" composite="yes">
+    <figure id="figure457" col="533" composite="yes">
       <figDesc>Centurion looking at cro&#x17F;&#x17F;, with handwritten text by mouth</figDesc>
       <ms>Truly this man was the son of God</ms>
     </figure>
-    <figure col="533" composite="yes">
+    <figure id="figure458" col="533" composite="yes">
       <figDesc>Centurion between cro&#x17F;&#x17F;es, with handwritten text by mouth</figDesc>
       <ms>Truly this was the son of God</ms>
     </figure>
@@ -18962,10 +18962,10 @@
       <verse book="b" cnumber="16" id="b.15.39-c" type="context" vnumber="39">❡ And when the
         Centurion which &#x17F;tood ouer again&#x17F;t him, &#x17F;aw </verse>
     </excerpt>
-    <figure>
+    <figure id="figure459">
       <figDesc>woman on knees</figDesc>
     </figure>
-    <figure>
+    <figure id="figure460">
       <figDesc>woman on knees</figDesc>
     </figure>
     <excerpt source="c.23:47a" type="supplement">
@@ -19027,19 +19027,19 @@
         acquaintance, and the women that followed him from Galilee, &#x17F;tood afarre off, beholding
         the&#x17F;e things. </verse>
     </excerpt>
-    <figure col="535">
+    <figure id="figure461" col="535">
       <figDesc>Samson pulling down temple</figDesc>
     </figure>
     <!-- note the problem of category here: is this best in an ms tag, which is for^ handwriting on or^ in the mid&#x17F;t of an image, or^ a comment tag, which is for^ marginal comments in handwriting?  Talitha has tagged it as a title, which &#x17F;eems to make sense, but is incorrect, becau&#x17F;e Title is for^ titles that are part of the original print.  What we may need to do is addre&#x17F;&#x17F; the comment/ms ambiguity in the &#x17F;earch interface, so that when users want to &#x17F;earch the handwriting, they automatically &#x17F;earch both tho&#x17F;e tags.  MS is an important tag, though, for^ anyone studying the composition of images, in which the handwriting is a part of the composition itself.  Thus, I think that since this comment on Samson is not part of the image, it &#x17F;hould be in a comment tag.  The problem with that is that the text is separated from the image, rather than being in the image tag, though that is a problem we'll have to addre&#x17F;&#x17F; more globally anyway.  &#x17F;omehow, we have to order all of the&#x17F;e tagged items so that they show up in their accurate proximity to each other.  Right now, we aren't tagging for^ this except for^ the col attribute, which can presumably get things onto the right page, but not in the right order? -->
     <comment><hi rend="letter(roman)">SAMPsoNS</hi> Acts being Types of Chr^i&#x17F;t are br^ought in this
       place and others following.</comment>
-    <figure>
+    <figure id="figure462">
       <figDesc>Man with arms rai&#x17F;ed</figDesc>
     </figure>
-    <figure composite="yes">
+    <figure id="figure463" composite="yes">
       <figDesc>Crowd with man pointing pasted to the top of four women walking</figDesc>
     </figure>
-    <figure>
+    <figure id="figure464">
       <figDesc>Woman walking with hands together</figDesc>
     </figure>
     <comment>the&#x17F;e three Pictures are to expre&#x17F;&#x17F; the &#x17F;orrowfull Returne of the People from Chr^i&#x17F;t
@@ -19047,11 +19047,11 @@
   </hchapter>
   <hchapter n="CXLV" toctitle="The Crucifying &amp; DEATH." col="537">
     <head><hi rend="color(gold)">T</hi>HE Crucifying &amp; DEATH+</head>
-    <figure>
+    <figure id="figure465">
       <figDesc>Chr^i&#x17F;t and thieves on cro&#x17F;&#x17F;es, &#x17F;oldier piercing Chr^i&#x17F;t's &#x17F;ide, Magdelene, BVM, and
         John, skull in mirror on ground</figDesc>
     </figure>
-    <figure size="miniature">
+    <figure id="figure466" size="miniature">
       <figDesc>Miniature Chr^i&#x17F;t on cro&#x17F;&#x17F;, &#x17F;oldier piercing &#x17F;ide</figDesc>
     </figure>
     <excerpt source="d.19:31-37a" type="context">
@@ -19079,17 +19079,17 @@
       <verse book="d" cnumber="20" id="d.19.37-c" type="context" vnumber="37"> *And againe another
         Scrip=ture &#x17F;aith, They &#x17F;hall looke on him whom they pierced. ** </verse> <!-- ** And after this. - supplement anecdote -->
     </excerpt>
-    <figure col="539">
+    <figure id="figure467" col="539">
       <figDesc>Delilah cutting the sleeping Samson's hair as &#x17F;oldiers approach (one with
       spear)</figDesc>
     </figure>
-    <figure composite="yes">
+    <figure id="figure468" composite="yes">
       <figDesc>Samson with foxes, Samson killing lion, Samson with jaw-bone and lion skin</figDesc>
     </figure>
   </hchapter>
   <hchapter n="CXLV" toctitle="THE BURIAL ." col="541">
     <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">B</hi>URIAL</head>
-    <figure>
+    <figure id="figure469">
       <figDesc>Chr^i&#x17F;t lowered from cro&#x17F;&#x17F; by di&#x17F;ciples</figDesc>
       <head>[Vir nomine Io&#x17F;eph ab Arimathea corpus Iesu depositum inuoluit sindone, et posuit eum in
         monumento exciso. Luc.23.]</head>
@@ -19100,7 +19100,7 @@
       <n>[48]</n>
       <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, [BL 1899cc68]</source>
     </figure>
-    <figure>
+    <figure id="figure470">
       <figDesc>Chr^i&#x17F;t lowered into coffin out&#x17F;ide tomb by di&#x17F;ciples</figDesc>
       <head>[Accepto corpore Io&#x17F;eph inuoluit illud in sindone munda: et posuit illud in monumento
         suo nouo, quod exciderat in petra. Matth.27.]</head>
@@ -19111,13 +19111,13 @@
       <n>[49]</n>
       <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, [BL 1899cc68]</source>
     </figure>
-    <figure>
+    <figure id="figure471">
       <figDesc>Woman reclining with crown of thorns, head down</figDesc>
     </figure>
-    <figure>
+    <figure id="figure472">
       <figDesc>Man holding jar [Nicodemus with myrrhe and aloes]</figDesc>
     </figure>
-    <figure col="543" composite="no, all one piece of paper">
+    <figure id="figure473" col="543" composite="no, all one piece of paper">
       <figDesc>Chr^i&#x17F;t lowered from cro&#x17F;&#x17F; by di&#x17F;ciples, background scenes with Chr^i&#x17F;t in tomb with
         women &#x17F;tanding</figDesc>
     </figure>
@@ -19240,10 +19240,10 @@
         and prepared &#x17F;pices and oyntments, and re&#x17F;ted the Sabbath day, according to the
         commandement. </verse>
     </excerpt>
-    <figure>
+    <figure id="figure474">
       <figDesc>Man &#x17F;tanding over Chr^i&#x17F;t lying on tomb</figDesc>
     </figure>
-    <figure composite="yes">
+    <figure id="figure475" composite="yes">
       <figDesc>&#x17F;ides: symbolic cro&#x17F;&#x17F; and column, empty lamp, dice, cloth, bowl and pitcher, bag of
         money, etc</figDesc>
     </figure>
@@ -19272,20 +19272,20 @@
   </hchapter>
   <hchapter n="CXLVI" toctitle="The re&#x17F;urrection ." col="545">
     <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">R</hi>ESURRECTION+</head>
-    <figure>
+    <figure id="figure476">
       <figDesc>Chr^i&#x17F;t emerges from tomb, &#x17F;oldiers amazed</figDesc>
     </figure>
-    <figure composite="yes">
+    <figure id="figure477" composite="yes">
       <figDesc>Chr^i&#x17F;t sitting on tomb, foot on skull and snake, with cro&#x17F;&#x17F;, angels
       surrounding*</figDesc>
     </figure>
-    <figure col="547" size="miniature">
+    <figure id="figure478" col="547" size="miniature">
       <figDesc>Mini Jonah &#x17F;pit out of whale</figDesc>
     </figure>
-    <figure size="miniature">
+    <figure id="figure479" size="miniature">
       <figDesc>Mini Chr^i&#x17F;t emerging with &#x17F;oldiers</figDesc>
     </figure>
-    <figure>
+    <figure id="figure480">
       <figDesc>Sampson breaking doors</figDesc>
       <ms>SAMPsoN</ms>
     </figure>
@@ -19369,14 +19369,14 @@
     <excerpt source="a.28:7b" type="context">
       <verse book="a" cnumber="29" id="a.28.7-c.b" type="context" vnumber="7"> loe, I haue told you. </verse>
     </excerpt>
-    <figure size="miniature">
+    <figure id="figure481" size="miniature">
       <figDesc>Miniature of Angel at tomb talking to women</figDesc>
     </figure>
-    <figure>
+    <figure id="figure482">
       <figDesc>Chr^i&#x17F;t emerging, &#x17F;oldiers, women, angels at corners in original plate, not
       pasted</figDesc>
     </figure>
-    <figure composite="yes">
+    <figure id="figure483" composite="yes">
       <figDesc>Chained Goat-man with breasts and wings [on left]; Chained skeleton with wings [on
         right]</figDesc>
       <text>in lignum crucis et a&#x17F;cendens in altum captivam duxit cap\ tivitatem dedit dona
@@ -19384,7 +19384,7 @@
         gave gifts unto men, (Ephesians, 4:8). &#x17F;ee
       http://www.abdn.ac.uk/bestiary/translat/57r.hti]</text>
     </figure>
-    <figure col="549">
+    <figure id="figure484" col="549">
       <figDesc>Two of women discovering tomb</figDesc>
       <head>[De re&#x17F;urrectione mulieribus indicata. Matt.28. Mar.26]]</head>
       <text>1. Maria Magdalene, Maria Iacobi, et Salome vnctrae corpus Iesu. contendunt ad
@@ -19395,11 +19395,11 @@
       <ex>Boetius Bolswert</ex>
       <n>[69]</n>
     </figure>
-    <figure composite="yes">
+    <figure id="figure485" composite="yes">
       <figDesc>Angels, Chr^i&#x17F;t, women*</figDesc>
       <text>Hee is not here but is ri&#x17F;en/Why &#x17F;eek ye the liuing among the Dead?</text>
     </figure>
-    <figure col="550">
+    <figure id="figure486" col="550">
       <figDesc>Magdalene</figDesc>
       <head>[De apparitione facta Magdalenae et alijs pijs mulieribus. Matt.28. Mar.16. Ioan.20]</head>
       <text>1.Angeli duo in Chr^i&#x17F;ti monumento Magdalena increpant. Mulier quid ploras. et illa.
@@ -19411,7 +19411,7 @@
       <ex>Boetius Bolswert</ex>
       <n>[70]</n>
     </figure>
-    <figure size="detail">
+    <figure id="figure487" size="detail">
       <figDesc>Man kneeling in tomb with keys [Peter]</figDesc>
     </figure>
     <!-- perhaps size &#x17F;hould be changed to type, and then size used for^ a mea&#x17F;urement -->
@@ -19491,16 +19491,16 @@
       <verse book="d" cnumber="21" id="d.20.10-c" type="context" vnumber="10"> Then the di&#x17F;ciples
         went away againe vnto their owne home. </verse>
     </excerpt>
-    <figure col="551">
+    <figure id="figure488" col="551">
       <figDesc>In Renai&#x17F;&#x17F;ance garden, Mary Magdalene kneeling at Chr^i&#x17F;t’s feet—Chr^i&#x17F;t with gardening
         shovel</figDesc>
       <inven>M de Vos</inven>
       <ex>G de Jode</ex>
     </figure>
-    <figure>
+    <figure id="figure489">
       <figDesc>Woman kneeling</figDesc>
     </figure>
-    <figure>
+    <figure id="figure490">
       <figDesc>Woman kneeling in front of Chr^i&#x17F;t, individual figures from &#x17F;ame print</figDesc>
     </figure>
     <excerpt source="c.24:12" type="supplement">
@@ -19541,14 +19541,14 @@
         Touch mee not: for^ I am not yet a&#x17F;cended to my Father: but goe to my br^ethr^en, and &#x17F;ay vnto
         them, I a&#x17F;cend vnto my Father, and your Father, and to my God, and your God. </verse>
     </excerpt>
-    <figure col="553"
+    <figure id="figure491" col="553"
       composite="yes, title taken from Bolswert plate used on 550, plate from another source">
       <figDesc>Magdalene at Chr^i&#x17F;t’s feet</figDesc>
       <head>De apparitione facta Magdalenae et alijs pijs mulieribus. Matt.28.Marc.16.Ioan.20</head>
       <ex>Boetius Bolswert</ex>
       <n>[70]</n>
     </figure>
-    <figure>
+    <figure id="figure492">
       <figDesc>&#x17F;oldiers receive money to cover up re&#x17F;urrection</figDesc>
       <text>They gaue Large mony</text>
     </figure>
@@ -19601,7 +19601,7 @@
   </hchapter>
   <hchapter n="CXLVII" toctitle="EMMAUS" col="553">
     <head><hi rend="color(gold)">E</hi>MMAUS</head>
-    <figure col="554">
+    <figure id="figure493" col="554">
       <figDesc>Chr^i&#x17F;t and two di&#x17F;ciples</figDesc>
       <head>[De apparitione duobus discipulis euntibus in Emaus. Mar.16. Luc. 24]</head>
       <text>1.Duobus discipulis euntibus in Emaus consite se viae prebet Deus et capta occasione
@@ -19707,11 +19707,11 @@
     <excerpt source="b.16:13b" type="context">
       <verse book="b" cnumber="17" id="b.16.13-c" type="context" vnumber="13"> neither beleeued they them. </verse>
     </excerpt>
-    <figure col="555">
+    <figure id="figure494" col="555">
       <figDesc>Chr^i&#x17F;t with two, breaking bread, fish on table</figDesc>
       <n>45 or^ 46 or^ 48?</n>
     </figure>
-    <figure composite="yes">
+    <figure id="figure495" composite="yes">
       <figDesc>Mo&#x17F;es and the Pr^ophets, writing, books with crucifix [&#x17F;ame plate], Emmaus scene*</figDesc>
       <text>Ecce puer meus quem elegi, dilec-tus meus, in quo bene complacuit anima meae. Po-nam
         spiritu' me-um super eum?, iudicium genti'iuintiabit?. Non contendet, neq' clamabit, neq'
@@ -19723,7 +19723,7 @@
     <head><hi rend="color(gold)">T</hi>HE fir&#x17F;t &amp; &#x17F;econd <hi rend="color(gold)
             "
         >A</hi>PPARITION</head>
-    <figure>
+    <figure id="figure496">
       <figDesc>Thomas puts hand in Chr^i&#x17F;t’s &#x17F;ide as other di&#x17F;ciples watch</figDesc>
     </figure>
     <excerpt source="c.24:36a" type="context">
@@ -19814,7 +19814,7 @@
         wr^itten, that yee might beleeue that Je&#x17F;us is the Chr^i&#x17F;t the Sonne of God, and that
         beleeuing ye might haue life through his Name. </verse>
     </excerpt>
-    <figure>
+    <figure id="figure497">
       <figDesc>Chr^i&#x17F;t with di&#x17F;ciples, &#x17F;ending them [Bolswert print with quotations from text pasted
         over image as speech bubbles]</figDesc>
       <head>[De apparritione discipulis in caenaculo. Luc.24. Ioan.20.]</head>
@@ -19828,7 +19828,7 @@
       <ex>Boetius Bolswert</ex>
       <n>[72]</n>
     </figure>
-    <figure col="558">
+    <figure id="figure498" col="558">
       <figDesc>miniature scroll, book, and ink embedded in the Context</figDesc>
       <text>Hec aut' scripta su't ut creda-tis quia Iesus Chri-sti. est ille</text>
     </figure>
@@ -19838,7 +19838,7 @@
       <hi rend="color(gold)"/>
     </head>
     <!-- TODO fill in chapter title.  Unfortunately, this means looking at the original document again. -->
-    <figure>
+    <figure id="figure499">
       <figDesc>Chr^i&#x17F;t appears on shore, eats with di&#x17F;ciples</figDesc>
       <head>De apparitione ad mare Tiberiadis. Iois' [Joan] 21</head>
       <text>1.Piscantibus discipulis offert se ad littus Dominus, et iubet ad dextram rete iaciant,
@@ -19943,7 +19943,7 @@
         which te&#x17F;tifieth of the&#x17F;e things, and wrote the&#x17F;e things, and we know that his te&#x17F;timony is
         true. </verse>
     </excerpt>
-    <figure>
+    <figure id="figure500">
       <figDesc>di&#x17F;ciples mend barn, bring in &#x17F;heep, Golgotha in backgd</figDesc>
       <text>Simon Ioannis diligis me plus his [reversed que&#x17F;tion mark] Dicit ei, etiam Domine, tu
         scis quia amo te, Dicit ei pasce agnos meos. Dicit ei iteram, Simon Ioannis diligis me ? ait
@@ -19958,7 +19958,7 @@
   <hchapter n="CL" toctitle="The la&#x17F;t Apparition &amp; ASCENSION ." col="561">
     <head><hi rend="color(gold)">T</hi>HE la&#x17F;t <hi rend="color(gold)">A</hi>pparition &amp; <hi
         rend="color(gold)">A</hi>scension+</head>
-    <figure>
+    <figure id="figure501">
       <figDesc>Chr^i&#x17F;t with cro&#x17F;&#x17F; and orb, in background his baptism and &#x17F;hepherd with flock and men
         repairing barn</figDesc>
       <ex>Ger de Jode</ex>
@@ -19996,7 +19996,7 @@
       <verse book="a" cnumber="29" id="a.28.20-c" type="context" vnumber="20"> Teaching them to
         ob&#x17F;erue all things, what&#x17F;oever I haue commanded you: </verse>
     </excerpt>
-    <figure composite="yes">
+    <figure id="figure502" composite="yes">
       <figDesc>Composite interwoven with Context: Man putting hands on head of kneeling man; Man
         with hand over head of kneeling man; two snakes, John with chalice and snake and
       eagle</figDesc>
@@ -20013,7 +20013,7 @@
         &#x17F;erpents, and if they drinke any deadly thing, it &#x17F;hall not hurt them, *they &#x17F;hall lay hands
         on the &#x17F;icke, and they &#x17F;hall recouer. </verse>
     </excerpt>
-    <figure col="563"
+    <figure id="figure503" col="563"
       composite="yes - Matthew image formed by text and placement into a completion image; it could as easily be a starting image, given the blank page and the Angel’s pre&#x17F;ence.">
       <figDesc>Matthew with Angel and book, hourgla&#x17F;&#x17F; and inkpot**</figDesc>
       <head>Context pasted over book: And Loe/I am/with you al/way Euen unto/the End of the
@@ -20026,11 +20026,11 @@
         the End of the Wor^ld Amen. </verse>
     </excerpt>
     <textnote>Context pasted onto plate.</textnote>
-    <figure col="565">
+    <figure id="figure504" col="565">
       <figDesc>Chr^i&#x17F;t a&#x17F;cending</figDesc>
       <fe>Anto. wierine</fe>
     </figure>
-    <figure>
+    <figure id="figure505">
       <figDesc>Holy Spirit/dove descending</figDesc>
       <head>[De Mi&#x17F;&#x17F;ione Spiritus sanct. Actor. 2]</head>
       <text>1. Festo Pentecostes congregatis discipulis cu' mulieribus et Maria Matre Iesu, repentè
@@ -20061,11 +20061,11 @@
       <verse book="c" cnumber="25" id="c.24.48-c" type="context" vnumber="48"> And ye are witne&#x17F;&#x17F;es
         of the&#x17F;e things. </verse>
     </excerpt>
-    <figure>
+    <figure id="figure506">
       <figDesc>oval: Elijah in chariot of fire</figDesc>
       <n>2</n>
     </figure>
-    <figure>
+    <figure id="figure507">
       <figDesc>Chr^i&#x17F;t a&#x17F;cending</figDesc>
       <head>[De vltima apparitione, et Ascensione Domini. Matt.28. Mar.16]</head>
       <text>[1. Apparens Dn's suis in Galilea postrema dat ma'data: Data est mihi omnis potestas in
@@ -20099,7 +20099,7 @@
       <verse book="c" cnumber="25" id="c.24.53-c" type="context" vnumber="53"> And were continually
         in the Temple, prai&#x17F;ing and ble&#x17F;&#x17F;ing God. Amen. </verse>
     </excerpt>
-    <figure col="567">
+    <figure id="figure508" col="567">
       <figDesc>Mark with Lion, writing tools and paper</figDesc>
       <text>Initium Eu (or^ Lu)</text>
     </figure>
@@ -20108,13 +20108,13 @@
         and preached euery Where, the Lord wor^king with them, and confirming the wor^d with &#x17F;ignes
         following. Amen. </verse>
     </excerpt>
-    <figure col="569">
+    <figure id="figure509" col="569">
       <figDesc>Man writing in book</figDesc>
     </figure>
-    <figure>
+    <figure id="figure510">
       <figDesc>eagle</figDesc>
     </figure>
-    <figure>
+    <figure id="figure511">
       <figDesc>Man with book and &#x17F;word</figDesc>
     </figure>
     <excerpt source="d.21:25" type="context">
@@ -20123,7 +20123,7 @@
         that euen the wor^ld it &#x17F;elfe could not conteine the bookes that &#x17F;hould be wr^itten, Amen.
       </verse>
     </excerpt>
-    <figure>
+    <figure id="figure512">
       <figDesc>Angels holding &#x17F;heet with I Tim 3 text</figDesc>
       <ms>Without controversie/GREAT is ye* MYSTERY of GODLINES/GOD was/manife&#x17F;t in ye
         fle&#x17F;h,/IVSTIFIED in ye SPIRIT,/&#x17F;eeNE of ANGELS,/PREACHED unto ye GENTILES,/BELEIVED on in ye
@@ -20134,12 +20134,12 @@
       is ye* MYSTERY of GODLINES/<hi rend="color(gold)">GOD</hi> was/manife&#x17F;t in ye fle&#x17F;h,/IVSTIFIED
       in ye SPIRIT,/&#x17F;eeNE of ANGELS,/PREACHED unto ye GENTILES,/BELEIVED on in ye wor^ld,/RECEIVED up
       into <hi rend="color(gold)">GLORY</hi>+/I Tim. 3</comment>
-    <figure composite="yes">
+    <figure id="figure513" composite="yes">
       <figDesc>Three layer composite: Life of Chr^i&#x17F;t scene with allegorical figures, Chr^i&#x17F;t in
         heaven pasted in upper center, with Tetragrammaton pasted on top of that</figDesc>
       <text>PAX, CHARITAS, FIDES, SPES, LEX, IVSTICIA</text>
     </figure>
-    <figure col="571">
+    <figure id="figure514" col="571">
       <figDesc>Full page Chr^i&#x17F;t making sign of peace, holding globe</figDesc>
       <text>Speramus in Deum viuum qui est Salvator omnium hominum</text>
       <ex>F. Hoeius</ex>
