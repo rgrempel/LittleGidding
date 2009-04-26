@@ -9,7 +9,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090423134713) do
+ActiveRecord::Schema.define(:version => 20090426004321) do
+
+  create_table "comments", :force => true do |t|
+    t.integer  "scholar_id"
+    t.string   "figure_id"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["created_at"], :name => "index_comments_on_created_at"
+  add_index "comments", ["figure_id"], :name => "index_comments_on_figure_id"
+  add_index "comments", ["scholar_id"], :name => "index_comments_on_scholar_id"
 
   create_table "pages", :force => true do |t|
     t.integer  "column_start", :null => false

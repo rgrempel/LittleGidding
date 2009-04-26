@@ -22,6 +22,34 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: comments; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE comments (
+    id integer NOT NULL,
+    scholar_id integer,
+    figure_id character varying(255),
+    comment text,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: pages; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE pages (
+    id integer NOT NULL,
+    column_start integer NOT NULL,
+    column_end integer NOT NULL,
+    filename character varying(255),
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -70,6 +98,43 @@ CREATE TABLE scholars (
 
 
 --
+-- Name: comments_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE comments_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+--
+-- Name: comments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE comments_id_seq OWNED BY comments.id;
+
+
+--
+-- Name: pages_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE pages_id_seq
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+--
+-- Name: pages_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE pages_id_seq OWNED BY pages.id;
+
+
+--
 -- Name: scholar_sessions_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
@@ -110,6 +175,20 @@ ALTER SEQUENCE scholars_id_seq OWNED BY scholars.id;
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE comments ALTER COLUMN id SET DEFAULT nextval('comments_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE pages ALTER COLUMN id SET DEFAULT nextval('pages_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE scholar_sessions ALTER COLUMN id SET DEFAULT nextval('scholar_sessions_id_seq'::regclass);
 
 
@@ -118,6 +197,22 @@ ALTER TABLE scholar_sessions ALTER COLUMN id SET DEFAULT nextval('scholar_sessio
 --
 
 ALTER TABLE scholars ALTER COLUMN id SET DEFAULT nextval('scholars_id_seq'::regclass);
+
+
+--
+-- Name: comments_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY comments
+    ADD CONSTRAINT comments_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: pages_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY pages
+    ADD CONSTRAINT pages_pkey PRIMARY KEY (id);
 
 
 --
@@ -134,6 +229,41 @@ ALTER TABLE ONLY scholar_sessions
 
 ALTER TABLE ONLY scholars
     ADD CONSTRAINT scholars_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: index_comments_on_created_at; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_comments_on_created_at ON comments USING btree (created_at);
+
+
+--
+-- Name: index_comments_on_figure_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_comments_on_figure_id ON comments USING btree (figure_id);
+
+
+--
+-- Name: index_comments_on_scholar_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_comments_on_scholar_id ON comments USING btree (scholar_id);
+
+
+--
+-- Name: index_pages_on_column_end; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_pages_on_column_end ON pages USING btree (column_end);
+
+
+--
+-- Name: index_pages_on_column_start; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_pages_on_column_start ON pages USING btree (column_start);
 
 
 --
@@ -185,3 +315,7 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 INSERT INTO schema_migrations (version) VALUES ('20090419201218');
 
 INSERT INTO schema_migrations (version) VALUES ('20090419204244');
+
+INSERT INTO schema_migrations (version) VALUES ('20090423134713');
+
+INSERT INTO schema_migrations (version) VALUES ('20090426004321');

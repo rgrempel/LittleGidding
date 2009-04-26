@@ -151,6 +151,41 @@ isc.RailsDataSource.create({
   ]
 });
 
+isc.RailsDataSource.create({
+  ID: "comments",
+  dataURL: "/comments",
+  fields: [
+    {
+      name: "id",
+      type: "integer",
+      primaryKey: true,
+      hidden: true
+    },
+    {
+      name: "scholar_id",
+      type: "integer",
+      title: "Scholar",
+      foreignKey: "scholars.id" 
+    },
+    {
+      name: "figure_id",
+      type: "text",
+      title: "Figure",
+      foreignKey: "figures.id"
+    },
+    {
+      name: "comment",
+      type: "text",
+      title: "Comment"
+    },
+    {
+      name: "created_at",
+      type: "date",
+      title: "Date"
+    }
+  ]
+});
+
 isc.defineClass("FiguresGrid", isc.ListGrid).addProperties({
   dataSource: "figures",
   autoFetchData: true,
@@ -193,6 +228,7 @@ isc.RailsDataSource.create({
   ID: "figures",
   dataURL: "/figures",
   fields: [
+    {name: "id", type: "text", primaryKey: "true", hidden: true},
     {name: "figDesc", type: "text", title: "Description"},
     {name: "head", type: "text", title: "Head"},
     {name: "text", type: "text", title: "Text"},
@@ -213,6 +249,15 @@ isc.RailsDataSource.create({
   ]
 });
 
+isc.defineClass("CommentsGrid", isc.ListGrid).addProperties({
+  dataSource: "comments",
+  fields: [
+    {name: "created_at", width: "60"},
+    {name: "scholar_id", width: "100"},
+    {name: "comment", width: "*"}
+  ]
+});
+
 isc.defineClass("FigureEditor", isc.Window).addProperties({
   title: "Figure",
   width: 500,
@@ -221,11 +266,30 @@ isc.defineClass("FigureEditor", isc.Window).addProperties({
   canDragResize: true,
   initWidget: function() {
     this.Super("initWidget", arguments);
+    this.detailViewer = isc.DetailViewer.create({
+      data: this.record,
+      dataSource: "figures",
+      showDetailFields: true,
+      showEdges: true,
+      showResizeBar: true,
+      height: "100%",
+      width: "50%",
+      overflow: "auto"
+    });
+    this.commentsGrid = isc.CommentsGrid.create({
+      showEdges: true,
+      height: "100%",
+      width: "50%"
+    });
+    this.commentsGrid.fetchRelatedData(this.record, this.detailViewer);
     this.addItem(
-      isc.DetailViewer.create({
-        data: this.record,
-        dataSource: "figures",
-        showDetailFields: true
+      isc.HLayout.create({
+        height: "100%",
+        width: "100%",
+        members: [
+          this.detailViewer, 
+          this.commentsGrid
+        ]
       })
     );
   }

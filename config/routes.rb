@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :comments
   map.resources :text
   map.resources :figures
   map.resources :pages
