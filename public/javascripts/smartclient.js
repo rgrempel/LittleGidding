@@ -28,6 +28,10 @@ isc.LG.addProperties({
     this.loginWindow.show();
   },
 
+  showFigureEditor: function(record) {
+    isc.FigureEditor.create({record: record}).show();
+  },
+
   logout: function() {
     var ds = isc.DataSource.get("scholar_sessions");
     // The id: is bogus ... this is really a singleton on the server
@@ -168,6 +172,9 @@ isc.defineClass("FiguresGrid", isc.ListGrid).addProperties({
     {name: "head", width: "*"},
     {name: "text", width: "*"}
   ],
+  recordDoubleClick: function(viewer, record, recordNum, field, fieldNum, value, rawValue) {
+    isc.LG.app.showFigureEditor(record);
+  },
   selectionChanged: function(record, state) {
     if (state) {
       isc.LG.app.setColumn(record.col);
@@ -186,7 +193,6 @@ isc.RailsDataSource.create({
   ID: "figures",
   dataURL: "/figures",
   fields: [
-    {name: "col", type: "integer", title: "Column", xmlAttribute: true},
     {name: "figDesc", type: "text", title: "Description"},
     {name: "head", type: "text", title: "Head"},
     {name: "text", type: "text", title: "Text"},
@@ -202,8 +208,27 @@ isc.RailsDataSource.create({
     {name: "n", type: "text", detail: true},
     // Size is an attribute ... values miniature, small
     {name: "size", type: "text", title: "Size", detail: true, xmlAttribute: true},
-    {name: "composite", type: "text", title: "Composite", detail: true, xmlAttribute: true}
+    {name: "composite", type: "text", title: "Composite", detail: true, xmlAttribute: true},
+    {name: "col", type: "integer", title: "Column", xmlAttribute: true},
   ]
+});
+
+isc.defineClass("FigureEditor", isc.Window).addProperties({
+  title: "Figure",
+  width: 500,
+  height: 300,
+  canDragReposition: true,
+  canDragResize: true,
+  initWidget: function() {
+    this.Super("initWidget", arguments);
+    this.addItem(
+      isc.DetailViewer.create({
+        data: this.record,
+        dataSource: "figures",
+        showDetailFields: true
+      })
+    );
+  }
 });
 
 isc.RailsDataSource.create({
@@ -235,6 +260,10 @@ isc.defineClass("TextGrid", isc.ListGrid).addProperties({
     {name: "html", width: "*"},
     {name: "col", width: 30}
   ],
+  recordDoubleClick: function(viewer, record, recordNum, field, fieldNum, value, rawValue) {
+    // TODO: Need to get the actual figure record ... or have supplied the whole thing in the first place?
+    // if (record.type == "figure") isc.LG.app.showFigureEditor(record);
+  },
   selectionChanged: function(record, state) {
     if (state) {
       isc.LG.app.setColumn(record.col);
