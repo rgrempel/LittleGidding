@@ -5,6 +5,11 @@ namespace :s3 do
     sh "/usr/bin/s3cmd sync --delete-removed .git/ s3://s3.pauldyck.com/LittleGidding.git/"
   end
 
+  desc "Download .git from s3"
+  task :gitfroms3 do
+    sh "/usr/bin/s3cmd sync --delete-removed s3://s3.pauldyck.com/LittleGidding.git/ .git/"
+  end
+
   namespace :images do
     desc "Get images"
     task :get do
