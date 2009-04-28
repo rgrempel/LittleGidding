@@ -217,18 +217,66 @@ isc.defineClass("FiguresGrid", isc.ListGrid).addProperties({
   },
   initWidget: function() {
     this.Super("initWidget", arguments);
+    this.summary = isc.ResultSet.create({
+      dataSource: "figures_summary",
+      fetchMode: "local",
+      dataArrived: function(startRow, endRow) {
+        // To be observed
+        return [startRow, endRow];
+      }
+    });
+    this.observe(this.summary, "dataArrived", "observer.handleSummaryData(returnVal)");
+    this.summary.getRange(0,1);
     this.observe(isc.LG.app, "fireColumnChanged", "observer.handleColumnChanged()");
   },
+  handleSummaryData: function(returnVal) {
+    // What this will give me is all the figures at or past the desired column
+    // So I basically want the first one ...
+    if ((returnVal[0] != 0) || (returnVal[1] < 1)) return;
+    var desiredFigure = this.summary.getRange(0, 1)[0];
+    if (desiredFigure == Array.LOADING) return;
+    var desiredRow = Math.max(desiredFigure.position - 2, 0);
+    this.body.scrollToRatio(true, desiredRow / this.getTotalRows());  
+  },
   handleColumnChanged: function() {
-    // TODO: figure out how to deal with this
+    var newColumn = isc.LG.app.column;
+    var visible = this.body.getVisibleRows();
+    
+    // If we don't have any data yet, just return
+    if (visible[0] == -1) return;
+      
+    // Check if the desired column is currently visible
+    if ((this.getRecord(visible[0]).col <= newColumn) && (this.getRecord(visible[1].col) >= newColumn)) return;
+
+    // If not, figure out what row to scroll to
+    this.summary.setCriteria({
+      _constructor: "AdvancedCriteria",
+      operator: "and",
+      criteria: [
+        {fieldName: "col", operator: "greaterOrEqual", value: newColumn}
+      ]
+    });
+
+    // This will trigger a dataArrived ... 
+    this.summary.getRange(0, 1);
   }
+});
+
+isc.RailsDataSource.create({
+  ID: "figures_summary",
+  dataURL: "figures",
+  fields: [
+    {name: "id", type: "text", primaryKey: "true", hidden: true},
+    {name: "position", type: "integer", hidden: true}, 
+    {name: "col", type: "integer", title: "Column", xmlAttribute: true}
+  ]
 });
 
 isc.RailsDataSource.create({
   ID: "figures",
   dataURL: "/figures",
+  inheritsFrom: "figures_summary",
   fields: [
-    {name: "id", type: "text", primaryKey: "true", hidden: true},
     {name: "figDesc", type: "text", title: "Description"},
     {name: "head", type: "text", title: "Head"},
     {name: "text", type: "text", title: "Text"},
@@ -245,7 +293,6 @@ isc.RailsDataSource.create({
     // Size is an attribute ... values miniature, small
     {name: "size", type: "text", title: "Size", detail: true, xmlAttribute: true},
     {name: "composite", type: "text", title: "Composite", detail: true, xmlAttribute: true},
-    {name: "col", type: "integer", title: "Column", xmlAttribute: true},
   ]
 });
 

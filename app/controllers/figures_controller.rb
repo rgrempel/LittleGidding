@@ -12,6 +12,11 @@ class FiguresController < ApplicationController
       @startRow = 0
       @nodes = @@gospel.xpath("//figure")
     end
+      
+    # We pick out attributes to return based on dataSource
+    # "figures" is full attributes
+    # "figures_summary" is just row, id, and column
+    @dataSource = params[:_dataSource]
 
     @status = 0
     @endRow = @startRow + @nodes.length - 1

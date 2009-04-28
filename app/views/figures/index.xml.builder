@@ -7,10 +7,15 @@ xml.response do
   xml.startRow @startRow
   xml.endRow @endRow
   xml.data do
-    @nodes.each do |node|
+    @nodes.each_with_index do |node, index|
       column = node.xpath("preceding-sibling::figure[@col] | ancestor-or-self::*[@col]").last
-      node["col"] = column["col"] if column 
-      xml << node.to_xml
+      node["col"] = column["col"] if column
+      node["position"] = (@startRow + index).to_s
+      if @dataSource == "figures_summary"
+        xml.figure :id => node["id"], :position => node["position"], :col => node["col"]
+      else
+        xml << node.to_xml
+      end
     end
   end
 end
