@@ -74,6 +74,19 @@ isc.LG.addProperties({
   // For observation
   fireColumnChanged: function(value) {
     return value;
+  },
+
+  figureID: "",
+
+  setFigureID: function(value) {
+    if (this.figureID != value) {
+      this.figureID = value;
+      this.fireFigureIDChanged(value);
+    }
+  },
+
+  fireFigureIDChanged: function(value) {
+    return value;
   }
 });
 
@@ -212,9 +225,12 @@ isc.defineClass("FiguresGrid", isc.ListGrid).addProperties({
   },
   selectionChanged: function(record, state) {
     if (state) {
+      this.settingFigureID = true;
       this.settingColumn = true;
+      isc.LG.app.setFigureID(record.id);
       isc.LG.app.setColumn(record.col);
       this.settingColumn = false;
+      this.settingFigureID = false;
     }
   },
   initWidget: function() {
@@ -230,6 +246,7 @@ isc.defineClass("FiguresGrid", isc.ListGrid).addProperties({
     this.observe(this.summary, "dataArrived", "observer.handleSummaryData(returnVal)");
     this.summary.getRange(0,1);
     this.observe(isc.LG.app, "fireColumnChanged", "observer.handleColumnChanged()");
+    this.observe(isc.LG.app, "fireFigureIDChanged", "observer.handleFigureIDChanged()");
   },
   handleSummaryData: function(returnVal) {
     // What this will give me is all the figures at or past the desired column
@@ -239,6 +256,32 @@ isc.defineClass("FiguresGrid", isc.ListGrid).addProperties({
     if (desiredFigure == Array.LOADING) return;
     var desiredRow = Math.max(desiredFigure.position, 0);
     this.body.scrollToRatio(true, desiredRow / this.getTotalRows());
+  },
+  handleFigureIDChanged: function() {
+    if (this.settingFigureID) return;
+    var newFigureID = isc.LG.app.figureID;
+    var visible = this.body.getVisibleRows();
+    
+    // if we don't have any data yet, just return
+    if (visible[0] == -1) return;
+      
+    // check if figure ID is  visible
+    var figureIDisVisible = false;
+    for (var x = visible[0]; x <= visible[1]; x++) {
+      if (this.getRecord(x).id == newFigureID) {
+        figureIDisVisible = true;
+        break;
+      }
+    }
+    if (figureIDisVisible) return;
+
+    // if not, figure out what row to scroll to
+    this.summary.setCriteria({
+      id: newFigureID
+    });
+
+    // This will trigger a dataArrived ... 
+    this.summary.getRange(0, 1);
   },
   handleColumnChanged: function() {
     if (this.settingColumn) return;
@@ -350,7 +393,8 @@ isc.RailsDataSource.create({
   dataURL: "/text",
   fields: [
     {name: "col", type: "integer", title: "Column"},
-    {name: "position", type: "integer", title: "Position", hidden: true}
+    {name: "position", type: "integer", title: "Position", hidden: true},
+    {name: "id", type: "text", title: "ID", hidden: true}
   ]
 });
 
@@ -390,8 +434,13 @@ isc.defineClass("TextGrid", isc.ListGrid).addProperties({
   selectionChanged: function(record, state) {
     if (state) {
       this.settingColumn = true;
+      if (record.type == "figure") {
+        this.settingFigureID = true;
+        isc.LG.app.setFigureID(record.id);
+      }
       isc.LG.app.setColumn(record.col);
       this.settingColumn = false;
+      this.settingFigureID = false;
     }
   },
   initWidget: function() {

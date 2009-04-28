@@ -27,6 +27,7 @@ module TextHelper
     xml.record :hchapter => hchapter["n"],
                :col => column_for(node),
                :position => node["position"],
+               :id => node["id"],
                :type => node.name do
       yield
     end
