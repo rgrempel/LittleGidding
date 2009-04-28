@@ -1,39 +1,5 @@
 isc.setAutoDraw(false);
 
-isc.RailsDataSource.create({
-  ID: "scholars",
-  dataURL: "/scholars",
-  fields: [
-    {
-      name: "id",
-      type: "integer",
-      primaryKey: true,
-      canEdit: false
-    },
-    {
-      name: "full_name",
-      type: "text",
-      title: "Full Name",
-      length: 255,
-      required: true
-    },
-    {
-      name: "email",
-      type: "text",
-      title: "E-Mail Address",
-      length: 255,
-      required: true
-    },
-    {
-      name: "institution",
-      type: "text",
-      title: "Institutional Affiliation",
-      length: 255,
-      required: true
-    }
-  ]
-});
-
 isc.defineClass("RegistrationForm", isc.DynamicForm);
 isc.RegistrationForm.addProperties({
   dataSource: "scholars",
@@ -68,25 +34,6 @@ isc.RegistrationForm.addProperties({
       );
     }
   },
-});
-
-isc.RailsDataSource.create({
-  ID: "scholar_sessions",
-  dataURL: "/scholar_sessions",
-  fields: [
-    {
-      name: "id",
-      type: "text",
-      primaryKey: true
-    },
-    {
-      name: "email",
-      type: "text",
-      title: "Email Address",
-      length: 50,
-      required: true
-    }
-  ]
 });
 
 isc.defineClass("LoginForm", isc.DynamicForm);
