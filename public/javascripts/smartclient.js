@@ -237,8 +237,8 @@ isc.defineClass("FiguresGrid", isc.ListGrid).addProperties({
     if ((returnVal[0] != 0) || (returnVal[1] < 1)) return;
     var desiredFigure = this.summary.getRange(0, 1)[0];
     if (desiredFigure == Array.LOADING) return;
-    var desiredRow = Math.max(desiredFigure.position - 2, 0);
-    this.body.scrollToRatio(true, desiredRow / this.getTotalRows());  
+    var desiredRow = Math.max(desiredFigure.position, 0);
+    this.body.scrollToRatio(true, desiredRow / this.getTotalRows());
   },
   handleColumnChanged: function() {
     if (this.settingColumn) return;
@@ -346,12 +346,21 @@ isc.defineClass("FigureEditor", isc.Window).addProperties({
 });
 
 isc.RailsDataSource.create({
-  ID: "text",
+  ID: "text_summary",
   dataURL: "/text",
   fields: [
+    {name: "col", type: "integer", title: "Column"},
+    {name: "position", type: "integer", title: "Position", hidden: true}
+  ]
+});
+
+isc.RailsDataSource.create({
+  ID: "text",
+  dataURL: "/text",
+  inheritsFrom: "text_summary",
+  fields: [
     {name: "source", type: "text", title: "Source"},
-    {name: "html", type: "text", title: "Text"},
-    {name: "col", type: "integer", title: "Column"}
+    {name: "html", type: "text", title: "Text"}
   ]
 });
 
@@ -380,15 +389,54 @@ isc.defineClass("TextGrid", isc.ListGrid).addProperties({
   },
   selectionChanged: function(record, state) {
     if (state) {
+      this.settingColumn = true;
       isc.LG.app.setColumn(record.col);
+      this.settingColumn = false;
     }
   },
   initWidget: function() {
     this.Super("initWidget", arguments);
+    this.summary = isc.ResultSet.create({
+      dataSource: "text_summary",
+      fetchMode: "local",
+      dataArrived: function(startRow, endRow) {
+        // To be observed
+        return [startRow, endRow];
+      }
+    });
+    this.observe(this.summary, "dataArrived", "observer.handleSummaryData(returnVal)");
+    this.summary.getRange(0,1);
     this.observe(isc.LG.app, "fireColumnChanged", "observer.handleColumnChanged()");
   },
+  handleSummaryData: function(returnVal) {
+    if ((returnVal[0] != 0) || (returnVal[1] < 1)) return;
+    var desiredRecord = this.summary.getRange(0, 1)[0];
+    if (desiredRecord == Array.LOADING) return;
+    var desiredRow = Math.max(desiredRecord.position, 0);
+    this.body.scrollToRatio(true, desiredRow / this.getTotalRows());
+  },
   handleColumnChanged: function() {
-    // TODO: figure out how to deal with this
+    if (this.settingColumn) return;
+    var newColumn = isc.LG.app.column;
+    var visible = this.body.getVisibleRows();
+
+    // If we don't have any data yet, just return
+    if (visible[0] == -1) return;
+
+    // Check if the desired column is currently visible
+    if ((this.getRecord(visible[0]).col <= newColumn) && (this.getRecord(visible[1].col) >= newColumn)) return;
+
+    // If not, figure out what row to scroll to
+    this.summary.setCriteria({
+      _constructor: "AdvancedCriteria",
+      operator: "and",
+      criteria: [
+        {fieldName: "col", operator: "greaterOrEqual", value: newColumn}
+      ]
+    });
+
+    // This will trigger a dataArrived ...
+    this.summary.getRange(0, 1);
   }
 });
 

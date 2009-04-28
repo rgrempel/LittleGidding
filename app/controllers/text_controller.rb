@@ -20,6 +20,8 @@ class TextController < ApplicationController
       @nodes = @@gospel.xpath query
     end
 
+    @dataSource = params[:_dataSource]
+
     @status = 0
     @endRow = @startRow + @nodes.length - 1
     @totalRows = @@gospel.xpath(query).length

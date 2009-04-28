@@ -13,19 +13,28 @@ module TextHelper
     end
   end
 
-  def apply_record xml, node
-    hchapter = node.xpath("ancestor-or-self::hchapter").first
+  def column_for node
     column = if node.key?("col")
       node
     else
       node.xpath("preceding-sibling::*[@col] | ancestor::*[@col]").last
     end
-    col = column ? column["col"] : ""
+    column ? column["col"] : ""
+  end
+
+  def apply_record xml, node
+    hchapter = node.xpath("ancestor-or-self::hchapter").first
     xml.record :hchapter => hchapter["n"],
-               :col => col,
+               :col => column_for(node),
+               :position => node["position"],
                :type => node.name do
       yield
     end
+  end
+
+  def apply_summary xml, node
+    xml.record :col => column_for(node),
+               :position => node["position"]
   end
 
   def apply_html xml

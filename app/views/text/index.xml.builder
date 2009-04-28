@@ -6,8 +6,13 @@ xml.response do
   xml.startRow @startRow
   xml.endRow @endRow
   xml.data do
-    @nodes.each do |node|
-      apply xml, node
+    @nodes.each_with_index do |node, index|
+      node["position"] = (@startRow + index).to_s
+      if @dataSource == "text_summary" then
+        apply_summary xml, node
+      else
+        apply xml, node
+      end
     end
   end
 end
