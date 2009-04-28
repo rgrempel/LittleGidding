@@ -212,7 +212,9 @@ isc.defineClass("FiguresGrid", isc.ListGrid).addProperties({
   },
   selectionChanged: function(record, state) {
     if (state) {
+      this.settingColumn = true;
       isc.LG.app.setColumn(record.col);
+      this.settingColumn = false;
     }
   },
   initWidget: function() {
@@ -239,6 +241,7 @@ isc.defineClass("FiguresGrid", isc.ListGrid).addProperties({
     this.body.scrollToRatio(true, desiredRow / this.getTotalRows());  
   },
   handleColumnChanged: function() {
+    if (this.settingColumn) return;
     var newColumn = isc.LG.app.column;
     var visible = this.body.getVisibleRows();
     
