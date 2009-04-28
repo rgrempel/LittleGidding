@@ -456,6 +456,7 @@ isc.defineClass("TextGrid", isc.ListGrid).addProperties({
     this.observe(this.summary, "dataArrived", "observer.handleSummaryData(returnVal)");
     this.summary.getRange(0,1);
     this.observe(isc.LG.app, "fireColumnChanged", "observer.handleColumnChanged()");
+    this.observe(isc.LG.app, "fireFigureIDChanged", "observer.handleFigureIDChanged()");
   },
   handleSummaryData: function(returnVal) {
     if ((returnVal[0] != 0) || (returnVal[1] < 1)) return;
@@ -486,6 +487,35 @@ isc.defineClass("TextGrid", isc.ListGrid).addProperties({
 
     // This will trigger a dataArrived ...
     this.summary.getRange(0, 1);
+  },
+  // TODO: this handler is actually generic ... should be refactored
+  // Also, the summary should really be at the model level, because
+  // all TextGridViews could share one copy and listen for dataArrived
+  handleFigureIDChanged: function() {
+    if (this.settingFigureID) return;
+    var newFigureID = isc.LG.app.figureID;
+    var visible = this.body.getVisibleRows();
+    
+    // if we don't have any data yet, just return
+    if (visible[0] == -1) return;
+      
+    // check if figure ID is  visible
+    var figureIDisVisible = false;
+    for (var x = visible[0]; x <= visible[1]; x++) {
+      if (this.getRecord(x).id == newFigureID) {
+        figureIDisVisible = true;
+        break;
+      }
+    }
+    if (figureIDisVisible) return;
+
+    // if not, figure out what row to scroll to
+    this.summary.setCriteria({
+      id: newFigureID
+    });
+
+    // This will trigger a dataArrived ... 
+    this.summary.getRange(0, 1); 
   }
 });
 
