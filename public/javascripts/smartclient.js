@@ -1,18 +1,71 @@
 isc.setAutoDraw(false);
 
-// This is the global application class
 isc.defineClass("LG");
 
+// isc.LG is the main "controller" class. It is a singleton that
+// can be accessed at isc.LG.app (a class variable)
 isc.LG.addClassProperties({
   app: null
 });
 
+// isc.LG is the main contact point for decoupled views. The idea is that we 
+// are trying to keep several views sync'd when you click on something
+//
+// (a) textual views, which represent the run of text
+// (b) figure views
+// (c) represents of the current column (4 per double-page)
+// (d) pages (actually, double-pages)
+//
+// The scrollXXXX methods represent an instruction to scroll all coordinated views
+// to the given location.
+//
+// Each view type then listens to the appropriate fireScrollXXXX method, depending on
+// what it needs to know in order to scroll itself.
+//
+// So, one job of this class is to multiplex the scrollXXX methods, so that no matter
+// which scrollXXX method you call, all of the fireScrollXXX methods get called, with the appropriate
+// values. It's slightly convoluted, but it does mean that we can create the widgets at will and
+// they will all sync without having to know about each other.
 isc.LG.addProperties({
   init: function () {
     this.Super("init", arguments);
 
     isc.LG.app = this;
 
+    this.scrollToFigureRS = isc.ResultSet.create({
+      dataSource: "figures_summary",
+      fetchMode: "local",
+      dataArrived: function(startRow, endRow) {
+        if ((startRow == 0) && (endRow >= 0)) {
+          var figure = this.get(0);
+          // This is a bit inelegant, but if we were searching for an id,
+          // then fire the column off as well ...
+          if (this.getCriteria().fieldName == "id") isc.LG.app.fireScrollToColumn(figure.col);
+          isc.LG.app.fireScrollToFigure(figure);
+        }
+      }
+    });
+
+    this.scrollToTextRS = isc.ResultSet.create({
+      dataSource: "text_summary",
+      fetchMode: "local",
+      dataArrived: function(startRow, endRow) {
+        if ((startRow == 0) && (endRow >= 0)) {
+          isc.LG.app.fireScrollToText(this.get(0));
+        }
+      }
+    });
+
+    this.scrollToPageRS = isc.ResultSet.create({
+      dataSource: "pages",
+      fetchMode: "local",
+      dataArrived: function(startRow, endRow) {
+        if ((startRow == 0) && (endRow >= 0)) {
+          isc.LG.app.fireScrollToPage(this.get(0));
+        }
+      }
+    });
+    
     this.layout = isc.AppNav.create({
       width: "100%",
       height: "100%"
@@ -62,31 +115,78 @@ isc.LG.addProperties({
     return this;
   },
 
-  column: 0,
+  scrollToColumn: function(value) {
+    // If you're looking for the column, we can just supply it ...
+    this.fireScrollToColumn(value);
 
-  setColumn: function(value) {
-    if (this.column != value) {
-      this.column = value;
-      this.fireColumnChanged(value);
-    }
+    // If you want the figure, we'll find it ...
+    this.scrollToFigureRS.setCriteria({
+      _constructor: "AdvancedCriteria",
+      fieldName: "col", 
+      operator: "greaterOrEqual", 
+      value: value
+    });
+    this.scrollToFigureRS.get(0);
+
+    // If you want the text row, we'll find it ...
+    this.scrollToTextRS.setCriteria({
+      _constructor: "AdvancedCriteria",
+      fieldName: "col", 
+      operator: "greaterOrEqual", 
+      value: value
+    });
+    this.scrollToTextRS.get(0);  
   },
 
-  // For observation
-  fireColumnChanged: function(value) {
-    return value;
+  scrollToFigureID: function(value) {
+    // Find the figure ... this will also handle the column
+    this.scrollToFigureRS.setCriteria({
+      _constructor: "AdvancedCriteria",
+      operator: "equals",
+      fieldName: "id",
+      value: value
+    });
+    this.scrollToFigureRS.get(0);
+   
+    // Find the text
+    this.scrollToTextRS.setCriteria({
+      _constructor: "AdvancedCriteria",
+      operator: "equals",
+      fieldName: "id",
+      value: value
+    });
+    this.scrollToTextRS.get(0);
   },
 
-  figureID: "",
+  // The following fireXXX events are for widgets to listen to ... just listen
+  // to one, whichever one gives you the information you need. Every time something
+  // calls for scrolling, they will all fire.
+  fireScrollToColumn: function(column) {
+    // Once we know what column to scroll to, scrolling to a page is entirely determined
+    // by that. So we can do it here ...
+    this.scrollToPageRS.setCriteria({
+      _constructor: "AdvancedCriteria",
+      operator: "and",
+      criteria: [
+        {fieldName: "column_start", operator: "lessOrEqual", value: column},
+        {fieldName: "column_end", operator: "greaterOrEqual", value: column}
+      ]
+    });
+    this.scrollToPageRS.get(0);
 
-  setFigureID: function(value) {
-    if (this.figureID != value) {
-      this.figureID = value;
-      this.fireFigureIDChanged(value);
-    }
+    return column;
   },
 
-  fireFigureIDChanged: function(value) {
-    return value;
+  fireScrollToFigure: function(figure) {
+    return figure;
+  },
+
+  fireScrollToText: function(text) {
+    return text;
+  },
+
+  fireScrollToPage: function(page) {
+    return page;
   }
 });
 
@@ -97,7 +197,7 @@ isc.defineClass("ChapterTitlesGrid", isc.ListGrid).addProperties({
   alternateRecordStyles: true,
   selectionType: "single",
   selectionChanged: function(record, state) {
-    if (state && !this.handlingColumnChange) isc.LG.app.setColumn(record.col);
+    if (state && !this.handlingColumnChange) isc.LG.app.scrollToColumn(record.col);
   },
   fields: [
     {name: "n", width: "60", align: "right"},
@@ -106,10 +206,9 @@ isc.defineClass("ChapterTitlesGrid", isc.ListGrid).addProperties({
   ],
   init: function() {
     this.Super("init", arguments);
-    this.observe(isc.LG.app, "fireColumnChanged", "observer.handleColumnChanged()");
+    this.observe(isc.LG.app, "fireScrollToColumn", "observer.handleScrollToColumn(returnVal)");
   },
-  handleColumnChanged: function() {
-    var newColumn = isc.LG.app.column;
+  handleScrollToColumn: function(newColumn) {
     var selectedRecord = this.getSelectedRecord();
     if (selectedRecord && selectedRecord.col == newColumn) return;
 
@@ -168,86 +267,32 @@ isc.defineClass("FiguresGrid", isc.ListGrid).addProperties({
   selectionChanged: function(record, state) {
     if (state) {
       this.settingFigureID = true;
-      this.settingColumn = true;
-      isc.LG.app.setFigureID(record.id);
-      isc.LG.app.setColumn(record.col);
-      this.settingColumn = false;
+      isc.LG.app.scrollToFigureID(record.id);
       this.settingFigureID = false;
     }
   },
   initWidget: function() {
     this.Super("initWidget", arguments);
-    this.summary = isc.ResultSet.create({
-      dataSource: "figures_summary",
-      fetchMode: "local",
-      dataArrived: function(startRow, endRow) {
-        // To be observed
-        return [startRow, endRow];
-      }
-    });
-    this.observe(this.summary, "dataArrived", "observer.handleSummaryData(returnVal)");
-    this.summary.getRange(0,1);
-    this.observe(isc.LG.app, "fireColumnChanged", "observer.handleColumnChanged()");
-    this.observe(isc.LG.app, "fireFigureIDChanged", "observer.handleFigureIDChanged()");
+    this.observe(isc.LG.app, "fireScrollToFigure", "observer.handleScrollToFigure(returnVal)");
   },
-  handleSummaryData: function(returnVal) {
-    // What this will give me is all the figures at or past the desired column
-    // So I basically want the first one ...
-    if ((returnVal[0] != 0) || (returnVal[1] < 1)) return;
-    var desiredFigure = this.summary.getRange(0, 1)[0];
-    if (desiredFigure == Array.LOADING) return;
-    var desiredRow = Math.max(desiredFigure.position, 0);
-    this.body.scrollToRatio(true, desiredRow / this.getTotalRows());
-  },
-  handleFigureIDChanged: function() {
+  handleScrollToFigure: function(figure) {
     if (this.settingFigureID) return;
-    var newFigureID = isc.LG.app.figureID;
-    var visible = this.body.getVisibleRows();
+
+    var visible = this.getVisibleRows();
+    if (visible[0] < 0) return;
     
-    // if we don't have any data yet, just return
-    if (visible[0] == -1) return;
-      
     // check if figure ID is  visible
     var figureIDisVisible = false;
     for (var x = visible[0]; x <= visible[1]; x++) {
-      if (this.getRecord(x).id == newFigureID) {
+      if (this.getRecord(x).id == figure.id) {
         figureIDisVisible = true;
         break;
       }
     }
     if (figureIDisVisible) return;
-
-    // if not, figure out what row to scroll to
-    this.summary.setCriteria({
-      id: newFigureID
-    });
-
-    // This will trigger a dataArrived ... 
-    this.summary.getRange(0, 1);
-  },
-  handleColumnChanged: function() {
-    if (this.settingColumn) return;
-    var newColumn = isc.LG.app.column;
-    var visible = this.body.getVisibleRows();
-    
-    // If we don't have any data yet, just return
-    if (visible[0] == -1) return;
       
-    // Check if the desired column is currently visible
-    if ((this.getRecord(visible[0]).col <= newColumn) && (this.getRecord(visible[1].col) >= newColumn)) return;
-
-    // If not, figure out what row to scroll to
-    this.summary.setCriteria({
-      _constructor: "AdvancedCriteria",
-      operator: "and",
-      criteria: [
-        {fieldName: "col", operator: "greaterOrEqual", value: newColumn}
-      ]
-    });
-
-    // This will trigger a dataArrived ... 
-    this.summary.getRange(0, 1);
-  }
+    this.body.scrollToRatio(true, figure.position / this.getTotalRows());
+  },
 });
 
 isc.defineClass("CommentsGrid", isc.ListGrid).addProperties({
@@ -323,103 +368,35 @@ isc.defineClass("TextGrid", isc.ListGrid).addProperties({
     if (state) {
       this.settingColumn = true;
       if (record.type == "figure") {
-        this.settingFigureID = true;
-        isc.LG.app.setFigureID(record.id);
+        isc.LG.app.scrollToFigureID(record.id);
+      } else {
+        isc.LG.app.scrollToColumn(record.col);
       }
-      isc.LG.app.setColumn(record.col);
       this.settingColumn = false;
-      this.settingFigureID = false;
     }
   },
   initWidget: function() {
     this.Super("initWidget", arguments);
-    this.summary = isc.ResultSet.create({
-      dataSource: "text_summary",
-      fetchMode: "local",
-      dataArrived: function(startRow, endRow) {
-        // To be observed
-        return [startRow, endRow];
-      }
-    });
-    this.observe(this.summary, "dataArrived", "observer.handleSummaryData(returnVal)");
-    this.summary.getRange(0,1);
-    this.observe(isc.LG.app, "fireColumnChanged", "observer.handleColumnChanged()");
-    this.observe(isc.LG.app, "fireFigureIDChanged", "observer.handleFigureIDChanged()");
+    this.observe(isc.LG.app, "fireScrollToText", "observer.handleScrollToText(returnVal)");
   },
-  handleSummaryData: function(returnVal) {
-    if ((returnVal[0] != 0) || (returnVal[1] < 1)) return;
-    var desiredRecord = this.summary.getRange(0, 1)[0];
-    if (desiredRecord == Array.LOADING) return;
-    var desiredRow = Math.max(desiredRecord.position, 0);
-    this.body.scrollToRatio(true, desiredRow / this.getTotalRows());
-  },
-  handleColumnChanged: function() {
+  handleScrollToText: function(text) {
     if (this.settingColumn) return;
-    var newColumn = isc.LG.app.column;
+    if (!text) return;
+
     var visible = this.body.getVisibleRows();
 
-    // If we don't have any data yet, just return
+    // Return if we have no data ...
     if (visible[0] == -1) return;
 
     // Check if the desired column is currently visible
-    if ((this.getRecord(visible[0]).col <= newColumn) && (this.getRecord(visible[1].col) >= newColumn)) return;
-
-    // If not, figure out what row to scroll to
-    this.summary.setCriteria({
-      _constructor: "AdvancedCriteria",
-      operator: "and",
-      criteria: [
-        {fieldName: "col", operator: "greaterOrEqual", value: newColumn}
-      ]
-    });
-
-    // This will trigger a dataArrived ...
-    this.summary.getRange(0, 1);
-  },
-  // TODO: this handler is actually generic ... should be refactored
-  // Also, the summary should really be at the model level, because
-  // all TextGridViews could share one copy and listen for dataArrived
-  handleFigureIDChanged: function() {
-    if (this.settingFigureID) return;
-    var newFigureID = isc.LG.app.figureID;
-    var visible = this.body.getVisibleRows();
+    if ((visible[0] <= text.position) && (visible[1] >= text.position)) return;
     
-    // if we don't have any data yet, just return
-    if (visible[0] == -1) return;
-      
-    // check if figure ID is  visible
-    var figureIDisVisible = false;
-    for (var x = visible[0]; x <= visible[1]; x++) {
-      if (this.getRecord(x).id == newFigureID) {
-        figureIDisVisible = true;
-        break;
-      }
-    }
-    if (figureIDisVisible) return;
-
-    // if not, figure out what row to scroll to
-    this.summary.setCriteria({
-      id: newFigureID
-    });
-
-    // This will trigger a dataArrived ... 
-    this.summary.getRange(0, 1); 
+    this.body.scrollToRatio(true, text.position / this.getTotalRows());
   }
 });
 
 isc.defineClass("PageScroll", isc.VLayout).addProperties({
   initWidget: function() {
-    this.pages = isc.ResultSet.create({
-      dataSource: "pages",
-      fetchMode: "local",
-      dataArrived: function(startRow, endRow) {
-        // To be observed
-        return [startRow, endRow];
-      }
-    });
-    
-    this.observe(this.pages, "dataArrived", "observer.handleDataArrived()");
-
     this.image = isc.Img.create({
       imageType: "normal",
       overflow: "scroll",
@@ -495,37 +472,28 @@ isc.defineClass("PageScroll", isc.VLayout).addProperties({
       title: "Column",
       vertical: false,
       valueChanged: function(value) {
-        isc.LG.app.setColumn(value);
+        if (!this.settingValue) isc.LG.app.scrollToColumn(value);
       }
     });
 
-    this.observe(isc.LG.app, "fireColumnChanged", "observer.handleColumnChanged()");
-
+    this.observe(isc.LG.app, "fireScrollToColumn", "observer.handleScrollToColumn(returnVal)");
+    this.observe(isc.LG.app, "fireScrollToPage", "observer.handleScrollToPage(returnVal)");
+    
     this.addMember(this.image);
     this.addMember(this.slider);
 
     this.Super("initWidget", arguments);
   },
 
-  handleDataArrived: function() {
-    this.ignore(this.pages, "dataArrived");
-    this.handleColumnChanged();
+  handleScrollToColumn: function(column) {
+    if (this.slider.value != column) {
+      this.slider.settingValue = true;
+      this.slider.setValue(column);
+      this.slider.settingValue = false;
+    }
   },
 
-  handleColumnChanged: function() {
-    var column = isc.LG.app.column;
-    if (this.slider.value != column) this.slider.setValue(column);
-    
-    this.pages.setCriteria({
-      _constructor: "AdvancedCriteria",
-      operator: "and",
-      criteria: [
-        {fieldName: "column_start", operator: "lessOrEqual", value: column},
-        {fieldName: "column_end", operator: "greaterOrEqual", value: column}
-      ]
-    });
-    
-    var page = this.pages.get(0);
+  handleScrollToPage: function(page) {
     if (page && (this.image.src != page.png_url)) {
       this.image.setSrc(page.png_url);
     }

@@ -35,7 +35,8 @@ module TextHelper
 
   def apply_summary xml, node
     xml.record :col => column_for(node),
-               :position => node["position"]
+               :position => node["position"],
+               :id => node["id"]
   end
 
   def apply_html xml
