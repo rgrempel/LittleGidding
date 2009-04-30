@@ -28,7 +28,22 @@ private
   
   def require_scholar
     unless current_scholar
-      render :text => "You must login to view this item", :status => 403
+      respond_to do |format|
+        format.xml do
+          response = <<-END
+            <response>
+              <status>-1</status>
+              <data>You must login to view this item</data>
+            </response>
+          END
+          render :xml => response, :status => 403 
+        end
+
+        format.all do
+          render :text => "You must login to view this item", :status => 403
+        end
+      end
+
       return false
     end
   end

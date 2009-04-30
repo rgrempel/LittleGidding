@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+  before_filter :require_scholar, :only => :index
+  # We handle :create internally, rather than in the before_filter
+  
   def index
     options = {
       :order => "created_at DESC",
