@@ -105,7 +105,7 @@ isc.LG.addProperties({
 
   fireSuccessfulLogin: function(email) {
     this.loggedIn = email;
-    this.loginWindow.destroy();
+    this.loginWindow.markForDestroy();
     this.loginWindow = null;
     return this; 
   },
@@ -310,6 +310,12 @@ isc.defineClass("FigureEditor", isc.Window).addProperties({
   height: 300,
   canDragReposition: true,
   canDragResize: true,
+  keepInParentRect: true,
+  animateMinimize: true,
+  dragOpacity: 30,
+  closeClick: function() {
+    this.markForDestroy();
+  },
   initWidget: function() {
     this.Super("initWidget", arguments);
     this.detailViewer = isc.DetailViewer.create({
@@ -532,7 +538,11 @@ isc.defineClass("AppNav", isc.VLayout).addProperties({
     });
 
     this.addMembers([
-      this.loginButton,
+      isc.ToolStrip.create({
+        members: [
+          this.loginButton
+        ]
+      }),
       isc.HLayout.create({
         height: "100%",
         width: "100%",
