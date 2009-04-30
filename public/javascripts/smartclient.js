@@ -297,17 +297,23 @@ isc.defineClass("FiguresGrid", isc.ListGrid).addProperties({
 
 isc.defineClass("CommentsGrid", isc.ListGrid).addProperties({
   dataSource: "comments",
+  alternateRecordStyles: true,
+  wrapCells: true,
+  bodyProperties: {
+    fixedRowHeights: false
+  },
+  autoFetchData: true,
   fields: [
     {name: "created_at", width: "60"},
-    {name: "scholar_id", width: "100"},
+    {name: "scholar_full_name", width: "100"},
     {name: "comment", width: "*"}
   ]
 });
 
 isc.defineClass("FigureEditor", isc.Window).addProperties({
   title: "Figure",
-  width: 500,
-  height: 300,
+  width: 800,
+  height: 400,
   canDragReposition: true,
   canDragResize: true,
   keepInParentRect: true,
@@ -325,25 +331,60 @@ isc.defineClass("FigureEditor", isc.Window).addProperties({
       showEdges: true,
       showResizeBar: true,
       height: "100%",
-      width: "50%",
+      width: "33%",
       overflow: "auto"
     });
     this.commentsGrid = isc.CommentsGrid.create({
       showEdges: true,
-      height: "100%",
-      width: "50%"
+      showResizeBar: true,
+      resizeBarTarget: "next",
+      height: "60%",
+      width: "100%",
+      initialCriteria: {
+        figure_id: this.record.id
+      }
     });
-    this.commentsGrid.fetchRelatedData(this.record, this.detailViewer);
+    this.commentForm = isc.DynamicForm.create({
+      showEdges: true,
+      dataSource: "comments",
+      width: "100%",
+      numCols: 1,
+      figure: this.record,
+      showErrorText: true,
+      showTitlesWithErrorMessages: true,
+      errorOrientation: "top",
+      colWidths: ["*"],
+      fields: [
+        {name: "comment", editorType: "textArea", width: "*", showTitle: false},
+        {
+          name: "submit", type: "button", title: "Save Comment", align: "right",
+          click: function (form, item) {
+            form.submit (function(dsResponse, data, dsRequest) {
+              if(dsResponse.status == 0) {
+                form.editNewRecord({figure_id: form.figure ? form.figure.id : null});
+              }
+            });
+          }
+        }
+      ]
+    });
     this.addItem(
       isc.HLayout.create({
         height: "100%",
         width: "100%",
         members: [
           this.detailViewer, 
-          this.commentsGrid
+          isc.VLayout.create({
+            width: "66%",
+            members: [
+              this.commentsGrid,
+              this.commentForm
+            ]
+          })
         ]
       })
     );
+    this.commentForm.editNewRecord({figure_id: this.record ? this.record.id : null});
   }
 });
 

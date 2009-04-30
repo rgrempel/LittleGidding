@@ -80,34 +80,12 @@ isc.RailsDataSource.create({
   ID: "comments",
   dataURL: "/comments",
   fields: [
-    {
-      name: "id",
-      type: "integer",
-      primaryKey: true,
-      hidden: true
-    },
-    {
-      name: "scholar_id",
-      type: "integer",
-      title: "Scholar",
-      foreignKey: "scholars.id" 
-    },
-    {
-      name: "figure_id",
-      type: "text",
-      title: "Figure",
-      foreignKey: "figures.id"
-    },
-    {
-      name: "comment",
-      type: "text",
-      title: "Comment"
-    },
-    {
-      name: "created_at",
-      type: "date",
-      title: "Date"
-    }
+    {name: "id", type: "integer", primaryKey: true, hidden: true},
+    {name: "scholar_id", type: "integer", title: "Scholar", foreignKey: "scholars.id" },
+    {name: "scholar_full_name", type: "text", title: "Scholar"},
+    {name: "figure_id", type: "text", title: "Figure", foreignKey: "figures.id", canEdit: false},
+    {name: "comment", type: "text", title: "Comment", required: true},
+    {name: "created_at", type: "date", title: "Date", canEdit: false}
   ]
 });
 
