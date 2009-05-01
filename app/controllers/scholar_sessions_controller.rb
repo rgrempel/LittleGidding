@@ -48,10 +48,15 @@ class ScholarSessionsController < ApplicationController
   end
 
   def destroy
-    @record = current_scholar_session
-    @record.destroy
+    if current_scholar_session
+      @record = current_scholar
+      current_scholar_session.destroy
+      @status = 0
+    else
+      @status = -1
+      @record = Scholar.new
+    end
 
-    @status = 0
     render :template => "shared/smartclient/show"
   end
 
@@ -59,7 +64,17 @@ class ScholarSessionsController < ApplicationController
 
   end
 
+  # This actually returns a singleton representing who is logged in ...
   def index
+    @records = current_scholar ? [current_scholar] : []
 
+    @status = 0
+    @startRow = 0
+    @endRow = @records.length - 1
+    @totalRows = @records.length
+
+    @toxml_options = {:only => [:email, :id, :full_name, :institution]}
+
+    render :template => "shared/smartclient/index"
   end
 end

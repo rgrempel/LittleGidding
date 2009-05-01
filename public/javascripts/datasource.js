@@ -38,18 +38,9 @@ isc.RailsDataSource.create({
   ID: "scholar_sessions",
   dataURL: "/scholar_sessions",
   fields: [
-    {
-      name: "id",
-      type: "text",
-      primaryKey: true
-    },
-    {
-      name: "email",
-      type: "text",
-      title: "Email Address",
-      length: 50,
-      required: true
-    }
+    {name: "id", type: "text", primaryKey: true},
+    {name: "email", type: "text", title: "Email Address", length: 255, required: true},
+    {name: "full_name", type: "text"}
   ]
 });
 

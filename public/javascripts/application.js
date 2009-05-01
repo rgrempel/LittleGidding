@@ -14,6 +14,7 @@ isc.LG.addProperties({
 
     isc.LG.app = this;
 
+    this.initAuthorization();
     this.initScrolling();
 
     this.layout = isc.AppNav.create({

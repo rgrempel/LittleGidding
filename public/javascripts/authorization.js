@@ -1,6 +1,33 @@
 isc.setAutoDraw(false);
 
 isc.LG.addProperties({
+  initAuthorization: function() {
+    this.loginRS = isc.ResultSet.create({
+      dataSource: "scholar_sessions",
+      dataArrived: function(startRow, endRow) {
+        if (startRow == 0 && endRow >= 0) {
+          isc.LG.app.setScholar (this.get(0));
+        } else {
+          isc.LG.app.setScholar(null);
+        }
+      }
+    });
+
+    // Find out if we are logged in ...
+    this.loginRS.get(0);
+  },
+
+  scholar: null,
+
+  setScholar: function(scholar) {
+    this.scholar = scholar;
+    if (scholar) {
+      this.fireLogin(scholar);
+    } else {
+      this.fireLogout();
+    }
+  },
+
   loginWindow: null,
 
   showLoginWindow: function() {
@@ -11,32 +38,27 @@ isc.LG.addProperties({
   },
 
   logout: function() {
-    var ds = isc.DataSource.get("scholar_sessions");
-    // The id: is bogus ... this is really a singleton on the server
-    ds.removeData({id: 1}, function(dsResponse, data, dsRequest) {
-      if (dsResponse.status == 0) isc.LG.app.fireLogout();
-    });
+    if (!this.scholar) return;
+    var ds = isc.DataSource.get(this.loginRS.dataSource);
+    ds.removeData({id: this.scholar.id});
   },
+
+  email: null,
 
   fireSuccessfulRegistration: function(value) {
     this.email = value;
-    return this;
+    return value;
   },
 
-  fireSuccessfulActivation: function(email) {
-    this.fireSuccessfulLogin(email);
-    return this;
-  },
-
-  fireSuccessfulLogin: function(email) {
-    this.loggedIn = email;
-    this.loginWindow.markForDestroy();
-    this.loginWindow = null;
-    return this;
+  fireLogin: function(scholar) {
+    if (this.loginWindow) {
+      this.loginWindow.markForDestroy();
+      this.loginWindow = null;
+    }
+    return scholar;
   },
 
   fireLogout: function() {
-    this.loggedIn = null;
     return this;
   }
 });
@@ -100,13 +122,8 @@ isc.LoginForm.addProperties({
 
   handleSubmission: function(dsResponse, data, dsRequest) {
     if (dsResponse.status == 0) {
-      //  isc.LG.app.setEmail(data.email);
       this.editNewRecord();
-      isc.say(
-        "You have successfully logged in!", function(){
-          isc.LG.app.fireSuccessfulLogin(data.email);
-        }
-      );
+      isc.say("You have successfully logged in!");
     }
   },
 
@@ -137,14 +154,8 @@ isc.defineClass("ActivationForm", isc.DynamicForm).addProperties({
 
   handleSubmission: function(dsResponse, data, dsRequest) {
     if (dsResponse.status == 0) {
-      //  isc.LG.app.setEmail(data.email);
       this.editNewRecord();
-      isc.say(
-        "You have successfully activated your account! From now on, use your email and password to log in.",
-        function() {
-          isc.LG.app.fireSuccessfulActivation(data.email);
-        }
-      );
+      isc.say("You have successfully activated your account! From now on, use your email and password to log in.");
     }
   },
 
@@ -190,7 +201,7 @@ isc.LoginButton.addProperties({
   },
   initWidget: function() {
     this.Super("initWidget", arguments);
-    this.observe(isc.LG.app, "fireSuccessfulLogin", "observer.handleLogin()");
+    this.observe(isc.LG.app, "fireLogin", "observer.handleLogin()");
     this.observe(isc.LG.app, "fireLogout", "observer.handleLogout()");
     if (isc.LG.app.loggedIn) {
       this.handleLogin();
@@ -199,7 +210,7 @@ isc.LoginButton.addProperties({
     }
   },
   handleLogin: function() {
-    this.setTitle("Logout: " + isc.LG.app.loggedIn);
+    this.setTitle("Logout: " + isc.LG.app.scholar.email);
     this.action = this.logoutAction;
   },
   handleLogout: function() {
@@ -234,9 +245,6 @@ isc.LoginWindow.addProperties({
     });
 
     this.addItem(this.tabSet);
-
-  //  this.observe(isc.LG.app, "fireSuccessfulActivation", "observer.closeClick()");
-  //  this.observe(isc.LG.app, "fireSuccessfulLogin", "observer.closeClick()");
   },
 
   handleSuccessfulRegistration: function() {
