@@ -8,7 +8,7 @@ isc.RailsDataSource.addProperties({
        {operationType:"update", dataProtocol:"postMessage", requestProperties:{httpMethod:"PUT"}}
     ],
 
-    getDataURL : function (dsRequest) { 
+    getDataURL : function (dsRequest) {
         var url = this.Super("getDataURL", arguments);
         switch (dsRequest.operationType) {
           case "fetch":

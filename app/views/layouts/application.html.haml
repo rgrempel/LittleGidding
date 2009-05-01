@@ -11,11 +11,10 @@
       = javascript_include_tag "/#{isomorphicDir}/system/modules/#{js}"
     
     = javascript_include_tag "/#{isomorphicDir}/skins/TreeFrog/load_skin.js"
-    = javascript_include_tag "/javascripts/smartclient-ext.js"
-    = javascript_include_tag "/javascripts/datasource.js"
-    = javascript_include_tag "/javascripts/authorization.js"
-    = javascript_include_tag "/javascripts/smartclient.js"
- 
+    
+    - %w{ smartclient-ext.js application.js datasource.js authorization.js scrolling.js comments.js }.each do |js|
+      = javascript_include_tag "/javascripts/#{js}"
+    
     = stylesheet_link_tag :all
 
   %body

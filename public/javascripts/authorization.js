@@ -1,5 +1,46 @@
 isc.setAutoDraw(false);
 
+isc.LG.addProperties({
+  loginWindow: null,
+
+  showLoginWindow: function() {
+    if (!this.loginWindow) {
+      this.loginWindow = isc.LoginWindow.create();
+    }
+    this.loginWindow.show();
+  },
+
+  logout: function() {
+    var ds = isc.DataSource.get("scholar_sessions");
+    // The id: is bogus ... this is really a singleton on the server
+    ds.removeData({id: 1}, function(dsResponse, data, dsRequest) {
+      if (dsResponse.status == 0) isc.LG.app.fireLogout();
+    });
+  },
+
+  fireSuccessfulRegistration: function(value) {
+    this.email = value;
+    return this;
+  },
+
+  fireSuccessfulActivation: function(email) {
+    this.fireSuccessfulLogin(email);
+    return this;
+  },
+
+  fireSuccessfulLogin: function(email) {
+    this.loggedIn = email;
+    this.loginWindow.markForDestroy();
+    this.loginWindow = null;
+    return this;
+  },
+
+  fireLogout: function() {
+    this.loggedIn = null;
+    return this;
+  }
+});
+
 isc.defineClass("RegistrationForm", isc.DynamicForm);
 isc.RegistrationForm.addProperties({
   dataSource: "scholars",
@@ -14,7 +55,7 @@ isc.RegistrationForm.addProperties({
       name: "submit",
       title: "Register",
       align: "right",
-      type: "button", 
+      type: "button",
       click: function (form, item) {
         form.submit (function(dsResponse, data, dsRequest) {
           form.handleSubmission(dsResponse, data, dsRequest);
@@ -27,7 +68,7 @@ isc.RegistrationForm.addProperties({
     if (dsResponse.status == 0) {
       this.editNewRecord();
       isc.say(
-        "You have successfully registered! Check your email for a confirmation code, and then enter it in the 'Activate' tab to continue", 
+        "You have successfully registered! Check your email for a confirmation code, and then enter it in the 'Activate' tab to continue",
         function() {
           isc.LG.app.fireSuccessfulRegistration(data.email);
         }
@@ -48,7 +89,7 @@ isc.LoginForm.addProperties({
       name: "submit",
       title: "Login",
       align: "right",
-      type: "button", 
+      type: "button",
       click: function (form, item) {
         form.submit (function(dsResponse, data, dsRequest) {
           form.handleSubmission(dsResponse, data, dsRequest);
@@ -66,7 +107,7 @@ isc.LoginForm.addProperties({
           isc.LG.app.fireSuccessfulLogin(data.email);
         }
       );
-    } 
+    }
   },
 
   initWidget: function() {
@@ -85,7 +126,7 @@ isc.defineClass("ActivationForm", isc.DynamicForm).addProperties({
       name: "submit",
       title: "Activate",
       align: "right",
-      type: "button", 
+      type: "button",
       click: function (form, item) {
         form.submit (function(dsResponse, data, dsRequest) {
           form.handleSubmission(dsResponse, data, dsRequest);
@@ -93,18 +134,18 @@ isc.defineClass("ActivationForm", isc.DynamicForm).addProperties({
       }
     },
   ],
-    
+
   handleSubmission: function(dsResponse, data, dsRequest) {
     if (dsResponse.status == 0) {
       //  isc.LG.app.setEmail(data.email);
       this.editNewRecord();
       isc.say(
-        "You have successfully activated your account! From now on, use your email and password to log in.", 
+        "You have successfully activated your account! From now on, use your email and password to log in.",
         function() {
           isc.LG.app.fireSuccessfulActivation(data.email);
         }
       );
-    }    
+    }
   },
 
   initWidget: function() {
@@ -122,7 +163,7 @@ isc.defineClass("PasswordResetForm", isc.DynamicForm).addProperties({
       name: "submit",
       title: "Reset Password",
       align: "right",
-      type: "button", 
+      type: "button",
       click: function (form, item) {
         form.submit (function(dsResponse, data, dsRequest) {
           form.handleSubmission(dsResponse, data, dsRequest);
@@ -130,7 +171,7 @@ isc.defineClass("PasswordResetForm", isc.DynamicForm).addProperties({
       }
     },
   ],
-    
+
   handleSubmission: function(dsResponse, data, dsRequest) {
 
   }
@@ -177,7 +218,7 @@ isc.LoginWindow.addProperties({
 
   initWidget: function() {
     this.Super("initWidget", arguments);
-    
+
     this.loginForm = isc.LoginForm.create();
     this.registrationForm  = isc.RegistrationForm.create();
     this.activationForm = isc.ActivationForm.create();
@@ -191,7 +232,7 @@ isc.LoginWindow.addProperties({
         {title: "Reset Password", pane: this.passwordResetForm}
       ]
     });
-    
+
     this.addItem(this.tabSet);
 
   //  this.observe(isc.LG.app, "fireSuccessfulActivation", "observer.closeClick()");
@@ -204,7 +245,7 @@ isc.LoginWindow.addProperties({
 
   show: function() {
     this.Super("show", arguments);
-    
+
     this.observe (isc.LG.app, "fireSuccessfulRegistration", "observer.handleSuccessfulRegistration()");
 
     this.loginForm.editNewRecord();

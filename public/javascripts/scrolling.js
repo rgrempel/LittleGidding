@@ -1,14 +1,6 @@
 isc.setAutoDraw(false);
 
-isc.defineClass("LG");
-
-// isc.LG is the main "controller" class. It is a singleton that
-// can be accessed at isc.LG.app (a class variable)
-isc.LG.addClassProperties({
-  app: null
-});
-
-// isc.LG is the main contact point for decoupled views. The idea is that we 
+// isc.LG is the main contact point for decoupled views. The idea is that we
 // are trying to keep several views sync'd when you click on something
 //
 // (a) textual views, which represent the run of text
@@ -27,11 +19,7 @@ isc.LG.addClassProperties({
 // values. It's slightly convoluted, but it does mean that we can create the widgets at will and
 // they will all sync without having to know about each other.
 isc.LG.addProperties({
-  init: function () {
-    this.Super("init", arguments);
-
-    isc.LG.app = this;
-
+  initScrolling: function () {
     this.scrollToFigureRS = isc.ResultSet.create({
       dataSource: "figures_summary",
       fetchMode: "local",
@@ -65,54 +53,6 @@ isc.LG.addProperties({
         }
       }
     });
-    
-    this.layout = isc.AppNav.create({
-      width: "100%",
-      height: "100%"
-    });
-  },
-
-  loginWindow: null,
-
-  showLoginWindow: function() {
-    if (!this.loginWindow) {
-      this.loginWindow = isc.LoginWindow.create();
-    }
-    this.loginWindow.show();
-  },
-
-  showFigureEditor: function(record) {
-    isc.FigureEditor.create({record: record}).show();
-  },
-
-  logout: function() {
-    var ds = isc.DataSource.get("scholar_sessions");
-    // The id: is bogus ... this is really a singleton on the server
-    ds.removeData({id: 1}, function(dsResponse, data, dsRequest) {
-      if (dsResponse.status == 0) isc.LG.app.fireLogout();
-    });
-  },
-  
-  fireSuccessfulRegistration: function(value) {
-    this.email = value;
-    return this;
-  },
-
-  fireSuccessfulActivation: function(email) {
-    this.fireSuccessfulLogin(email);
-    return this;
-  },
-
-  fireSuccessfulLogin: function(email) {
-    this.loggedIn = email;
-    this.loginWindow.markForDestroy();
-    this.loginWindow = null;
-    return this; 
-  },
-
-  fireLogout: function() {
-    this.loggedIn = null;
-    return this;
   },
 
   scrollToColumn: function(value) {
@@ -122,8 +62,8 @@ isc.LG.addProperties({
     // If you want the figure, we'll find it ...
     this.scrollToFigureRS.setCriteria({
       _constructor: "AdvancedCriteria",
-      fieldName: "col", 
-      operator: "greaterOrEqual", 
+      fieldName: "col",
+      operator: "greaterOrEqual",
       value: value
     });
     this.scrollToFigureRS.get(0);
@@ -131,11 +71,11 @@ isc.LG.addProperties({
     // If you want the text row, we'll find it ...
     this.scrollToTextRS.setCriteria({
       _constructor: "AdvancedCriteria",
-      fieldName: "col", 
-      operator: "greaterOrEqual", 
+      fieldName: "col",
+      operator: "greaterOrEqual",
       value: value
     });
-    this.scrollToTextRS.get(0);  
+    this.scrollToTextRS.get(0);
   },
 
   scrollToFigureID: function(value) {
@@ -147,7 +87,7 @@ isc.LG.addProperties({
       value: value
     });
     this.scrollToFigureRS.get(0);
-   
+
     // Find the text
     this.scrollToTextRS.setCriteria({
       _constructor: "AdvancedCriteria",
@@ -224,7 +164,7 @@ isc.defineClass("ChapterTitlesGrid", isc.ListGrid).addProperties({
 
     if (!selectRecord) return;
     if (selectedRecord && (selectedRecord.n == selectRecord.n)) return;
-    
+
     this.deselectAllRecords();
     this.handlingColumnChange = true;
     this.selectRecord(selectRecord);
@@ -280,7 +220,7 @@ isc.defineClass("FiguresGrid", isc.ListGrid).addProperties({
 
     var visible = this.getVisibleRows();
     if (visible[0] < 0) return;
-    
+
     // check if figure ID is  visible
     var figureIDisVisible = false;
     for (var x = visible[0]; x <= visible[1]; x++) {
@@ -290,102 +230,9 @@ isc.defineClass("FiguresGrid", isc.ListGrid).addProperties({
       }
     }
     if (figureIDisVisible) return;
-      
+
     this.body.scrollToRatio(true, figure.position / this.getTotalRows());
   },
-});
-
-isc.defineClass("CommentsGrid", isc.ListGrid).addProperties({
-  dataSource: "comments",
-  alternateRecordStyles: true,
-  wrapCells: true,
-  bodyProperties: {
-    fixedRowHeights: false
-  },
-  autoFetchData: true,
-  fields: [
-    {name: "created_at", width: "60"},
-    {name: "scholar_full_name", width: "100"},
-    {name: "comment", width: "*"}
-  ]
-});
-
-isc.defineClass("FigureEditor", isc.Window).addProperties({
-  title: "Figure",
-  width: 800,
-  height: 400,
-  canDragReposition: true,
-  canDragResize: true,
-  keepInParentRect: true,
-  animateMinimize: true,
-  dragOpacity: 30,
-  closeClick: function() {
-    this.markForDestroy();
-  },
-  initWidget: function() {
-    this.Super("initWidget", arguments);
-    this.detailViewer = isc.DetailViewer.create({
-      data: this.record,
-      dataSource: "figures",
-      showDetailFields: true,
-      showEdges: true,
-      showResizeBar: true,
-      height: "100%",
-      width: "33%",
-      overflow: "auto"
-    });
-    this.commentsGrid = isc.CommentsGrid.create({
-      showEdges: true,
-      showResizeBar: true,
-      resizeBarTarget: "next",
-      height: "60%",
-      width: "100%",
-      initialCriteria: {
-        figure_id: this.record.id
-      }
-    });
-    this.commentForm = isc.DynamicForm.create({
-      showEdges: true,
-      dataSource: "comments",
-      width: "100%",
-      numCols: 1,
-      figure: this.record,
-      showErrorText: true,
-      showTitlesWithErrorMessages: true,
-      errorOrientation: "top",
-      colWidths: ["*"],
-      fields: [
-        {name: "comment", editorType: "textArea", width: "*", showTitle: false},
-        {
-          name: "submit", type: "button", title: "Save Comment", align: "right",
-          click: function (form, item) {
-            form.submit (function(dsResponse, data, dsRequest) {
-              if(dsResponse.status == 0) {
-                form.editNewRecord({figure_id: form.figure ? form.figure.id : null});
-              }
-            });
-          }
-        }
-      ]
-    });
-    this.addItem(
-      isc.HLayout.create({
-        height: "100%",
-        width: "100%",
-        members: [
-          this.detailViewer, 
-          isc.VLayout.create({
-            width: "66%",
-            members: [
-              this.commentsGrid,
-              this.commentForm
-            ]
-          })
-        ]
-      })
-    );
-    this.commentForm.editNewRecord({figure_id: this.record ? this.record.id : null});
-  }
 });
 
 isc.defineClass("TextGrid", isc.ListGrid).addProperties({
@@ -437,7 +284,7 @@ isc.defineClass("TextGrid", isc.ListGrid).addProperties({
 
     // Check if the desired column is currently visible
     if ((visible[0] <= text.position) && (visible[1] >= text.position)) return;
-    
+
     this.body.scrollToRatio(true, text.position / this.getTotalRows());
   }
 });
@@ -504,7 +351,7 @@ isc.defineClass("PageScroll", isc.VLayout).addProperties({
         var scrollY = this.imageHeight > this.getInnerContentHeight();
         var scrollX = this.imageWidth > this.getInnerContentWidth();
         if (scrollX || scrollY) {
-          this.scrollTo(scrollX ? newX - apparentX : this.getScrollLeft(), 
+          this.scrollTo(scrollX ? newX - apparentX : this.getScrollLeft(),
                         scrollY ? newY - apparentY : this.getScrollTop());
         }
       }
@@ -525,7 +372,7 @@ isc.defineClass("PageScroll", isc.VLayout).addProperties({
 
     this.observe(isc.LG.app, "fireScrollToColumn", "observer.handleScrollToColumn(returnVal)");
     this.observe(isc.LG.app, "fireScrollToPage", "observer.handleScrollToPage(returnVal)");
-    
+
     this.addMember(this.image);
     this.addMember(this.slider);
 
@@ -546,82 +393,4 @@ isc.defineClass("PageScroll", isc.VLayout).addProperties({
     }
   }
 });
-
-// The overall app nav widget
-isc.defineClass("AppNav", isc.VLayout).addProperties({
-  initWidget: function () {
-    this.Super("initWidget", arguments);
-
-    this.loginButton = isc.LoginButton.create();
-    
-    this.chapterTitles = isc.ChapterTitlesGrid.create({
-      width: "100%",
-      height: "33%",
-      showEdges: true,
-      showResizeBar: true
-    });
-
-    this.pageScroll = isc.PageScroll.create({
-      width: "100%",
-      height: "75%",
-      showEdges: true,
-      showResizeBar: true
-    });
-
-    this.figuresGrid = isc.FiguresGrid.create({
-      width: "100%",
-      height: "100%"
-    });
-
-    this.textGrid = isc.TextGrid.create({
-      width: "100%",
-      height: "100%"
-    });
-
-    this.addMembers([
-      isc.ToolStrip.create({
-        members: [
-          this.loginButton
-        ]
-      }),
-      isc.HLayout.create({
-        height: "100%",
-        width: "100%",
-        members: [
-          isc.VLayout.create({
-            width: "33%",
-            showResizeBar: true,
-            members: [
-              this.chapterTitles,
-              isc.TabSet.create({
-                height: "66%",
-                tabs: [
-                  {title: "Text", pane: this.textGrid}
-                ]
-              })
-            ]
-          }),
-          isc.VLayout.create({
-            width: "66%",
-            members: [
-              this.pageScroll,
-              isc.TabSet.create({
-                height: "25%",
-                tabs: [
-                  {title: "Figures", pane: this.figuresGrid}, 
-                  {title: "Comments", pane: isc.Label.create({align: "center", contents: "Comments go here"})}                  
-                ]
-              })
-            ]
-          })
-        ]
-      })
-    ]);
-  }
-});
-
-isc.Page.setEvent("load", function() {
-  var app = isc.LG.create();
-  app.layout.draw();
-}, Page.FIRE_ONCE);
 

@@ -94,7 +94,7 @@ isc.RailsDataSource.create({
   dataURL: "figures",
   fields: [
     {name: "id", type: "text", primaryKey: "true", hidden: true},
-    {name: "position", type: "integer", hidden: true}, 
+    {name: "position", type: "integer", hidden: true},
     {name: "col", type: "integer", title: "Column", xmlAttribute: true}
   ]
 });
