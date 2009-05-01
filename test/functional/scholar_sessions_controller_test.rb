@@ -47,5 +47,20 @@ class ScholarSessionsControllerTest < ActionController::TestCase
       assert_tag :record, :child => {:tag => "email", :content => "rgrempel@gmail.com"}
       assert_not_nil @controller.session[:scholar_credentials]
     end
+
+    should "be able to activate with perishable_token" do
+      assert_nil @scholar.activated_at
+
+      post :create, wrap_sc_params(:email => @scholar.email, :perishable_token => @scholar.perishable_token)
+
+      assert_response :success
+      assert_tag :status, :content => "0"
+      assert_tag :record, :child => {:tag => "email", :content => @scholar.email}
+
+      @scholar.reload
+
+      assert_not_nil @scholar.activated_at, "activated_at should now be set"
+      assert_not_nil @controller.session[:scholar_credentials], "should have been logged in"
+    end
   end
 end

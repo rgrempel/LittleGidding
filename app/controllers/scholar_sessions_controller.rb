@@ -21,7 +21,7 @@ class ScholarSessionsController < ApplicationController
           @record.save
           @status = 0
           
-          ScholarSession.create(@scholar)
+          ScholarSession.create(@record)
         end
       else
         # ... Could not find the perishable_token
