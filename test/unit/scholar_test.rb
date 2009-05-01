@@ -22,11 +22,17 @@
 #  updated_at         :datetime
 #
 
-require 'test_helper'
+require File.join(File.dirname(__FILE__), '..', 'test_helper')
 
 class ScholarTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  test "email should be sanitized" do
+    u = Scholar.new :email => "rgrempel@gmail.com",
+                    :full_name => "<b>Ryan Rempel</b>",
+                    :institution => "CMU"
+    u.password = "abcd12345"
+    u.password_confirmation = "abcd12345"
+    
+    assert u.save, "Should have saved record"
+    assert_equal "Ryan Rempel", u.full_name, "Should have stripped tags from full_name"
   end
 end

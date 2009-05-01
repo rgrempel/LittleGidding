@@ -11,6 +11,8 @@
 #
 
 class Comment < ActiveRecord::Base
+  sanitize_fields :only => [:comment], :allow_tags => [:comment]
+
   belongs_to :scholar
 
   attr_accessible :figure_id, :comment
