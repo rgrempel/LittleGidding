@@ -16,7 +16,25 @@ isc.defineClass("CommentsGrid", isc.ListGrid).addProperties({
     {name: "created_at", width: "60"},
     {name: "scholar_full_name", width: "100"},
     {name: "comment", width: "*"}
-  ]
+  ],
+  initWidget: function(){
+    this.Super("initWidget", arguments);
+    this.observe(isc.LG.app, "fireLogin", "observer.handleLogin()");
+    this.observe(isc.LG.app, "fireLogout", "observer.handleLogout()");
+    if (isc.LG.app.scholar) {
+      this.handleLogin();
+    } else {
+      this.handleLogout();
+    }
+  },
+  handleLogin: function() {
+    this.emptyMessage = "No comments to show.";
+    this.invalidateCache();
+  },
+  handleLogout: function() {
+    this.emptyMessage = "You must login to see comments.";
+    this.invalidateCache();
+  }
 });
 
 isc.defineClass("FigureEditor", isc.Window).addProperties({
