@@ -289,72 +289,75 @@ isc.defineClass("TextGrid", isc.ListGrid).addProperties({
   }
 });
 
+isc.defineClass("PanZoomImg", "Img").addProperties({
+  imageType: "normal",
+  overflow: "scroll",
+  defaultWidth: "100%",
+  defaultHeight: "100%",
+  magnification: null,
+  canDrag: true,
+  cursor: "all-scroll",
+  dragAppearance: "none",
+  dragStart: function() {
+    this.scrollLeftStart = this.getScrollLeft();
+    this.scrollTopStart = this.getScrollTop();
+  },
+  dragMove: function() {
+    this.scrollTo(
+      this.scrollLeftStart - isc.Event.lastEvent.x + isc.Event.mouseDownEvent.x,
+      this.scrollTopStart - isc.Event.lastEvent.y + isc.Event.mouseDownEvent.y
+    );
+  },
+  draw: function() {
+    this.Super("draw", arguments);
+    if (this.magnification) return;
+    var widthRatio = this.getInnerContentWidth() / this.naturalImageWidth;
+    var heightRatio = this.getInnerContentHeight() / this.naturalImageHeight;
+    this.magnification = widthRatio < heightRatio ? widthRatio : heightRatio;
+    this.zoom();
+  },
+  zoom: function() {
+    this.imageHeight = this.naturalImageHeight * this.magnification;
+    this.imageWidth = this.naturalImageWidth * this.magnification;
+    this.markForRedraw();
+  },
+  mouseWheel: function() {
+    var ev = isc.Event.lastEvent;
+    var factor = 1 + (ev.wheelDelta < 0 ? 0.1 : -0.1);
+    this.magnify(factor);
+  },
+  click: function() {
+    this.magnify(isc.Event.shiftKeyDown() ? 0.9 : 1.1);
+    return false;
+  },
+  magnify: function(factor) {
+    var ev = isc.Event.lastEvent;
+    var apparentY = ev.y - this.getPageTop();
+    var apparentX = ev.x - this.getPageLeft();
+    var realX = apparentX + this.getScrollLeft();
+    var realY = apparentY + this.getScrollTop();
+    var newX = realX * factor;
+    var newY = realY * factor;
+
+    this.magnification = this.magnification * factor;
+    this.zoom();
+
+    // If we'll be scrolled, then try to keep the mouse over the same point
+    var scrollY = this.imageHeight > this.getInnerContentHeight();
+    var scrollX = this.imageWidth > this.getInnerContentWidth();
+    if (scrollX || scrollY) {
+      this.scrollTo(scrollX ? newX - apparentX : this.getScrollLeft(),
+                    scrollY ? newY - apparentY : this.getScrollTop());
+    }
+  }
+});
+
 isc.defineClass("PageScroll", isc.VLayout).addProperties({
   initWidget: function() {
-    this.image = isc.Img.create({
-      imageType: "normal",
-      overflow: "scroll",
-      defaultWidth: "100%",
-      defaultHeight: "100%",
+    this.image = isc.PanZoomImg.create({
       naturalImageWidth: 2035.0,
       naturalImageHeight: 1318.0,
-      magnification: null,
       aspectRatio: 2035.0 / 1318.0,
-      canDrag: true,
-      cursor: "all-scroll",
-      dragAppearance: "none",
-      dragStart: function() {
-        this.scrollLeftStart = this.getScrollLeft();
-        this.scrollTopStart = this.getScrollTop();
-      },
-      dragMove: function() {
-        this.scrollTo(
-          this.scrollLeftStart - isc.Event.lastEvent.x + isc.Event.mouseDownEvent.x,
-          this.scrollTopStart - isc.Event.lastEvent.y + isc.Event.mouseDownEvent.y
-        );
-      },
-      draw: function() {
-        this.Super("draw", arguments);
-        if (this.magnification) return;
-        var widthRatio = this.getInnerContentWidth() / this.naturalImageWidth;
-        var heightRatio = this.getInnerContentHeight() / this.naturalImageHeight;
-        this.magnification = widthRatio < heightRatio ? widthRatio : heightRatio;
-        this.zoom();
-      },
-      zoom: function() {
-        this.imageHeight = this.naturalImageHeight * this.magnification;
-        this.imageWidth = this.naturalImageWidth * this.magnification;
-        this.markForRedraw();
-      },
-      mouseWheel: function() {
-        var ev = isc.Event.lastEvent;
-        var factor = 1 + (ev.wheelDelta < 0 ? 0.1 : -0.1);
-        this.magnify(factor);
-      },
-      click: function() {
-        this.magnify(isc.Event.shiftKeyDown() ? 0.9 : 1.1);
-        return false;
-      },
-      magnify: function(factor) {
-        var ev = isc.Event.lastEvent;
-        var apparentY = ev.y - this.getPageTop();
-        var apparentX = ev.x - this.getPageLeft();
-        var realX = apparentX + this.getScrollLeft();
-        var realY = apparentY + this.getScrollTop();
-        var newX = realX * factor;
-        var newY = realY * factor;
-
-        this.magnification = this.magnification * factor;
-        this.zoom();
-
-        // If we'll be scrolled, then try to keep the mouse over the same point
-        var scrollY = this.imageHeight > this.getInnerContentHeight();
-        var scrollX = this.imageWidth > this.getInnerContentWidth();
-        if (scrollX || scrollY) {
-          this.scrollTo(scrollX ? newX - apparentX : this.getScrollLeft(),
-                        scrollY ? newY - apparentY : this.getScrollTop());
-        }
-      }
     });
 
     this.slider = isc.Slider.create({
