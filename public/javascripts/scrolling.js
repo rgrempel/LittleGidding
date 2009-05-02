@@ -373,13 +373,37 @@ isc.defineClass("PageScroll", isc.VLayout).addProperties({
       }
     });
 
+    this.mustLoginLabel = isc.Label.create({
+      align: "center",
+      contents: "You must login in order to see page images",
+      width: "100%",
+      height: "100%"
+    });
+
     this.observe(isc.LG.app, "fireScrollToColumn", "observer.handleScrollToColumn(returnVal)");
     this.observe(isc.LG.app, "fireScrollToPage", "observer.handleScrollToPage(returnVal)");
+    this.observe(isc.LG.app, "fireLogin", "observer.handleLogin()");
+    this.observe(isc.LG.app, "fireLogout", "observer.handleLogout()");
 
-    this.addMember(this.image);
+    if (isc.LG.app.scholar) {
+      this.addMember(this.image);
+    } else {
+      this.addMember(this.mustLoginLabel);
+    }
     this.addMember(this.slider);
 
     this.Super("initWidget", arguments);
+  },
+
+  handleLogin: function() {
+    this.removeMember(this.mustLoginLabel);
+    this.addMember(this.image, 0);
+    this.image.markForRedraw();
+  },
+
+  handleLogout: function() {
+    this.removeMember(this.image);
+    this.addMember(this.mustLoginLabel, 0);
   },
 
   handleScrollToColumn: function(column) {
