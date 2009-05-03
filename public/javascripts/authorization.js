@@ -66,18 +66,21 @@ isc.LG.addProperties({
 isc.defineClass("RegistrationForm", isc.DynamicForm);
 isc.RegistrationForm.addProperties({
   dataSource: "scholars",
+  width: "100%",
   fields: [
     {name: "base", type: "header", defaultValue: "Register"},
-    {name: "full_name"},
-    {name: "email"},
-    {name: "institution"},
-    {name: "password", type: "password", title: "Password", required: true},
-    {name: "password_confirmation", type: "password", title: "Confirm Password", required: true},
+    {name: "full_name", width: "*"},
+    {name: "email", width: "*"},
+    {name: "institution", width: "*"},
+    {name: "password", type: "password", title: "Password", required: true, width: "*"},
+    {name: "password_confirmation", type: "password", title: "Confirm Password", required: true, width: "*"},
+    {name: "space", type: "spacer", height: 10},
     {
       name: "submit",
       title: "Register",
-      align: "right",
+      align: "center",
       type: "button",
+      colSpan: 2,
       click: function (form, item) {
         form.submit (function(dsResponse, data, dsRequest) {
           form.handleSubmission(dsResponse, data, dsRequest);
@@ -102,16 +105,18 @@ isc.RegistrationForm.addProperties({
 isc.defineClass("LoginForm", isc.DynamicForm);
 isc.LoginForm.addProperties({
   dataSource: "scholar_sessions",
+  width: "100%",
   fields: [
     {name: "base", type: "header", defaultValue: "Login"},
-    {name: "email"},
-    {name: "password", type: "password", title: "Password", required: true},
+    {name: "email", width: "*"},
+    {name: "password", type: "password", title: "Password", required: true, width: "*"},
     {name: "space", type: "spacer", height: 10},
     {
       name: "submit",
       title: "Login",
-      align: "right",
+      align: "center",
       type: "button",
+      colSpan: 2,
       click: function (form, item) {
         form.submit (function(dsResponse, data, dsRequest) {
           form.handleSubmission(dsResponse, data, dsRequest);
@@ -135,15 +140,18 @@ isc.LoginForm.addProperties({
 
 isc.defineClass("ActivationForm", isc.DynamicForm).addProperties({
   dataSource: "scholar_sessions",
+  width: "100%",
   fields: [
     {name: "base", type: "header", defaultValue: "Activate Account"},
-    {name: "email"},
-    {name: "perishable_token", type: "text", title: "Activation Code"},
+    {name: "email", width: "*"},
+    {name: "perishable_token", type: "text", title: "Activation Code", width: "*"},
+    {name: "space", type: "spacer", height: 10},
     {
       name: "submit",
       title: "Activate",
-      align: "right",
+      align: "center",
       type: "button",
+      colSpan: 2,
       click: function (form, item) {
         form.submit (function(dsResponse, data, dsRequest) {
           form.handleSubmission(dsResponse, data, dsRequest);
@@ -167,14 +175,17 @@ isc.defineClass("ActivationForm", isc.DynamicForm).addProperties({
 
 isc.defineClass("PasswordResetForm", isc.DynamicForm).addProperties({
   dataSource: "scholars",
+  width: "100%",
   fields: [
     {name: "base", type: "header", defaultValue: "Reset Password"},
-    {name: "email"},
+    {name: "email", width: "*"},
+    {name: "space", type: "spacer", height: 10},
     {
       name: "submit",
       title: "Reset Password",
-      align: "right",
+      align: "center",
       type: "button",
+      colSpan: 2,
       click: function (form, item) {
         form.submit (function(dsResponse, data, dsRequest) {
           form.handleSubmission(dsResponse, data, dsRequest);
