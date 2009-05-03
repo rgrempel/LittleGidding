@@ -241,7 +241,10 @@ isc.LoginWindow.addProperties({
         {title: "Register", pane: this.registrationForm},
         {title: "Activate", pane: this.activationForm},
         {title: "Reset Password", pane: this.passwordResetForm}
-      ]
+      ],
+      tabSelected: function(tabNum, tabPane, ID, tab) {
+        tabPane.delayCall("focusInItem", [1]);
+      }
     });
 
     this.addItem(this.tabSet);
