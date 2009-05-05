@@ -367,6 +367,8 @@ isc.defineClass("PageScroll", isc.VLayout).addProperties({
       maxValue: 574,
       numValues: 575,
       stepPercent: 1.0 / 575.0,
+      showRange: false,
+      margin: 6,
       title: "Column",
       vertical: false,
       valueChanged: function(value) {
