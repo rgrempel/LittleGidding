@@ -50,6 +50,8 @@ isc.defineClass("AppNav", isc.VLayout).addProperties({
       height: "100%"
     });
 
+    this.globalComments = isc.GlobalComments.create();
+
     this.textGrid = isc.TextGrid.create({
       width: "100%",
       height: "100%"
@@ -86,7 +88,7 @@ isc.defineClass("AppNav", isc.VLayout).addProperties({
                 height: "25%",
                 tabs: [
                   {title: "Figures", pane: this.figuresGrid},
-                  {title: "Comments", pane: isc.Label.create({align: "center", contents: "Comments go here"})}
+                  {title: "Comments", pane: this.globalComments}
                 ]
               })
             ]

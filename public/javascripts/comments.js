@@ -38,6 +38,50 @@ isc.defineClass("CommentsGrid", isc.ListGrid).addProperties({
   }
 });
 
+isc.defineClass("GlobalComments", isc.HLayout).addProperties({
+  initWidget: function() {
+    this.Super("initWidget", arguments);
+
+    this.detailViewer = isc.DetailViewer.create({
+      dataSource: "figures",
+      showDetailFields: true,
+      showEdges: true,
+      overflow: "auto",
+      width: "33%"
+    });
+
+    this.figures = isc.ResultSet.create({
+      dataSource: "figures",
+      detailViewer: this.detailViewer,
+      dataArrived: function(startRow, endRow) {
+        if (startRow == 0 && endRow >= 0) {
+          this.detailViewer.setData(
+            this.get(0)
+          );
+        }
+      }
+    });
+
+    this.commentsGrid = isc.CommentsGrid.create({
+      showEdges: true,
+      width: "66%",
+      selectionType: "single",
+      figures: this.figures,
+      selectionChanged: function(record, state) {
+        if (state) {
+          this.figures.setCriteria({
+            id: record.figure_id
+          });
+          this.figures.get(0);
+        }
+      }
+    });
+
+    this.addMember(this.commentsGrid);
+    this.addMember(this.detailViewer);
+  }
+});
+
 isc.defineClass("FigureEditor", isc.Window).addProperties({
   title: "Figure",
   width: 800,

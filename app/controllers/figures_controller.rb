@@ -1,18 +1,28 @@
 class FiguresController < ApplicationController
   def index
+    @conditions = []
+    @position = []
+
     if params.has_key?(:_startRow)
       # Some basic protection
       @startRow = params[:_startRow].to_i
       @endRow = params[:_endRow].to_i
-
-      # @startRow and @endRow are 0-based, but position() is 1 based
-      # So, if the position is greater than @startRow, we want it
-      @nodes = @@gospel.xpath("(//figure)[position() > #{@startRow} and position() <= #{@endRow + 1}]")
     else
       @startRow = 0
-      @nodes = @@gospel.xpath("//figure")
     end
-      
+
+    if params.has_key?(:id)
+      @conditions << "@id='#{params[:id]}'"
+    end
+
+    xpath = "//figure"
+    xpath += "[#{@conditions.join(" and ")}]" unless @conditions.empty?
+    logger.info xpath
+    @nodes = @@gospel.xpath(xpath)
+    @totalRows = @nodes.length
+
+    @nodes = @nodes.to_ary[@startRow..@endRow] if params.has_key?(:_startRow)
+
     # We pick out attributes to return based on dataSource
     # "figures" is full attributes
     # "figures_summary" is just row, id, and column
@@ -20,6 +30,5 @@ class FiguresController < ApplicationController
 
     @status = 0
     @endRow = @startRow + @nodes.length - 1
-    @totalRows = @@gospel.xpath("//figure").length
   end
 end
