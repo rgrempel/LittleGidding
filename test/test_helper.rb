@@ -14,5 +14,15 @@ class ActiveSupport::TestCase
   
   fixtures :all
 
-  # Add more helper methods to be used by all tests here...
+  def wrap_sc_params datasource, params={}
+    {
+      :format => :xml,
+      :request => {
+        :data_source => datasource.to_s,
+        :data => {
+          datasource.to_sym => params
+        }
+      }
+    }
+  end
 end

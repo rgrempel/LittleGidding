@@ -1,46 +1,15 @@
 class ScholarSessionsController < ApplicationController
-  def new
-
-  end
+  before_filter :set_toxml_defaults
 
   def create
-    data = params[:request][:data][:scholar_sessions]
-    @toxml_options = {:only => [:email, :id, :full_name, :institution]}
- 
-    if data.has_key?(:perishable_token)
-      @record = Scholar.find_using_perishable_token(data[:perishable_token])
-      if @record
-        if @record.activated_at
-          # ... an attempt to reset password ...
-          @record.password = data[:password]
-          @record.password_confirmation = data[:password_confirmation]
-          @status = @record.save ? 0 : -4
-        else
-          # ... an activation ...
-          @record.activated_at = Time.now
-          @record.save
-          @status = 0
-          
-          ScholarSession.create(@record)
-        end
-      else
-        # ... Could not find the perishable_token
-        @record = Scholar.new
-        @record.email = data[:email]
-        @record.perishable_token = data[:perishable_token]
-        @status = -4
-        @record.errors.add :perishable_token, "was not found in system ..."
-      end
+    if params[:request][:data_source] == "password_reset"
+      handle_request_for_password_reset_code
     else
-      # It's a normal login attempt
-      session = ScholarSession.new data
-      if session.save
-        @status = 0
-        @record = session.attempted_record
+      @data = params[:request][:data][:scholar_sessions]
+      if @data.has_key?(:perishable_token)
+        handle_activation_or_password_reset
       else
-        @status = -4
-        @record = session
-        @toxml_options = {}
+        handle_login_attempt
       end
     end
 
@@ -60,10 +29,6 @@ class ScholarSessionsController < ApplicationController
     render :template => "shared/smartclient/show"
   end
 
-  def update
-
-  end
-
   # This actually returns a singleton representing who is logged in ...
   def index
     @records = current_scholar ? [current_scholar] : []
@@ -73,8 +38,78 @@ class ScholarSessionsController < ApplicationController
     @endRow = @records.length - 1
     @totalRows = @records.length
 
-    @toxml_options = {:only => [:email, :id, :full_name, :institution]}
-
     render :template => "shared/smartclient/index"
+  end
+
+private
+  def set_toxml_defaults
+    @toxml_options = {:only => [:email, :id, :full_name, :institution]}
+  end
+
+  def handle_login_attempt
+    session = ScholarSession.new @data
+    if session.save
+      @status = 0
+      @record = session.attempted_record
+    else
+      @status = -4
+      @record = session
+      @toxml_options = {}
+    end
+  end
+
+  def handle_activation_or_password_reset
+    @record = Scholar.find_using_perishable_token(@data[:perishable_token])
+    if @record
+      if @data[:password]
+        # ... an attempt to reset password ...
+        if @data[:password].blank?
+          @record.errors.add :password, "is required"
+          @status = -4
+        else
+          @record.password = @data[:password]
+          @record.password_confirmation = @data[:password_confirmation]
+          @record.activated_at = Time.now unless @record.activated_at
+          if @record.save
+            @status = 0
+            ScholarSession.create(@record)
+          else
+            @status = -4
+          end
+        end
+      else
+        # ... an activation ...
+        @record.activated_at = Time.now unless @record.activated_at
+        @record.save
+        @status = 0
+
+        ScholarSession.create(@record)
+      end
+    else
+      # ... Could not find the perishable_token
+      @record = Scholar.new
+      @record.perishable_token = @data[:perishable_token]
+      @status = -4
+      @record.errors.add :perishable_token, "was not found in system ..."
+    end
+  end
+
+  def handle_request_for_password_reset_code
+    @data = params[:request][:data][:password_reset]
+    # It's a password reset request, so we don't leak the real record ...
+    @record = Scholar.new
+    if @data[:email]
+      scholar = Scholar.find_by_email @data[:email]
+      if scholar
+        scholar.deliver_password_reset_instructions!
+        @status = 0
+      else
+        @record.errors.add :email, "was not found"
+        @status = -4
+      end
+    else
+      @record.errors.add :email, "is required"
+      @status = -4
+    end
   end
 end
