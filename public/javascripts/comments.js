@@ -1,6 +1,10 @@
 isc.LG.addProperties({
   showFigureEditor: function(record) {
-    isc.FigureEditor.create({record: record}).show();
+    isc.FigureEditor.create({figure: record}).show();
+  },
+
+  showFigureEditorForID: function(id) {
+    isc.FigureEditor.create({figureID: id}).show();
   }
 });
 
@@ -47,7 +51,12 @@ isc.defineClass("GlobalComments", isc.HLayout).addProperties({
       showDetailFields: true,
       showEdges: true,
       overflow: "auto",
-      width: "33%"
+      width: "33%",
+      doubleClick: function() {
+        if (this.data) {
+          isc.LG.app.showFigureEditor(this.data);
+        }
+      }
     });
 
     this.figures = isc.ResultSet.create({
@@ -67,12 +76,16 @@ isc.defineClass("GlobalComments", isc.HLayout).addProperties({
       width: "66%",
       selectionType: "single",
       figures: this.figures,
+      recordDoubleClick: function(viewer, record, recordNum, field, fieldNum, value, rawValue) {
+        isc.LG.app.showFigureEditorForID(record.figure_id);
+      },
       selectionChanged: function(record, state) {
         if (state) {
           this.figures.setCriteria({
             id: record.figure_id
           });
           this.figures.get(0);
+          isc.LG.app.scrollToFigureID(record.figure_id);
         }
       }
     });
@@ -94,10 +107,36 @@ isc.defineClass("FigureEditor", isc.Window).addProperties({
   closeClick: function() {
     this.markForDestroy();
   },
+  setFigureID: function(id) {
+    this.figureRS.setCriteria({
+      id: id
+    });
+    this.figureRS.get(0);
+  },
+  setFigure: function(figure) {
+    this.figure = figure;
+    this.figureID = figure.id;
+    this.detailViewer.setData([figure]);
+    this.commentsGrid.fetchData({
+      figure_id: figure.id
+    });
+    this.commentForm.figure = figure;
+    this.commentForm.editNewRecord({
+      figure_id: figure.id
+    });
+  },
   initWidget: function() {
     this.Super("initWidget", arguments);
+    this.figureRS = isc.ResultSet.create({
+      dataSource: "figures",
+      origin: this,
+      dataArrived: function(startRow, endRow) {
+        if (startRow == 0 && endRow >= 0) {
+          this.origin.setFigure(this.get(0));
+        }
+      }
+    });
     this.detailViewer = isc.DetailViewer.create({
-      data: this.record,
       dataSource: "figures",
       showDetailFields: true,
       showEdges: true,
@@ -112,16 +151,14 @@ isc.defineClass("FigureEditor", isc.Window).addProperties({
       resizeBarTarget: "next",
       height: "60%",
       width: "100%",
-      initialCriteria: {
-        figure_id: this.record.id
-      }
+      autoFetchData: false
     });
     this.commentForm = isc.DynamicForm.create({
       showEdges: true,
       dataSource: "comments",
       width: "100%",
       numCols: 1,
-      figure: this.record,
+      figure: null,
       showErrorText: true,
       showTitlesWithErrorMessages: true,
       errorOrientation: "top",
@@ -140,6 +177,14 @@ isc.defineClass("FigureEditor", isc.Window).addProperties({
         }
       ]
     });
+
+    // Use setter if passed in config
+    if (this.figureID) {
+      this.setFigureID(this.figureID);
+    } else if (this.figure) {
+      this.setFigure(this.figure);
+    }
+
     this.addItem(
       isc.HLayout.create({
         height: "100%",
@@ -156,7 +201,6 @@ isc.defineClass("FigureEditor", isc.Window).addProperties({
         ]
       })
     );
-    this.commentForm.editNewRecord({figure_id: this.record ? this.record.id : null});
   }
 });
 

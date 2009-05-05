@@ -255,8 +255,9 @@ isc.defineClass("TextGrid", isc.ListGrid).addProperties({
     {name: "col", width: 30}
   ],
   recordDoubleClick: function(viewer, record, recordNum, field, fieldNum, value, rawValue) {
-    // TODO: Need to get the actual figure record ... or have supplied the whole thing in the first place?
-    // if (record.type == "figure") isc.LG.app.showFigureEditor(record);
+    if (record.type == "figure") {
+      isc.LG.app.showFigureEditorForID(record.id);
+    }
   },
   selectionChanged: function(record, state) {
     if (state) {
