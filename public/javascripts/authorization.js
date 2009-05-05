@@ -67,6 +67,8 @@ isc.defineClass("RegistrationForm", isc.DynamicForm);
 isc.RegistrationForm.addProperties({
   dataSource: "scholars",
   width: "100%",
+  errorOrientation: "top",
+  showErrorText: true,
   fields: [
     {name: "base", type: "header", defaultValue: "Register"},
     {name: "full_name", width: "*"},
@@ -106,6 +108,8 @@ isc.defineClass("LoginForm", isc.DynamicForm);
 isc.LoginForm.addProperties({
   dataSource: "scholar_sessions",
   width: "100%",
+  errorOrientation: "top",
+  showErrorText: true,
   fields: [
     {name: "base", type: "header", defaultValue: "Login"},
     {name: "email", width: "*"},
@@ -141,6 +145,8 @@ isc.LoginForm.addProperties({
 isc.defineClass("ActivationForm", isc.DynamicForm).addProperties({
   dataSource: "scholar_sessions",
   width: "100%",
+  errorOrientation: "top",
+  showErrorText: true,
   fields: [
     {name: "base", type: "header", defaultValue: "Activate Account"},
     {name: "perishable_token", type: "text", title: "Activation Code", width: "*"},
@@ -175,6 +181,8 @@ isc.defineClass("ActivationForm", isc.DynamicForm).addProperties({
 isc.defineClass("PasswordResetRequestForm", isc.DynamicForm).addProperties({
   dataSource: "password_reset",
   width: "100%",
+  errorOrientation: "top",
+  showErrorText: true,
   fields: [
     {name: "base", type: "header", defaultValue: "Request Password Reset Code"},
     {name: "email", type: "text", title: "email", width: "*"},
@@ -203,6 +211,8 @@ isc.defineClass("PasswordResetRequestForm", isc.DynamicForm).addProperties({
 isc.defineClass("PasswordResetForm", isc.DynamicForm).addProperties({
   dataSource: "scholar_sessions",
   width: "100%",
+  errorOrientation: "top",
+  showErrorText: true,
   fields: [
     {name: "base", type: "header", defaultValue: "Reset Password"},
     {name: "perishable_token", type: "text", title: "Confirmation Code", width: "*"},
