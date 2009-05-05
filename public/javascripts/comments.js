@@ -12,8 +12,9 @@ isc.defineClass("CommentsGrid", isc.ListGrid).addProperties({
     fixedRowHeights: false
   },
   autoFetchData: true,
+  dateFormatter: "toEuropeanShortDateTime",
   fields: [
-    {name: "created_at", width: "60"},
+    {name: "created_at", width: "90", align: "left"},
     {name: "scholar_full_name", width: "100"},
     {name: "comment", width: "*"}
   ],
