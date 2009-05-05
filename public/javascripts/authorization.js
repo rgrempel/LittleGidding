@@ -143,7 +143,6 @@ isc.defineClass("ActivationForm", isc.DynamicForm).addProperties({
   width: "100%",
   fields: [
     {name: "base", type: "header", defaultValue: "Activate Account"},
-    {name: "email", width: "*"},
     {name: "perishable_token", type: "text", title: "Activation Code", width: "*"},
     {name: "space", type: "spacer", height: 10},
     {
@@ -173,12 +172,42 @@ isc.defineClass("ActivationForm", isc.DynamicForm).addProperties({
   }
 });
 
+isc.defineClass("PasswordResetRequestForm", isc.DynamicForm).addProperties({
+  dataSource: "password_reset",
+  width: "100%",
+  fields: [
+    {name: "base", type: "header", defaultValue: "Request Password Reset Code"},
+    {name: "email", type: "text", title: "email", width: "*"},
+    {name: "space", type: "spacer", height: 10},
+    {
+      name: "submit",
+      title: "Request Password Reset Code",
+      align: "center",
+      type: "button",
+      colSpan: 2,
+      click: function (form, item) {
+        form.submit (function(dsResponse, data, dsRequest) {
+          form.handleSubmission(dsResponse, data, dsRequest);
+        });
+      }
+    }
+  ],
+
+  handleSubmission: function(dsResponse, data, dsRequest) {
+    if (dsResponse.status == 0) {
+      isc.say("A confirmation code has been e-mailed to you. Enter it here with your desired password.");
+    }
+  }
+});
+
 isc.defineClass("PasswordResetForm", isc.DynamicForm).addProperties({
-  dataSource: "scholars",
+  dataSource: "scholar_sessions",
   width: "100%",
   fields: [
     {name: "base", type: "header", defaultValue: "Reset Password"},
-    {name: "email", width: "*"},
+    {name: "perishable_token", type: "text", title: "Confirmation Code", width: "*"},
+    {name: "password", type: "password", title: "New Password", required: true, width: "*"},
+    {name: "password_confirmation", type: "password", title: "Confirm New Password", required: true, width: "*"},
     {name: "space", type: "spacer", height: 10},
     {
       name: "submit",
@@ -195,10 +224,11 @@ isc.defineClass("PasswordResetForm", isc.DynamicForm).addProperties({
   ],
 
   handleSubmission: function(dsResponse, data, dsRequest) {
-
+    if (dsResponse.status == 0) {
+      isc.say("You have successfully reset your password");
+    }
   }
 });
-
 
 // A button that knows how to login
 isc.defineClass("LoginButton", isc.Button);
@@ -245,13 +275,26 @@ isc.LoginWindow.addProperties({
     this.registrationForm  = isc.RegistrationForm.create();
     this.activationForm = isc.ActivationForm.create();
     this.passwordResetForm = isc.PasswordResetForm.create();
+    this.passwordResetRequestForm = isc.PasswordResetRequestForm.create();
 
     this.tabSet = isc.TabSet.create({
       tabs: [
         {title: "Login", pane: this.loginForm},
         {title: "Register", pane: this.registrationForm},
         {title: "Activate", pane: this.activationForm},
-        {title: "Reset Password", pane: this.passwordResetForm}
+        {
+          title: "Password Reset", 
+          pane: isc.VStack.create({
+            focusInItem: function(item) {
+              this.getMember(0).focusInItem(item);
+            },
+            membersMargin: 24,
+            members: [
+              this.passwordResetRequestForm,
+              this.passwordResetForm
+            ]
+          })
+        }
       ],
       tabSelected: function(tabNum, tabPane, ID, tab) {
         tabPane.delayCall("focusInItem", [1]);
@@ -274,6 +317,7 @@ isc.LoginWindow.addProperties({
     this.registrationForm.editNewRecord();
     this.passwordResetForm.editNewRecord();
     this.activationForm.editNewRecord();
+    this.passwordResetRequestForm.editNewRecord();
   }
 });
 

@@ -35,6 +35,14 @@ isc.RailsDataSource.create({
 });
 
 isc.RailsDataSource.create({
+  ID: "password_reset",
+  dataURL: "/scholar_sessions",
+  fields: [
+    {name: "email", type: "text", title: "Email Address", length: 255, required: true},
+  ]
+});
+
+isc.RailsDataSource.create({
   ID: "scholar_sessions",
   dataURL: "/scholar_sessions",
   fields: [
