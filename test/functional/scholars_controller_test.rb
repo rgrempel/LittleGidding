@@ -28,6 +28,7 @@ class ScholarsControllerTest < ActionController::TestCase
       assert_equal 1, Scholar.count, "Should be 1 scholar now"
       @scholar = Scholar.find_by_email "rgrempel@gmail.com"
       assert_not_nil @scholar, "Should have set email"
+      assert_sent_email
       assert_nil @scholar.activated_at, "Should not be activated yet"
       assert_nil @controller.session[:scholar_credentials], "Should not be logged in"
     end
