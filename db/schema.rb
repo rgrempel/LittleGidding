@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090426004321) do
+ActiveRecord::Schema.define(:version => 20090506001209) do
 
   create_table "comments", :force => true do |t|
     t.integer  "scholar_id"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(:version => 20090426004321) do
     t.string   "last_login_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "administrator"
   end
 
   add_index "scholars", ["email"], :name => "index_scholars_on_email", :unique => true

@@ -31,6 +31,27 @@ isc.defineClass("CommentsGrid", isc.ListGrid).addProperties({
     } else {
       this.handleLogout();
     }
+    this.contextMenu = isc.Menu.create({
+      data: [
+        {
+          grid: this,
+          title: "Delete comment",
+          click: function() {
+            var grid = this.grid;
+            grid.getSelection().map(function (item) {
+              grid.removeData(item);
+            })
+          }
+        },
+        {
+          grid: this,
+          title: "Show figure window",
+          click: function() {
+            isc.LG.app.showFigureEditorForID(this.grid.getSelection()[0].figure_id);
+          }
+        }
+      ]
+    });
   },
   handleLogin: function() {
     this.emptyMessage = "No comments to show.";

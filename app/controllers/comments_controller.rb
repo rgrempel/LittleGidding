@@ -58,4 +58,31 @@ class CommentsController < ApplicationController
     
     render :template => "shared/smartclient/show"
   end
+
+  def destroy
+    @record = Comment.find params[:id]
+    if @record
+      if current_scholar.administrator? || (current_scholar.id == @record.scholar_id)
+        @record.destroy
+        @status = 0
+        render :template => "shared/smartclient/show"
+      else
+        response = <<-END
+          <response>
+            <status>-1</status>
+            <data>You are not allowed to delete this item</data>
+          </response>
+        END
+        render :xml => response, :status => 403
+      end
+    else
+      response = <<-END
+        <response>
+          <status>-1</status>
+          <data>Item not found</data>
+        </response>
+      END
+      render :xml => response, :status => 404
+    end
+  end
 end

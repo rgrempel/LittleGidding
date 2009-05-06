@@ -93,7 +93,8 @@ CREATE TABLE scholars (
     current_login_ip character varying(255),
     last_login_ip character varying(255),
     created_at timestamp without time zone,
-    updated_at timestamp without time zone
+    updated_at timestamp without time zone,
+    administrator boolean
 );
 
 
@@ -102,7 +103,6 @@ CREATE TABLE scholars (
 --
 
 CREATE SEQUENCE comments_id_seq
-    START WITH 1
     INCREMENT BY 1
     NO MAXVALUE
     NO MINVALUE
@@ -319,3 +319,5 @@ INSERT INTO schema_migrations (version) VALUES ('20090419204244');
 INSERT INTO schema_migrations (version) VALUES ('20090423134713');
 
 INSERT INTO schema_migrations (version) VALUES ('20090426004321');
+
+INSERT INTO schema_migrations (version) VALUES ('20090506001209');
