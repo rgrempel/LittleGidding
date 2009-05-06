@@ -5,20 +5,22 @@
 #  id         :integer         not null, primary key
 #  scholar_id :integer
 #  figure_id  :string(255)
-#  comment    :text
+#  body       :text
 #  created_at :datetime
 #  updated_at :datetime
 #
 
 class Comment < ActiveRecord::Base
-  sanitize_fields :only => [:comment], :allow_tags => [:comment]
+  sanitize_fields :only => [:body], :allow_tags => [:body]
 
   belongs_to :scholar
 
-  attr_accessible :figure_id, :comment
+  attr_accessible :figure_id, :body
 
   validates_presence_of :scholar_id
-  validates_presence_of :comment
+  validates_presence_of :body
+
+  tracks_versions
 
   # This is just a convenience for to_xml
   def scholar_full_name

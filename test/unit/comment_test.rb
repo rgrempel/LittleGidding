@@ -5,7 +5,7 @@
 #  id         :integer         not null, primary key
 #  scholar_id :integer
 #  figure_id  :string(255)
-#  comment    :text
+#  body       :text
 #  created_at :datetime
 #  updated_at :datetime
 #
@@ -22,11 +22,11 @@ class CommentTest < ActiveSupport::TestCase
     end
 
     should "allow tags but sanitize them" do
-      c = Comment.new :comment => "<img src=\"fred.jpg\"/><script></script>"
+      c = Comment.new :body => "<img src=\"fred.jpg\"/><script></script>"
       c.scholar_id = @anyone.id
       c.save || flunk(c.errors.inspect)
       
-      assert_equal "<img src=\"fred.jpg\"/>&lt;script&gt;&lt;/script&gt;", c.comment
+      assert_equal "<img src=\"fred.jpg\"/>&lt;script&gt;&lt;/script&gt;", c.body
     end
   end
 end

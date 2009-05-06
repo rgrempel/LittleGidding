@@ -20,7 +20,7 @@ isc.defineClass("CommentsGrid", isc.ListGrid).addProperties({
   fields: [
     {name: "created_at", width: "90", align: "left"},
     {name: "scholar_full_name", width: "100"},
-    {name: "comment", width: "*"}
+    {name: "body", width: "*"}
   ],
   initWidget: function(){
     this.Super("initWidget", arguments);
@@ -185,7 +185,7 @@ isc.defineClass("FigureEditor", isc.Window).addProperties({
       errorOrientation: "top",
       colWidths: ["*"],
       fields: [
-        {name: "comment", editorType: "textArea", width: "*", showTitle: false},
+        {name: "body", editorType: "textArea", width: "*", showTitle: false},
         {
           name: "submit", type: "button", title: "Save Comment", align: "right",
           click: function (form, item) {

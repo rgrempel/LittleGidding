@@ -9,12 +9,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090506001209) do
+ActiveRecord::Schema.define(:version => 20090506021233) do
+
+  create_table "comment_versions", :force => true do |t|
+    t.integer  "comment_id"
+    t.datetime "version_from"
+    t.datetime "version_to"
+    t.integer  "scholar_id"
+    t.string   "figure_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comment_versions", ["comment_id"], :name => "index_comment_versions_on_comment_id"
+  add_index "comment_versions", ["version_from"], :name => "index_comment_versions_on_version_from"
+  add_index "comment_versions", ["version_to"], :name => "index_comment_versions_on_version_to"
 
   create_table "comments", :force => true do |t|
     t.integer  "scholar_id"
     t.string   "figure_id"
-    t.text     "comment"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

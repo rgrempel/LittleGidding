@@ -83,7 +83,7 @@ isc.RailsDataSource.create({
     {name: "scholar_id", type: "integer", title: "Scholar", foreignKey: "scholars.id" },
     {name: "scholar_full_name", type: "text", title: "Scholar"},
     {name: "figure_id", type: "text", title: "Figure", foreignKey: "figures.id", canEdit: false},
-    {name: "comment", type: "text", title: "Comment", required: true},
+    {name: "body", type: "text", title: "Comment", required: true},
     {name: "created_at", type: "date", title: "Date", canEdit: false}
   ]
 });

@@ -51,7 +51,7 @@ class CommentsController < ApplicationController
       end
     else
       @status = -4
-      @record.errors.add :comment, "You must log in to comment"
+      @record.errors.add :body, "You must log in to comment"
     end
     
     @toxml_options = {:methods => [:scholar_full_name]}

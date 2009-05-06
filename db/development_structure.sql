@@ -22,6 +22,23 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
+-- Name: comment_versions; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE comment_versions (
+    id integer NOT NULL,
+    comment_id integer,
+    version_from timestamp without time zone,
+    version_to timestamp without time zone,
+    scholar_id integer,
+    figure_id character varying(255) DEFAULT NULL::character varying,
+    comment text,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
 -- Name: comments; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -96,6 +113,25 @@ CREATE TABLE scholars (
     updated_at timestamp without time zone,
     administrator boolean
 );
+
+
+--
+-- Name: comment_versions_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE comment_versions_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MAXVALUE
+    NO MINVALUE
+    CACHE 1;
+
+
+--
+-- Name: comment_versions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE comment_versions_id_seq OWNED BY comment_versions.id;
 
 
 --
@@ -175,6 +211,13 @@ ALTER SEQUENCE scholars_id_seq OWNED BY scholars.id;
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE comment_versions ALTER COLUMN id SET DEFAULT nextval('comment_versions_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE comments ALTER COLUMN id SET DEFAULT nextval('comments_id_seq'::regclass);
 
 
@@ -197,6 +240,14 @@ ALTER TABLE scholar_sessions ALTER COLUMN id SET DEFAULT nextval('scholar_sessio
 --
 
 ALTER TABLE scholars ALTER COLUMN id SET DEFAULT nextval('scholars_id_seq'::regclass);
+
+
+--
+-- Name: comment_versions_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY comment_versions
+    ADD CONSTRAINT comment_versions_pkey PRIMARY KEY (id);
 
 
 --
@@ -229,6 +280,27 @@ ALTER TABLE ONLY scholar_sessions
 
 ALTER TABLE ONLY scholars
     ADD CONSTRAINT scholars_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: index_comment_versions_on_comment_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_comment_versions_on_comment_id ON comment_versions USING btree (comment_id);
+
+
+--
+-- Name: index_comment_versions_on_version_from; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_comment_versions_on_version_from ON comment_versions USING btree (version_from);
+
+
+--
+-- Name: index_comment_versions_on_version_to; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_comment_versions_on_version_to ON comment_versions USING btree (version_to);
 
 
 --
@@ -321,3 +393,5 @@ INSERT INTO schema_migrations (version) VALUES ('20090423134713');
 INSERT INTO schema_migrations (version) VALUES ('20090426004321');
 
 INSERT INTO schema_migrations (version) VALUES ('20090506001209');
+
+INSERT INTO schema_migrations (version) VALUES ('20090506021233');
