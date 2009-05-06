@@ -10,3 +10,6 @@
 [submodule "vendor/plugins/dryopteris"]
 	path = vendor/plugins/dryopteris
 	url = git://github.com/rgrempel/dryopteris.git
+[submodule "vendor/plugins/tracks_versions"]
+	path = vendor/plugins/tracks_versions
+	url = git://github.com/rgrempel/tracks_versions.git
