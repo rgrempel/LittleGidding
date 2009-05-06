@@ -20,6 +20,7 @@
 #  last_login_ip      :string(255)
 #  created_at         :datetime
 #  updated_at         :datetime
+#  administrator      :boolean
 #
 
 require File.join(File.dirname(__FILE__), '..', 'test_helper')
