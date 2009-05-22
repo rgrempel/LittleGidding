@@ -1,0 +1,9 @@
+== Little Gidding
+
+This is the source code for a web site that can be found at http://littlegidding.pauldyck.com/
+
+The purpose of the web site is to present an XML version of a Gospel harmony in an interesting way,
+and facilitate work on the identification of the images used in the harmony.
+
+The source code that I've written is under the MIT licence. However, the various frameworks and
+plugins used here have their own licence terms, so you'll need to pay attention to that as well.
