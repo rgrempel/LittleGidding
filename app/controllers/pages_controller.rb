@@ -31,7 +31,7 @@ class PagesController < ApplicationController
       format.png do
         type = :png
         type = :jpg if @page.localfile.match(/\.jpg$/)
-        send_file @page.localfile, :x_sendfile => true, :disposition => "inline", :type => type
+        send_file @page.localfile, :x_sendfile => (Rails.env != "development"), :disposition => "inline", :type => type
       end
     end
   end
