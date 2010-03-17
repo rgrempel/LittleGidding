@@ -109,7 +109,14 @@ isc.LoginForm.addProperties({
   dataSource: "scholar_sessions",
   width: "100%",
   errorOrientation: "top",
+  saveOnEnter: true,
   showErrorText: true,
+  submit: function(callback, requestProperties) {
+    var self = this;
+    this.Super("submit", [function(dsResponse, data, dsRequest) {
+      self.handleSubmission(dsResponse, data, dsRequest);
+    }, requestProperties]);
+  },
   fields: [
     {name: "base", type: "header", defaultValue: "Login"},
     {name: "email", width: "*"},
@@ -122,9 +129,7 @@ isc.LoginForm.addProperties({
       type: "button",
       colSpan: 2,
       click: function (form, item) {
-        form.submit (function(dsResponse, data, dsRequest) {
-          form.handleSubmission(dsResponse, data, dsRequest);
-        });
+        form.submit();
       }
     },
   ],
