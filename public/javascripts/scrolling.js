@@ -415,10 +415,10 @@ isc.defineClass("PageScroll", isc.HLayout).addProperties({
 
     if (isc.LG.app.scholar) {
       this.addMember(this.image);
+      this.addMember(this.slider);
     } else {
       this.addMember(this.mustLoginLabel);
     }
-    this.addMember(this.slider);
 
     this.Super("initWidget", arguments);
   },
@@ -426,11 +426,13 @@ isc.defineClass("PageScroll", isc.HLayout).addProperties({
   handleLogin: function() {
     this.removeMember(this.mustLoginLabel);
     this.addMember(this.image, 0);
+    this.addMember(this.slider);
     this.image.markForRedraw();
   },
 
   handleLogout: function() {
     this.removeMember(this.image);
+    this.removeMember(this.slider);
     this.addMember(this.mustLoginLabel, 0);
   },
 
