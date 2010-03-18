@@ -19,19 +19,19 @@ class PagesController < ApplicationController
     @status = 0
     @totalRows = Page.count
     @endRow = @startRow + @records.length - 1
-    @toxml_options = {:methods => [:png_url]}
+    @toxml_options = {:methods => [:png_url, :thumbnail_url]}
 
     render :template => "shared/smartclient/index"
   end
 
   def show
     @page = Page.find params[:id]
+    @width = params[:w]
+    @height = params[:h]
 
     respond_to do |format|
-      format.png do
-        type = :png
-        type = :jpg if @page.localfile.match(/\.jpg$/)
-        send_file @page.localfile, :x_sendfile => (Rails.env != "development"), :disposition => "inline", :type => type
+      format.jpg do
+        send_file @page.localfile(@width, @height), :x_sendfile => true, :disposition => "inline", :type => :jpg
       end
     end
   end

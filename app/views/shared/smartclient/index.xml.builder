@@ -6,12 +6,14 @@ xml.response do
   xml.startRow @startRow
   xml.endRow @endRow
   xml.data do
-    @records.each do |record|
+    @records.each_with_index do |record, index|
+      row_proc = Proc.new {|options| options[:builder].tag!("sc_row", @startRow + index)}
       xml << record.to_xml({
         :skip_instruct => true,
         :skip_types => true,
         :root => "record",
-        :dasherize => false
+        :dasherize => false,
+        :procs => [row_proc]
       }.merge(@toxml_options || {}))
     end
   end

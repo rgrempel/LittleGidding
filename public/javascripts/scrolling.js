@@ -293,7 +293,6 @@ isc.defineClass("TextGrid", isc.ListGrid).addProperties({
 isc.defineClass("PanZoomImg", "Img").addProperties({
   imageType: "normal",
   overflow: "scroll",
-  defaultWidth: "100%",
   defaultHeight: "100%",
   magnification: null,
   canDrag: true,
@@ -353,29 +352,56 @@ isc.defineClass("PanZoomImg", "Img").addProperties({
   }
 });
 
-isc.defineClass("PageScroll", isc.VLayout).addProperties({
+isc.defineClass("PageScroll", isc.HLayout).addProperties({
   initWidget: function() {
     this.image = isc.PanZoomImg.create({
       naturalImageWidth: 2035.0,
       naturalImageHeight: 1318.0,
       aspectRatio: 2035.0 / 1318.0,
+      defaultWidth: "*"
     });
 
-    this.slider = isc.Slider.create({
-      width: "100%",
-      minValue: 0,
-      maxValue: 574,
-      numValues: 575,
-      stepPercent: 1.0 / 575.0,
-      showRange: false,
-      margin: 6,
-      title: "Column",
-      vertical: false,
-      valueChanged: function(value) {
-        if (!this.settingValue) isc.LG.app.scrollToColumn(value);
+    this.slider = isc.ListGrid.create({
+      dataSource: "pages",
+      autoFetchData: true,
+      width: "180",
+      selectionType: "single",
+      cellHeight: 97,
+      showHeader: false,
+      handlingPageChange: false,
+      fields: [
+        {name: "thumbnail_url", cellAlign: "center", imageHeight: 97, imageWidth: 150}
+      ],
+      selectionChanged: function(record, state) {
+        if (state && !this.handlingPageChange) isc.LG.app.scrollToColumn(record.column_start);
+      },
+      initWidget: function() {
+        this.Super("initWidget", arguments);
+        this.observe(isc.LG.app, "fireScrollToPage", "observer.handleScrollToPage(returnVal)");
+      },
+      handleScrollToPage: function(page) {
+        if (this.handlingPageChange) return;
+
+        var visible = this.getVisibleRows();
+        if (visible[0] < 0) return;
+
+        // check if page is  visible
+        var pageIsVisible = false;
+        for (var x = visible[0]; x <= visible[1]; x++) {
+          if (this.getRecord(x).id == page.id) {
+            pageIsVisible = true;
+            break;
+          }
+        }
+        if (!pageIsVisible) {
+          this.body.scrollToRatio(true, page.sc_row / this.getTotalRows());
+        }
+        this.handlingPageChange = true;
+        this.selectSingleRecord(page.sc_row);
+        this.handlingPageChange = false;
       }
     });
-
+    
     this.mustLoginLabel = isc.Label.create({
       align: "center",
       contents: "You must login in order to see page images",
@@ -383,7 +409,6 @@ isc.defineClass("PageScroll", isc.VLayout).addProperties({
       height: "100%"
     });
 
-    this.observe(isc.LG.app, "fireScrollToColumn", "observer.handleScrollToColumn(returnVal)");
     this.observe(isc.LG.app, "fireScrollToPage", "observer.handleScrollToPage(returnVal)");
     this.observe(isc.LG.app, "fireLogin", "observer.handleLogin()");
     this.observe(isc.LG.app, "fireLogout", "observer.handleLogout()");
@@ -407,14 +432,6 @@ isc.defineClass("PageScroll", isc.VLayout).addProperties({
   handleLogout: function() {
     this.removeMember(this.image);
     this.addMember(this.mustLoginLabel, 0);
-  },
-
-  handleScrollToColumn: function(column) {
-    if (this.slider.value != column) {
-      this.slider.settingValue = true;
-      this.slider.setValue(column);
-      this.slider.settingValue = false;
-    }
   },
 
   handleScrollToPage: function(page) {

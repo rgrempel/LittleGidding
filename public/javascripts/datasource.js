@@ -151,6 +151,7 @@ isc.RailsDataSource.create({
       type: "integer",
       primaryKey: true
     },
+    {name: "sc_row", type: "integer", hidden: true},
     {
       name: "column_start",
       type: "integer"
@@ -161,6 +162,10 @@ isc.RailsDataSource.create({
     },
     {
       name: "png_url",
+      type: "image"
+    },
+    {
+      name: "thumbnail_url",
       type: "image"
     }
   ]
