@@ -296,6 +296,8 @@ isc.defineClass("PanZoomImg", "Img").addProperties({
   defaultHeight: "100%",
   magnification: null,
   canDrag: true,
+  availableWidths: [75, 150, 300, 600, 1200, 2400],
+  availableHeights: [49, 97, 194, 389, 777, 1554],
   cursor: "all-scroll",
   dragAppearance: "none",
   dragStart: function() {
@@ -319,6 +321,18 @@ isc.defineClass("PanZoomImg", "Img").addProperties({
   zoom: function() {
     this.imageHeight = this.naturalImageHeight * this.magnification;
     this.imageWidth = this.naturalImageWidth * this.magnification;
+    // default to biggest file available, then check if the width is smaller than
+    // one of the available widths (specified above), which should be in order from smallest
+    var width = this.availableWidths.last();
+    var height = this.availableHeights.last();
+    for (var i = 0; i < this.availableWidths.length; i++) {
+      if (this.imageWidth < this.availableWidths.get(i)) {
+        width = this.availableWidths.get(i);
+        height = this.availableHeights.get(i);
+        break;
+      }
+    }
+    this.setState("/" + width + "/" + height);
     this.markForRedraw();
   },
   mouseWheel: function() {
@@ -327,7 +341,7 @@ isc.defineClass("PanZoomImg", "Img").addProperties({
     this.magnify(factor);
   },
   click: function() {
-    this.magnify(isc.Event.shiftKeyDown() ? 0.9 : 1.1);
+    this.magnify(isc.Event.shiftKeyDown() ? 0.8 : 1.2);
     return false;
   },
   magnify: function(factor) {

@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :comments
   map.resources :text
   map.resources :figures
+  map.connect 'pages/:id/:w/:h.:format', :controller => 'pages', :action => 'show'
   map.resources :pages
   map.resources :chapter_titles
   map.resources :scholar_sessions
