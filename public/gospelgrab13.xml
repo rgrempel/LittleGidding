@@ -7,8 +7,8 @@
 <!--Gospelgrab.9x was succeeded by 10, 11, 12?, and 13-.  Thus, gospelgrab.13- is the most recent document, though for some reason it is a bit smaller file than the earlier ones.  We will rename the file from "gospelgrab" soon.-->
 <!-- In gospelgrab.87 we have changed image tags to figure tags, and changed the attribute description to figdesc. -->
 <book>
-  <hchapter n="0.3" toctitle="THE ORDER of the CHAPTERS of the CONCORDANCE" col="1"/>
-  <hchapter n="0.2" toctitle="Preface1" col="5">
+  <hchapter toctitle="THE ORDER of the CHAPTERS of the CONCORDANCE" col="1"/>
+  <hchapter toctitle="[ADVERTIZEMENTS touching this Ensuing CONCORDANCE]" col="5">
     <figure id="figure1">
       <figDesc>Evangelist symbols: angel, lion, ox, eagle in corners around ornamental border oval
         of decorative flowers with grapes and squash at top</figDesc>
@@ -99,7 +99,7 @@
       kinds. For the&#x17F;e are not to infringe ye* Liberty of any others judgement; but to be Directions
       &amp; Helps for them, who cannot intend the doing it themselues+ </comment>
   </hchapter>
-  <hchapter n="0.1" toctitle="title page" col="6">
+  <hchapter toctitle="[THE ACTIONS &amp; DOCTRINE]" col="6">
     <figure id="figure2">
       <figDesc>ornamental border of flowers and angel faces, with Evangelist animals within, in
         corners.</figDesc>
@@ -128,7 +128,8 @@
         >Figures</hi> Or other <hi rend="letter(roman)">MATTERS</hi> appertaining thereunto Ano
       M,DC,XXXV+ </comment>
   </hchapter>
-  <hchapter n="0" toctitle="THE EVANGELICAL HISTORIE + THE PREFACE" col="7">
+  <hchapter toctitle="THE PREFACE" col="7">
+    <head>THE EVANGELICAL HISTORIE + THE PREFACE</head>
     <excerpt source="c.1:1-4" type="context">
       <verse book="c" cnumber="2" id="c.1.1-c" type="context" vnumber="1"> Fora&#x17F;much as many haue
         taken in hande to &#x17F;et forth in order a declaration of tho&#x17F;e things which are mo&#x17F;t &#x17F;urely
@@ -1058,10 +1059,10 @@
       <figDesc>Chri&#x17F;t in Temple (though he &#x17F;eems older than 12, Joseph finding him)</figDesc>
       <ex>[G De Jode]?</ex>
     </figure>
-
-    <head>A summary Recapitulation of all the Former <hi
-        rend="color(red) letter(roman)
-                ">STORIES</hi> of our Lord and Saviour <hi
+    </hchapter>
+    <hchapter col="33" toctitle="[Pictorial summary of Christ's infancy]">
+    <head col="33">A summary Recapitulation of all the Former <hi
+        rend="color(red) letter(roman)">STORIES</hi> of our Lord and Saviour <hi
         rend="letter(roman) color(gold)">IESVS Chri&#x17F;t</hi>.</head>
     <figure id="figure29" col="33" size="miniature">
       <figDesc>annunciation</figDesc>
@@ -1107,9 +1108,7 @@
     <figure id="figure40" size="miniature">
       <figDesc>mary and child with angels bringing cro&#x17F;&#x17F; from heaven</figDesc>
     </figure>
-  </hchapter>
-  <hchapter col="35">
-    <head>To wch are added Divers other Conjecturals touching his <hi
+    <head col="35">To wch are added Divers other Conjecturals touching his <hi
         rend="color(red)
                 letter(roman)">INFANCIE</hi>+</head>
     <figure id="figure41" col="35" size="small">
