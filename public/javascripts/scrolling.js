@@ -310,6 +310,18 @@ isc.defineClass("PanZoomImg", "Img").addProperties({
       this.scrollTopStart - isc.Event.lastEvent.y + isc.Event.mouseDownEvent.y
     );
   },
+  // returns left,top,width,height relative from 0 to 1
+  getPercentRect: function() {
+    var leftPercent = this.getScrollLeft() / this.getScrollWidth();
+    var topPercent = this.getScrollTop() / this.getScrollHeight();
+    var widthPercent = this.getViewportWidth() / this.getScrollWidth();
+    var heightPercent = this.getViewportHeight() / this.getScrollHeight();
+
+    if (widthPercent > 1) widthPercent = 1;
+    if (topPercent > 1) topPercent = 1;
+
+    return [leftPercent, topPercent, widthPercent, heightPercent];
+  },
   draw: function() {
     this.Super("draw", arguments);
     if (this.magnification) return;
@@ -337,11 +349,11 @@ isc.defineClass("PanZoomImg", "Img").addProperties({
   },
   mouseWheel: function() {
     var ev = isc.Event.lastEvent;
-    var factor = 1 + (ev.wheelDelta < 0 ? 0.1 : -0.1);
+    var factor = ev.wheelDelta < 0 ? 1.25 : 0.8;
     this.magnify(factor);
   },
   click: function() {
-    this.magnify(isc.Event.shiftKeyDown() ? 0.8 : 1.2);
+    this.magnify(isc.Event.shiftKeyDown() ? 0.8 : 1.25);
     return false;
   },
   magnify: function(factor) {
@@ -366,6 +378,63 @@ isc.defineClass("PanZoomImg", "Img").addProperties({
   }
 });
 
+isc.defineClass("PageGrid", isc.ListGrid).addProperties({
+  dataSource: "pages",
+  autoFetchData: true,
+  selectionType: "single",
+  showHeader: false,
+  handlingPageChange: false,
+  setPercentRect: function(percentRect) {
+    this.viewableBox.setRect(
+      percentRect[0] * 150,
+      percentRect[1] * 97 + this.viewableBox.topOffset,
+      percentRect[2] * 150,
+      percentRect[3] * 97
+    )
+  },
+  fields: [
+    {name: "thumbnail_url", cellAlign: "center", imageHeight: 97, imageWidth: 150, width: 150}
+  ],
+  selectionChanged: function(record, state) {
+    if (state) {
+      if (!this.handlingPageChange) isc.LG.app.scrollToColumn(record.column_start);
+    }
+  },
+  initWidget: function() {
+    this.Super("initWidget", arguments);
+    this.observe(isc.LG.app, "fireScrollToPage", "observer.handleScrollToPage(returnVal)");
+    this.viewableBox = isc.Canvas.create({
+      border: "1px solid yellow"
+    });
+  },
+  handleScrollToPage: function(page) {
+    if (this.handlingPageChange) return;
+
+    var visible = this.getVisibleRows();
+    if (visible[0] < 0) return;
+
+    // check if page is  visible
+    var pageIsVisible = false;
+    for (var x = visible[0]; x <= visible[1]; x++) {
+      if (this.getRecord(x).id == page.id) {
+        pageIsVisible = true;
+        break;
+      }
+    }
+    
+    if (!pageIsVisible) {
+      this.body.scrollToRatio(true, page.sc_row / this.getTotalRows());
+    }
+    
+    this.handlingPageChange = true;
+    this.selectSingleRecord(page.sc_row);
+    this.handlingPageChange = false;
+      
+    this.addEmbeddedComponent(this.viewableBox, page, page.sc_row, 0, "within");
+    this.viewableBox.topOffset = page.sc_row * 97;
+  }  
+});
+
 isc.defineClass("PageScroll", isc.HLayout).addProperties({
   initWidget: function() {
     this.image = isc.PanZoomImg.create({
@@ -375,53 +444,20 @@ isc.defineClass("PageScroll", isc.HLayout).addProperties({
       defaultWidth: "*"
     });
 
-    this.slider = isc.ListGrid.create({
-      dataSource: "pages",
-      autoFetchData: true,
-      width: "180",
-      selectionType: "single",
+    this.slider = isc.PageGrid.create({
       cellHeight: 97,
-      showHeader: false,
-      handlingPageChange: false,
-      fields: [
-        {name: "thumbnail_url", cellAlign: "center", imageHeight: 97, imageWidth: 150}
-      ],
-      selectionChanged: function(record, state) {
-        if (state && !this.handlingPageChange) isc.LG.app.scrollToColumn(record.column_start);
-      },
-      initWidget: function() {
-        this.Super("initWidget", arguments);
-        this.observe(isc.LG.app, "fireScrollToPage", "observer.handleScrollToPage(returnVal)");
-      },
-      handleScrollToPage: function(page) {
-        if (this.handlingPageChange) return;
-
-        var visible = this.getVisibleRows();
-        if (visible[0] < 0) return;
-
-        // check if page is  visible
-        var pageIsVisible = false;
-        for (var x = visible[0]; x <= visible[1]; x++) {
-          if (this.getRecord(x).id == page.id) {
-            pageIsVisible = true;
-            break;
-          }
-        }
-        if (!pageIsVisible) {
-          this.body.scrollToRatio(true, page.sc_row / this.getTotalRows());
-        }
-        this.handlingPageChange = true;
-        this.selectSingleRecord(page.sc_row);
-        this.handlingPageChange = false;
-      }
+      width: 175   
     });
-    
+
     this.mustLoginLabel = isc.Label.create({
       align: "center",
       contents: "You must login in order to see page images",
       width: "100%",
       height: "100%"
     });
+
+    this.observe(this.image, "scrolled", "observer.delayCall('handleImageScrolled')");
+    this.observe(this.image, "zomm", "observer.delayCall('handleImageScrolled')");
 
     this.observe(isc.LG.app, "fireScrollToPage", "observer.handleScrollToPage(returnVal)");
     this.observe(isc.LG.app, "fireLogin", "observer.handleLogin()");
@@ -435,6 +471,10 @@ isc.defineClass("PageScroll", isc.HLayout).addProperties({
     }
 
     this.Super("initWidget", arguments);
+  },
+
+  handleImageScrolled: function() {
+    this.slider.setPercentRect(this.image.getPercentRect());
   },
 
   handleLogin: function() {
@@ -453,6 +493,7 @@ isc.defineClass("PageScroll", isc.HLayout).addProperties({
   handleScrollToPage: function(page) {
     if (page && (this.image.src != page.png_url)) {
       this.image.setSrc(page.png_url);
+      this.delayCall("handleImageScrolled");
     }
   }
 });
