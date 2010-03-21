@@ -19,6 +19,26 @@ class ApplicationController < ActionController::Base
 
 private
   
+  # Call this one when you want to write ... it will get an exclusive lock, reload
+  # if necessary, yield, and then write if you return true from the block
+  def write_gospel
+    open_gospel "r+" do |f|
+      # Now that we have lock, check if we need to re-read gospel
+      if @@gospel_mod_time != f.mtime
+        Rails.logger.warn "Reloading XML because it changed before we got exclusive lock"
+        @@gospel = Nokogiri::XML(f)
+        @@gospel_mod_time = f.mtime
+      end
+      # Then yield for modification ... if true, then write it out
+      if yield @@gospel
+        Rails.logger.warn "Writing new XML"
+        f.truncate(0)
+        @@gospel.write_xml_to(f, :encoding => 'UTF-8')
+        @@gospel_mod_time = f.mtime
+      end
+    end
+  end
+  
   def reload_gospel
     open_gospel do |f|
       Rails.logger.info "Reloading XML"

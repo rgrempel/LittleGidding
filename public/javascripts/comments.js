@@ -138,6 +138,7 @@ isc.defineClass("FigureEditor", isc.Window).addProperties({
     this.figure = figure;
     this.figureID = figure.id;
     this.detailViewer.setData([figure]);
+    this.figureForm.editRecord(figure);
     this.commentsGrid.fetchData({
       figure_id: figure.id
     });
@@ -165,6 +166,17 @@ isc.defineClass("FigureEditor", isc.Window).addProperties({
       height: "100%",
       width: "33%",
       overflow: "auto"
+    });
+    this.figureForm = isc.DynamicForm.create({
+      showEdges: true,
+      dataSource: "figures",
+      width: "100%",
+      figure: null,
+      showErrorText: true,
+      showTitlesWithErrorMessages: true,
+      errorOrientation: top,
+      saveOnEnter: true,
+      colWidths: ["*", "*"]
     });
     this.commentsGrid = isc.CommentsGrid.create({
       showEdges: true,
@@ -211,7 +223,7 @@ isc.defineClass("FigureEditor", isc.Window).addProperties({
         height: "100%",
         width: "100%",
         members: [
-          this.detailViewer,
+          this.figureForm,
           isc.VLayout.create({
             width: "66%",
             members: [
