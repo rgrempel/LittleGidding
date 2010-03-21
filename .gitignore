@@ -1,2 +1,3 @@
 public/javascripts/SmartClient/smartclientSDK/WEB-INF/embeddedTomcat/work
 s3
+tmp/restart.txt
