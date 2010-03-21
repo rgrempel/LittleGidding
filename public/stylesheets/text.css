@@ -7,6 +7,12 @@ span.colorred {
   color: #DC143C;
 }
 
+span.lettersuperscript {
+  font-size: 80%;
+  position: relative;
+  bottom: 0.3em;
+}
+
 span.colorgold {
   color: #FFD700;
 }
@@ -20,7 +26,7 @@ div.figure {
 div.comment {
   font-family: serif;
   font-style: italic;
-  font-size: 9pt;
+  font-size: 11pt;
 }
 
 div.context {

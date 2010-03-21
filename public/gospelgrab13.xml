@@ -23,80 +23,80 @@
       <!-- For this page, I have marked all the text in the comment tag as either roman or italic.  After this page, I am marking only the roman, thinking that we can make italic the default for comment tags.  Backing up a step, I have created the look tag to refer to the appearance of comments, and given it letter and color attributes. --><!-- I am using comment tags for all the handwriting in the book except for that which occurs on images.  The latter I've tagged with a MS attribute within the image tag.  The Image tag also has a text attribute, which is for text that is part of the original image, as opposed to text that has been added by hand at Little Gidding.  Regarding columns, we have made the col attribute available within both hchapter and image tags, so that we can set a marker for the beginning of the chapter and also for the placement of images within that chapter.  We are not, however, repeating col numbers, so images without a col specified are found on the col indicated in the hchapter tag. -->
       <hi rend="letter(roman)">ADVERTIZEMENTS</hi> touching this Ensuing <hi
         rend="letter(roman)
-                color(red)">CONCORDANCE</hi>. the&#x17F;e Two Parts wch* wee
+                color(red)">CONCORDANCE</hi>. the&#x17F;e Two Parts w<hi rend="letter(superscript)">ch</hi> wee
       call COMPARISON &amp; COMPOSITION are only touching tho&#x17F;e <hi rend="letter(roman)"
-        >PA&#x17F;&#x17F;AGES</hi> wch* are <hi rend="letter(roman)">IOINTLY</hi> Related by Two or more of the
+        >PA&#x17F;&#x17F;AGES</hi> w<hi rend="letter(superscript)">ch</hi> are <hi rend="letter(roman)">IOINTLY</hi> Related by Two or more of the
         <hi rend="letter(roman)
-                ">EVANGELISTS</hi>. But ye* whole <hi
-        rend="letter(roman)">EVANGELICAL HISTORIE</hi> is included in that, wch* is termed ye*
-      COLLECTION. wch* is that in ye* Great English Letter together wth* tho&#x17F;e <hi
-        rend="letter(roman)">ADDITIONS</hi> in ye* Romane Letter imme- diately following or going
+                ">EVANGELISTS</hi>. But y<hi rend="letter(superscript)">e</hi> whole <hi
+        rend="letter(roman)">EVANGELICAL HISTORIE</hi> is included in that, w<hi rend="letter(superscript)">ch</hi> is termed y<hi rend="letter(superscript)">e</hi>
+      COLLECTION. w<hi rend="letter(superscript)">ch</hi> is that in y<hi rend="letter(superscript)">e</hi> Great English Letter together w<hi rend="letter(superscript)">th</hi> tho&#x17F;e <hi
+        rend="letter(roman)">ADDITIONS</hi> in y<hi rend="letter(superscript)">e</hi> Romane Letter imme- diately following or going
       before every of the &#x17F;ayd sections in the English Letter. And in both the&#x17F;e together is fully
-      conteined what euer is related by the <hi rend="letter(roman)">FOVRE EVANGELISTS</hi>, so yt*
-      no one word is omitted in this COLLECTION or BODY. That wch* is ye* Great English Letter, is
+      conteined what euer is related by the <hi rend="letter(roman)">FOVRE EVANGELISTS</hi>, so y<hi rend="letter(superscript)">t</hi>
+      no one word is omitted in this COLLECTION or BODY. That w<hi rend="letter(superscript)">ch</hi> is y<hi rend="letter(superscript)">e</hi> Great English Letter, is
       termed the <hi rend="letter(roman)">CONTEXT</hi>. &amp; doth include a full &amp;
-      cleare <hi rend="letter(roman)">NARRATION</hi> of <hi rend="letter(roman)">ALL</hi> yt* was
-      &#x17F;aid or done. tho&#x17F;e words of all &amp; Every of ye* <hi rend="letter(roman)"
-      >EVANGELISTS</hi> being still inserted in ye* <hi rend="letter(roman)">CONTEXT</hi>, which
-      speak most largely. And the Rest is Annexed in ye* Roman Letter either before or after,
-      &amp; is called the <hi rend="letter(roman)">SVPPLEMENT.</hi> And both together make ye*
+      cleare <hi rend="letter(roman)">NARRATION</hi> of <hi rend="letter(roman)">ALL</hi> y<hi rend="letter(superscript)">t</hi> was
+      &#x17F;aid or done. tho&#x17F;e words of all &amp; Every of y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)"
+      >EVANGELISTS</hi> being still inserted in y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">CONTEXT</hi>, which
+      speak most largely. And the Rest is Annexed in y<hi rend="letter(superscript)">e</hi> Roman Letter either before or after,
+      &amp; is called the <hi rend="letter(roman)">SVPPLEMENT.</hi> And both together make y<hi rend="letter(superscript)">e</hi>
         <hi rend="letter(roman)">COLLECTION. </hi> So that besides a cleare <hi
         rend="letter(roman)
                 ">NARRATION</hi> in the <hi rend="letter(roman)"
-      >CONTEXT</hi> there may likewise be easily &#x17F;een ye* <hi rend="letter(roman)">AGREEMENTS</hi>
+      >CONTEXT</hi> there may likewise be easily &#x17F;een y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">AGREEMENTS</hi>
       &amp; <hi rend="letter(roman)
-                ">DIFFERENCES</hi> of all ye* <hi
-        rend="letter(roman)">EVANGELISTS</hi> yt* speak of ye* same matter. And furthermore euery
+                ">DIFFERENCES</hi> of all y<hi rend="letter(superscript)">e</hi> <hi
+        rend="letter(roman)">EVANGELISTS</hi> y<hi rend="letter(superscript)">t</hi> speak of y<hi rend="letter(superscript)">e</hi> same matter. And furthermore euery
         <hi rend="letter(roman)">EVANGELIST</hi> may be <hi rend="letter(roman)">SEVERALLY</hi> read
       as plainly &amp; readily as if they were alone. And in the&#x17F;e Two points this <hi
-        rend="letter(roman)">CONCORDANCE</hi> pa&#x17F;&#x17F;eth that wch* we call ye* <hi rend="letter(roman)"
+        rend="letter(roman)">CONCORDANCE</hi> pa&#x17F;&#x17F;eth that w<hi rend="letter(superscript)">ch</hi> we call y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)"
         >COMPOSITION. </hi> As it was invented by Rubus Hannonius, otherwise called John Buisonius
-      ye* Kings Profe&#x17F;&#x17F;or of Divinitie at Doway about ye* yeare 1570. <hi rend="letter(roman)"
-        >TOVCHING</hi> ye* <hi rend="letter(roman)">READING</hi> of ye* COLLECTION <hi
+      y<hi rend="letter(superscript)">e</hi> Kings Profe&#x17F;&#x17F;or of Divinitie at Doway about y<hi rend="letter(superscript)">e</hi> yeare 1570. <hi rend="letter(roman)"
+        >TOVCHING</hi> y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">READING</hi> of y<hi rend="letter(superscript)">e</hi> COLLECTION <hi
         rend="letter(roman)">OBSERVE,</hi> That, A, signifies Mathew, <hi
         rend="color(blue) letter(roman)">B</hi> Mark, <hi rend="color(red) letter(roman)">C</hi>
       Luke, and <hi rend="color(gold) letter(roman)
-            ">D</hi> John. Wch* are likewise for
-      more ease &amp; surety distinguished in several colors. Now if yu* ** would read ye* <hi
+            ">D</hi> John. w<hi rend="letter(superscript)">ch</hi> are likewise for
+      more ease &amp; surety distinguished in several colors. Now if y<hi rend="letter(superscript)">u</hi> ** would read y<hi rend="letter(superscript)">e</hi> <hi
         rend="letter(roman)">EVANGELICAL HISTORY</hi> keep on still from one of the&#x17F;e marking
-      letters to another reading only that, wch* is in ye* Great English Letter. But if you would
-      Read ye* <hi rend="letter(roman)">EVANGELISTS SEVERALLY</hi> then yu* must keep still from
-      section to section in ye* same letter, wth* wch* yu* begin, reading both <hi
+      letters to another reading only that, w<hi rend="letter(superscript)">ch</hi> is in y<hi rend="letter(superscript)">e</hi> Great English Letter. But if you would
+      Read y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">EVANGELISTS SEVERALLY</hi> then y<hi rend="letter(superscript)">u</hi> must keep still from
+      section to section in y<hi rend="letter(superscript)">e</hi> same letter, w<hi rend="letter(superscript)">th</hi> w<hi rend="letter(superscript)">ch</hi> y<hi rend="letter(superscript)">u</hi> begin, reading both <hi
         rend="letter(roman)
                 ">CONTEXT</hi> &amp; <hi rend="letter(roman)"
-        >SUPPLEMENT.</hi> Yt* is, the Great English Letter and the Romane annexed. And when euer it
-      happens (as it doth often) yt* that, wch follows next in the <hi rend="letter(roman)"
-        >EVANGELISTS</hi> doth not follow immediately in ye* <hi rend="letter(roman)">ORDER</hi> of
-      ye* <hi rend="letter(roman)
-                ">CONCORDANCE</hi> then yu* &#x17F;hall find in <hi
-        rend="letter(roman)">WRITTEN HAND</hi> in ye* End of ye* section ye* <hi
-        rend="letter(roman)">FIRST WORDS</hi> of ye* <hi rend="letter(roman)">EVANGELISTS</hi>
+        >SUPPLEMENT.</hi> Y<hi rend="letter(superscript)">t</hi> is, the Great English Letter and the Romane annexed. And when euer it
+      happens (as it doth often) y<hi rend="letter(superscript)">t</hi> that, wch follows next in the <hi rend="letter(roman)"
+        >EVANGELISTS</hi> doth not follow immediately in y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">ORDER</hi> of
+      y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)
+                ">CONCORDANCE</hi> then y<hi rend="letter(superscript)">u</hi> &#x17F;hall find in <hi
+        rend="letter(roman)">WRITTEN HAND</hi> in y<hi rend="letter(superscript)">e</hi> End of y<hi rend="letter(superscript)">e</hi> section y<hi rend="letter(superscript)">e</hi> <hi
+        rend="letter(roman)">FIRST WORDS</hi> of y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">EVANGELISTS</hi>
       &amp; á Direction of the chapter &amp; page of the <hi rend="letter(roman)"
-        >CONCORDANCE</hi> to wch* yu* are to goe. <!-- Paraph character goes here-->This mark
-      signifies ye* Beginning of ye* Chapters of ye* <hi rend="letter(roman)">EVANGELISTS.</hi> And
-      ye* first smaller Numeral Figures in ye* <hi rend="letter(roman)">COLLECTION</hi> ye* Chapters
-      of ye* <hi rend="letter(roman)
-                ">EVANGELISTS.</hi> When yu* find any one word
-      or more streaked vnder in ye* <hi rend="letter(roman)">CONTEXT</hi> yu* are to omitt it in
+        >CONCORDANCE</hi> to w<hi rend="letter(superscript)">ch</hi> y<hi rend="letter(superscript)">u</hi> are to goe. <!-- Paraph character goes here-->This mark
+      signifies y<hi rend="letter(superscript)">e</hi> Beginning of y<hi rend="letter(superscript)">e</hi> Chapters of y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">EVANGELISTS.</hi> And
+      y<hi rend="letter(superscript)">e</hi> first smaller Numeral Figures in y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">COLLECTION</hi> y<hi rend="letter(superscript)">e</hi> Chapters
+      of y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)
+                ">EVANGELISTS.</hi> When y<hi rend="letter(superscript)">u</hi> find any one word
+      or more streaked vnder in y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">CONTEXT</hi> y<hi rend="letter(superscript)">u</hi> are to omitt it in
       reading of the <hi rend="letter(roman)">CONTEXT</hi> to make the clearer sense. But it is
-      nece{&#x17F;&#x17F;}arily left remaining for ye* reading of ye* <hi rend="letter(roman)">EVANGELISTS
-        SEVERALLY.</hi> When yu* find in ye* <hi rend="letter(roman)">CONTEXT</hi> any one or more
+      nece{&#x17F;&#x17F;}arily left remaining for y<hi rend="letter(superscript)">e</hi> reading of y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">EVANGELISTS
+        SEVERALLY.</hi> When y<hi rend="letter(superscript)">u</hi> find in y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">CONTEXT</hi> any one or more
       word [note: the plant could be obscuring an “s” but this is not apparent to the reader] in
-      Romane letters, know, that they are inserted out of some other of ye* <hi
+      Romane letters, know, that they are inserted out of some other of y<hi rend="letter(superscript)">e</hi> <hi
         rend="letter(roman)
-                ">EVANGELISTS</hi> in ye* <hi rend="letter(roman)"
-        >SVPPLEMENT</hi> for ye* making up ye* <hi rend="letter(roman)">NARRATION</hi> full
+                ">EVANGELISTS</hi> in y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)"
+        >SVPPLEMENT</hi> for y<hi rend="letter(superscript)">e</hi> making up y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">NARRATION</hi> full
       &amp; Perfe{ct}+ The <hi rend="letter(roman)">ANNOTATIONS</hi> are out of Rubus. And for
       the <hi rend="letter(roman)
-                ">ORDER</hi> of ye* <hi rend="letter(roman)"
-        >CONCORDANCE</hi> it agrees wth* Jansenius, whom we haue followed almost wholly in ye*
-      COMPOSITION. As for ye* COMPARISON wee need &#x17F;ay nothing, but that besides it will giue
-      Satisfaction to &#x17F;ee the <hi rend="letter(roman)">ORIGINAL</hi> Relations of ye* <hi
+                ">ORDER</hi> of y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)"
+        >CONCORDANCE</hi> it agrees w<hi rend="letter(superscript)">th</hi> Jansenius, whom we haue followed almost wholly in y<hi rend="letter(superscript)">e</hi>
+      COMPOSITION. As for y<hi rend="letter(superscript)">e</hi> COMPARISON wee need &#x17F;ay nothing, but that besides it will giue
+      Satisfaction to &#x17F;ee the <hi rend="letter(roman)">ORIGINAL</hi> Relations of y<hi rend="letter(superscript)">e</hi> <hi
         rend="letter(roman)
-            ">EVANGELISTS:</hi> So ye* <hi rend="letter(roman)"
-      >ADDITION</hi> of it to the&#x17F;e other serues both for proof of ye* truth of ye* COLLECTION
+            ">EVANGELISTS:</hi> So y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)"
+      >ADDITION</hi> of it to the&#x17F;e other serues both for proof of y<hi rend="letter(superscript)">e</hi> truth of y<hi rend="letter(superscript)">e</hi> COLLECTION
       &amp; COMPOSITION, &amp; may happily minister occasion of other Composures in both
-      kinds. For the&#x17F;e are not to infringe ye* Liberty of any others judgement; but to be Directions
+      kinds. For the&#x17F;e are not to infringe y<hi rend="letter(superscript)">e</hi> Liberty of any others judgement; but to be Directions
       &amp; Helps for them, who cannot intend the doing it themselues+ </comment>
   </hchapter>
   <hchapter toctitle="[THE ACTIONS &amp; DOCTRINE]" col="6">
@@ -110,7 +110,7 @@
       Other PA&#x17F;&#x17F;AGES touching Our Lord and Saviour <hi rend="color(gold) letter(roman)">IESUS
       Chri&#x17F;t</hi>, as they are Related by the FOURE <hi rend="color(gold)">E</hi><hi
         rend="color(red)">VAN</hi><hi rend="color(blue)">GE</hi>LISTS, Reduced into one Complete
-      Body of <hi rend="color(red) letter(roman)">HISTORIE</hi>, wherein That, wch* is <hi
+      Body of <hi rend="color(red) letter(roman)">HISTORIE</hi>, wherein That, w<hi rend="letter(superscript)">ch</hi> is <hi
         rend="letter(roman)">SEVERALLY</hi> Related by them is Digested into <hi
         rend="letter(roman)">ORDER</hi>; And that, wch is <hi rend="letter(roman)">IOINTLY</hi>
       Related by all or any two or more of them Is, First Expre&#x17F;&#x17F;ed in their own words by way of <hi
@@ -153,7 +153,7 @@
     </figure>
     <!--this ms text is in red.  It does not show up in the microfilm and may not on a photograph.  So, it needs to be represented somehow, as it is a title -->
     <comment>This Preface agrees to all the Evangelical Historie/as well as to St Lukes Gospell.</comment>
-    <comment ref="c 1:3 word 21">1 Hee meanes not ye* order of time yt* things were done in; but yt*
+    <comment ref="c 1:3 word 21">1 Hee meanes not y<hi rend="letter(superscript)">e</hi> order of time y<hi rend="letter(superscript)">t</hi> things were done in; but y<hi rend="letter(superscript)">t</hi>
       he began not to write till he had first made diligent search of all things</comment>
     <!-- I have added a ref attribute to the comment tag to connect the comment with the point in the excerpt to which it refers.  In this case, there is a marker above word 21 -->
     <figure id="figure4" col="8">
@@ -614,7 +614,7 @@
         into Babylon, are foureteene generations: and from the carying away into Babylon vnto
         Chri&#x17F;t, are fourteene generations. </verse>
     </excerpt>
-    <comment ref="a 1:1 word 1">I This is not the title of ye* book, but signifies from whom ye*
+    <comment ref="a 1:1 word 1">I This is not the title of y<hi rend="letter(superscript)">e</hi> book, but signifies from whom y<hi rend="letter(superscript)">e</hi>
       story is begun</comment>
   </hchapter>
   <hchapter n="VII" toctitle="The Manner of Chri&#x17F;tS BIRTH" col="17">
@@ -653,9 +653,9 @@
       <verse book="a" cnumber="2" id="a.1.25-c" type="context" vnumber="25"> And knewe her not, till
         &#x17F;he had brought forth her fir&#x17F;t borne Sonne, and he called his name Je&#x17F;us. </verse>
     </excerpt>
-    <comment col="18">A│Speaks of ye* generation in the wombe, yet is there no question but that
-      this wch* he relates came to pa&#x17F;&#x17F;e not Long before ye* Birth, to witt, after Marys return
-      from Elizabeth &amp; therefore ye* chapter going before neither ought nor could be placed
+    <comment col="18">A│Speaks of y<hi rend="letter(superscript)">e</hi> generation in the wombe, yet is there no question but that
+      this w<hi rend="letter(superscript)">ch</hi> he relates came to pa&#x17F;&#x17F;e not Long before y<hi rend="letter(superscript)">e</hi> Birth, to witt, after Marys return
+      from Elizabeth &amp; therefore y<hi rend="letter(superscript)">e</hi> chapter going before neither ought nor could be placed
       in any other order. [Ed. This note appears after the title of VII, but refers to VI.]</comment>
     <link col="18">(NOW WHEN IESVS CHAP.9. P.21</link>
     <figure id="figure11">
@@ -767,8 +767,8 @@
   <hchapter n="IX" toctitle="The EPIPHANIE(sp)" col="21">
 
     <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">EPIPHANIE</hi></head>
-    <comment>: St Augustine holds &amp; ye* church &#x17F;eemes to confirme it by celebrating ye*
-      Festival thirteen days after ye* Birth, yt* ye* Wisemen came before the Purification.</comment>
+    <comment>: St Augustine holds &amp; y<hi rend="letter(superscript)">e</hi> church &#x17F;eemes to confirme it by celebrating y<hi rend="letter(superscript)">e</hi>
+      Festival thirteen days after y<hi rend="letter(superscript)">e</hi> Birth, y<hi rend="letter(superscript)">t</hi> y<hi rend="letter(superscript)">e</hi> Wisemen came before the Purification.</comment>
     <!-- this comment comes immediately after the title -->
     <excerpt source="a.2:1-12" type="context">
       <verse book="a" cnumber="3" id="a.2.1-c" type="context" vnumber="1">❡ Now when * Je&#x17F;us was borne
@@ -1327,7 +1327,7 @@
         incense spelling ABBA PATER</figDesc>
       <head>PARS TOTIVS ET DE TOTO FIDES . et dedit dominus hominibus,</head>
       <text>Tetragrammaton [imitation, nonsensical Hebrew]</text>
-      <ms>He &#x17F;hall baptize yu* wth* the Holy Gho&#x17F;t and with Fire</ms>
+      <ms>He &#x17F;hall baptize y<hi rend="letter(superscript)">u</hi> w<hi rend="letter(superscript)">th</hi> the Holy Gho&#x17F;t and with Fire</ms>
     </figure>
     <figure id="figure57">
       <figDesc>Noble woman giving food to the poor</figDesc>
@@ -2048,7 +2048,7 @@
         trueth, commeth to the light, that his deeds may bee made manife&#x17F;t, that they are wrought in
         God. </verse>
     </excerpt>
-    <comment col="54">Hereby it appeares, yt* or* Lord did many miracles ye first yeare, although
+    <comment col="54">Hereby it appeares, y<hi rend="letter(superscript)">t</hi> or* Lord did many miracles ye first yeare, although
       not so openly, nor wth such concourse of people as afterwards. But few or none are written.
       [note incompletene&#x17F;&#x17F; of story]</comment>
   </hchapter>
@@ -20204,13 +20204,13 @@
     </excerpt>
     <figure id="figure512">
       <figDesc>Angels holding &#x17F;heet with I Tim 3 text</figDesc>
-      <ms>Without controversie/GREAT is ye* MYSTERY of GODLINES/GOD was/manife&#x17F;t in ye
+      <ms>Without controversie/GREAT is y<hi rend="letter(superscript)">e</hi> MYSTERY of GODLINES/GOD was/manife&#x17F;t in ye
         fle&#x17F;h,/IVSTIFIED in ye SPIRIT,/&#x17F;eeNE of ANGELS,/PREACHED unto ye GENTILES,/BELEIVED on in ye
         wor^ld,/RECEIVED up into GLORY+/I Tim. 3</ms>
     </figure>
     <comment>[I include the above text al&#x17F;o as a comment, so that it can be properly formatted. This
       is the only writing on an image that uses color and roman letter] Without controversie/GREAT
-      is ye* MYSTERY of GODLINES/<hi rend="color(gold)">GOD</hi> was/manife&#x17F;t in ye fle&#x17F;h,/IVSTIFIED
+      is y<hi rend="letter(superscript)">e</hi> MYSTERY of GODLINES/<hi rend="color(gold)">GOD</hi> was/manife&#x17F;t in ye fle&#x17F;h,/IVSTIFIED
       in ye SPIRIT,/&#x17F;eeNE of ANGELS,/PREACHED unto ye GENTILES,/BELEIVED on in ye wor^ld,/RECEIVED up
       into <hi rend="color(gold)">GLORY</hi>+/I Tim. 3</comment>
     <figure id="figure513" composite="yes">
