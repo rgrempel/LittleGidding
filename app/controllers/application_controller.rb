@@ -11,10 +11,42 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password, :password_confirmation
 
-  # Cache the gospel
-  @@gospel ||= Nokogiri::XML(File.open("#{RAILS_ROOT}/public/gospelgrab13.xml"))
+  before_filter :check_gospel
+  @@gospel ||= "initialize"
+  @@gospel_mod_time ||= 0
+
+  GOSPEL_PATH = "#{Rails.root}/public/gospelgrab13.xml"
 
 private
+  
+  def reload_gospel
+    open_gospel do |f|
+      Rails.logger.info "Reloading XML"
+      @@gospel = Nokogiri::XML(f)
+      @@gospel_mod_time = f.mtime
+    end
+  end
+
+  def open_gospel mode='r'
+    File.open(GOSPEL_PATH, mode) do |f|
+      f.flock(mode == 'r' ? File::LOCK_SH : File::LOCK_EX)
+      begin
+        yield f
+      ensure
+        f.flock(File::LOCK_UN)
+      end
+    end 
+  end
+
+  def check_gospel  
+    if @@gospel == "initialize"
+      Rails.logger.info "Reloading XML because first request"
+      reload_gospel
+    elsif @@gospel_mod_time != File.mtime(GOSPEL_PATH)
+      Rails.logger.info "Reloading XML because it has changed"
+      reload_gospel
+    end
+  end
 
   def current_scholar_session
     return @current_scholar_session if defined?(@current_scholar_session)
