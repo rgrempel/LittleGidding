@@ -404,7 +404,7 @@ isc.defineClass("PageGrid", isc.ListGrid).addProperties({
     this.Super("initWidget", arguments);
     this.observe(isc.LG.app, "fireScrollToPage", "observer.handleScrollToPage(returnVal)");
     this.viewableBox = isc.Canvas.create({
-      border: "1px solid yellow"
+      border: "2px dashed yellow"
     });
   },
   handleScrollToPage: function(page) {
