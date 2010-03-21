@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE book SYSTEM "gospelgrab9c.dtd">
 
-<!-- gospelgrab.9x was succeeded by 10, 11, 12?, and 13-.  Thus, gospelgrab.13- is the most recent document, though for some reason it is a bit smaller file than the earlier ones.  We will rename the file from "gospelgrab" soon.-->
+<!-- We have been using [ ] for information missing from figures, but it can mean two different things: info, such as engraver, that wasn't originally on the plate, and info that has been cropped by LG.  This needs disambiguation. -->
+<!-- To handle composite images, I have placed multiple source tags within a single figure tag, each followed by other tags normal to figures.  I have begun each source text with a number. -->
+<!-- Gospelgrab 14 comes after Ryan's interface and adds information from Plantin-Moretus and Hollstein to some figures.-->
+<!--Gospelgrab.9x was succeeded by 10, 11, 12?, and 13-.  Thus, gospelgrab.13- is the most recent document, though for some reason it is a bit smaller file than the earlier ones.  We will rename the file from "gospelgrab" soon.-->
 <!-- In gospelgrab.87 we have changed image tags to figure tags, and changed the attribute description to figdesc. -->
 <book>
   <hchapter n="0.3" toctitle="THE ORDER of the CHAPTERS of the CONCORDANCE" col="1"/>
@@ -1163,27 +1166,38 @@
     <head><hi rend="color(gold)">JOHNS B</hi>aptisme, <hi rend="color(gold)">P</hi>reaching, <hi
         rend="color(gold)">F</hi>oode, &amp; <hi rend="color(gold)">R</hi>ayment</head>
     <figure id="figure50">
-      <figDesc>John in wilderne&#x17F;&#x17F; by water with divine light and lamb, tetragrammaton</figDesc>
+      <figDesc>John in wilderness by water with divine light and lamb, tetragrammaton</figDesc>
       <head>Fac cum [factum?] est verbum Domini Super Ioannem Zachariae filium in deserto. Luc.III</head>
       <inven>Joan Stradanus</inven>
       <sculp>Ant. Wierx</sculp>
       <ex>Th. Gall</ex>
     </figure>
     <figure id="figure51" composite="yes">
-      <figDesc>image of two men, one helping the other, and on top, three people watching a tailor</figDesc>
+      <figDesc>from Clothing the Naked; image of two men, one helping the other, and on top, three people watching a tailor, both from same print</figDesc>
       <ms>He yt hath two coates let him Impart &amp; c.</ms>
+      <inven>[M. de Vos]</inven>
+      <ex>[G. de Jode]</ex>
+      <head>[NVDVS ERAM ET OPERVITIS ME]</head>
+      <source>The Seven Acts of Mercy, Hollstein 44:621-8, 625.</source>
+      <date>[1581-81]</date>
     </figure>
     <figure id="figure52" col="38">
       <figDesc>Mark with Lion, sitting at writing table, holding book</figDesc>
-    </figure> description="Miniatures of Mark with Lion, Ox and Matt with Angel as each gospel
-    begins its bit."/&gt; <figure id="figure53" col="39" size="miniature">
+      </figure> 
+    <figure id="figure53" col="39" size="miniature">
       <figDesc>Mark at writing desk with lion</figDesc>
+      <inven>[M. de. Vos]</inven>
+      <ex>[Adrian Collaert]</ex>
+      <source>Title page of Vita, Passio, et Resurrectio Iesv Christi (upper right), Hollstein 44:275-325, 275; BL 1899cc68</source>
     </figure>
     <figure id="figure54" size="miniature">
       <figDesc>ox at feet of Luke</figDesc>
     </figure>
     <figure id="figure55" size="miniature">
       <figDesc>Matthew with book and angel</figDesc>
+      <inven>[M. de. Vos]</inven>
+      <ex>[Adrian Collaert]</ex>
+      <source>Title page of Vita, Passio, et Resurrectio Iesv Christi (upper left), Hollstein 44:275-325, 275; BL 1899cc68</source>
     </figure>
     <excerpt source="b.1:1-3" type="context">
       <verse book="b" cnumber="2" id="b.1.1-c" type="context" vnumber="1">❡ The beginning of the
@@ -1829,6 +1843,8 @@
     <figure id="figure65">
       <figDesc>Wedding, with Je&#x17F;us commanding servant in foreground</figDesc>
       <ex>Gerardus de Iode [GdJ]</ex>
+      <head>[Et s^acra coniugij dignatus foedera tanto est. Munere qui lijmphas Bacchica dona facit]</head>
+      <source>Plantin Moretus III/J149</source>
     </figure>
     <excerpt source="d.2:1-11" type="context">
       <verse book="d" cnumber="3" id="d.2.1-c" type="context" vnumber="1"> And the third day there
@@ -2171,14 +2187,16 @@
     col="57">
 
     <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">W</hi>OMAN of SAMARIA+</head>
-    <figure id="figure73">
-      <figDesc>figures of confinement and torture</figDesc>
-      <source>[from plate used later re. Chri&#x17F;t watching the faithful visit tho&#x17F;e in prison (sheep
-        and goats)</source>
-      <source>[from plate used later re. Chri&#x17F;t watching the faithful visit tho&#x17F;e in prison (sheep
-        and goats)</source>
+    <figure col="57" id="figure73">
+      <figDesc>figures of confinement and torture, from engraving Visiting the sick, with Christ talking to prisoner, pointing to people entering prison</figDesc>
+      <inven>[M. de Vos]</inven>
+      <ex>[G. de Jode]</ex>
+      <head>[IN CARCERE ERAM ET VENISTIS AD ME]</head>
+      <source>The Seven Acts of Mercy, Hollstein 44:621-8, 627.  Fuller image at Column 451, The Judgment.  Note that the prisoner here looks to Christ, who has been cut out of this image--the prisoner is here read as John, ironically looking to a non-present Christ.</source>
+      <date>[1581-81]</date>
     </figure>
     <comment>the&#x17F;e Pictures are to expre&#x17F;&#x17F; the Torments in Prison.</comment>
+    <!-- should this comment be within the figure tag?  Also, should this figure be in the preceding chapter? -->
     <excerpt source="a.4:12a" type="context">
       <verse book="a" cnumber="5" id="a.4.12-c" type="context" vnumber="12"> ❡ *Now when Je&#x17F;us had
         heard that Iohn was ca&#x17F;t into pri&#x17F;on, </verse>
@@ -3115,7 +3133,8 @@
     <figure id="figure91">
       <figDesc>Chri&#x17F;t casting out demons, man bent over bkwrd</figDesc>
       <head>Et uidit e poeris/poeius/ hominem saluarier Daemon Perdidit tum porcos setigerumq genus</head>
-      <ex>GdJ?</ex>
+      <ex>GdJ</ex>
+      <source>Plantin Moretus III/J.143</source>
     </figure>
     <excerpt source="c.8:26" type="context">
       <verse book="c" cnumber="9" id="c.8.26-c" type="context" vnumber="26">❡ *And they arriued at the
@@ -3835,6 +3854,7 @@
       <sculp>Carol de Mallery</sculp>
       <ex>P Galle</ex>
       <n>7</n>
+      <source>Icones Illvstrivm Feminarvm Novi Testamenti, A Philippo Gallaeo collectae atque expressae: A Cornelio Kiliano Dufflaeo versi:bus breueter explanatae.  Hollstein xliv 514, one of a series (with titlepage) of 15 (508a--522)</source>
     </figure>
     <excerpt source="a.9:18a" type="context">
       <verse book="a" cnumber="10" id="a.9.18-c" type="context" vnumber="18">❡ *While he &#x17F;pake the&#x17F;e
@@ -5837,11 +5857,11 @@
       <verse book="b" cnumber="4" id="b.3.23-c" type="context" vnumber="23"> And he called them vnto
         him, and in parables, How can Satan ca&#x17F;t out Satan? </verse>
     </excerpt>
-    <figure id="figure146" col="143" composite="yes">
-      <figDesc>image of ca&#x17F;ting into &#x17F;wine, with &#x17F;wine removed, demons, tree, and two men standing
-        on left added [same base image as Chp 32]</figDesc>
+    <figure col="143" id="figure146" composite="yes">
+      <figDesc>image of casting into swine, with swine removed, demons, tree, and two men standing
+        on left added [same base image as Chp 32]</figDesc><!-- link to figure in chap XXXII -->
       <ms>YE SATAN ca&#x17F;t OUT SATAN</ms>
-      <artist>monograph cj? [I cannot &#x17F;ee a monograph or any other mark, Sept 06]</artist>
+      <artist>monograph cj? [I cannot see a monograph or any other mark, Sept 06]</artist><artist>[GdJ]</artist>
     </figure>
     <excerpt source="a.12:25a" type="supplement">
       <verse book="a" cnumber="13" id="a.12.25-s" type="supplement" vnumber="25">And Je&#x17F;us knew
@@ -5968,13 +5988,15 @@
         Scribes, and of the Phari&#x17F;ees, an&#x17F;wered, &#x17F;aying, Ma&#x17F;ter, we would &#x17F;ee a &#x17F;igne from thee.
       </verse>
     </excerpt>
-    <figure id="figure147">
-      <figDesc>Jonah fleeing Tetragrammaton</figDesc>
-      <head>Mittitur ad Ninives celebernma maenia Jonas, Imperium domini sed tamen ille fugit.</head>
+    <figure id="figure147" col="145">
+      <figDesc>Jonah fleeing the presence of the Lord, Tetragrammaton</figDesc>
+      <head>Mittitur ad Ninives celebernma maenia Jonas, Imperium domini sed tamen ille fugit. [Jonas Cap. I.]</head>
+      <inven>[MdV]</inven>
       <ex>CJ? Vi&#x17F;&#x17F;cher</ex>
+      <source>The Story of Jonah, Hollstein 44:158-161, 158.  Note: this is state IV, a reworking of Wierix plate, replacing Father with Tetragrammaton.  Published in 1639 Bible.</source>
     </figure>
-    <figure id="figure148">
-      <figDesc>Jonah thrown over the boat [The Comparison is here glued line-by-line onto the print</figDesc>
+    <figure id="figure148" col="145">
+      <figDesc>Jonah cast into the sea. Note: the Comparison is here glued line-by-line onto the print</figDesc>
       <head>A domino fugiens iactatur in aequora Ionas, Excepit hunc caeco bellua ventre ferox.</head>
       <text>S.Matthew 39 But he an&#x17F;wered, and &#x17F;aid to them, And will and adulterous generation
         &#x17F;eeketh after a signe, and there &#x17F;hall no signe be giuen to it, but the sigue of the Prophet
@@ -5985,18 +6007,27 @@
         when the use were n? thi? together, bee began to &#x17F;ay, This is an evill generation, the seke
         a signe, and they &#x17F;hall no signe be giuen it, but the signe of Ionas the Prophet 30 For as
         Ionas was a signe vnto the Nineuites, so &#x17F;hall al&#x17F;o the sonne of Man bee to this generation.</text>
+      <text>[A domino fugiens iactatur in aequora Ionas, Excepit hunc caeco bellua ventre ferox. Ionas Cap. 2]</text>
       <ex>CJ? Vi&#x17F;&#x17F;cher</ex>
+       <inven>[MdV]</inven>
+      <source>The Story of Jonah, Hollstein 44:158-161, 159.</source>
     </figure>
     <figure id="figure149">
-      <figDesc>Jonah spit up on land by whale</figDesc>
-      <head>Euomit absorptum caeco de gutture Caetus. Redditur et terre qui modo praeda fuit.</head>
-      <ex>CJ? Vi&#x17F;&#x17F;cher</ex>
+      <figDesc>Jonah cast on shore by the fish</figDesc>
+      <head>Euomit absorptum caeco de gutture Caetus. Redditur et terre qui modo praeda fuit. [Ionas Cap 2.10.]</head>
+      <ex>CJ Vi&#x17F;&#x17F;cher</ex>
+      <inven>[MdV]</inven>
+      <source>The Story of Jonah, Hollstein 44:158-161, 160.</source>
     </figure>
     <figure id="figure150" composite="yes">
-      <figDesc>Jonah, on hill overlooking city, under tree, with Tetragrammaton, attached image from
-        smaller print shows people of Ninevah on knees praying under Tetragrammaton</figDesc>
+      <figDesc>Jonah, on hill overlooking city, under gourd/tree, with Tetragrammaton.</figDesc>
       <head>Digna deo, turbat rigidum clementia Ionam, Germine, carpit eum, dispereunte. Deus.</head>
-      <ex>CJ? Vi&#x17F;&#x17F;cher</ex>
+      <inven>[MdV]</inven>
+      <ex>CJ Vi&#x17F;&#x17F;cher</ex>
+      <source>The Story of Jonah, Hollstein 44:158-161, 161. Note: this is state II, a reworking of Wierix plate, replacing Father with Tetragrammaton.  </source>
+    </figure>
+    <figure id="figure150-1" composite="yes">
+      <figDesc>People of Ninevah on knees praying under Tetragrammaton, pasted over corner of larger print of Jonah.</figDesc>
     </figure>
     <excerpt source="c.11:29a" type="context">
       <verse book="c" cnumber="12" id="c.11.29-c" type="context" vnumber="29">❡ *And when the people
@@ -6842,16 +6873,13 @@
         of their vnbeliefe. </verse>
     </excerpt>
     <figure id="figure168" col="175" composite="yes">
-      <figDesc>The women that followed Chri&#x17F;t: (&#x17F;ee files under GdJ)Elizabeth Anna Magdalene Maria
-        Salome Susanna Joanna</figDesc>
+      <figDesc>The women that followed Christ: The Samaritan Woman, St. Anne, Martha, Maria Salome, Anna the Prophetess, Mary Magdalen, St. Elizabeth, Lydia, Seller of Purple</figDesc>
       <head>The Women that followed Chri&#x17F;t / SUSANNA</head>
       <inven>[M d Vos]</inven>
       <sculp>[Adrian. Collaert]</sculp>
       <ex>[Phils Galle]</ex>
-      <source>Elizabeth (old, looking to left with left hand grabbing her robe and right hand on
-        breast) is &#x17F;ame as Cecil p5/ii</source>
-      <source>Elizabeth (old, looking to left with left hand grabbing her robe and right hand on
-        breast) is &#x17F;ame as Cecil p5/ii</source>
+      <source>Icones Illvstrivm Feminarvm Novi Testamenti (Celebrated Women of the New Testament).  Hollstein 44:508-522.  The Woman of Samaria (512), St. Anne, (509), Martha (517), Maria Salome (520), Anna the Prophetess (511), Mary Magdalen (518), St. Elizabeth (510), Lydia, Seller of Purple (522)</source>
+      <source>St Anne (512) also in Cecil p5/ii, slightly cropped</source>
     </figure>
     <excerpt source="c.8:1a" type="context">
       <verse book="c" cnumber="9" id="c.8.1-c" type="context" vnumber="1"> ANd it came to pa&#x17F;&#x17F;e
@@ -6968,8 +6996,9 @@
       <n/>
     </figure>
     <figure id="figure175">
-      <figDesc>Woman with hands up</figDesc>
+      <figDesc>Mary, mother of James and John (Joses)</figDesc>
       <ms>Mater Jacobi et Johanni</ms>
+      <source>Icones Illvstrivm Feminarvm Novi Testamenti (Celebrated Women of the New Testament).  Hollstein 44:508-522, 519.</source>
       <n/>
     </figure>
     <figure id="figure176">
@@ -8029,12 +8058,20 @@
   </hchapter>
   <hchapter n="LX" toctitle="VNWASHEN HANDS" col="205">
     <head>
-      <hi rend="color(gold)"/>
+      <hi rend="color(gold)">V</hi>NWASHEN HANDS
     </head>
     <figure id="figure202" composite="yes">
       <figDesc>Composite: Absolom hanging by hair, stabbed; youths mocking Elisha eaten by bears</figDesc>
       <artist>EB?</artist>
-      <n>4</n>
+    </figure>
+    <figure id="figure202-1" composite="yes">
+      <figDesc>Death of Absolom: hanging from tree by hair, horseman goring him with spear.</figDesc>
+      <inven>[M de Vos]</inven>
+      <fe>[Johan Wierix]</fe>
+      <ex>GdJ or CJV</ex>
+      <date>[c1585]</date>
+      <head>[Absolon ex pugna fugens ex arbore pendet. Illius Ioab st ferit hasta latus. 2 Sam. 18.]</head>
+      <source>The Story of David and Absolom, Hollstein 44:118-121, 121</source>
     </figure>
     <excerpt source="d.7:1" type="context">
       <verse book="d" cnumber="8" id="d.7.1-c" type="context" vnumber="1">❡ AFter the&#x17F;e things, Je&#x17F;us
@@ -8935,8 +8972,14 @@
         &#x17F;ide in &gt;&gt; Latin: [I]&gt;&gt; Exploratores, qui mi&#x17F;&#x17F;i a Mose fuerunt
         In Canam. redeunt inde &gt;&gt; botrosque ferunt&gt;&gt; Num:13. It is
         numbered 1 at bottom right with the word [I] Amsterdam written&gt;&gt; before the
-        number. In &#x17F;ome cases (depending on the print) the word [I]&gt;&gt; Rotterdam is
-        written under De Vos. (from Carmen, JU’s ra—&#x17F;ee file)</text>
+        number. In some cases (depending on the print) the word [I]&gt;&gt; Rotterdam is
+        written under De Vos. (from Carmen, JU’s ra—see file)</text>
+        <n>1</n>
+        <source>series: Story of Balaam, 4 plates, Hollstein XLIV 83</source>
+        <inven>Maarten de Vos</inven>
+        <ex>GdJ</ex>
+        <head>Exploratores, qui mis^s^i a Mose fuerunt
+          In Canam. redeunt inde &gt;&gt; botros^que ferunt&gt;&gt; Num:13</head>
     </figure>
     <comment>As the Bunche of Grapes was a proofe of the excellency of ye Lande of Canaan/ soe
       Chri&#x17F;t’s Transfiguration was an Earnest and Fore&#x17F;igne of the Glory of heaven/ And divers
@@ -10331,13 +10374,13 @@
         rend="color(gold)
             ">S</hi>HEPHEARD+</head>
     <figure id="figure244">
-      <figDesc>&#x17F;hepherds wor^k in barn, &#x17F;heep</figDesc>
-      <head>[Simon Ioannis diligis me plus his . . . Joannis 21]</head>
+      <figDesc>shepherds work in barn, sheep</figDesc>
+      <head>[Simon Ioannis diligis me plus his . . . Joannis 21] from Cecil? Holl is different, below</head>
       <inven>M. de Vos</inven>
       <sculp>Jul. Goltzius</sculp>
-      <ex>Joan Bapti&#x17F;ta Vrints</ex>
-      <source>[al&#x17F;o in Cecil 375/cl]</source>
-      <source>[al&#x17F;o in Cecil 375/cl]</source>
+      <ex>Joan Baptis^ta Vrints</ex>
+      <source>[also in Cecil 375/cl]</source>
+      <source>Hollstein 44 The Bad Shepherd 607, from Parable of the Good Shepherd, four plates (607-610)</source><n>[1]</n><head>Qui non intrat per ostium in ouile ouium, sed ascendit . . . educit eas.  Ioannis 10</head>
     </figure>
     <figure id="figure245">
       <figDesc>&#x17F;hepherd with &#x17F;heep</figDesc>
@@ -10419,7 +10462,7 @@
       <figDesc>&#x17F;hepherd chases away wolves</figDesc>
       <inven>M. de Vos</inven>
       <sculp>Jul. Goltzius</sculp>
-      <ex>Joan Bapti&#x17F;ta Vrints</ex>
+      <ex>Joan Bapti&17F;ta Vrints</ex><source>Hollstein 44 Christ the Good Shepherd defending his sheep against wolves, 608, from Parable of the Good Shepherd, four plates (607-610)</source><n>[2]</n>
     </figure>
     <figure id="figure247">
       <figDesc>David fights bear, lion dead</figDesc>
@@ -12225,6 +12268,7 @@
     <figure id="figure305">
       <figDesc>Phineas about to thrust swor^d into man and woman</figDesc>
       <ms>Thou &#x17F;halt not Commit Adultery/ PHINEAS</ms>
+      <source>series: The Story of Balaam, 4 plates (83-86), Hollstein XLIV 86; scene of idol and worshippers to right removed.</source><inven>Maarten de Vos</inven><ex>GdJ</ex><n>4</n><head>[Scortatur populus sed mox furit ira supremi, Scortantes Phinees nam ferit enfis atrox. Num: 25]</head>
     </figure>
     <excerpt source="b.10:17-18a" type="context">
       <verse book="b" cnumber="11" id="b.10.17-c" type="context" vnumber="17">❡ *And when he was gone
@@ -13799,10 +13843,9 @@
       <inven>[M. de. Vos]</inven>
       <sculp>[Iacob. de Bye]</sculp>
       <ex>[Adrian Collaert]</ex>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, BL 1899cc68</source>
+      <source>Vita, Passio, et Resurrectio Iesv Christi, Hollstein 44:275-325, 288; BL 1899cc68</source>
       <date>1600?</date>
       <n>[14]</n>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, BL 1899cc68</source>
     </figure>
   </hchapter>
   <hchapter n="CXII" toctitle="The FIG TREE" col="383">
@@ -15741,12 +15784,13 @@
   <hchapter n="CXXVII" toctitle="THE IVDGEMENT ." col="443">
     <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">J</hi>UDGEMENT+</head>
     <figure id="figure388">
-      <figDesc>Chr^i&#x17F;t judging, angel divides &#x17F;heep from goats</figDesc>
+      <figDesc>Separation of sheep from goats, last judgment in sky, center</figDesc>
       <head>[Cum venerit filius hominis tunc . . . ]</head>
       <inven>M d Vos</inven>
       <ex>[GdJ]</ex>
-      <source>[al&#x17F;o in Cecil 299/cxxviii]</source>
-      <source>[al&#x17F;o in Cecil 299/cxxviii]</source>
+      <date>[1581-82]</date>
+      <source>The Seven Acts of Mercy, Hollstein 44:621-8, 621; also in Cecil 299/cxxviii</source>
+            
     </figure>
     <excerpt source="a.25:31-46" type="context">
       <verse book="a" cnumber="26" id="a.25.31-c" type="context" vnumber="31">❡ When the Sonne of man
@@ -15807,16 +15851,45 @@
       <verse book="a" cnumber="26" id="a.25.46-c" type="context" vnumber="46"> And* the&#x17F;e &#x17F;hall go
         away into e=uerla&#x17F;ting puni&#x17F;hment: but the righ=teous into life eternall. </verse>
     </excerpt>
-    <figure id="figure389" col="445-8">
-      <figDesc>4 images of Chr^i&#x17F;tians with Chr^i&#x17F;t in backgnd, giving food, water, ho&#x17F;pitality,
-        clothing [break up]</figDesc>
+    <figure id="figure389" col="445">
+      <figDesc>Feeding the Hungry: man and woman, center, feed hungry in city, Christ, left, looks on.</figDesc>
       <inven>M de Vos</inven>
+      <ex>[G. de Jode]</ex>
+      <head>[ESVRIVI ENIM ET DEDISTIS MIHI MANDVCARE]</head>
+      <source>The Seven Acts of Mercy, Hollstein 44:621-8, 622. Also used in chapter 13, fragment.</source>
+      <date>1581-81</date>
+    </figure>
+    <figure id="figure389-1" col="445">
+      <figDesc>Giving the thirsty to drink: man, center, pours water into jugs held by thirsty</figDesc>
+      <inven>M de Vos</inven>
+      <ex>[G. de Jode]</ex>
+      <head>[SITIVI ET DEDISTIS MIHI BIBERE]</head>
+      <source>The Seven Acts of Mercy, Hollstein 44:621-8, 623.</source>
+      <date>1581-81</date>
+    </figure>
+    <figure id="figure389-2" col="447">
+      <figDesc>Sheltering strangers</figDesc>
+      <inven>[M de Vos]</inven>
+      <ex>[G. de Jode]</ex>
+      <head>[HOSPES ERAM ET COLLEGISTIS ME]</head>
+      <source>The Seven Acts of Mercy, Hollstein 44:621-8, 624.</source>
+      <date>[1581-81]</date>
+    </figure>
+    <figure id="figure389-3" col="447">      
+      <figDesc>Clothing the naked</figDesc>
+      <inven>M. de Vos</inven>
       <ex>G. de Jode</ex>
+      <head>[NVDVS ERAM ET OPERVITIS ME]</head>
+      <source>The Seven Acts of Mercy, Hollstein 44:621-8, 625.</source>
+      <date>[1581-81]</date>
     </figure>
     <figure id="figure390" col="449">
-      <figDesc>Chr^i&#x17F;t witne&#x17F;&#x17F;es tho&#x17F;e tending the sick</figDesc>
-      <inven>M de Vos</inven>
+      <figDesc>Visiting the sick</figDesc>
+      <inven>M. de Vos</inven>
       <ex>G. de Jode</ex>
+      <head>[INFIRMVS ERAM ET VISITASTIS ME]</head>
+      <source>The Seven Acts of Mercy, Hollstein 44:621-8, 626.</source>
+      <date>[1581-81]</date>
     </figure>
     <figure id="figure391">
       <figDesc>Angel herding &#x17F;heep and goats at re&#x17F;urrection</figDesc>
@@ -15831,20 +15904,30 @@
         came early in the morning to him in the Temple, for^ to heare him. </verse>
     </excerpt>
     <figure id="figure392" col="451">
-      <figDesc>Chr^i&#x17F;t talking to pri&#x17F;oner, pointing to people entering pri&#x17F;on [this image is al&#x17F;o
-        the source for^ the various illustrations of torture earlier in the volume</figDesc>
-      <inven>M de Vos</inven>
-      <ex>G. de Jode</ex>
+      <figDesc>Visiting the Prisoners: Chr^is^t talking to pris^oner, pointing to people entering pris^on.</figDesc>
+      <inven>[M. de Vos]</inven>
+      <ex>[G. de Jode]</ex>
+      <head>[IN CARCERE ERAM ET VENISTIS AD ME]</head>
+      <source>The Seven Acts of Mercy, Hollstein 44:621-8, 627. This image is als^o
+        the source for^ the various illustrations of torture at Column 57, Chapter 22, John's Imprisonment.</source>
+      <date>[1581-81]</date>
     </figure>
+    <figure id="figure392-1">
+      <figDesc>[Burying the Dead: the only image of this series not used]</figDesc>
+      <inven>[M. de Vos]</inven>
+      <ex>[G. de Jode]</ex>
+      <head>[TOBIAS PLVS TIMENS . . .]</head>
+      <source>The Seven Acts of Mercy, Hollstein 44:621-8, 628.</source>
+      <date>[1581-81]</date>
+    </figure>
+    <!-- How to deal with above entry, for a figure that does not appear in this book? -->
     <figure id="figure393">
-      <figDesc>Devils herding goats and people at re&#x17F;urrection</figDesc>
+      <figDesc>Devils herding goats and people at res^urrection</figDesc>
       <inven>MdV</inven>
     </figure>
   </hchapter>
   <hchapter n="CXXVIII" toctitle="IVDAS his BARGAINING" col="453">
-    <head><hi rend="color(gold)">J</hi>UDAS Couenants to sell <hi rend="color(gold)
-            "
-        >Chr^i&#x17F;t</hi>+</head>
+    <head><hi rend="color(gold)">J</hi>UDAS Couenants to sell <hi rend="color(gold)">Chr^i&#x17F;t</hi>+</head>
     <figure id="figure394">
       <figDesc>Absolom drawn away from David</figDesc>
       <ex>GdJ?</ex>
@@ -16070,10 +16153,9 @@
       <inven>[M. de. Vos]</inven>
       <sculp>[Adrian Collaert]</sculp>
       <ex>[Adrian Collaert]</ex>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, BL 1899cc68</source>
+      <source>Vita, Passio, et Resurrectio Iesv Christi, BL 1899cc68</source>
       <date>1600?</date>
       <n>[35]</n>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, BL 1899cc68</source>
     </figure>
     <excerpt source="d.13:1-15" type="context">
       <verse book="d" cnumber="14" id="d.13.1-c" type="context" vnumber="1">❡ NOw *befor^e the fea&#x17F;t of
@@ -16201,10 +16283,10 @@
       <inven>[M. de. Vos]</inven>
       <sculp>[Adrian Collaert]</sculp>
       <ex>[Adrian Collaert]</ex>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, BL 1899cc68</source>
+      <source>Vita, Passio, et Resurrectio Iesv Christi, BL 1899cc68</source>
       <date>1600?</date>
       <n>[34]</n>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, BL 1899cc68</source>
+      <source>Vita, Passio, et Resurrectio Iesv Christi, BL 1899cc68</source>
     </figure>
     <figure id="figure403">
       <figDesc>wa&#x17F;hing of feet, la&#x17F;t supper</figDesc>
@@ -16505,7 +16587,7 @@
         or^ e3?]</figDesc>
       <inven>MdV</inven>
       <sculp>Golezius</sculp>
-      <ex>Joan Bapti&#x17F;ta Vrints</ex>
+      <ex>Joan Baptista Vrints</ex><source>Hollstein 44 Christ separating the sheep from the goats 610, from Parable of the Good Shepherd, four plates (607-610)</source><n>[4]</n>
     </figure>
     <excerpt source="d.14:1-31" type="context">
       <verse book="d" cnumber="15" id="d.14.1-c" type="context" vnumber="1">❡ LEt not your heart be
@@ -16999,10 +17081,9 @@
       <inven>[M. de. Vos]</inven>
       <sculp>[Cornelius Galle]</sculp>
       <ex>[Adrian Collaert]</ex>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, BL 1899cc68</source>
+      <source>Vita, Passio, et Resurrectio Iesv Christi, BL 1899cc68</source>
       <date>1600?</date>
       <n>[26]</n>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, BL 1899cc68</source>
     </figure>
     <figure id="figure421">
       <figDesc>Five miniatures in text, including young man running naked [pull apart]</figDesc>
@@ -17653,9 +17734,8 @@
       <inven>[M. de Vos]</inven>
       <sculp>[Adr. Collaert]</sculp>
       <ex>[Adr. Collaert]</ex>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, [BL 1899cc68]</source>
+      <source>Vita, Passio, et Resurrectio Iesv Christi, [BL 1899cc68]</source>
       <n>[38]</n>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, [BL 1899cc68]</source>
     </figure>
   </hchapter>
   <hchapter n="CXL" toctitle="PETERS DENYAL ." col="497">
@@ -17968,9 +18048,8 @@
       <inven>[M. de Vos]</inven>
       <sculp>[Ioan. Bapti&#x17F;ta Barbe]</sculp>
       <ex>[Adr. Collaert]</ex>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, [BL 1899cc68]</source>
+      <source>Vita, Passio, et Resurrectio Iesv Christi, [BL 1899cc68]</source>
       <n>[39]</n>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, [BL 1899cc68]</source>
     </figure>
     <excerpt source="d.18:28-32" type="context">
       <verse book="d" cnumber="19" id="d.18.28-c.b" type="context" vnumber="28">❡ *Then led they Je&#x17F;us
@@ -18039,9 +18118,8 @@
       <inven>[M. de Vos]</inven>
       <sculp>[Iacob. de Bye]</sculp>
       <ex>[Adr. Collaert]</ex>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, [BL 1899cc68]</source>
+      <source>Vita, Passio, et Resurrectio Iesv Christi, [BL 1899cc68]</source>
       <n>[40]</n>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, [BL 1899cc68]</source>
     </figure>
     <excerpt source="b.15:2" type="supplement">
       <verse book="b" cnumber="16" id="b.15.2-s" type="supplement" vnumber="2">*And Pilate a&#x17F;ked him,
@@ -18242,9 +18320,8 @@
       <inven>[M. de Vos]</inven>
       <sculp>[Adr. Collaert]</sculp>
       <ex>[Adr. Collaert]</ex>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, [BL 1899cc68]</source>
+      <source>Vita, Passio, et Resurrectio Iesv Christi, [BL 1899cc68]</source>
       <n>[41]</n>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, [BL 1899cc68]</source>
     </figure>
     <figure id="figure439" col="511-16">
       <figDesc>6 images of scourging, including 511 colored oval piece (on vellum?) and the wa&#x17F;hing
@@ -18477,9 +18554,8 @@
       <inven>[M. de Vos]</inven>
       <sculp>[Adr. Collaert]</sculp>
       <ex>[Adr. Collaert]</ex>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, [BL 1899cc68]</source>
+      <source>Vita, Passio, et Resurrectio Iesv Christi, [BL 1899cc68]</source>
       <n>[45]</n>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, [BL 1899cc68]</source>
     </figure>
     <figure id="figure442" composite="yes">
       <figDesc>Daughters of Jerusalem*</figDesc>
@@ -18495,9 +18571,8 @@
       <inven>[M. de Vos]</inven>
       <sculp>[Adr. Collaert]</sculp>
       <ex>[Adr. Collaert]</ex>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, [BL 1899cc68]</source>
+      <source>Vita, Passio, et Resurrectio Iesv Christi, [BL 1899cc68]</source>
       <n>[46]</n>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, [BL 1899cc68]</source>
     </figure>
     <figure id="figure444">
       <figDesc>mi&#x17F;&#x17F;ing oval plate on 519/20, damage to page cau&#x17F;ed by its removal, impre&#x17F;&#x17F;ion
@@ -19028,7 +19103,7 @@
         the&#x17F;e things. </verse>
     </excerpt>
     <figure id="figure461" col="535">
-      <figDesc>Samson pulling down temple</figDesc>
+      <figDesc>Samson pulling down temple</figDesc><source>The Story of Samson, 7 plates, Hollstein XLIV 97</source><date>c1585</date><inven>[MdV]</inven><fe>[Antonie Wierix]</fe><ex>[GdJ]</ex><head>Princibibus Samson fatum crudele parabat, Dum bas^in aulai frangit Vtramque manu. Judicum.16.Cap</head><n>7</n>
     </figure>
     <!-- note the problem of category here: is this best in an ms tag, which is for^ handwriting on or^ in the mid&#x17F;t of an image, or^ a comment tag, which is for^ marginal comments in handwriting?  Talitha has tagged it as a title, which &#x17F;eems to make sense, but is incorrect, becau&#x17F;e Title is for^ titles that are part of the original print.  What we may need to do is addre&#x17F;&#x17F; the comment/ms ambiguity in the &#x17F;earch interface, so that when users want to &#x17F;earch the handwriting, they automatically &#x17F;earch both tho&#x17F;e tags.  MS is an important tag, though, for^ anyone studying the composition of images, in which the handwriting is a part of the composition itself.  Thus, I think that since this comment on Samson is not part of the image, it &#x17F;hould be in a comment tag.  The problem with that is that the text is separated from the image, rather than being in the image tag, though that is a problem we'll have to addre&#x17F;&#x17F; more globally anyway.  &#x17F;omehow, we have to order all of the&#x17F;e tagged items so that they show up in their accurate proximity to each other.  Right now, we aren't tagging for^ this except for^ the col attribute, which can presumably get things onto the right page, but not in the right order? -->
     <comment><hi rend="letter(roman)">SAMPsoNS</hi> Acts being Types of Chr^i&#x17F;t are br^ought in this
@@ -19080,11 +19155,18 @@
         Scrip=ture &#x17F;aith, They &#x17F;hall looke on him whom they pierced. ** </verse> <!-- ** And after this. - supplement anecdote -->
     </excerpt>
     <figure id="figure467" col="539">
-      <figDesc>Delilah cutting the sleeping Samson's hair as &#x17F;oldiers approach (one with
-      spear)</figDesc>
+      <figDesc>Delilah cutting the sleeping Samson's hair as soldiers approach (one with
+        spear)</figDesc><source>The Story of Samson, 7 plates (91-97), Hollstein XLIV 96, top and bottom trimmed</source><date>c1585</date><inven>[MdV]</inven><fe>[Antonie Wierix]</fe><ex>[GdJ]</ex><head>Robor Vbi Sams^on meretrice prodit auare, Hostibus effosso lumine preda fuit. Judicum.16.Cap</head><n>6</n>
     </figure>
     <figure id="figure468" composite="yes">
-      <figDesc>Samson with foxes, Samson killing lion, Samson with jaw-bone and lion skin</figDesc>
+      <figDesc>1. Samson with foxes (3 pieces), 2. Samson killing lion, 3. Samson with jaw-bone and lion skin</figDesc>
+      
+      <source>1. The Story of Samson, 7 plates (91-97), Hollstein XLIV 93, background landscape removed, along with bottom right pair of foxes.</source><date>c1585</date><inven>[MdV]</inven><fe>[Antonie Wierix]</fe><ex>Gerard de Jode</ex><head>Sams^onus rapta Tymnatide concitus ira Vulpe Philis^taeos igne*q[ue] perdit Agros. Judicum.xv</head><n>[3]</n>
+      
+      <source>2. The Story of Samson, 7 plates (91-97), Hollstein XLIV 92</source><date>c1585</date><inven>[MdV]</inven><fe>[Antonie Wierix]</fe><ex>[GdJ]</ex><head>Armorum nulla vi conterit ora Leonis victor et ex Lucta fortis abit dubia. Judicum.14</head><n>[2]</n>
+      
+      <source>3 unknown</source>
+      
     </figure>
   </hchapter>
   <hchapter n="CXLV" toctitle="THE BURIAL ." col="541">
@@ -19096,9 +19178,8 @@
       <inven>[M. de Vos]</inven>
       <sculp>[Ioan. Collaert]</sculp>
       <ex>[Adr. Collaert]</ex>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, [BL 1899cc68]</source>
+      <source>Vita, Passio, et Resurrectio Iesv Christi, [BL 1899cc68]</source>
       <n>[48]</n>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, [BL 1899cc68]</source>
     </figure>
     <figure id="figure470">
       <figDesc>Chr^i&#x17F;t lowered into coffin out&#x17F;ide tomb by di&#x17F;ciples</figDesc>
@@ -19107,9 +19188,8 @@
       <inven>[M. de Vos]</inven>
       <sculp>[Ioan. Collaert]</sculp>
       <ex>[Adr. Collaert]</ex>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, [BL 1899cc68]</source>
+      <source>Vita, Passio, et Resurrectio Iesv Christi, [BL 1899cc68]</source>
       <n>[49]</n>
-      <source>Vita, Pa&#x17F;&#x17F;io, et Resurrectio Iesv Chr^i&#x17F;ti, [BL 1899cc68]</source>
     </figure>
     <figure id="figure471">
       <figDesc>Woman reclining with crown of thorns, head down</figDesc>
@@ -19952,7 +20032,7 @@
         Domine tu omnia scis, tu scis quia amo te. Dicit ei pasce oues meas. Ioannis 21.</text>
       <inven>M de Vos</inven>
       <sculp>Jul. Goltzius</sculp>
-      <ex>Joan Bapti&#x17F;ta Vrints</ex>
+      <ex>Joan Baptista Vrints</ex><source>Hollstein 44 St Peter as the Shepherd 609, from Parable of the Good Shepherd, four plates (607-610)</source><n>[3]</n>
     </figure>
   </hchapter>
   <hchapter n="CL" toctitle="The la&#x17F;t Apparition &amp; ASCENSION ." col="561">
