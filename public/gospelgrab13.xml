@@ -20,9 +20,9 @@
     <!-- There are four creator roles given on the plates themselves: inven, for inventor, or the person who painted or otherwise made the initial image; sculp, for sculptor?, for the engraver; ex, for excudebat, for the printer; and fe, for fecit, for the maker. Fe seems to be used only together with inven, so it may mean one or both of sculp and ex. -->
     <comment col="5">
       <!-- For this page, I have marked all the text in the comment tag as either roman or italic.  After this page, I am marking only the roman, thinking that we can make italic the default for comment tags.  Backing up a step, I have created the look tag to refer to the appearance of comments, and given it letter and color attributes. --><!-- I am using comment tags for all the handwriting in the book except for that which occurs on images.  The latter I've tagged with a MS attribute within the image tag.  The Image tag also has a text attribute, which is for text that is part of the original image, as opposed to text that has been added by hand at Little Gidding.  Regarding columns, we have made the col attribute available within both hchapter and image tags, so that we can set a marker for the beginning of the chapter and also for the placement of images within that chapter.  We are not, however, repeating col numbers, so images without a col specified are found on the col indicated in the hchapter tag. -->
-      <hi rend="letter(roman)">ADVERTIZEMENTS</hi> touching this Ensuing <hi rend="letter(roman)                 color(red)">CONCORDANCE</hi>. theſe Two Parts w<hi rend="letter(superscript)">ch</hi> wee
+      <hi rend="letter(roman)">ADVERTIZEMENTS</hi> touching this Ensuing <hi rend="letter(roman) color(red)">CONCORDANCE</hi>. theſe Two Parts w<hi rend="letter(superscript)">ch</hi> wee
       call COMPARISON &amp; COMPOSITION are only touching thoſe <hi rend="letter(roman)">PAſſAGES</hi> w<hi rend="letter(superscript)">ch</hi> are <hi rend="letter(roman)">IOINTLY</hi> Related by Two or more of the
-        <hi rend="letter(roman)                 ">EVANGELISTS</hi>. But y<hi rend="letter(superscript)">e</hi> whole <hi rend="letter(roman)">EVANGELICAL HISTORIE</hi> is included in that, w<hi rend="letter(superscript)">ch</hi> is termed y<hi rend="letter(superscript)">e</hi>
+        <hi rend="letter(roman)">EVANGELISTS</hi>. But y<hi rend="letter(superscript)">e</hi> whole <hi rend="letter(roman)">EVANGELICAL HISTORIE</hi> is included in that, w<hi rend="letter(superscript)">ch</hi> is termed y<hi rend="letter(superscript)">e</hi>
       COLLECTION. w<hi rend="letter(superscript)">ch</hi> is that in y<hi rend="letter(superscript)">e</hi> Great English Letter together w<hi rend="letter(superscript)">th</hi> thoſe <hi rend="letter(roman)">ADDITIONS</hi> in y<hi rend="letter(superscript)">e</hi> Romane Letter imme- diately following or going
       before every of the ſayd sections in the English Letter. And in both theſe together is fully
       conteined what euer is related by the <hi rend="letter(roman)">FOVRE EVANGELISTS</hi>, so y<hi rend="letter(superscript)">t</hi>
@@ -32,32 +32,32 @@
       ſaid or done. thoſe words of all &amp; Every of y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">EVANGELISTS</hi> being still inserted in y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">CONTEXT</hi>, which
       speak most largely. And the Rest is Annexed in y<hi rend="letter(superscript)">e</hi> Roman Letter either before or after,
       &amp; is called the <hi rend="letter(roman)">SVPPLEMENT.</hi> And both together make y<hi rend="letter(superscript)">e</hi>
-        <hi rend="letter(roman)">COLLECTION. </hi> So that besides a cleare <hi rend="letter(roman)                 ">NARRATION</hi> in the <hi rend="letter(roman)">CONTEXT</hi> there may likewise be easily ſeen y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">AGREEMENTS</hi>
-      &amp; <hi rend="letter(roman)                 ">DIFFERENCES</hi> of all y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">EVANGELISTS</hi> y<hi rend="letter(superscript)">t</hi> speak of y<hi rend="letter(superscript)">e</hi> same matter. And furthermore euery
+        <hi rend="letter(roman)">COLLECTION. </hi> So that besides a cleare <hi rend="letter(roman)">NARRATION</hi> in the <hi rend="letter(roman)">CONTEXT</hi> there may likewise be easily ſeen y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">AGREEMENTS</hi>
+      &amp; <hi rend="letter(roman)">DIFFERENCES</hi> of all y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">EVANGELISTS</hi> y<hi rend="letter(superscript)">t</hi> speak of y<hi rend="letter(superscript)">e</hi> same matter. And furthermore euery
         <hi rend="letter(roman)">EVANGELIST</hi> may be <hi rend="letter(roman)">SEVERALLY</hi> read
       as plainly &amp; readily as if they were alone. And in theſe Two points this <hi rend="letter(roman)">CONCORDANCE</hi> paſſeth that w<hi rend="letter(superscript)">ch</hi> we call y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">COMPOSITION. </hi> As it was invented by Rubus Hannonius, otherwise called John Buisonius
       y<hi rend="letter(superscript)">e</hi> Kings Profeſſor of Divinitie at Doway about y<hi rend="letter(superscript)">e</hi> yeare 1570. <hi rend="letter(roman)">TOVCHING</hi> y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">READING</hi> of y<hi rend="letter(superscript)">e</hi> COLLECTION <hi rend="letter(roman)">OBSERVE,</hi> That, A, signifies Mathew, <hi rend="color(blue) letter(roman)">B</hi> Mark, <hi rend="color(red) letter(roman)">C</hi>
-      Luke, and <hi rend="color(gold) letter(roman)             ">D</hi> John. w<hi rend="letter(superscript)">ch</hi> are likewise for
+      Luke, and <hi rend="color(gold) letter(roman)">D</hi> John. w<hi rend="letter(superscript)">ch</hi> are likewise for
       more ease &amp; surety distinguished in several colors. Now if y<hi rend="letter(superscript)">u</hi> ** would read y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">EVANGELICAL HISTORY</hi> keep on still from one of theſe marking
       letters to another reading only that, w<hi rend="letter(superscript)">ch</hi> is in y<hi rend="letter(superscript)">e</hi> Great English Letter. But if you would
       Read y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">EVANGELISTS SEVERALLY</hi> then y<hi rend="letter(superscript)">u</hi> must keep still from
-      section to section in y<hi rend="letter(superscript)">e</hi> same letter, w<hi rend="letter(superscript)">th</hi> w<hi rend="letter(superscript)">ch</hi> y<hi rend="letter(superscript)">u</hi> begin, reading both <hi rend="letter(roman)                 ">CONTEXT</hi> &amp; <hi rend="letter(roman)">SUPPLEMENT.</hi> Y<hi rend="letter(superscript)">t</hi> is, the Great English Letter and the Romane annexed. And when euer it
+      section to section in y<hi rend="letter(superscript)">e</hi> same letter, w<hi rend="letter(superscript)">th</hi> w<hi rend="letter(superscript)">ch</hi> y<hi rend="letter(superscript)">u</hi> begin, reading both <hi rend="letter(roman)">CONTEXT</hi> &amp; <hi rend="letter(roman)">SUPPLEMENT.</hi> Y<hi rend="letter(superscript)">t</hi> is, the Great English Letter and the Romane annexed. And when euer it
       happens (as it doth often) y<hi rend="letter(superscript)">t</hi> that, wch follows next in the <hi rend="letter(roman)">EVANGELISTS</hi> doth not follow immediately in y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">ORDER</hi> of
-      y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)                 ">CONCORDANCE</hi> then y<hi rend="letter(superscript)">u</hi> ſhall find in <hi rend="letter(roman)">WRITTEN HAND</hi> in y<hi rend="letter(superscript)">e</hi> End of y<hi rend="letter(superscript)">e</hi> section y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">FIRST WORDS</hi> of y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">EVANGELISTS</hi>
+      y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">CONCORDANCE</hi> then y<hi rend="letter(superscript)">u</hi> ſhall find in <hi rend="letter(roman)">WRITTEN HAND</hi> in y<hi rend="letter(superscript)">e</hi> End of y<hi rend="letter(superscript)">e</hi> section y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">FIRST WORDS</hi> of y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">EVANGELISTS</hi>
       &amp; á Direction of the chapter &amp; page of the <hi rend="letter(roman)">CONCORDANCE</hi> to w<hi rend="letter(superscript)">ch</hi> y<hi rend="letter(superscript)">u</hi> are to goe. <!-- Paraph character goes here-->This mark
       signifies y<hi rend="letter(superscript)">e</hi> Beginning of y<hi rend="letter(superscript)">e</hi> Chapters of y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">EVANGELISTS.</hi> And
       y<hi rend="letter(superscript)">e</hi> first smaller Numeral Figures in y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">COLLECTION</hi> y<hi rend="letter(superscript)">e</hi> Chapters
-      of y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)                 ">EVANGELISTS.</hi> When y<hi rend="letter(superscript)">u</hi> find any one word
+      of y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">EVANGELISTS.</hi> When y<hi rend="letter(superscript)">u</hi> find any one word
       or more streaked vnder in y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">CONTEXT</hi> y<hi rend="letter(superscript)">u</hi> are to omitt it in
       reading of the <hi rend="letter(roman)">CONTEXT</hi> to make the clearer sense. But it is
       nece{ſſ}arily left remaining for y<hi rend="letter(superscript)">e</hi> reading of y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">EVANGELISTS
         SEVERALLY.</hi> When y<hi rend="letter(superscript)">u</hi> find in y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">CONTEXT</hi> any one or more
       word [note: the plant could be obscuring an “s” but this is not apparent to the reader] in
-      Romane letters, know, that they are inserted out of some other of y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)                 ">EVANGELISTS</hi> in y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">SVPPLEMENT</hi> for y<hi rend="letter(superscript)">e</hi> making up y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">NARRATION</hi> full
+      Romane letters, know, that they are inserted out of some other of y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">EVANGELISTS</hi> in y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">SVPPLEMENT</hi> for y<hi rend="letter(superscript)">e</hi> making up y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">NARRATION</hi> full
       &amp; Perfe{ct}+ The <hi rend="letter(roman)">ANNOTATIONS</hi> are out of Rubus. And for
-      the <hi rend="letter(roman)                 ">ORDER</hi> of y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">CONCORDANCE</hi> it agrees w<hi rend="letter(superscript)">th</hi> Jansenius, whom we haue followed almost wholly in y<hi rend="letter(superscript)">e</hi>
+      the <hi rend="letter(roman)">ORDER</hi> of y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">CONCORDANCE</hi> it agrees w<hi rend="letter(superscript)">th</hi> Jansenius, whom we haue followed almost wholly in y<hi rend="letter(superscript)">e</hi>
       COMPOSITION. As for y<hi rend="letter(superscript)">e</hi> COMPARISON wee need ſay nothing, but that besides it will giue
-      Satisfaction to ſee the <hi rend="letter(roman)">ORIGINAL</hi> Relations of y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)             ">EVANGELISTS:</hi> So y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">ADDITION</hi> of it to theſe other serues both for proof of y<hi rend="letter(superscript)">e</hi> truth of y<hi rend="letter(superscript)">e</hi> COLLECTION
+      Satisfaction to ſee the <hi rend="letter(roman)">ORIGINAL</hi> Relations of y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">EVANGELISTS:</hi> So y<hi rend="letter(superscript)">e</hi> <hi rend="letter(roman)">ADDITION</hi> of it to theſe other serues both for proof of y<hi rend="letter(superscript)">e</hi> truth of y<hi rend="letter(superscript)">e</hi> COLLECTION
       &amp; COMPOSITION, &amp; may happily minister occasion of other Composures in both
       kinds. For theſe are not to infringe y<hi rend="letter(superscript)">e</hi> Liberty of any others judgement; but to be Directions
       &amp; Helps for them, who cannot intend the doing it themselues+ </comment>
@@ -79,7 +79,7 @@
       manner as all the <hi rend="letter(roman)">FOVRE</hi>
       <hi rend="color(gold)">E</hi><hi rend="color(red)">VAN</hi><hi rend="color(blue)">GE</hi>LISTS
       may be read <hi rend="letter(roman)">SEVERALLY</hi> from First to Last+ To wch are added
-      Sundry <hi rend="letter(roman) color(red)">PICTVRES</hi> Expreſſing Either the <hi rend="letter(roman) color(red)">FACTS</hi> themselves Or their <hi rend="letter(roman)                 color(red)">TYPES</hi> &amp; <hi rend="color(red)">Figures</hi> Or other <hi rend="letter(roman)">MATTERS</hi> appertaining thereunto Ano
+      Sundry <hi rend="letter(roman) color(red)">PICTVRES</hi> Expreſſing Either the <hi rend="letter(roman) color(red)">FACTS</hi> themselves Or their <hi rend="letter(roman) color(red)">TYPES</hi> &amp; <hi rend="color(red)">Figures</hi> Or other <hi rend="letter(roman)">MATTERS</hi> appertaining thereunto Ano
       M,DC,XXXV+ </comment>
   </hchapter>
   <hchapter toctitle="THE PREFACE" col="7">
@@ -1053,7 +1053,7 @@
     <figure id="figure40" size="miniature">
       <figDesc>mary and child with angels bringing croſſ from heaven</figDesc>
     </figure>
-    <head col="35">To wch are added Divers other Conjecturals touching his <hi rend="color(red)                 letter(roman)">INFANCIE</hi>+</head>
+    <head col="35">To wch are added Divers other Conjecturals touching his <hi rend="color(red) letter(roman)">INFANCIE</hi>+</head>
     <figure id="figure41" col="35" size="small">
       <figDesc>mary with child, angel looking over from side</figDesc>
     </figure>
@@ -1826,7 +1826,7 @@
   </hchapter>
   <hchapter n="XIX" toctitle="The First Paſſover &amp; CASTING out of ye TEMPLE" col="51">
 
-    <head><hi rend="color(gold)">T</hi>HE Casting out o f the <hi rend="color(gold)             ">T</hi>EMPLE <hi rend="color(gold)">T</hi>he First <hi rend="color(gold)">P</hi>AſſOVER+</head>
+    <head><hi rend="color(gold)">T</hi>HE Casting out o f the <hi rend="color(gold)">T</hi>EMPLE <hi rend="color(gold)">T</hi>he First <hi rend="color(gold)">P</hi>AſſOVER+</head>
     <excerpt source="d.2:12-25" type="context">
       <verse book="d" cnumber="3" id="d.2.12-c" type="context" vnumber="12"> ❡ After this hee went
         downe to Capernaum, hee and his mother, and his brethren and his diſciples, and they
@@ -2296,7 +2296,7 @@
   </hchapter>
   <hchapter n="XXIIII" toctitle="ChriſtS Coming into Galilee, PREACHING {FAME / And his HABITATION" col="61">
 
-    <head><hi rend="color(gold)">Chriſt'S</hi> Comming into Gallilee, <hi rend="color(gold)             ">P</hi>reaching, <hi rend="color(gold)">F</hi>ame, <hi rend="color(gold)">H</hi>abitation+</head>
+    <head><hi rend="color(gold)">Chriſt'S</hi> Comming into Gallilee, <hi rend="color(gold)">P</hi>reaching, <hi rend="color(gold)">F</hi>ame, <hi rend="color(gold)">H</hi>abitation+</head>
     <excerpt source="d.4:43" type="context">
       <verse book="d" cnumber="5" id="d.4.43-c" type="context" vnumber="43"> ❡ *Now after two dayes hee
         departed thence, and went into Galilee: </verse>
@@ -2707,7 +2707,7 @@
   </hchapter>
   <hchapter n="XXIX" toctitle="ChriſtS Going into ye Desert The LEAPER {The FIRST GOING about GALILEE" col="73">
 
-    <head><hi rend="color(gold)">T</hi>he Going our into the Desert. <hi rend="color(gold)             ">L</hi>eper &amp; <hi rend="color(gold)">P</hi>erambulation+</head>
+    <head><hi rend="color(gold)">T</hi>he Going our into the Desert. <hi rend="color(gold)">L</hi>eper &amp; <hi rend="color(gold)">P</hi>erambulation+</head>
     <figure id="figure84">
       <figDesc>Men bring sick men to Jeſus, a demon dragon cast out</figDesc>
       <ms>The Leper clensed. And they brought unto him all sicke persons</ms>
@@ -2822,7 +2822,7 @@
         from Iudea, and from beyond Iordane. </verse>
     </excerpt>
     <link col="75">AND ſeeING YE MVLTITVDES c.40.p.111</link>
-    <comment>Both The <hi rend="letter(roman)">COMPARISON</hi> and <hi rend="letter(roman)                 ">COMPOSITION</hi> in theſe two Heades of the
+    <comment>Both The <hi rend="letter(roman)">COMPARISON</hi> and <hi rend="letter(roman)">COMPOSITION</hi> in theſe two Heades of the
       Concordance vr XXIX and XXX are omitted in regard that they are soe full and Playne in the
       Collection as it would haue been but a meere Repetition to haue inserted them</comment>
   </hchapter>
@@ -6021,7 +6021,7 @@
     </excerpt>
   </hchapter>
   <hchapter n="L" toctitle="ChriſtS MOTHER &amp; BRETHREN" col="151">
-    <head><hi rend="color(gold)">T</hi>HE WOMANS Exclamation. <hi rend="color(gold)             ">Chriſt'S</hi> Mother, Brethren, Sisters+</head>
+    <head><hi rend="color(gold)">T</hi>HE WOMANS Exclamation. <hi rend="color(gold)">Chriſt'S</hi> Mother, Brethren, Sisters+</head>
     <figure id="figure152">
       <figDesc>Mary, large, hands folded on breast</figDesc>
     </figure>
@@ -10279,7 +10279,7 @@
     </excerpt>
   </hchapter>
   <hchapter n="LXXVIII" toctitle="The TRUE ſhepheard" col="269">
-    <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">T</hi>RUE <hi rend="color(gold)             ">S</hi>HEPHEARD+</head>
+    <head><hi rend="color(gold)">T</hi>HE <hi rend="color(gold)">T</hi>RUE <hi rend="color(gold)">S</hi>HEPHEARD+</head>
     <figure id="figure244">
       <figDesc>shepherds work in barn, sheep</figDesc>
       <head>[Simon Ioannis diligis me plus his . . . Joannis 21] from Cecil? Holl is different, below</head>
@@ -12699,7 +12699,7 @@
     </figure>
   </hchapter>
   <hchapter n="CIII" toctitle="The firſt Counsell" col="355">
-    <head><hi rend="color(gold)">T</hi>HE firſt Consultation againſt <hi rend="color(gold)                 ">Chr^iſt</hi>+</head>
+    <head><hi rend="color(gold)">T</hi>HE firſt Consultation againſt <hi rend="color(gold)">Chr^iſt</hi>+</head>
     <figure id="figure319">
       <figDesc>Caiphas Pontifex, embedded text** quoting him (figures numbered in original, but no
         legend given)alſo, asterisk in text—why?</figDesc>
@@ -14604,7 +14604,7 @@
     <comment>The History of the Golden/ Imadge uppon occasion/ of the firſt Comaun-/dement</comment>
   </hchapter>
   <hchapter n="CXIX" toctitle="whoſe soN Chr^iſt is" col="407">
-    <head><hi rend="color(gold)">W</hi>HOSE <hi rend="color(gold)">S</hi>ON <hi rend="color(gold)                 ">Chr^iſt</hi> IS+</head>
+    <head><hi rend="color(gold)">W</hi>HOSE <hi rend="color(gold)">S</hi>ON <hi rend="color(gold)">Chr^iſt</hi> IS+</head>
     <figure id="figure358">
       <figDesc>David with harp</figDesc>
     </figure>
@@ -16596,7 +16596,7 @@
     </excerpt>
   </hchapter>
   <hchapter n="CXXXV" toctitle="The Continuation of the SERMON ." col="473">
-    <head><hi rend="color(gold)">T</hi>he Continuation of the <hi rend="color(gold)             ">S</hi>ERMON</head>
+    <head><hi rend="color(gold)">T</hi>he Continuation of the <hi rend="color(gold)">S</hi>ERMON</head>
     <figure id="figure410">
       <figDesc>14 miniatures illustrating virtues</figDesc>
       <head>Septum Dona Spiritus Sancti</head>
@@ -19694,7 +19694,7 @@
     </figure>
   </hchapter>
   <hchapter n="CXLVIII" toctitle="The firſt &amp; ſecond APPARITION ." col="557">
-    <head><hi rend="color(gold)">T</hi>HE firſt  ſecond <hi rend="color(gold)             ">A</hi>PPARITION</head>
+    <head><hi rend="color(gold)">T</hi>HE firſt  ſecond <hi rend="color(gold)">A</hi>PPARITION</head>
     <figure id="figure496">
       <figDesc>Thomas puts hand in Chr^iſt’s ſide as other diſciples watch</figDesc>
     </figure>
