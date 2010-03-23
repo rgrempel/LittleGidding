@@ -23,16 +23,14 @@ private
   # if necessary, yield, and then write if you return true from the block
   def write_gospel
     open_gospel "r+" do |f|
-      # Now that we have lock, check if we need to re-read gospel
-      if @@gospel_mod_time != f.mtime
-        Rails.logger.warn "Reloading XML because it changed before we got exclusive lock"
-        @@gospel = Nokogiri::XML(f)
-        @@gospel_mod_time = f.mtime
-      end
+      Rails.logger.info "Reloading XML for modification"
+      @@gospel = Nokogiri::XML(f)
+      @@gospel_mod_time = f.mtime
       # Then yield for modification ... if true, then write it out
       if yield @@gospel
         Rails.logger.warn "Writing new XML"
         f.truncate(0)
+        f.rewind
         @@gospel.write_xml_to(f, :encoding => 'UTF-8')
         @@gospel_mod_time = f.mtime
       end
@@ -48,14 +46,15 @@ private
   end
 
   def open_gospel mode='r'
-    File.open(GOSPEL_PATH, mode) do |f|
-      f.flock(mode == 'r' ? File::LOCK_SH : File::LOCK_EX)
-      begin
+    file = File.new(GOSPEL_PATH)
+    file.flock(mode == 'r' ? File::LOCK_SH : File::LOCK_EX)
+    begin
+      File.open(GOSPEL_PATH, mode) do |f|
         yield f
-      ensure
-        f.flock(File::LOCK_UN)
-      end
-    end 
+      end 
+    ensure
+      file.flock(File::LOCK_UN)
+    end
   end
 
   def check_gospel  
