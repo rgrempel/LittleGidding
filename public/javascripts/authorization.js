@@ -101,7 +101,7 @@ isc.RegistrationForm.addProperties({
         }
       );
     }
-  },
+  }
 });
 
 isc.defineClass("LoginForm", isc.DynamicForm);

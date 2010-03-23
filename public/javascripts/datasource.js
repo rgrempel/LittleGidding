@@ -38,7 +38,7 @@ isc.RailsDataSource.create({
   ID: "password_reset",
   dataURL: "/scholar_sessions",
   fields: [
-    {name: "email", type: "text", title: "Email Address", length: 255, required: true},
+    {name: "email", type: "text", title: "Email Address", length: 255, required: true}
   ]
 });
 
@@ -118,7 +118,7 @@ isc.RailsDataSource.create({
     {name: "n", type: "text", detail: true},
     // Size is an attribute ... values miniature, small
     {name: "size", type: "text", title: "Size", detail: true, xmlAttribute: true},
-    {name: "composite", type: "text", title: "Composite", detail: true, xmlAttribute: true},
+    {name: "composite", type: "text", title: "Composite", detail: true, xmlAttribute: true}
   ]
 });
 

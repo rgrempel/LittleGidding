@@ -232,7 +232,7 @@ isc.defineClass("FiguresGrid", isc.ListGrid).addProperties({
     if (figureIDisVisible) return;
 
     this.body.scrollToRatio(true, figure.position / this.getTotalRows());
-  },
+  }
 });
 
 isc.defineClass("TextGrid", isc.ListGrid).addProperties({
