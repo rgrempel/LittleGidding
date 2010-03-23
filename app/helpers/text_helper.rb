@@ -70,6 +70,7 @@ module TextHelper
 
   def render_figure xml, node
     apply_record xml, node do
+      xml.source node["id"] 
       apply_html xml do |html|
         html.div :class => "figure" do
           node.xpath("figDesc | head | text").each do |child|
