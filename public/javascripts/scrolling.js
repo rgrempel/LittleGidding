@@ -290,6 +290,35 @@ isc.defineClass("TextGrid", isc.ListGrid).addProperties({
   }
 });
 
+isc.defineClass("SeaDragon","Canvas").addProperties({
+  dzi_url: null,
+  viewer: null,
+  draw: function () {
+    this.Super("draw", arguments);
+    this.viewer = new Seadragon.Viewer(this.getHandle());
+    this.setDZIURL(this.dzi_url);
+  },
+  clear: function () {
+    this.closeDZI();
+    this.viewer = null;
+    this.Super("clear", arguments);
+  },
+  setDZIURL: function (newURL) {
+    this.dzi_url = newURL;
+    if (this.dzi_url) {
+      this.openDZI();
+    } else {
+      this.closeDZI();
+    }
+  },
+  openDZI: function () {
+    if (this.viewer) this.viewer.openDzi(this.dzi_url);
+  },
+  closeDZI: function () {
+    if (this.viewer) this.viewer.close();
+  }
+});
+
 isc.defineClass("PanZoomImg", "Img").addProperties({
   imageType: "normal",
   overflow: "scroll",
@@ -437,11 +466,18 @@ isc.defineClass("PageGrid", isc.ListGrid).addProperties({
 
 isc.defineClass("PageScroll", isc.HLayout).addProperties({
   initWidget: function() {
+/*  
     this.image = isc.PanZoomImg.create({
       naturalImageWidth: 2035.0,
       naturalImageHeight: 1318.0,
       aspectRatio: 2035.0 / 1318.0,
       defaultWidth: "*"
+    }); 
+*/
+
+    this.image = isc.SeaDragon.create({
+      defaultWidth: "*",
+      defaultHeight: "100%"
     });
 
     this.slider = isc.PageGrid.create({
@@ -456,8 +492,8 @@ isc.defineClass("PageScroll", isc.HLayout).addProperties({
       height: "100%"
     });
 
-    this.observe(this.image, "scrolled", "observer.delayCall('handleImageScrolled')");
-    this.observe(this.image, "zomm", "observer.delayCall('handleImageScrolled')");
+//    this.observe(this.image, "scrolled", "observer.delayCall('handleImageScrolled')");
+//    this.observe(this.image, "zomm", "observer.delayCall('handleImageScrolled')");
 
     this.observe(isc.LG.app, "fireScrollToPage", "observer.handleScrollToPage(returnVal)");
     this.observe(isc.LG.app, "fireLogin", "observer.handleLogin()");
@@ -491,9 +527,8 @@ isc.defineClass("PageScroll", isc.HLayout).addProperties({
   },
 
   handleScrollToPage: function(page) {
-    if (page && (this.image.src != page.png_url)) {
-      this.image.setSrc(page.png_url);
-      this.delayCall("handleImageScrolled");
+    if (page && (this.image.dzi_url != page.dzi_url)) {
+      this.image.setDZIURL(page.dzi_url);
     }
   }
 });

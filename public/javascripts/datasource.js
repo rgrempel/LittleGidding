@@ -165,6 +165,10 @@ isc.RailsDataSource.create({
       type: "image"
     },
     {
+      name: "dzi_url",
+      type: "text"
+    },
+    {
       name: "thumbnail_url",
       type: "image"
     }

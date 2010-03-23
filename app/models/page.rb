@@ -35,6 +35,10 @@ class Page < ActiveRecord::Base
     "/pages/#{self.id}.jpg"
   end
 
+  def dzi_url
+    "/dzi/#{File.basename(self.filename,".png")}.xml"
+  end
+
   def thumbnail_url
     "#{self.png_url}?w=150&h=97"
   end

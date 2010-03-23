@@ -19,7 +19,7 @@ class PagesController < ApplicationController
     @status = 0
     @totalRows = Page.count
     @endRow = @startRow + @records.length - 1
-    @toxml_options = {:methods => [:png_url, :thumbnail_url]}
+    @toxml_options = {:methods => [:png_url, :thumbnail_url, :dzi_url]}
 
     render :template => "shared/smartclient/index"
   end

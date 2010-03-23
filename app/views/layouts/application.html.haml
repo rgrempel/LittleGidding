@@ -11,7 +11,8 @@
       = javascript_include_tag "/#{isomorphicDir}/system/modules/#{js}"
     
     = javascript_include_tag "/#{isomorphicDir}/skins/TreeFrog/load_skin.js"
-    
+    = javascript_include_tag "/javascripts/seadragon-min.js"
+
     - %w{ smartclient-ext.js application.js datasource.js authorization.js scrolling.js comments.js }.each do |js|
       = javascript_include_tag "/javascripts/#{js}"
     
