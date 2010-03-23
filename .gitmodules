@@ -13,3 +13,6 @@
 [submodule "vendor/plugins/tracks_versions"]
 	path = vendor/plugins/tracks_versions
 	url = git://github.com/rgrempel/tracks_versions.git
+[submodule "lib/deepzoom.rb"]
+	path = lib/deepzoom.rb
+	url = git://github.com/openzoom/deepzoom.rb.git
