@@ -296,12 +296,25 @@ isc.defineClass("SeaDragon","Canvas").addProperties({
   draw: function () {
     this.Super("draw", arguments);
     this.viewer = new Seadragon.Viewer(this.getHandle());
+    this.viewer.iscHandler = this;
+    this.viewer.addEventListener("animation", this.handleVisible);
+    this.viewer.addEventListener("open", this.handleVisible);
+    this.viewer.addEventListener("resize", this.handleVisible);
     this.setDZIURL(this.dzi_url);
   },
   clear: function () {
     this.closeDZI();
     this.viewer = null;
     this.Super("clear", arguments);
+  },
+  handleVisible: function(viewer) {
+    viewer.iscHandler.fireVisible();
+  },
+  getSeaDragonBounds: function() {
+    return this.viewer.viewport.getBounds(true);
+  },
+  fireVisible: function() {
+    return this.getSeaDragonBounds();
   },
   setDZIURL: function (newURL) {
     this.dzi_url = newURL;
@@ -319,94 +332,6 @@ isc.defineClass("SeaDragon","Canvas").addProperties({
   }
 });
 
-isc.defineClass("PanZoomImg", "Img").addProperties({
-  imageType: "normal",
-  overflow: "scroll",
-  defaultHeight: "100%",
-  magnification: null,
-  canDrag: true,
-  availableWidths: [75, 150, 300, 600, 1200, 2400],
-  availableHeights: [49, 97, 194, 389, 777, 1554],
-  cursor: "all-scroll",
-  dragAppearance: "none",
-  dragStart: function() {
-    this.scrollLeftStart = this.getScrollLeft();
-    this.scrollTopStart = this.getScrollTop();
-  },
-  dragMove: function() {
-    this.scrollTo(
-      this.scrollLeftStart - isc.Event.lastEvent.x + isc.Event.mouseDownEvent.x,
-      this.scrollTopStart - isc.Event.lastEvent.y + isc.Event.mouseDownEvent.y
-    );
-  },
-  // returns left,top,width,height relative from 0 to 1
-  getPercentRect: function() {
-    var leftPercent = this.getScrollLeft() / this.getScrollWidth();
-    var topPercent = this.getScrollTop() / this.getScrollHeight();
-    var widthPercent = this.getViewportWidth() / this.getScrollWidth();
-    var heightPercent = this.getViewportHeight() / this.getScrollHeight();
-
-    if (widthPercent > 1) widthPercent = 1;
-    if (topPercent > 1) topPercent = 1;
-
-    return [leftPercent, topPercent, widthPercent, heightPercent];
-  },
-  draw: function() {
-    this.Super("draw", arguments);
-    if (this.magnification) return;
-    var widthRatio = this.getInnerContentWidth() / this.naturalImageWidth;
-    var heightRatio = this.getInnerContentHeight() / this.naturalImageHeight;
-    this.magnification = widthRatio < heightRatio ? widthRatio : heightRatio;
-    this.zoom();
-  },
-  zoom: function() {
-    this.imageHeight = this.naturalImageHeight * this.magnification;
-    this.imageWidth = this.naturalImageWidth * this.magnification;
-    // default to biggest file available, then check if the width is smaller than
-    // one of the available widths (specified above), which should be in order from smallest
-    var width = this.availableWidths.last();
-    var height = this.availableHeights.last();
-    for (var i = 0; i < this.availableWidths.length; i++) {
-      if (this.imageWidth < this.availableWidths.get(i)) {
-        width = this.availableWidths.get(i);
-        height = this.availableHeights.get(i);
-        break;
-      }
-    }
-    this.setState("/" + width + "/" + height);
-    this.markForRedraw();
-  },
-  mouseWheel: function() {
-    var ev = isc.Event.lastEvent;
-    var factor = ev.wheelDelta < 0 ? 1.25 : 0.8;
-    this.magnify(factor);
-  },
-  click: function() {
-    this.magnify(isc.Event.shiftKeyDown() ? 0.8 : 1.25);
-    return false;
-  },
-  magnify: function(factor) {
-    var ev = isc.Event.lastEvent;
-    var apparentY = ev.y - this.getPageTop();
-    var apparentX = ev.x - this.getPageLeft();
-    var realX = apparentX + this.getScrollLeft();
-    var realY = apparentY + this.getScrollTop();
-    var newX = realX * factor;
-    var newY = realY * factor;
-
-    this.magnification = this.magnification * factor;
-    this.zoom();
-
-    // If we'll be scrolled, then try to keep the mouse over the same point
-    var scrollY = this.imageHeight > this.getInnerContentHeight();
-    var scrollX = this.imageWidth > this.getInnerContentWidth();
-    if (scrollX || scrollY) {
-      this.scrollTo(scrollX ? newX - apparentX : this.getScrollLeft(),
-                    scrollY ? newY - apparentY : this.getScrollTop());
-    }
-  }
-});
-
 isc.defineClass("PageGrid", isc.ListGrid).addProperties({
   dataSource: "pages",
   autoFetchData: true,
@@ -414,12 +339,27 @@ isc.defineClass("PageGrid", isc.ListGrid).addProperties({
   showHeader: false,
   handlingPageChange: false,
   setPercentRect: function(percentRect) {
-    this.viewableBox.setRect(
-      percentRect[0] * 150,
-      percentRect[1] * 97 + this.viewableBox.topOffset,
-      percentRect[2] * 150,
-      percentRect[3] * 97
-    )
+    var box = [
+      percentRect.x * 150,
+      percentRect.y * 150,
+      percentRect.width * 150,
+      percentRect.height * 150
+    ]
+
+    if (box[0] + box[2] > 150) box[2] = 150 - box[0];
+    if (box[1] + box[3] > 97) box[3] = 97 - box[1];
+    if (box[0] < 0) {
+      box[2] = box[2] + box[0];
+      box[0] = 0;
+    }
+    if (box[1] < 0) {
+      box[3] = box[3] + box[1];
+      box[1] = 0;
+    }
+    
+    box[1] = box[1] + this.viewableBox.topOffset;
+    
+    this.viewableBox.setRect(box);
   },
   fields: [
     {name: "thumbnail_url", cellAlign: "center", imageHeight: 97, imageWidth: 150, width: 150}
@@ -466,15 +406,6 @@ isc.defineClass("PageGrid", isc.ListGrid).addProperties({
 
 isc.defineClass("PageScroll", isc.HLayout).addProperties({
   initWidget: function() {
-/*  
-    this.image = isc.PanZoomImg.create({
-      naturalImageWidth: 2035.0,
-      naturalImageHeight: 1318.0,
-      aspectRatio: 2035.0 / 1318.0,
-      defaultWidth: "*"
-    }); 
-*/
-
     this.image = isc.SeaDragon.create({
       defaultWidth: "*",
       defaultHeight: "100%"
@@ -492,8 +423,7 @@ isc.defineClass("PageScroll", isc.HLayout).addProperties({
       height: "100%"
     });
 
-//    this.observe(this.image, "scrolled", "observer.delayCall('handleImageScrolled')");
-//    this.observe(this.image, "zomm", "observer.delayCall('handleImageScrolled')");
+    this.observe(this.image, "fireVisible", "observer.handleImageScrolled(returnVal)");
 
     this.observe(isc.LG.app, "fireScrollToPage", "observer.handleScrollToPage(returnVal)");
     this.observe(isc.LG.app, "fireLogin", "observer.handleLogin()");
@@ -509,8 +439,8 @@ isc.defineClass("PageScroll", isc.HLayout).addProperties({
     this.Super("initWidget", arguments);
   },
 
-  handleImageScrolled: function() {
-    this.slider.setPercentRect(this.image.getPercentRect());
+  handleImageScrolled: function(bounds) {
+    this.slider.setPercentRect(bounds);
   },
 
   handleLogin: function() {
