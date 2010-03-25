@@ -36,6 +36,9 @@ isc.defineClass("AppMenu", isc.Menu).addProperties({
 
 // The overall app nav widget
 isc.defineClass("AppNav", isc.VLayout).addProperties({
+  height: "100%",
+  width: "100%",
+  overflow: "hidden",
   initWidget: function () {
     this.Super("initWidget", arguments);
 
@@ -100,7 +103,8 @@ isc.defineClass("AppNav", isc.VLayout).addProperties({
    
     this.documentArea = isc.Canvas.create({
       width: "100%",
-      height: "100%"
+      height: "100%",
+      overflow: "hidden"
     });
     
     this.addMembers([
