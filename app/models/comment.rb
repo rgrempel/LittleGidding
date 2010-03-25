@@ -24,7 +24,11 @@ class Comment < ActiveRecord::Base
 
   # This is just a convenience for to_xml
   def scholar_full_name
-    self.scholar.full_name
+    if self.scholar
+      self.scholar.full_name
+    else
+      ""
+    end
   end
 
   def deliver_notification!
