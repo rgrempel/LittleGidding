@@ -63,6 +63,19 @@ isc.defineClass("CommentsGrid", isc.ListGrid).addProperties({
   }
 });
 
+isc.defineClass("GlobalCommentsWindow", isc.AppWindow).addProperties({
+  defaultWidth: "40%",
+  defaultHeight: "50%",
+  title: "Comments",
+  initWidget: function() {
+    this.Super("initWidget", arguments);
+    this.addItem(isc.GlobalComments.create({
+      width: "100%",
+      height: "100%"
+    }));
+  }
+});
+
 isc.defineClass("GlobalComments", isc.HLayout).addProperties({
   initWidget: function() {
     this.Super("initWidget", arguments);

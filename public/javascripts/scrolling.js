@@ -130,6 +130,43 @@ isc.LG.addProperties({
   }
 });
 
+isc.defineClass("AppWindow", isc.Window).addProperties({
+  defaultWidth: "50%",
+  defaultHeight: "50%",
+  canDragReposition: true,
+  canDragResize: true,
+  keepInParentRect: true,
+  showFooter: true,
+  showResizer: true,
+  showMaximizeButton: true,
+  animateMinimize: true,
+  contentPanelClass: null,
+
+  closeClick: function() {
+    this.markForDestroy();
+  },
+
+  initWidget: function() {
+    this.headerControls = [
+      "headerIcon",
+      "headerLabel",
+      "minimizeButton",
+      "maximizeButton",
+      "closeButton"
+    ];
+    
+    this.Super("initWidget", arguments);
+  }
+});
+
+isc.defineClass("ChapterTitlesWindow", isc.AppWindow).addProperties({
+  defaultWidth: "33%",
+  defaultHeight: "33%",
+  showMaximizeButton: false,
+  title: "Chapters",
+  bodyConstructor: "ChapterTitlesGrid"
+});
+
 isc.defineClass("ChapterTitlesGrid", isc.ListGrid).addProperties({
   dataSource: "chapter_titles",
   autoFetchData: true,
@@ -144,8 +181,8 @@ isc.defineClass("ChapterTitlesGrid", isc.ListGrid).addProperties({
     {name: "toctitle"},
     {name: "col", width: "40", align: "right"}
   ],
-  init: function() {
-    this.Super("init", arguments);
+  initWidget: function() {
+    this.Super("initWidget", arguments);
     this.observe(isc.LG.app, "fireScrollToColumn", "observer.handleScrollToColumn(returnVal)");
   },
   handleScrollToColumn: function(newColumn) {
@@ -165,9 +202,8 @@ isc.defineClass("ChapterTitlesGrid", isc.ListGrid).addProperties({
     if (!selectRecord) return;
     if (selectedRecord && (selectedRecord.n == selectRecord.n)) return;
 
-    this.deselectAllRecords();
     this.handlingColumnChange = true;
-    this.selectRecord(selectRecord);
+    this.selectSingleRecord(selectRecord);
     this.handlingColumnChange = false;
 
     var body = this.body;
@@ -178,6 +214,13 @@ isc.defineClass("ChapterTitlesGrid", isc.ListGrid).addProperties({
       body.scrollBy(0, (x - visible[1] + 3) * body.cellHeight);
     }
   }
+});
+
+isc.defineClass("FiguresWindow", isc.AppWindow).addProperties({
+  defaultWidth: "33%",
+  defaultHeight: "33%",
+  title: "Figures",
+  bodyConstructor: "FiguresGrid"
 });
 
 isc.defineClass("FiguresGrid", isc.ListGrid).addProperties({
@@ -233,6 +276,13 @@ isc.defineClass("FiguresGrid", isc.ListGrid).addProperties({
 
     this.body.scrollToRatio(true, figure.position / this.getTotalRows());
   }
+});
+
+isc.defineClass("TextWindow", isc.AppWindow).addProperties({
+  defaultWidth: "33%",
+  defaultHeight: "80%",
+  title: "Text",
+  bodyConstructor: "TextGrid"
 });
 
 isc.defineClass("TextGrid", isc.ListGrid).addProperties({
@@ -404,23 +454,36 @@ isc.defineClass("PageGrid", isc.ListGrid).addProperties({
   }  
 });
 
-isc.defineClass("PageScroll", isc.HLayout).addProperties({
+isc.defineClass("PageScrollWindow", isc.AppWindow).addProperties({
+  defaultWidth: 640,
+  defaultHeight: 480,
+  title: "Facsimile",
   initWidget: function() {
+    this.Super("initWidget", arguments);
+    this.addItem(isc.PageScroll.create());
+  }
+});
+
+isc.defineClass("PageScroll", isc.HLayout).addProperties({
+  width: "100%",
+  height: "100%",
+  initWidget: function() {
+    this.Super("initWidget", arguments);
+    
     this.image = isc.SeaDragon.create({
-      defaultWidth: "*",
-      defaultHeight: "100%"
+      width: "*"
     });
 
     this.slider = isc.PageGrid.create({
       cellHeight: 97,
-      width: 175   
+      width: 175
     });
 
     this.mustLoginLabel = isc.Label.create({
       align: "center",
       contents: "You must login in order to see page images",
-      width: "100%",
-      height: "100%"
+      defaultWidth: "100%",
+      defaultHeight: "100%"
     });
 
     this.observe(this.image, "fireVisible", "observer.handleImageScrolled(returnVal)");
@@ -430,8 +493,7 @@ isc.defineClass("PageScroll", isc.HLayout).addProperties({
     this.observe(isc.LG.app, "fireLogout", "observer.handleLogout()");
 
     if (isc.LG.app.scholar) {
-      this.addMember(this.image);
-      this.addMember(this.slider);
+      this.addMembers([this.image, this.slider]);
     } else {
       this.addMember(this.mustLoginLabel);
     }
@@ -445,15 +507,12 @@ isc.defineClass("PageScroll", isc.HLayout).addProperties({
 
   handleLogin: function() {
     this.removeMember(this.mustLoginLabel);
-    this.addMember(this.image, 0);
-    this.addMember(this.slider);
-    this.image.markForRedraw();
+    this.addMembers([this.image, this.slider]);
   },
 
   handleLogout: function() {
-    this.removeMember(this.image);
-    this.removeMember(this.slider);
-    this.addMember(this.mustLoginLabel, 0);
+    this.removeMembers([this.image, this.slider]);
+    this.addMember(this.mustLoginLabel);
   },
 
   handleScrollToPage: function(page) {

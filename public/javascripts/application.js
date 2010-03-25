@@ -24,6 +24,16 @@ isc.LG.addProperties({
   }
 });
 
+isc.defineClass("AppMenu", isc.Menu).addProperties({
+  width: 100,
+  canHover: true,
+  hoverDelay: 1200,
+  hoverWidth: 200,
+  cellHoverHTML: function(record, rowNum, colNum) {
+    return record.hoverText;
+  }
+});
+
 // The overall app nav widget
 isc.defineClass("AppNav", isc.VLayout).addProperties({
   initWidget: function () {
@@ -31,71 +41,97 @@ isc.defineClass("AppNav", isc.VLayout).addProperties({
 
     this.loginButton = isc.LoginButton.create();
 
-    this.chapterTitles = isc.ChapterTitlesGrid.create({
-      width: "100%",
-      height: "33%",
-      showEdges: true,
-      showResizeBar: true
+    this.menuBar = isc.MenuBar.create({
+      menus: [
+        isc.AppMenu.create({
+          title: "Show",
+          data: [
+            {
+              title: "Chapters",
+              action: function() {
+                isc.LG.app.layout.documentArea.addChild(isc.ChapterTitlesWindow.create());
+              },
+              hoverText: "New Chapter Titles List"
+            },
+            {
+              title: "Text",
+              action: function() {
+                isc.LG.app.layout.documentArea.addChild(isc.TextWindow.create());
+              },
+              hoverText: "New Text"
+            },
+            {
+              title: "Facsimile",
+              action: function() {
+                isc.LG.app.layout.documentArea.addChild(isc.PageScrollWindow.create());
+              },
+              hoverText: "New Facsimile"
+            },
+            {
+              title: "Figures",
+              action: function() {
+                isc.LG.app.layout.documentArea.addChild(isc.FiguresWindow.create());
+              },
+              hoverText: "New Figures List"
+            },
+            {
+              title: "Comments",
+              action: function() {
+                isc.LG.app.layout.documentArea.addChild(isc.GlobalCommentsWindow.create());
+              },
+              hoverText: "New Comments List"
+            }
+          ]
+        }),
+        isc.AppMenu.create({
+          title: "Debug",
+          data: [
+            {
+              title: "Show Console",
+              action: function() {
+                isc.showConsole();
+              },
+              hoverText: "Show SmartClient Debugging Console"
+            }
+          ]
+        })
+      ]
     });
-
-    this.pageScroll = isc.PageScroll.create({
-      width: "100%",
-      height: "75%",
-      showEdges: true,
-      showResizeBar: true
-    });
-
-    this.figuresGrid = isc.FiguresGrid.create({
+   
+    this.documentArea = isc.Canvas.create({
       width: "100%",
       height: "100%"
     });
-
-    this.globalComments = isc.GlobalComments.create();
-
-    this.textGrid = isc.TextGrid.create({
-      width: "100%",
-      height: "100%"
-    });
-
+    
     this.addMembers([
-      isc.ToolStrip.create({
+      isc.HLayout.create({
         members: [
+          this.menuBar,
           this.loginButton
         ]
       }),
-      isc.HLayout.create({
-        height: "100%",
-        width: "100%",
-        members: [
-          isc.VLayout.create({
-            width: "33%",
-            showResizeBar: true,
-            members: [
-              this.chapterTitles,
-              isc.TabSet.create({
-                height: "66%",
-                tabs: [
-                  {title: "Text", pane: this.textGrid}
-                ]
-              })
-            ]
-          }),
-          isc.VLayout.create({
-            width: "66%",
-            members: [
-              this.pageScroll,
-              isc.TabSet.create({
-                height: "25%",
-                tabs: [
-                  {title: "Figures", pane: this.figuresGrid},
-                  {title: "Comments", pane: this.globalComments}
-                ]
-              })
-            ]
-          })
-        ]
-      })
+      this.documentArea
     ]);
+
+    this.chapterTitles = isc.ChapterTitlesWindow.create({});
+
+    this.documentArea.addChild(this.chapterTitles);
+
+    this.documentArea.addChild(
+      isc.TextWindow.create({
+        defaultWidth: "33%",
+        defaultHeight: 400,
+        top: 200
+      })
+    );
+
+    this.documentArea.addChild(
+      isc.PageScrollWindow.create({
+        defaultWidth: "66%",
+        defaultHeight: "66%",
+        left: 300
+      })
+    );
   }
 });
 
