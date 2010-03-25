@@ -102,5 +102,5 @@ isc.defineClass("AppNav", isc.VLayout).addProperties({
 isc.Page.setEvent("load", function() {
   var app = isc.LG.create();
   app.layout.draw();
-}, Page.FIRE_ONCE);
+}, isc.Page.FIRE_ONCE);
 

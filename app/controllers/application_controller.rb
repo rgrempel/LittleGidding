@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password, :password_confirmation
 
-  before_filter :check_gospel
+  before_filter :check_gospel, :checkIsomorphicDebug
   @@gospel ||= "initialize"
   @@gospel_mod_time ||= 0
 
@@ -19,6 +19,10 @@ class ApplicationController < ActionController::Base
 
 private
   
+  def checkIsomorphicDebug
+    @isomorphicDebug = params.has_key?(:isomorphicDebug)
+  end
+
   # Call this one when you want to write ... it will get an exclusive lock, reload
   # if necessary, yield, and then write if you return true from the block
   def write_gospel
