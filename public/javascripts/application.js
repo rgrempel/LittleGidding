@@ -116,24 +116,35 @@ isc.defineClass("AppNav", isc.VLayout).addProperties({
       }),
       this.documentArea
     ]);
+   
+    var leftWidth = 360;
+    var chapterHeight = 200;
+    var padding = 4;
+    var footer = 18;
 
-    this.chapterTitles = isc.ChapterTitlesWindow.create({});
-
-    this.documentArea.addChild(this.chapterTitles);
+    var chapterTitles = isc.ChapterTitlesWindow.create({
+      top: padding,
+      left: padding,
+      width: leftWidth,
+      height: chapterHeight
+    })
+    this.documentArea.addChild(chapterTitles)
 
     this.documentArea.addChild(
       isc.TextWindow.create({
-        defaultWidth: "33%",
-        defaultHeight: 400,
-        top: 200
+        top: (padding * 2) + chapterHeight,
+        left: padding,
+        width: leftWidth,
+        height: this.documentArea.getInnerContentHeight() - (padding * 3) - footer - chapterTitles.getHeight()
       })
     );
 
     this.documentArea.addChild(
       isc.PageScrollWindow.create({
-        defaultWidth: "66%",
-        defaultHeight: "66%",
-        left: 300
+        top: padding,
+        height: this.documentArea.getHeight() - (padding * 2) - footer,
+        left: leftWidth + (padding * 2),
+        width: this.documentArea.getInnerContentWidth() - (padding * 3) - chapterTitles.getWidth() 
       })
     );
   }
