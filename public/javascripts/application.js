@@ -120,7 +120,6 @@ isc.defineClass("AppNav", isc.VLayout).addProperties({
     var leftWidth = 360;
     var chapterHeight = 200;
     var padding = 4;
-    var footer = 18;
 
     var chapterTitles = isc.ChapterTitlesWindow.create({
       top: padding,
@@ -129,6 +128,8 @@ isc.defineClass("AppNav", isc.VLayout).addProperties({
       height: chapterHeight
     })
     this.documentArea.addChild(chapterTitles)
+    
+    var footer = chapterTitles.footerHeight;
 
     this.documentArea.addChild(
       isc.TextWindow.create({
