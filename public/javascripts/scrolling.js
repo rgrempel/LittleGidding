@@ -155,12 +155,13 @@ isc.defineClass("AppWindow", isc.Window).addProperties({
         width: 75,
         numCols: 2,
         layoutAlign: "center",
+        parentWindow: this,
         fields: [{
           name: "Synchronize on click?",
           type: "checkbox",
           defaultValue: true,
           changed: function (form, item, value) {
-
+            form.parentWindow.contentPanel.synchronizeOnClick = value;
           }
         }]
       }),
@@ -172,7 +173,8 @@ isc.defineClass("AppWindow", isc.Window).addProperties({
     this.Super("initWidget", arguments);
     
     this.contentPanel = isc[this.contentPanelConstructor].create({
-      parentWindow: this
+      parentWindow: this,
+      synchronizeOnClick: true
     });
     this.addItem(this.contentPanel);
   }
@@ -193,7 +195,10 @@ isc.defineClass("ChapterTitlesGrid", isc.ListGrid).addProperties({
   alternateRecordStyles: true,
   selectionType: "single",
   selectionChanged: function(record, state) {
-    if (state && !this.handlingColumnChange) isc.LG.app.scrollToColumn(record.col);
+    if (state && !this.handlingColumnChange) {
+      if (!this.synchronizeOnClick) return;
+      isc.LG.app.scrollToColumn(record.col);
+    }
   },
   fields: [
     {name: "n", width: "60", align: "right"},
@@ -205,6 +210,8 @@ isc.defineClass("ChapterTitlesGrid", isc.ListGrid).addProperties({
     this.observe(isc.LG.app, "fireScrollToColumn", "observer.handleScrollToColumn(returnVal)");
   },
   handleScrollToColumn: function(newColumn) {
+    if (!this.synchronizeOnClick) return;
+
     var selectedRecord = this.getSelectedRecord();
     if (selectedRecord && selectedRecord.col == newColumn) return;
 
@@ -268,6 +275,7 @@ isc.defineClass("FiguresGrid", isc.ListGrid).addProperties({
   },
   selectionChanged: function(record, state) {
     if (state) {
+      if (!this.synchronizeOnClick) return;
       this.settingFigureID = true;
       isc.LG.app.scrollToFigureID(record.id);
       this.settingFigureID = false;
@@ -279,6 +287,7 @@ isc.defineClass("FiguresGrid", isc.ListGrid).addProperties({
   },
   handleScrollToFigure: function(figure) {
     if (this.settingFigureID) return;
+    if (!this.synchronizeOnClick) return;
 
     var visible = this.getVisibleRows();
     if (visible[0] < 0) return;
@@ -329,6 +338,7 @@ isc.defineClass("TextGrid", isc.ListGrid).addProperties({
     }
   },
   selectionChanged: function(record, state) {
+    if (!this.synchronizeOnClick) return;
     if (state) {
       this.settingColumn = true;
       if (record.type == "figure") {
@@ -345,6 +355,7 @@ isc.defineClass("TextGrid", isc.ListGrid).addProperties({
   },
   handleScrollToText: function(text) {
     if (this.settingColumn) return;
+    if (!this.synchronizeOnClick) return;
     if (!text) return;
 
     var visible = this.body.getVisibleRows();
@@ -435,12 +446,14 @@ isc.defineClass("PageGrid", isc.ListGrid).addProperties({
   ],
   selectionChanged: function(record, state) {
     if (state) {
-      if (!this.handlingPageChange) isc.LG.app.scrollToColumn(record.column_start);
+      if (!this.handlingPageChange) this.fireScrollToPage(record);
     }
+  },
+  fireScrollToPage: function(page) {
+    return page;
   },
   initWidget: function() {
     this.Super("initWidget", arguments);
-    this.observe(isc.LG.app, "fireScrollToPage", "observer.handleScrollToPage(returnVal)");
     this.viewableBox = isc.Canvas.create({
       border: "2px dashed yellow"
     });
@@ -505,6 +518,8 @@ isc.defineClass("PageScroll", isc.HLayout).addProperties({
     this.observe(this.image, "fireVisible", "observer.handleImageScrolled(returnVal)");
 
     this.observe(isc.LG.app, "fireScrollToPage", "observer.handleScrollToPage(returnVal)");
+    this.observe(this.slider, "fireScrollToPage", "observer.handleScrollToPageFromSlider(returnVal)");
+    
     this.observe(isc.LG.app, "fireLogin", "observer.handleLogin()");
     this.observe(isc.LG.app, "fireLogout", "observer.handleLogout()");
 
@@ -529,10 +544,22 @@ isc.defineClass("PageScroll", isc.HLayout).addProperties({
     this.addMember(this.mustLoginLabel);
   },
 
-  handleScrollToPage: function(page) {
+  updatePage: function(page) {
+    this.slider.handleScrollToPage(page);
     if (page && (this.image.dzi_url != page.dzi_url)) {
       this.image.setDZIURL(page.dzi_url);
     }
+  },
+
+  handleScrollToPage: function(page) {
+    if (!this.synchronizeOnClick) return;
+    this.updatePage(page);
+  },
+
+  handleScrollToPageFromSlider: function(page) {
+    this.updatePage(page);
+    if (!this.synchronizeOnClick) return;
+    isc.LG.app.scrollToColumn(page.column_start);
   }
 });
 
