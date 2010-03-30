@@ -236,7 +236,8 @@ isc.defineClass("FigureEditor", isc.Window).addProperties({
         height: "100%",
         width: "100%",
         members: [
-          this.figureForm,
+          // this.figureForm,
+          this.detailViewer,
           isc.VLayout.create({
             width: "66%",
             members: [
