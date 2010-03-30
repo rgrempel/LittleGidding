@@ -243,8 +243,8 @@ isc.defineClass("ChapterTitlesGrid", isc.ListGrid).addProperties({
 });
 
 isc.defineClass("FiguresWindow", isc.AppWindow).addProperties({
-  defaultWidth: "33%",
-  defaultHeight: "33%",
+  defaultWidth: "66%",
+  defaultHeight: "80%",
   title: "Figures",
   contentPanelConstructor: "FiguresGrid"
 });
@@ -268,7 +268,13 @@ isc.defineClass("FiguresGrid", isc.ListGrid).addProperties({
     {name: "col", width: "60"},
     {name: "figDesc", width: "*"},
     {name: "head", width: "*"},
-    {name: "text", width: "*"}
+    {name: "text", width: "*"},
+    {name: "ms", width: "*"},
+    {name: "source", width: "*"},
+    {name: "inven", width: "*"},
+    {name: "sculp", width: "*"},
+    {name: "fe", width: "*"},
+    {name: "date", width: "*"},
   ],
   recordDoubleClick: function(viewer, record, recordNum, field, fieldNum, value, rawValue) {
     isc.LG.app.showFigureEditor(record);
