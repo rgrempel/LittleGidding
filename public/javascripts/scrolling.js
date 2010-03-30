@@ -141,6 +141,7 @@ isc.defineClass("AppWindow", isc.Window).addProperties({
   showMaximizeButton: true,
   animateMinimize: true,
   contentPanelClass: null,
+  contentPanel: null,
 
   closeClick: function() {
     this.markForDestroy();
@@ -150,12 +151,30 @@ isc.defineClass("AppWindow", isc.Window).addProperties({
     this.headerControls = [
       "headerIcon",
       "headerLabel",
+      isc.DynamicForm.create({
+        width: 75,
+        numCols: 2,
+        layoutAlign: "center",
+        fields: [{
+          name: "Synchronize on click?",
+          type: "checkbox",
+          defaultValue: true,
+          changed: function (form, item, value) {
+
+          }
+        }]
+      }),
       "minimizeButton",
       "maximizeButton",
       "closeButton"
     ];
     
     this.Super("initWidget", arguments);
+    
+    this.contentPanel = isc[this.contentPanelConstructor].create({
+      parentWindow: this
+    });
+    this.addItem(this.contentPanel);
   }
 });
 
@@ -164,7 +183,7 @@ isc.defineClass("ChapterTitlesWindow", isc.AppWindow).addProperties({
   defaultHeight: "33%",
   showMaximizeButton: false,
   title: "Chapters",
-  bodyConstructor: "ChapterTitlesGrid"
+  contentPanelConstructor: "ChapterTitlesGrid"
 });
 
 isc.defineClass("ChapterTitlesGrid", isc.ListGrid).addProperties({
@@ -220,7 +239,7 @@ isc.defineClass("FiguresWindow", isc.AppWindow).addProperties({
   defaultWidth: "33%",
   defaultHeight: "33%",
   title: "Figures",
-  bodyConstructor: "FiguresGrid"
+  contentPanelConstructor: "FiguresGrid"
 });
 
 isc.defineClass("FiguresGrid", isc.ListGrid).addProperties({
@@ -282,7 +301,7 @@ isc.defineClass("TextWindow", isc.AppWindow).addProperties({
   defaultWidth: "33%",
   defaultHeight: "80%",
   title: "Text",
-  bodyConstructor: "TextGrid"
+  contentPanelConstructor: "TextGrid"
 });
 
 isc.defineClass("TextGrid", isc.ListGrid).addProperties({
@@ -458,10 +477,7 @@ isc.defineClass("PageScrollWindow", isc.AppWindow).addProperties({
   defaultWidth: 640,
   defaultHeight: 480,
   title: "Facsimile",
-  initWidget: function() {
-    this.Super("initWidget", arguments);
-    this.addItem(isc.PageScroll.create());
-  }
+  contentPanelConstructor: "PageScroll"
 });
 
 isc.defineClass("PageScroll", isc.HLayout).addProperties({
@@ -497,8 +513,6 @@ isc.defineClass("PageScroll", isc.HLayout).addProperties({
     } else {
       this.addMember(this.mustLoginLabel);
     }
-
-    this.Super("initWidget", arguments);
   },
 
   handleImageScrolled: function(bounds) {
