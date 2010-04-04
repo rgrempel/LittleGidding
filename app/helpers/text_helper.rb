@@ -19,7 +19,7 @@ module TextHelper
     else
       node.xpath("preceding-sibling::*[@col] | ancestor::*[@col]").last
     end
-    column ? column["col"] : ""
+    column ? column["col"].to_i.to_s : ""
   end
 
   def apply_record xml, node
