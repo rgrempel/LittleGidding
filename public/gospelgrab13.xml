@@ -103,7 +103,6 @@
       <figDesc>Luke, with ox, painting Madonna and child</figDesc>
       <ms>THE EVANGELICALL HISTORIE+ THE PREFACE</ms>
       <source>[Luke same as Cecil p1]</source>
-      <source>[Luke same as Cecil p1]</source>
     </figure>
     <!--this ms text is in red.  It does not show up in the microfilm and may not on a photograph.  So, it needs to be represented somehow, as it is a title -->
     <comment>This Preface agrees to all the Evangelical Historie/as well as to St Lukes Gospell.</comment>
@@ -179,7 +178,6 @@
       <source>[same as Cecil p3/i]</source>
       <date>1564</date>
       <n>I.</n>
-      <source>[same as Cecil p3/i]</source>
     </figure>
   </hchapter>
   <!-- I have added fe, inven, ex, and sculp attributes in addition to the more general artist.  The latter should be used only when the others are not specified -->
@@ -1081,7 +1079,6 @@
     <figure id="figure47" composite="yes [Crucifixion set within title page of Bolswert text.  The fit is so tight that it is barely noticable]" size="small">
       <figDesc>crucifixion set within scene of tomb</figDesc>
       <source>Vitae Paſſionis, title page border</source>
-      <source>Vitae Paſſionis, title page border</source>
     </figure>
     <figure id="figure48" size="small">
       <figDesc>Angel bringing croſſ from heaven to praying Jeſus</figDesc>
@@ -1091,7 +1088,6 @@
         caelisti Patri adrentiſſima prece frequenter sese offerebat. 3. Artem fabrilem videtur
         exercuiſſe, in victuque parando pauperes parentes adiuuiſſe.</text>
       <ex>Boetius Bolswert</ex>
-      <source>Vitae Paſſionis et Mortis Jesu Chriſti</source>
       <date>1622</date>
       <n>10</n>
       <source>Vitae Paſſionis et Mortis Jesu Chriſti</source>
@@ -1701,7 +1697,6 @@
       <inven>M de Vos</inven>
       <sculp>Adrian Collaert</sculp>
       <source>Apostles Creed</source>
-      <source>Apostles Creed</source>
     </figure>
     <!-- fp=Ferrar Papers -->
     <comment>theſe two <hi rend="color(red)">Pictures</hi> are to Expreſſe that wch is ſayd, That
@@ -2289,7 +2284,6 @@
       <inven>[M. de. Vos]</inven>
       <sculp>[Ioan. Baptista Barbe]</sculp>
       <ex>[Adrian Collaert]</ex>
-      <source>Vita, Paſſio, et Resurrectio Iesv Chriſti, BL 1899cc68</source>
       <n>[15]</n>
       <source>Vita, Paſſio, et Resurrectio Iesv Chriſti, BL 1899cc68</source>
     </figure>
@@ -2655,7 +2649,6 @@
       <inven>[M. de. Vos]</inven>
       <sculp>[Iacob. de Bye]</sculp>
       <ex>[Adrian Collaert]</ex>
-      <source>Vita, Paſſio, et Resurrectio Iesv Chriſti, BL 1899cc68</source>
       <n>[18]</n>
       <source>Vita, Paſſio, et Resurrectio Iesv Chriſti, BL 1899cc68</source>
     </figure>
@@ -2900,8 +2893,7 @@
       <figDesc>Tempest, Chriſt asleep</figDesc>
       <ex>Gd. Iode</ex>
       <fe>A Muller</fe>
-      <source>[alſo in Cecil p65/xxxi]</source>
-      <source>[alſo in Cecil p65/xxxi]</source>
+      <source>[also in Cecil p65/xxxi]</source>
     </figure>
     <excerpt source="c.8:22a" type="context">
       <verse book="c" cnumber="9" id="c.8.22-c" type="context" vnumber="22"> ❡ *Now it came to paſſe on
@@ -3550,8 +3542,7 @@
       Disputation about FASTING</head>
     <figure id="figure99">
       <figDesc>Chriſt, with diſciples, calls Matthew from table with money</figDesc>
-      <source>[alſo in Cecil p73/xxxiii]</source>
-      <source>[alſo in Cecil p73/xxxiii]</source>
+      <source>[also in Cecil p73/xxxiii]</source>
     </figure>
     <excerpt source="b.2:13" type="context">
       <verse book="b" cnumber="3" id="b.2.13-c" type="context" vnumber="13"> And hee went forth
@@ -3853,10 +3844,8 @@
       <inven>[M. de. Vos]</inven>
       <sculp>[Iacobus. de Bye]</sculp>
       <ex>[Adrian Collaert]</ex>
-      <source>Vita, Paſſio, et Resurrectio Iesv Chriſti, BL 1899cc68 [alſo in Cecil 77/xxxv]</source>
+      <source>Vita, Paſſio, et Resurrectio Iesv Chriſti, BL 1899cc68 [also in Cecil 77/xxxv]</source>
       <n>[22]</n>
-      <source>Vita, Paſſio, et Resurrectio Iesv Chriſti, BL 1899cc68 [alſo in Cecil
-      77/xxxv]</source>
     </figure>
     <textnote>bottom corner of col 96, the page has been sliced through, ſeemingly caused by the
       ruling</textnote>
@@ -4061,8 +4050,7 @@
     <figure id="figure106">
       <figDesc>Chriſt heals man by pool, bkgrd man walks with bedding</figDesc>
       <artist>IH.W. [difficult to read]</artist>
-      <source>[alſo in Cecil p81/xxxvii]</source>
-      <source>[alſo in Cecil p81/xxxvii]</source>
+      <source>[also in Cecil p81/xxxvii]</source>
     </figure>
     <figure id="figure107">
       <figDesc>Man walks by temple with bedding</figDesc>
@@ -4348,8 +4336,7 @@
     <head><hi rend="color(gold)">T</hi>HE WITHERED HAND+</head>
     <figure id="figure112">
       <figDesc>Chriſt and man with withered hand, in background, Chriſt puts hand over sitting man</figDesc>
-      <source>[alſo in Cecil p 85/xxxix]</source>
-      <source>[alſo in Cecil p 85/xxxix]</source>
+      <source>[also in Cecil p 85/xxxix]</source>
     </figure>
     <excerpt source="a.12:9" type="context">
       <verse book="a" cnumber="13" id="a.12.9-c" type="context" vnumber="9"> *And when he was
@@ -4489,9 +4476,8 @@
       <ms>AND IN HIS NAME ſhall THE GENTILES TRVST</ms>
     </figure>
     <figure id="figure114" col="109">
-      <figDesc>Chriſt on hill teaching apostles, bkgd, Chriſt heals man with apostles</figDesc>
-      <source>[poſſibly same as Cecil p87/xl, though background is different]</source>
-      <source>[poſſibly same as Cecil p87/xl, though background is different]</source>
+      <figDesc>Christ on hill teaching apostles, bkgd, Christ heals man with apostles</figDesc>
+      <source>[possibly same as Cecil p87/xl, though background is different]</source>
     </figure>
   </hchapter>
   <hchapter n="XL" toctitle="The CHOISE of ye APOSTLES {The BEATITVDES" col="111">
@@ -6115,9 +6101,8 @@
       <figDesc>Chriſt preaching to crowd from boat, bkgd: getting in boat, ſower in field</figDesc>
       <head>E NAVIGIO TVRBAS DOCET PARABOLAM EIVS QVI SEMINAT MAT 14</head>
       <ex>Gerard de Iode</ex>
-      <source>[alſo in Cecil p117/Li]</source>
       <date>1568</date>
-      <source>[alſo in Cecil p117/Li]</source>
+      <source>[also in Cecil p117/Li]</source>
     </figure>
     <excerpt source="c.8:4a" type="context">
       <verse book="c" cnumber="9" id="c.8.4-c" type="context" vnumber="4">❡ *And when much people were
@@ -6276,7 +6261,6 @@
       <figDesc>round miniature, ſower in field</figDesc>
       <head>DIVERsoS LAETVM IACTATVR SEMEN IN AGROS. CONTEMTVS VERBI MAGNUS UBIQVE DEIEST. LVCAE
         VIII</head>
-      <source>alſo in Cecil 119/Lii</source>
       <source>alſo in Cecil 119/Lii</source>
     </figure>
     <figure id="figure157" col="157">
@@ -6677,7 +6661,6 @@
       <figDesc>Isaiah with ſaw</figDesc>
       <head>ESAIAS.</head>
       <source>out of plates in FP, large with 2 or 3 full body figures</source>
-      <source>out of plates in FP, large with 2 or 3 full body figures</source>
     </figure>
     <excerpt source="a.13:54b" type="context">
       <verse book="a" cnumber="14" id="a.13.54-c" type="context" vnumber="54"> Whence hath this man this wiſedome, and theſe migh=ty workes? </verse>
@@ -6702,9 +6685,8 @@
         not his ſiſters here with us? and they were offended at him.</verse>
     </excerpt>
     <figure id="figure165" size="miniature">
-      <figDesc>Chriſt as boy and Joseph building, Mary in foreground sewing</figDesc>
-      <source>[ſee similar print, but mirror image, in Cecil 123/Liiii]</source>
-      <source>[ſee similar print, but mirror image, in Cecil 123/Liiii]</source>
+      <figDesc>Christ as boy and Joseph building, Mary in foreground sewing</figDesc>
+      <source>[see similar print, but mirror image, in Cecil 123/Liiii]</source>
     </figure>
     <comment>Both Comparison and Composition are omitted in regarde they would litle or nothing at
       all differ from the Collection</comment>
@@ -7066,7 +7048,6 @@
       <inven>MdV</inven>
       <ex>widow of GdJ</ex>
       <source>FP</source>
-      <source>FP</source>
     </figure>
     <figure id="figure190" size="detail">
       <figDesc>public flogging</figDesc>
@@ -7367,11 +7348,9 @@
       <inven>[M. de. Vos]</inven>
       <sculp>[Adrian Collaert]</sculp>
       <ex>[Adrian Collaert]</ex>
-      <source>Vita, Paſſio, et Resurrectio Iesv Chriſti, BL 1899cc68 [alſo in Cecil 157/lxiii]</source>
+      <source>Vita, Paſſio, et Resurrectio Iesv Chriſti, BL 1899cc68 [also in Cecil 157/lxiii]</source>
       <date>1600?</date>
       <n>[26]</n>
-      <source>Vita, Paſſio, et Resurrectio Iesv Chriſti, BL 1899cc68 [alſo in Cecil
-      157/lxiii]</source>
     </figure>
     <figure id="figure196" col="194" size="miniature">
       <figDesc>Five loaves, Chriſt on hillſide with multitudes</figDesc>
@@ -9890,7 +9869,6 @@
     <figure id="figure238">
       <figDesc>Chriſt kneels at woman's feet in Temple</figDesc>
       <ex>GdJ?</ex>
-      <source>Y</source>
       <n>9</n>
       <source>Y</source>
     </figure>
@@ -9956,9 +9934,8 @@
       aboue.</comment>
     <figure id="figure242" col="265">
       <figDesc>men pick up rocks to stone Chriſt</figDesc>
-      <source>Y [alſo in Cecil 187/lxxvii]</source>
       <n>10</n>
-      <source>Y [alſo in Cecil 187/lxxvii]</source>
+      <source>Y [also in Cecil 187/lxxvii]</source>
     </figure>
     <excerpt source="d.8:12-59" type="context">
       <verse book="d" cnumber="9" id="d.8.12-c" type="context" vnumber="12">❡ Then ſpake Jeſus againe
@@ -10397,10 +10374,9 @@
         seruandum praeception charitatis Dei et proximi. 3. Per eam occasionem proponit parabolam
         samaritani.</text>
       <ex>Boetius Bolswert</ex>
-      <source>Vitae Paſſionis et Mortis Jesu Chriſti</source>
       <date>1622</date>
       <n>26</n>
-      <source>Vitae Paſſionis et Mortis Jesu Chriſti</source>
+      <source>Vitae Passionis et Mortis Jesu Christi</source>
     </figure>
     <excerpt source="c.10:1-12" type="context">
       <verse book="c" cnumber="11" id="c.10.1-c" type="context" vnumber="1">❡ AFter *theſe things, the
@@ -12021,8 +11997,7 @@
       <figDesc>Lot and daughters with angels leave sodom, wife watches city aflame in background</figDesc>
       <head>Cum Ultione Misericordia . . .</head>
       <ms>Lykewise alſo as it was in the days of Lott</ms>
-      <source>[ſame as Cecil 193/lxxx]</source>
-      <source>[ſame as Cecil 193/lxxx]</source>
+      <source>[same as Cecil 193/lxxx]</source>
     </figure>
     <figure id="figure297" size="detail">
       <figDesc>Wife with embedded text “Remember Lots wife”**</figDesc>
@@ -13011,18 +12986,16 @@
       <head>[Post multum vero temporis . . .]</head>
       <inven>[CP Groening]</inven>
       <ex>[GdJ]</ex>
-      <source>[alſo in Cecil 249/cviii]</source>
       <n>4</n>
-      <source>[alſo in Cecil 249/cviii]</source>
+      <source>[also in Cecil 249/cviii]</source>
     </figure>
     <figure id="figure328">
       <figDesc>Nobleman demanding account, three men preſent money on table</figDesc>
       <head>[Et accedens qui qumque talenta acceperat . . .]</head>
       <inven>[CP Groening]</inven>
       <ex>[GdJ]</ex>
-      <source>[alſo in Cecil 249/cviii]</source>
       <n>5</n>
-      <source>[alſo in Cecil 249/cviii]</source>
+      <source>[also in Cecil 249/cviii]</source>
     </figure>
     <excerpt source="c.19:11-28" type="context">
       <verse book="c" cnumber="20" id="c.19.11-c" type="context" vnumber="11"> And as they heard
@@ -14017,8 +13990,7 @@
       <figDesc>Husbandmen beat servants, kill owner’s son</figDesc>
       <head>A domino miſsos ad bacchica dona coloni Multarunt natum porro dedere neci. Luck</head>
       <artist>[GdJ]?</artist>
-      <source>[alſo in Cecil 265/cxv]</source>
-      <source>[alſo in Cecil 265/cxv]</source>
+      <source>[also in Cecil 265/cxv]</source>
     </figure>
     <excerpt source="c.20:9a" type="context">
       <verse book="c" cnumber="21" id="c.20.9-c" type="context" vnumber="9"> Then began he to
@@ -14853,14 +14825,12 @@
         of dead men’s bones, and of all uncleanneſſe” [such a composite illus script, but alſo leads
         one to ſearch scrip]like Spenser’s houſe of Pride. alſo ſee c65k7]</text>
       <source>[grave walls used as background in Cecil 207/xc]</source>
-      <source>[grave walls used as background in Cecil 207/xc]</source>
     </figure>
   </hchapter>
   <hchapter n="CXXI" toctitle="The POORE WIDDOW" col="413">
     <head><hi rend="color(gold)">T</hi>HE POORE <hi rend="color(gold)">W</hi>IDDOW+</head>
     <figure id="figure363">
       <figDesc>Jeſus points to woman putting coin in chest</figDesc>
-      <source>Y</source>
       <n>7</n>
       <source>Y</source>
     </figure>
@@ -15571,9 +15541,8 @@
       <inven>CP Groening</inven>
       <ex>[GdJ]</ex>
       <fe>Harman Muller</fe>
-      <source>[alſo in Cecil 247/cviii]</source>
       <n>1</n>
-      <source>[alſo in Cecil 247/cviii]</source>
+      <source>[also in Cecil 247/cviii]</source>
     </figure>
     <figure id="figure383">
       <figDesc>miniature of Jeſus at door</figDesc>
@@ -15650,9 +15619,8 @@
       <inven>CP Groening</inven>
       <ex>[GdJ]</ex>
       <fe>Harman Muller</fe>
-      <source>[alſo in Cecil 247/cviii]</source>
       <n>2</n>
-      <source>[alſo in Cecil 247/cviii]</source>
+      <source>[also in Cecil 247/cviii]</source>
     </figure>
     <figure id="figure386">
       <figDesc>ſervant digging</figDesc>
@@ -15660,9 +15628,8 @@
       <inven>CP Groening</inven>
       <ex>[GdJ]</ex>
       <fe>Harman Muller</fe>
-      <source>[alſo in Cecil 287/cxxvii]</source>
       <n>3</n>
-      <source>[alſo in Cecil 287/cxxvii]</source>
+      <source>[also in Cecil 287/cxxvii]</source>
     </figure>
     <figure id="figure387">
       <figDesc>ſervant bound in jail</figDesc>
@@ -15670,9 +15637,8 @@
       <inven>CP Groening</inven>
       <ex>[GdJ]</ex>
       <fe>Harman Muller</fe>
-      <source>[alſo in Cecil 289/cxxvii]</source>
+      <source>[also in Cecil 289/cxxvii]</source>
       <n>6</n>
-      <source>[alſo in Cecil 289/cxxvii]</source>
     </figure>
   </hchapter>
   <hchapter n="CXXVII" toctitle="THE IVDGEMENT ." col="443">
@@ -16180,7 +16146,6 @@
       <source>Vita, Passio, et Resurrectio Iesv Christi, BL 1899cc68</source>
       <date>1600?</date>
       <n>[34]</n>
-      <source>Vita, Passio, et Resurrectio Iesv Christi, BL 1899cc68</source>
     </figure>
     <figure id="figure403">
       <figDesc>waſhing of feet, laſt supper</figDesc>
@@ -18560,8 +18525,7 @@
     <figure id="figure445" col="521">
       <figDesc>Moſes with serpent on croſſ</figDesc>
       <text>As Moſes lyfte up the Serpent in ye wilderneſſ</text>
-      <source>[alſo in Cecil p47/xx]</source>
-      <source>[alſo in Cecil p47/xx]</source>
+      <source>[also in Cecil p47/xx]</source>
     </figure>
     <figure id="figure446" composite="yes">
       <figDesc>Abel dead at altar with lamb*</figDesc>
@@ -18912,8 +18876,7 @@
     <figure id="figure456" composite="yes">
       <figDesc>Woman with halo pasted over scene of people rising from their graves*</figDesc>
       <ms>And came out of the Graves</ms>
-      <source>[alſo used in The Revelation, chapter XXI]</source>
-      <source>[alſo used in The Revelation, chapter XXI]</source>
+      <source>[also used in The Revelation, chapter XXI]</source>
     </figure>
     <figure id="figure457" col="533" composite="yes">
       <figDesc>Centurion looking at croſſ, with handwritten text by mouth</figDesc>
