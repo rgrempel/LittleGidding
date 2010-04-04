@@ -424,6 +424,14 @@ isc.defineClass("PageGrid", isc.ListGrid).addProperties({
   selectionType: "single",
   showHeader: false,
   handlingPageChange: false,
+  draw: function() {
+    this.Super("draw", arguments);
+    if (this.pageOnDraw) {
+      // TODO: This is probably not the right way to do this ...
+      this.delayCall("handleScrollToPage", [this.pageOnDraw], 1000);
+      this.pageOnDraw = null;
+    }
+  },
   setPercentRect: function(percentRect) {
     var box = [
       percentRect.x * 150,
@@ -466,6 +474,10 @@ isc.defineClass("PageGrid", isc.ListGrid).addProperties({
   },
   handleScrollToPage: function(page) {
     if (this.handlingPageChange) return;
+    if (!this.isDrawn()) {
+      this.pageOnDraw = page;
+      return;
+    }
 
     var visible = this.getVisibleRows();
     if (visible[0] < 0) return;
