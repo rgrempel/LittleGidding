@@ -12,7 +12,7 @@ xml.response do
       node["col"] = column["col"].to_i.to_s if column
       node["position"] = (@startRow + index).to_s
       if @dataSource == "figures_summary"
-        xml.figure :id => node["id"], :position => node["position"], :col => node["col"]
+        xml.record :id => node["id"], :position => node["position"], :col => node["col"]
       else
         xml << node.to_xml
       end
